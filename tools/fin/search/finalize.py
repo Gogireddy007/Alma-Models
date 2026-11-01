@@ -279,7 +279,9 @@ def main():
     ap.add_argument("stage")
     ap.add_argument("--key", default="")
     a = ap.parse_args()
-    torch.set_num_threads(3)
+    torch.set_num_threads(int(os.environ.get("ALMA_THREADS", 3)))  # ALMA_THREADS=1: bit-reproducible across machines
+    if os.environ.get("ALMA_THREADS") == "1":
+        torch.use_deterministic_algorithms(True)
     globals()[a.stage](a)
 
 

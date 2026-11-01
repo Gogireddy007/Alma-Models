@@ -134,7 +134,9 @@ def main():
     ap.add_argument("--note", default="")
     ap.add_argument("--data", default="smard", help="smard (search) | lead (final refit on tools/power/data.train_panel)")
     a = ap.parse_args()
-    torch.set_num_threads(2)
+    torch.set_num_threads(int(os.environ.get("ALMA_THREADS", 2)))  # ALMA_THREADS=1: bit-reproducible across machines
+    if os.environ.get("ALMA_THREADS") == "1":
+        torch.use_deterministic_algorithms(True)
     torch.manual_seed(a.seed)
     t0 = time.time()
     row = dict(name=a.name, arch=a.arch, abl=a.abl, seed=a.seed, d=a.d, L=a.L, steps=a.steps, lr=a.lr, aux=a.aux,

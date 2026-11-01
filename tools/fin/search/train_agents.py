@@ -37,7 +37,9 @@ def main():
     ap.add_argument("--tag", required=True)
     ap.add_argument("--no-eval", action="store_true")
     a = ap.parse_args()
-    torch.set_num_threads(3)
+    torch.set_num_threads(int(os.environ.get("ALMA_THREADS", 3)))  # ALMA_THREADS=1: bit-reproducible across machines
+    if os.environ.get("ALMA_THREADS") == "1":
+        torch.use_deterministic_algorithms(True)
     cks = a.wm.split(",")
     members = []
     for ck in cks:

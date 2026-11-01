@@ -26,7 +26,7 @@
 ## Audited TEST results
 | Claim | Result |
 |---|---|
-| 1-day probabilistic forecast (T4 h=1) | **Rank 1 of 9** clean models; skill vs RW +0.45% |
+| 1-day probabilistic forecast (T4 h=1) | Numerically rank 1 of 9 clean models, but skill vs RW is only +0.45% (p 0.48); an EWMA(0.94) random walk scores 0.01054 vs 0.01052, so this is a tie with a random walk |
 | Significantly better than | auto_arima (Holm 0.001), chronos_bolt_base (0.0001), kronos_small (0.002) |
 | h = 5 | Significantly better than kronos_small only (Holm 0.0009) |
 | vs random walk | Not significant (p 0.48); negative skill at h = 5 and 20 |

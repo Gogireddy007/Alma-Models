@@ -297,7 +297,9 @@ def main():
     ap.add_argument("--utc", action="store_true", help="--until is a UTC HH:MM (RT-14)")
     ap.add_argument("--force", default="", help="knob=value of the first proposal (e.g. dow=True)")
     a = ap.parse_args()
-    torch.set_num_threads(3)
+    torch.set_num_threads(int(os.environ.get("ALMA_THREADS", 3)))  # ALMA_THREADS=1: bit-reproducible across machines
+    if os.environ.get("ALMA_THREADS") == "1":
+        torch.use_deterministic_algorithms(True)
     lg = open(os.path.join(C.OUT, "logs", f"loop_{a.pillar}.log"), "a")
 
     def log(s):

@@ -76,6 +76,7 @@ Scores are VAL `wql_rel` (geometric mean vs Seasonal Naive, lower is better) unl
    - The GRU rollout tied a direct head because the decoder could read everything it needed from the origin state
      (gc_roll 0.6958 vs gc_direct 0.6978, 3 seeds [M]).
    - The SSM family is the first to pass the WM test: none 0.6707, direct 0.6926 (+0.022), copy 0.7083 (+0.038) on s0
+     **Correction (audit 2026-11-01):** over 5 seeds the gain is +0.7% (95% CI [−0.03%, +1.3%], not significant) and +0.08% without the selection seed; the SSM does not pass the WM test (`docs/ssm_wm_test_5seed.md`).
      [M]. There the *same* system encodes and imagines, so there is no bypass.
    - In AlmaTS (`wm/tswm.py`) every lead token also attends to the full context. The carried state `T(z_k)` can
      therefore be ignored, the same failure mode as GRU. The design has to remove the bypass (experiment E7).
