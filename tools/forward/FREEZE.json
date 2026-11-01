@@ -1,0 +1,53 @@
+{
+ "frozen_utc": "2026-11-01T17:47:00Z",
+ "forward_start": "2026-11-02",
+ "models": {
+  "gas": [
+   "wm_gas_ens",
+   "wm_gas",
+   "wm_gas_direct",
+   "st_ols_wx"
+  ],
+  "power": [
+   "wm_power_blend",
+   "wm_power",
+   "lear"
+  ],
+  "fin": [
+   "wm_fin_blend",
+   "wm_fin",
+   "har_intra_dow"
+  ]
+ },
+ "sha256": {
+  "tools/gas/wm_gas.py": "de3b1bb74bfcbd17ad383e567eb1510ec6fe05244cbb560f3b189a68667e4c2f",
+  "tools/gas/wm_gas_ens.py": "75207bb55c4844a2f9b68e273b7dbe079d55224b328b8520bfa6f9963f99ed81",
+  "tools/gas/search/feats.py": "9e69063d94ddd784d0c7c3f36d53649792b179c91e8df3982d09ecd2fdd6c572",
+  "tools/gas/search/nets.py": "8da05ed553a8056318f321e6e665d2eda5a5c31d3cadce9d7ae3c35a56203e13",
+  "tools/gas/storage.py": "2e01820d344b6e1444a600da1b5d6364c4fc7f507d255f3470e5734f621c4979",
+  "tools/gas/models.py": "b866f9c9bc50fd1ce7086c6ffff38258549261e8b0d2fcbf6c29a38756e05813",
+  "winning_models/gas_wm_gas/checkpoints/wm_gas.pt": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+  "winning_models/gas_wm_gas/checkpoints/wm_gas_direct.pt": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+  "winning_models/gas_wm_gas_ens/checkpoints/x_wm_s3456.pt": "1958ad360f7480c4a7d94e9aca5bf098d4153e87ae2ec1b1a73d494af2bbf1eb",
+  "winning_models/gas_wm_gas_ens/checkpoints/x_dir_s3456.pt": "d6e47f2aa5a32e7f354b6cc77f6378297c8fbc3cb48b46e56dbb0f3a9adeb3bb",
+  "tools/power/wm_power.py": "c94372dab0cd3e405ea09949bcba1f9e7b8d2573949fa695aae76f240cfd776a",
+  "tools/power/wm_power_blend.py": "773b02ac6bc4fd21bc5cdbc91ddd7b9a8add52110033817650e97d4d596c64bd",
+  "tools/power/wm_data.py": "3e10d796909dac6eacb016a2f9fd247cde84694fb3b1ddd1ed732508e0008f31",
+  "tools/power/wm_models.py": "5c10714929b694c0a24e1ef04516764b898b75cf9c007fe3bd7ae70afe241c6f",
+  "tools/power/models.py": "387ca2e5047fe4b329ff5f78eaa5f900b97153239b8b42f562049ab8edb5246d",
+  "tools/power/data.py": "fa7770e777a8f5cfdd219801357606ad17f55ca478a988e64603369f89e184df",
+  "winning_models/power_wm_power/checkpoints/frz_phys_none_s0.pt": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+  "winning_models/power_wm_power/checkpoints/frz_phys_none_s1.pt": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+  "winning_models/power_wm_power/checkpoints/frz_phys_none_s2.pt": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+  "winning_models/power_wm_power/checkpoints/frz_phys_direct_s0.pt": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+  "winning_models/power_wm_power/checkpoints/frz_phys_direct_s1.pt": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+  "winning_models/power_wm_power/checkpoints/frz_phys_direct_s2.pt": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+  "tools/fin/wm_fin.py": "e6eca501fb3dd0b36ed1106d2feb7f9844a495879594c87b3f09c34e358b7d5f",
+  "tools/fin/wm_core.py": "1fb5368fdefc487fd3f6ef7a752a6bceb5f9d429b0ce0e044fb88ae78b67cfaf",
+  "tools/fin/wm_fin_blend.py": "40bdbe6e88b1d269ffac76b968cb3a5b64d013ebd4befd27a64a551246de1f0d",
+  "tools/fin/models.py": "18b1000f8ab474af33bfb59558212b029034fa7577213361223e7a066ff95658",
+  "tools/fin/harness.py": "b615d002e5eac95c461f8e6b9d5b8bd1a41793d2240b7ce78eb4b06683920ada",
+  "winning_models/fin_wm_fin/checkpoints/frozen_wm_fin.pt": "5b90558f4c271e4dc00f5ad8c5207b53d07c5676326b26c5c3d796dbd41b6b08",
+  "winning_models/fin_wm_fin/checkpoints/frozen_wm_direct.pt": "38b39cf96bd921ccb8b08b87bdb2f00bf68e9d4875d29a8c2953c9ab33a708be"
+ }
+}

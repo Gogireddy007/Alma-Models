@@ -47,7 +47,7 @@
 | Pillar | Result | Verdict |
 |---|---|---|
 | P3 quantile score vs foundation models | 0.147 vs Chronos-2 0.156, TiRex 0.158, Chronos-Bolt 0.160 | **Significant** (Holm 0.023 / 0.002 / 0.0002), and vs Kronos |
-| Portability to held-out coins | +8.0 pp vs lgbm_asset, +9.2 pp vs har_roll | **Met** (Holm < 1e-4) |
+| Portability to held-out coins | +8.0 pp vs lgbm_asset, +9.2 pp vs har_roll (Holm < 1e-4); but 0.728 vs har_intra_dow 0.731 on the same held-out coins | **Not met against the best baseline**: the 8–9 pp gap is against baselines without a weekday input |
 | P1 vs best registered baseline | 0.727 vs har_intra_dow 0.731 | Not met (p 0.70) |
 | P1 vs foundation models | +1.0 to +1.9 pp | Not significant |
 | Rollout vs direct twin | +0.27 pp (p 0.30) | Not met |

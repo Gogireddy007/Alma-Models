@@ -75,7 +75,9 @@ def main():
     ap.add_argument("--steps", type=int, default=1000)
     ap.add_argument("--no-eval", action="store_true")
     a = ap.parse_args()
-    torch.set_num_threads(3)
+    torch.set_num_threads(int(os.environ.get("ALMA_THREADS", 3)))  # ALMA_THREADS=1: bit-reproducible across machines
+    if os.environ.get("ALMA_THREADS") == "1":
+        torch.use_deterministic_algorithms(True)
     name = f"wm_d{a.d}_{a.abl}_s{a.seed}_{a.fit_end}"
     cfg = {"d": a.d, "abl": a.abl, "steps": a.steps, "bs": 256, "lr": 1e-3, "W": WC.W, "fit_end": a.fit_end}
     fold = "F1" if a.fit_end == "2024-06-30" else "refit"

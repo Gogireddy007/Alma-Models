@@ -21,11 +21,13 @@ Everything here was evaluated **once** on a sealed, out-of-sample TEST year, the
 
 | Project | What Alma wins (significant, Holm-corrected) | What it does not win |
 |---|---|---|
-| Oil | wm_sv ranks #1 of 9 on the 1-day probabilistic forecast, and beats ARIMA, Chronos-Bolt and Kronos | Does not beat the random walk or Chronos-2 (tie); no directional edge |
+| Oil | wm_sv is numerically first of 9 on the 1-day probabilistic forecast, but by +0.45% skill over the random walk (p 0.48): an EWMA-volatility random walk scores the same (0.01054 vs 0.01052). It significantly beats only ARIMA, Chronos-Bolt and Kronos | Does not beat the random walk or Chronos-2 (tie); no directional edge |
 | Power | wm_power ranks #1 numerically on hourly direction (0.747), and beats the naive baselines, Kronos and zero-shot Alma | No significant win over LEAR, ARX or the foundation models; 80% intervals under-cover (0.75) |
 | Gas | wm_gas beats **every** external model on quantile score, including OLS (Holm 0.030 / 0.039). It beats every clean foundation model on MAE: 11.5 Bcf vs Chronos-2-cov 19.8 (Holm 0.0016) | Not significant on MAE vs OLS (14.4, p 0.13); no accuracy win |
-| Alma-Fin | wm_fin significantly beats Chronos-2, TiRex, Chronos-Bolt and Kronos on quantile score (Holm 0.023 / 0.002 / 0.0002). It transfers to unseen crypto coins: +8–9 pp over per-coin baselines, Holm < 1e-4 | Volatility direction 0.727 vs calendar regression 0.731 (tie); RL agent loses to DQN; no ETF transfer |
-| **World-model test** (rollout vs matched direct twin) | | **Not passed in any project yet** |
+| Alma-Fin | wm_fin significantly beats Chronos-2, TiRex, Chronos-Bolt and Kronos on quantile score (Holm 0.023 / 0.002 / 0.0002). On held-out coins it beats per-coin baselines without a weekday input (lgbm_asset, har_roll) by 8–9 pp, but **not** the weekday-aware HAR baseline (har_intra_dow 0.731 vs wm_fin 0.728 on the held-out coins), so there is no transfer advantage over a simple calendar model | Volatility direction 0.727 vs calendar regression 0.731 (tie); RL agent loses to DQN; no ETF transfer |
+| **World-model test** (rollout vs matched direct twin) | | **Not passed in any project yet**: the direct twin (no rollout) is equal or better on TEST in gas, fin, oil and power |
+
+An independent re-audit (2026-11-01, `audit/REPORT.md` outside this repo) rebuilt every dataset, re-ran every frozen checkpoint and reproduced the TEST numbers above; it found no leakage and no fabricated numbers, and corrected the oil and fin wording in this table.
 
 ## Integrity protocol
 
