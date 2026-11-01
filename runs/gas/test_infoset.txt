@@ -1,0 +1,12 @@
+price task: OK on 16 origins (2022-08-10 .. 2025-08-28), raw-source perturbation + sensitivity
+storage task: OK on 11 weeks x 2 origin kinds (18 contexts use CPC forecasts)
+train helpers: OK (last daily target 2025-06-25, last storage training release 2025-06-26)
+  rw_gauss: deterministic on 4 origins
+  px_fund_ols: deterministic on 4 origins
+  st_persistence: deterministic on 8 contexts
+  st_climatology: deterministic on 8 contexts
+  st_seasonal_naive: deterministic on 8 contexts
+  st_ols_wx: deterministic on 8 contexts
+models: inputs are the context dicts only (future invariance follows from tests 1-2)
+ALL INFORMATION-SET TESTS PASSED
+nice -n 10 .venv/bin/python -W ignore tools/gas/test_infoset.py  60.23s user 1.02s system 97% cpu 1:02.87 total

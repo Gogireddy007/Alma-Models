@@ -1,0 +1,4 @@
+tirex exit 0
+chronos2 exit 0
+timestral_5m exit 0
+kronos_small exit 0

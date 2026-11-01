@@ -1,0 +1,1 @@
+--name r3_alma_ft_lr3e5_direct --arch alma --abl direct --minutes 5 --lr 3e-5 --batch 16 --threads 2

@@ -1,0 +1,130 @@
+{
+ "model": "wm_gas",
+ "ckpt": "runs/gas/search/ckpt/wm_gas.pt",
+ "ckpt_sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+ "target_week": "2025-02-28",
+ "origin": "2025-02-27 17:00:00-05:00",
+ "paths": 1000,
+ "days": [
+  "2025-02-22",
+  "2025-02-23",
+  "2025-02-24",
+  "2025-02-25",
+  "2025-02-26",
+  "2025-02-27",
+  "2025-02-28"
+ ],
+ "wx_src": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  2
+ ],
+ "hdd_known": [
+  32.0,
+  27.0,
+  21.0,
+  17.0,
+  18.0,
+  16.0,
+  19.0
+ ],
+ "hdd_normal": [
+  24.1,
+  24.3,
+  25.2,
+  26.5,
+  26.5,
+  25.1,
+  23.9
+ ],
+ "hdd_anom_sd_daily": 5.27,
+ "avg5_l48": -69.6,
+ "last_level_l48": 1840.0,
+ "arms": {
+  "baseline": {
+   "hdd_shift_per_day": 0.0,
+   "dS_quantiles_10_50_90": [
+    -96.2,
+    -74.9,
+    -53.5
+   ],
+   "dev_vs_avg5_median": -5.3,
+   "P_draw_larger_than_5yr_avg": 0.613,
+   "storage_path_p10": [
+    1798.3,
+    1774.8,
+    1767.9,
+    1766.1,
+    1759.4,
+    1754.3,
+    1743.8
+   ],
+   "storage_path_p50": [
+    1807.6,
+    1789.3,
+    1784.0,
+    1782.6,
+    1777.4,
+    1772.8,
+    1765.1
+   ],
+   "storage_path_p90": [
+    1816.8,
+    1803.8,
+    1799.9,
+    1798.9,
+    1795.2,
+    1791.9,
+    1786.5
+   ]
+  },
+  "cold_snap_+2sd_7d": {
+   "hdd_shift_per_day": 10.54,
+   "dS_quantiles_10_50_90": [
+    -239.6,
+    -218.0,
+    -196.5
+   ],
+   "dev_vs_avg5_median": -148.4,
+   "P_draw_larger_than_5yr_avg": 1.0,
+   "storage_path_p10": [
+    1773.4,
+    1722.3,
+    1691.8,
+    1671.7,
+    1649.1,
+    1627.9,
+    1600.4
+   ],
+   "storage_path_p50": [
+    1779.0,
+    1732.4,
+    1704.5,
+    1686.1,
+    1665.4,
+    1646.8,
+    1622.0
+   ],
+   "storage_path_p90": [
+    1785.0,
+    1743.0,
+    1717.8,
+    1701.2,
+    1682.6,
+    1665.8,
+    1643.5
+   ]
+  }
+ },
+ "limitations": [
+  "Simulation only, not scored; a counterfactual through a model fitted on 2015-2025 DEV weeks, not a forecast.",
+  "The shift is applied to the degree-day inputs only; supply, LNG exports and prices are not shocked, and no feedback from price to demand is modelled. The response is the model's learned (monotone) weather sensitivity, extrapolated if +2 sd lies outside the training range for that week.",
+  "Daily flows are latent: EIA publishes only weekly totals, so the daily path is not validated against data; each path's daily flows are rescaled to sum to its weekly draw.",
+  "Uncertainty = CPC forecast-error noise on forecast days + the model's quantile spread; parameter uncertainty is only represented by the 3 seed members. Quantiles from the same model were only checked on DEV/VAL.",
+  "The direct twin also takes weather as input and can be shocked the same way; the WM's addition is the daily latent state path, not the ability to answer what-if questions per se."
+ ]
+}

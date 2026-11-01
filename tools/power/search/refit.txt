@@ -1,0 +1,7 @@
+# frozen recipe B (phys, d64, L14, lr 1e-3, aux 0.3, 1500 steps), refit on the lead's panel, targets <= 2025-06-30
+--name frz_phys_none_s0 --arch phys --abl none --lr 1e-3 --seed 0 --train_end 2025-06-30 --data lead
+--name frz_phys_none_s1 --arch phys --abl none --lr 1e-3 --seed 1 --train_end 2025-06-30 --data lead
+--name frz_phys_none_s2 --arch phys --abl none --lr 1e-3 --seed 2 --train_end 2025-06-30 --data lead
+--name frz_phys_direct_s0 --arch phys --abl direct --lr 1e-3 --seed 0 --train_end 2025-06-30 --data lead
+--name frz_phys_direct_s1 --arch phys --abl direct --lr 1e-3 --seed 1 --train_end 2025-06-30 --data lead
+--name frz_phys_direct_s2 --arch phys --abl direct --lr 1e-3 --seed 2 --train_end 2025-06-30 --data lead

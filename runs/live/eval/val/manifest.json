@@ -1,0 +1,29 @@
+{
+ "split": "val",
+ "label": "val",
+ "score_days": [
+  "2024-07-01",
+  "2025-10-24",
+  332
+ ],
+ "clock": {
+  "decision": "15:30 ET",
+  "fill": "16:00 ET close"
+ },
+ "cost_bp_per_side": 10.0,
+ "data_pins": {
+  "data/live/pit/cot.csv": "380f68b70c92d9e45c20b81b4ffacfdae2e13489fc1537cd9c9fa06b49ca2646",
+  "data/live/pit/cpc_fcst.csv": "57a3d0e506ae529e8efc4b80dbbd763d74e078a28237cd96cc4e8bf9e6bb112c",
+  "data/live/pit/cpc_obs.csv": "7b2804ddd1794cfe384b1c55123b333dc0660da12aa7da022078f512ace377ca",
+  "data/live/pit/edgar_fact.csv": "2244e04bb6cc3ce5f3a7f612b0fb6a784506b854b7632e5e55bbc5c65b4f5c60",
+  "data/live/pit/edgar_filing.csv": "028d4f6c8fb448d6272357c97909a260d9451d195d7d7d2a856f6036c6aab0c0",
+  "data/live/pit/px.csv": "bdbc3e5f4c699ace9eb6fe4a032049c73c41aa43609d7e3aa4719e4fbb55564e",
+  "data/live/pit/storage.csv": "7938f5ff6195f064c8b0dd0d92c20a3ff33081548690ac9d7662b90b2a3bdf1c"
+ },
+ "features_tag": "d58ec4ac2752",
+ "errors": {},
+ "k_trials_trading": 8,
+ "model_load_errors": {},
+ "run_at": "2026-11-01T13:09:41Z",
+ "git_head": "6d1eac545403dd312ddb9e9f911af8cdbff1f60b"
+}

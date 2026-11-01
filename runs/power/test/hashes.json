@@ -1,0 +1,19 @@
+{
+ "runs/power/test/alma_direct_s0.npz": "ed51af03749e95e14dedd2ebccfc44d17780fc7a41baafa669514e95ebeaf518",
+ "runs/power/test/alma_s0.npz": "c688172880cbeee010d263035f2aa077e6f366fddbf3265d5a000d6d5fddaa3f",
+ "runs/power/test/arx.npz": "5bf0d7f99d4c7d94e77ec9760c32739cfc5981bba97839e43aa3326566470ee0",
+ "runs/power/test/chronos2.npz": "0204f910c5b60d1cb495d84c1158dc7f7f9d8529113653a229b0728a2e6d376d",
+ "runs/power/test/chronos2_cov.npz": "91b9c8eb4068c02aaa70822d606154c1fb4c821e03674772b13f4488a5e28266",
+ "runs/power/test/chronos_bolt_base.npz": "001468172d7a18b90947edc25e41bc6e1101aff4c7765b802706cf375529c646",
+ "runs/power/test/kronos_small.npz": "41c4d1b23fe3071f393027d4e3725cc61a9ba7a2e2f191500b756cd67d9f1c89",
+ "runs/power/test/lear.npz": "fa25a831f9b0a91b13c71e67a18e0d7a13985d07f99bee0a8ccbece9c8088407",
+ "runs/power/test/lear_nocov.npz": "00083ed4a922c65a1b01152923602556736f971fa00f14e198c1a9996ad7cfa4",
+ "runs/power/test/metrics.json": "7c68fe23b76cb54a34489f870fe56170dc2e685d0f30588717ddd9d0a0adf25d",
+ "runs/power/test/naive_d.npz": "995d80d84af7ac9090ac2491ad8f95c4960c67c5cc11a4e9d1e1c0bbf95f1663",
+ "runs/power/test/naive_epf.npz": "03c5f2a94133252be662bb5b7596bd76b8a3adeed3b6739be763f56e64a1d2fb",
+ "runs/power/test/naive_w.npz": "9f1f9120417869a61fa865c2e8bb9dbd1c414d1e68d7fb08aa0c212c8429a281",
+ "runs/power/test/timestral_5m.npz": "a4c7a13e3c1c089013fe9d864a25d9eda6e6b90141f98bffdce028796947bda5",
+ "runs/power/test/tirex.npz": "7437bd2f934ea296a3d2fb1c34e51fb738aadcd810ce76a40fca2b0cfad202b3",
+ "runs/power/test/wm_power.npz": "92051f51c6cae2b45db12e0641635a0c3444affd7698ccb3ea08dd463dbbf4c6",
+ "runs/power/test/wm_power_direct.npz": "999a78082bed3e382c40e4cabfa811a466ca0f8bfb1e72b478a5dc274fadb793"
+}

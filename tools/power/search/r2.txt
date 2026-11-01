@@ -1,0 +1,10 @@
+--name r2_phys_none_d96 --arch phys --abl none --d 96
+--name r2_phys_none_L28 --arch phys --abl none --L 28
+--name r2_phys_none_L7 --arch phys --abl none --L 7
+--name r2_phys_none_s3000 --arch phys --abl none --steps 3000
+--name r2_phys_none_dirw --arch phys --abl none --dirw 0.3
+--name r2_phys_none_aux0 --arch phys --abl none --aux 0
+--name r2_phys_none_aux1 --arch phys --abl none --aux 1.0
+--name r2_cycle_none_dirw --arch cycle --abl none --dirw 0.3
+--name r2_cycle_none_L28 --arch cycle --abl none --L 28
+--name r2_phys_none_lr1e3 --arch phys --abl none --lr 1e-3

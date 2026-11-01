@@ -1,0 +1,7 @@
+{"name": "cl2_lr1e3", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 1, "l2": 0.001, "win": 30, "lrs": [0.001]}}
+{"name": "cl2_lr1e2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 1, "l2": 0.001, "win": 30, "lrs": [0.01]}}
+{"name": "cl2_lr3e2_s3", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 3, "l2": 0.001, "win": 30, "lrs": [0.03]}}
+{"name": "cl2_meta3", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 1, "l2": 0.001, "win": 30, "lrs": [0, 0.001, 0.01]}}
+{"name": "cl2_meta4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 1, "l2": 0.001, "win": 30, "lrs": [0, 0.003, 0.01, 0.03]}}
+{"name": "cl2_meta3_R30", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 30, "steps": 1, "l2": 0.001, "win": 30, "lrs": [0, 0.001, 0.01]}}
+{"name": "cl2_lr1e2_l2_0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "rule": {"R": 60, "steps": 1, "l2": 0.0, "win": 30, "lrs": [0.01]}}

@@ -1,0 +1,725 @@
+{
+ "notes": {
+  "cpc_bad_files": 4
+ },
+ "pit": {
+  "data/live/pit/cot.csv": {
+   "bytes": 919276,
+   "rows": 9576,
+   "sha256": "380f68b70c92d9e45c20b81b4ffacfdae2e13489fc1537cd9c9fa06b49ca2646",
+   "updated_at": "2026-11-01T12:21:11Z"
+  },
+  "data/live/pit/cpc_fcst.csv": {
+   "bytes": 6335812,
+   "rows": 63624,
+   "sha256": "57a3d0e506ae529e8efc4b80dbbd763d74e078a28237cd96cc4e8bf9e6bb112c",
+   "updated_at": "2026-11-01T12:29:25Z"
+  },
+  "data/live/pit/cpc_obs.csv": {
+   "bytes": 1728764,
+   "rows": 21790,
+   "sha256": "7b2804ddd1794cfe384b1c55123b333dc0660da12aa7da022078f512ace377ca",
+   "updated_at": "2026-11-01T12:29:25Z"
+  },
+  "data/live/pit/edgar_fact.csv": {
+   "bytes": 991294,
+   "rows": 4084,
+   "sha256": "2244e04bb6cc3ce5f3a7f612b0fb6a784506b854b7632e5e55bbc5c65b4f5c60",
+   "updated_at": "2026-11-01T12:24:46Z"
+  },
+  "data/live/pit/edgar_filing.csv": {
+   "bytes": 780663,
+   "rows": 4293,
+   "sha256": "028d4f6c8fb448d6272357c97909a260d9451d195d7d7d2a856f6036c6aab0c0",
+   "updated_at": "2026-11-01T12:24:46Z"
+  },
+  "data/live/pit/px.csv": {
+   "bytes": 9423334,
+   "rows": 107651,
+   "sha256": "bdbc3e5f4c699ace9eb6fe4a032049c73c41aa43609d7e3aa4719e4fbb55564e",
+   "updated_at": "2026-11-01T12:43:05Z"
+  },
+  "data/live/pit/storage.csv": {
+   "bytes": 1167243,
+   "rows": 10710,
+   "sha256": "7938f5ff6195f064c8b0dd0d92c20a3ff33081548690ac9d7662b90b2a3bdf1c",
+   "updated_at": "2026-11-01T12:42:36Z"
+  }
+ },
+ "raw": {
+  "data/live/raw/cot/20261101T121909Z_cot_023651.json": {
+   "bytes": 7305332,
+   "fetched_at": "2026-11-01T12:19:09Z",
+   "name": "cot_023651.json",
+   "sha256": "9c7356e84c8788d543ff46507337d313f2229dca419d764f0bd8c3a6e76239ae",
+   "source": "cot",
+   "url": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json?cftc_contract_market_code=023651&$limit=5000&$order=report_date_as_yyyy_mm_dd"
+  },
+  "data/live/raw/edgar/20261101T122126Z_company_tickers.json": {
+   "bytes": 797604,
+   "fetched_at": "2026-11-01T12:21:26Z",
+   "name": "company_tickers.json",
+   "sha256": "3087398afcb236e5eef138bc383afe6292bb5bcc31644b8edae5222cd9305ce0",
+   "source": "edgar",
+   "url": "https://www.sec.gov/files/company_tickers.json"
+  },
+  "data/live/raw/edgar/20261101T122127Z_concept_EQT_Revenues.json": {
+   "bytes": 20238,
+   "fetched_at": "2026-11-01T12:21:27Z",
+   "name": "concept_EQT_Revenues.json",
+   "sha256": "d1e738c3c4b4f7cffdde499b157efc9a9fb27d2f38f3b969cafed0ca47e84395",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000033213/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122127Z_sub_EQT.json": {
+   "bytes": 161604,
+   "fetched_at": "2026-11-01T12:21:27Z",
+   "name": "sub_EQT.json",
+   "sha256": "53dfd98fa5234f788e830a3a1c5cf1585aa76d011664640421781f9444d12475",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000033213.json"
+  },
+  "data/live/raw/edgar/20261101T122128Z_concept_EQT_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 12450,
+   "fetched_at": "2026-11-01T12:21:28Z",
+   "name": "concept_EQT_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "5de52c27288f3bfba19e5d6f6f4246b0973bb41bf8abb72100374226d11e8876",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000033213/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122128Z_sub_EXE.json": {
+   "bytes": 166163,
+   "fetched_at": "2026-11-01T12:21:28Z",
+   "name": "sub_EXE.json",
+   "sha256": "a713b35a167403a5703e8ea5bea6a4d5927943da886bccea8079865e837ea91e",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000895126.json"
+  },
+  "data/live/raw/edgar/20261101T122129Z_concept_EXE_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 780,
+   "fetched_at": "2026-11-01T12:21:29Z",
+   "name": "concept_EXE_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "a17c0f4cab3bd6b4c1cfc80a7334f7bc3f10ce99798985fd03b958aea7490096",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000895126/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122129Z_concept_EXE_Revenues.json": {
+   "bytes": 42019,
+   "fetched_at": "2026-11-01T12:21:29Z",
+   "name": "concept_EXE_Revenues.json",
+   "sha256": "ec0a325b5b44b82cffeba9fc5b8eb68821c9170c7462d2e875d763f6a8223f71",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000895126/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122130Z_sub_AR.json": {
+   "bytes": 159482,
+   "fetched_at": "2026-11-01T12:21:30Z",
+   "name": "sub_AR.json",
+   "sha256": "1360b168fb4d58187c0f1772f33724ce4c22cba69579a4e10ee1ec3ae5905e1c",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001433270.json"
+  },
+  "data/live/raw/edgar/20261101T122131Z_concept_AR_NaturalGasProductionRevenue.json": {
+   "bytes": 9281,
+   "fetched_at": "2026-11-01T12:21:31Z",
+   "name": "concept_AR_NaturalGasProductionRevenue.json",
+   "sha256": "0507f3a4a78b9eb3b204fc137f1eac2621842adba5c46f05a4be392c6cb1853e",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001433270/us-gaap/NaturalGasProductionRevenue.json"
+  },
+  "data/live/raw/edgar/20261101T122131Z_concept_AR_Revenues.json": {
+   "bytes": 35793,
+   "fetched_at": "2026-11-01T12:21:31Z",
+   "name": "concept_AR_Revenues.json",
+   "sha256": "91018a250dc093aecd1ff2f763b5bc955c730d7e141397f290239c04958e2176",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001433270/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122132Z_sub_RRC.json": {
+   "bytes": 161036,
+   "fetched_at": "2026-11-01T12:21:32Z",
+   "name": "sub_RRC.json",
+   "sha256": "9e9dcb35fb2bf07f8968ee74b543a5ef491f9793ae076e74191fdb7e70a5f6f9",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000315852.json"
+  },
+  "data/live/raw/edgar/20261101T122133Z_concept_RRC_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 15770,
+   "fetched_at": "2026-11-01T12:21:33Z",
+   "name": "concept_RRC_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "3ce0c974ce799790b723536b908fab9ee75f406f6d8971cf6af5b94dcfce6507",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000315852/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122133Z_concept_RRC_Revenues.json": {
+   "bytes": 49012,
+   "fetched_at": "2026-11-01T12:21:33Z",
+   "name": "concept_RRC_Revenues.json",
+   "sha256": "89aadc56c2c80234b21050c2832b3d9c463381217bc9dd493f287c41aa1c2696",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000315852/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122134Z_sub_CNX.json": {
+   "bytes": 169076,
+   "fetched_at": "2026-11-01T12:21:34Z",
+   "name": "sub_CNX.json",
+   "sha256": "8496b9212a5a67259457a9509f544ed5423584ec0329e93338ed574e8a0f9073",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001070412.json"
+  },
+  "data/live/raw/edgar/20261101T122135Z_concept_CNX_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 942,
+   "fetched_at": "2026-11-01T12:21:35Z",
+   "name": "concept_CNX_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "88e02d0d7ec11c723636ab473646cc300c66325ad76246a941f502e99366f83f",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001070412/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122135Z_concept_CNX_Revenues.json": {
+   "bytes": 37795,
+   "fetched_at": "2026-11-01T12:21:35Z",
+   "name": "concept_CNX_Revenues.json",
+   "sha256": "3dafca08efa9b944ada9f24fcb54a215ff88d1dbc6db5106c87adc6cd739d099",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001070412/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122136Z_concept_CRK_Revenues.json": {
+   "bytes": 6079,
+   "fetched_at": "2026-11-01T12:21:36Z",
+   "name": "concept_CRK_Revenues.json",
+   "sha256": "b1028fc788514907ef32a0747ce4b03ed1b977fdf17043ca4381274aad4e6c1a",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000023194/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122136Z_sub_CRK.json": {
+   "bytes": 165890,
+   "fetched_at": "2026-11-01T12:21:36Z",
+   "name": "sub_CRK.json",
+   "sha256": "49cdf01ca0375877234f700eab4f4d63c7d278f7b8dc79c3afdb93c47b93af73",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000023194.json"
+  },
+  "data/live/raw/edgar/20261101T122137Z_concept_CRK_NaturalGasProductionRevenue.json": {
+   "bytes": 9354,
+   "fetched_at": "2026-11-01T12:21:37Z",
+   "name": "concept_CRK_NaturalGasProductionRevenue.json",
+   "sha256": "e000e835507f2260fe82873ae77bb681f6cf89099442257838051396b9027131",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000023194/us-gaap/NaturalGasProductionRevenue.json"
+  },
+  "data/live/raw/edgar/20261101T122137Z_concept_CRK_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 17172,
+   "fetched_at": "2026-11-01T12:21:37Z",
+   "name": "concept_CRK_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "d2b3260d53a3e21c9e8e1a74f5e625f6353b707461a371780130a44bb79d761d",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000023194/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122138Z_sub_LNG.json": {
+   "bytes": 165875,
+   "fetched_at": "2026-11-01T12:21:38Z",
+   "name": "sub_LNG.json",
+   "sha256": "ab9a446626be549071e595da8bc5b731b5a6fac19290ef5263ea684373ced4bb",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000003570.json"
+  },
+  "data/live/raw/edgar/20261101T122139Z_concept_LNG_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 18225,
+   "fetched_at": "2026-11-01T12:21:39Z",
+   "name": "concept_LNG_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "98efaa98694fd7a2d5a2a76b8c6d271d000c07541af72291093b559675c518da",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000003570/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122139Z_concept_LNG_Revenues.json": {
+   "bytes": 37534,
+   "fetched_at": "2026-11-01T12:21:39Z",
+   "name": "concept_LNG_Revenues.json",
+   "sha256": "24f170006af83fc6db9ea3e94fdbea98395d6ba77c05b47516997363031f346e",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000003570/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122140Z_concept_CQP_Revenues.json": {
+   "bytes": 42010,
+   "fetched_at": "2026-11-01T12:21:40Z",
+   "name": "concept_CQP_Revenues.json",
+   "sha256": "66782403aa9d6de121007e5494b0e44a7c25f8c8a8e7d9440a7b1b9ec904d604",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001383650/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122140Z_sub_CQP.json": {
+   "bytes": 158031,
+   "fetched_at": "2026-11-01T12:21:40Z",
+   "name": "sub_CQP.json",
+   "sha256": "cb8b1744cde5ae3f753435ccdf3bd638a76aa9c927ecba0e7cebde7dc63dbcc5",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001383650.json"
+  },
+  "data/live/raw/edgar/20261101T122141Z_concept_CQP_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 17915,
+   "fetched_at": "2026-11-01T12:21:41Z",
+   "name": "concept_CQP_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "4237bb5f8eb05df3e6a8f869503c669a07cc11dd6b8b804ede21c10eaa755962",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001383650/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122142Z_concept_VG_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 3552,
+   "fetched_at": "2026-11-01T12:21:42Z",
+   "name": "concept_VG_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "8dca8e408ac6f352b4497f53946b70cd3e405ed6a103258a3bfb215241eb2b54",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0002007855/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122142Z_sub_VG.json": {
+   "bytes": 35522,
+   "fetched_at": "2026-11-01T12:21:42Z",
+   "name": "sub_VG.json",
+   "sha256": "abc389d77e2c96b81fb878cdd6730b164e03446f07da5a6ca0ed21fe4a274b5e",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0002007855.json"
+  },
+  "data/live/raw/edgar/20261101T122143Z_sub_NEXT.json": {
+   "bytes": 135808,
+   "fetched_at": "2026-11-01T12:21:43Z",
+   "name": "sub_NEXT.json",
+   "sha256": "7aa34bab604a235153b63fc19b7a8e192a7aa21c1ee02b179c4e3dfe6aef9b85",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001612720.json"
+  },
+  "data/live/raw/edgar/20261101T122144Z_concept_NEXT_Revenues.json": {
+   "bytes": 15824,
+   "fetched_at": "2026-11-01T12:21:44Z",
+   "name": "concept_NEXT_Revenues.json",
+   "sha256": "8ca95d882393cf69514dc517cb9a64861e83d0facc43dc3f816ea44398b82667",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001612720/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122144Z_sub_ATO.json": {
+   "bytes": 158998,
+   "fetched_at": "2026-11-01T12:21:44Z",
+   "name": "sub_ATO.json",
+   "sha256": "e7c3872661bdad1840b5c391f22dea6b17986ee38c98429d005a0413cfe56267",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000731802.json"
+  },
+  "data/live/raw/edgar/20261101T122145Z_concept_ATO_Revenues.json": {
+   "bytes": 16685,
+   "fetched_at": "2026-11-01T12:21:45Z",
+   "name": "concept_ATO_Revenues.json",
+   "sha256": "deb099435dc1977319a10a525f9776b795aceb51e3e9519423ef019fb8032e8b",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000731802/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122146Z_concept_NI_Revenues.json": {
+   "bytes": 20855,
+   "fetched_at": "2026-11-01T12:21:46Z",
+   "name": "concept_NI_Revenues.json",
+   "sha256": "62473b2a62f1bc9964f7577eb7cb59aefdb6fa3d188bae81d7c844cb37426d2d",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001111711/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122146Z_sub_NI.json": {
+   "bytes": 159734,
+   "fetched_at": "2026-11-01T12:21:46Z",
+   "name": "sub_NI.json",
+   "sha256": "f5dbd716730604eddba9da472e6c027346092afe8f119bdc1133d5334abbbb4f",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001111711.json"
+  },
+  "data/live/raw/edgar/20261101T122147Z_concept_NI_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 17601,
+   "fetched_at": "2026-11-01T12:21:47Z",
+   "name": "concept_NI_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "3b282c866e6fd1212c4d6dd8d876ed0d58905f6eebe7b0f6bf5d9f6932034a92",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001111711/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122147Z_sub_OGS.json": {
+   "bytes": 164732,
+   "fetched_at": "2026-11-01T12:21:47Z",
+   "name": "sub_OGS.json",
+   "sha256": "8090634c46b9766556915a5c0e96d87357b7220e8aa1ffb691fb38c1e2993bc5",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001587732.json"
+  },
+  "data/live/raw/edgar/20261101T122148Z_concept_OGS_Revenues.json": {
+   "bytes": 2734,
+   "fetched_at": "2026-11-01T12:21:48Z",
+   "name": "concept_OGS_Revenues.json",
+   "sha256": "d818a74172f3351f1b72134a93b52611a3130c11de7db2fedef343229bb420c0",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001587732/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122149Z_concept_SWX_Revenues.json": {
+   "bytes": 21695,
+   "fetched_at": "2026-11-01T12:21:49Z",
+   "name": "concept_SWX_Revenues.json",
+   "sha256": "1803f3de0ccebe2a134c3f67efc65de74d92ed72754b20e327bac68bdfc37a55",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001692115/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122149Z_sub_SWX.json": {
+   "bytes": 159043,
+   "fetched_at": "2026-11-01T12:21:49Z",
+   "name": "sub_SWX.json",
+   "sha256": "12f641ac70637333a98ba453ebd29a8abf9cb8275216a17cc54946411ed3f21b",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001692115.json"
+  },
+  "data/live/raw/edgar/20261101T122150Z_concept_SWX_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 11915,
+   "fetched_at": "2026-11-01T12:21:50Z",
+   "name": "concept_SWX_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "f139d0890040db69be1eb9ccf8e28f3a79c5971c3bc8e8761098dee8209222f8",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001692115/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122151Z_concept_SR_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 10830,
+   "fetched_at": "2026-11-01T12:21:51Z",
+   "name": "concept_SR_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "c4a14c0f19ba5a76deb6fe0ef674f0c8e335b36157a5a7ac484d0f6f276d8a40",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001126956/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122151Z_concept_SR_Revenues.json": {
+   "bytes": 9343,
+   "fetched_at": "2026-11-01T12:21:51Z",
+   "name": "concept_SR_Revenues.json",
+   "sha256": "9ed469a362b5829b903aa935b48855133f77cb483f4cf003bd812ade1adcf793",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001126956/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122151Z_sub_SR.json": {
+   "bytes": 170688,
+   "fetched_at": "2026-11-01T12:21:51Z",
+   "name": "sub_SR.json",
+   "sha256": "5d70f3bd33cd882a8db8e45674787d49c2759006a00f641e32a38a3567a2ac1a",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001126956.json"
+  },
+  "data/live/raw/edgar/20261101T122152Z_sub_NFG.json": {
+   "bytes": 165569,
+   "fetched_at": "2026-11-01T12:21:52Z",
+   "name": "sub_NFG.json",
+   "sha256": "485db5e2d90c2d3aab2fbb0d34ff4f5c507939a2b3d6a5a2b486d6e3886cb597",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000070145.json"
+  },
+  "data/live/raw/edgar/20261101T122153Z_concept_NFG_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 6528,
+   "fetched_at": "2026-11-01T12:21:53Z",
+   "name": "concept_NFG_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "dfbe2dcb7f88d9127c241d443da0a9240f4321d379ebeb90fecd7b68debac178",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000070145/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122153Z_concept_NFG_Revenues.json": {
+   "bytes": 23427,
+   "fetched_at": "2026-11-01T12:21:53Z",
+   "name": "concept_NFG_Revenues.json",
+   "sha256": "09c4b1678cbca49e95c0c2609dfb96d6c91814005972f58606c106ca387569f7",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000070145/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122154Z_sub_KMI.json": {
+   "bytes": 164012,
+   "fetched_at": "2026-11-01T12:21:54Z",
+   "name": "sub_KMI.json",
+   "sha256": "e3fbf68560769b7ecefd86698305c4846f94ab8f2e010f7cb33083384b83acd4",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0001506307.json"
+  },
+  "data/live/raw/edgar/20261101T122155Z_concept_KMI_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 16555,
+   "fetched_at": "2026-11-01T12:21:55Z",
+   "name": "concept_KMI_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "d3de6fc05b73185da06d2a2293623da70cae8f22735806b8bd37f8cffcdc3139",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001506307/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122155Z_concept_KMI_Revenues.json": {
+   "bytes": 31426,
+   "fetched_at": "2026-11-01T12:21:55Z",
+   "name": "concept_KMI_Revenues.json",
+   "sha256": "e8fb89f168be4f67550e8984780edf8a565be1d82bce60cb3ca109506867b045",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0001506307/us-gaap/Revenues.json"
+  },
+  "data/live/raw/edgar/20261101T122156Z_sub_WMB.json": {
+   "bytes": 160966,
+   "fetched_at": "2026-11-01T12:21:56Z",
+   "name": "sub_WMB.json",
+   "sha256": "ff1ee714576bebacb723937dc8cfb6e51cf42215ae70603fbc718b61d49c3327",
+   "source": "edgar",
+   "url": "https://data.sec.gov/submissions/CIK0000107263.json"
+  },
+  "data/live/raw/edgar/20261101T122157Z_concept_WMB_RevenueFromContractWithCustomerExcludingAssessedTax.json": {
+   "bytes": 16665,
+   "fetched_at": "2026-11-01T12:21:57Z",
+   "name": "concept_WMB_RevenueFromContractWithCustomerExcludingAssessedTax.json",
+   "sha256": "ba84779b22a10108136b14dc4c7d066ae4b17cb282a69cf31be7b01c2886d281",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000107263/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json"
+  },
+  "data/live/raw/edgar/20261101T122157Z_concept_WMB_Revenues.json": {
+   "bytes": 38577,
+   "fetched_at": "2026-11-01T12:21:57Z",
+   "name": "concept_WMB_Revenues.json",
+   "sha256": "9e6d0033570433305765ecfc390b0417c00a4c9223cbafe3cf65928f341d6d8a",
+   "source": "edgar",
+   "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000107263/us-gaap/Revenues.json"
+  },
+  "data/live/raw/om_fcst/20261101T122207Z_new_york_2021-04-01_2026-11-01.json": {
+   "bytes": 2553399,
+   "fetched_at": "2026-11-01T12:22:07Z",
+   "name": "new_york_2021-04-01_2026-11-01.json",
+   "sha256": "1d11c31297fb155ac115b9d2edbd7e2799660f4c6a79fca410c485bc59377686",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7128&longitude=-74.006&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122214Z_chicago_2021-04-01_2026-11-01.json": {
+   "bytes": 2559558,
+   "fetched_at": "2026-11-01T12:22:14Z",
+   "name": "chicago_2021-04-01_2026-11-01.json",
+   "sha256": "b20e544ce4477cb4a869e4b7f695ee6ccb1dace959c6d3849f433589bb0b0ded",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122220Z_philadelphia_2021-04-01_2026-11-01.json": {
+   "bytes": 2559885,
+   "fetched_at": "2026-11-01T12:22:20Z",
+   "name": "philadelphia_2021-04-01_2026-11-01.json",
+   "sha256": "4ef1150e4db57ccbead39f83a10417b79a92fcc46b1f13b419d3e00415b5512a",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=39.9526&longitude=-75.1652&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122224Z_boston_2021-04-01_2026-11-01.json": {
+   "bytes": 2540526,
+   "fetched_at": "2026-11-01T12:22:24Z",
+   "name": "boston_2021-04-01_2026-11-01.json",
+   "sha256": "e60f2a399d544a1b3e1adff4e7777c11ad5930c9f76695b2881aad2d9ea224c7",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=42.3601&longitude=-71.0589&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122228Z_detroit_2021-04-01_2026-11-01.json": {
+   "bytes": 2560706,
+   "fetched_at": "2026-11-01T12:22:28Z",
+   "name": "detroit_2021-04-01_2026-11-01.json",
+   "sha256": "94d985472f259fa56d675814a0dee786ff44c0fbe909b05d747159bbf2baefa1",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=42.3314&longitude=-83.0458&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122234Z_minneapolis_2021-04-01_2026-11-01.json": {
+   "bytes": 2594124,
+   "fetched_at": "2026-11-01T12:22:34Z",
+   "name": "minneapolis_2021-04-01_2026-11-01.json",
+   "sha256": "e7b957ddc868caebf37486258c0b1956f644f3cb7f39f27f8f767d5a77b9e7be",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=44.9778&longitude=-93.265&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/om_fcst/20261101T122239Z_pittsburgh_2021-04-01_2026-11-01.json": {
+   "bytes": 2559543,
+   "fetched_at": "2026-11-01T12:22:39Z",
+   "name": "pittsburgh_2021-04-01_2026-11-01.json",
+   "sha256": "a43e31df9797db08b8ecadfe57b98a74f883ab385edff2e563701f89ebb082fb",
+   "source": "om_fcst",
+   "url": "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.4406&longitude=-79.9959&hourly=temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&start_date=2021-04-01&end_date=2026-11-01&models=gfs_seamless&timezone=GMT"
+  },
+  "data/live/raw/px/20261101T121859Z_NG_F.json": {
+   "bytes": 714684,
+   "fetched_at": "2026-11-01T12:18:59Z",
+   "name": "NG_F.json",
+   "sha256": "e3bd40cfd628455cd6f03ec0b889a0a76d85eda921c873b656a345d571be76d0",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NG%3DF?period1=946684800&period2=1793621938&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T121900Z_UNG.json": {
+   "bytes": 524339,
+   "fetched_at": "2026-11-01T12:19:00Z",
+   "name": "UNG.json",
+   "sha256": "c7c38610443861251cfd594e3dd61ac80f5f27b9f3f323fe9f1e16477828bdde",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/UNG?period1=946684800&period2=1793621938&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T121902Z_BOIL.json": {
+   "bytes": 256884,
+   "fetched_at": "2026-11-01T12:19:02Z",
+   "name": "BOIL.json",
+   "sha256": "aa75f748697ca998fb7a03e310aa1294b68481a011a42c11487b0e36bb89f4a0",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/BOIL?period1=946684800&period2=1793621938&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T121903Z_NGZ26.NYM.json": {
+   "bytes": 339742,
+   "fetched_at": "2026-11-01T12:19:03Z",
+   "name": "NGZ26.NYM.json",
+   "sha256": "72eb8249557838035aae45c061b694c53c1b02b693b4abcbe9c66d90e3a3e032",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGZ26.NYM?period1=946684800&period2=1793621938&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T121904Z_NGF27.NYM.json": {
+   "bytes": 314427,
+   "fetched_at": "2026-11-01T12:19:04Z",
+   "name": "NGF27.NYM.json",
+   "sha256": "dedb6962666ed81fdd47e7589d42406ed08afffa5d857a392eaf22a20b4a2167",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGF27.NYM?period1=946684800&period2=1793621938&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T123234Z_NG_F.json": {
+   "bytes": 714684,
+   "fetched_at": "2026-11-01T12:32:34Z",
+   "name": "NG_F.json",
+   "sha256": "b6e817cbe180463accfd9b355ccb34408e7394a7ac55f3bf669021b7f66946d3",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NG%3DF?period1=946684800&period2=1793622754&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T123235Z_UNG.json": {
+   "bytes": 524339,
+   "fetched_at": "2026-11-01T12:32:35Z",
+   "name": "UNG.json",
+   "sha256": "56bea8101ada7addb02ea5e44c9a46af24e44100fb90eb04697a629989ee626c",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/UNG?period1=946684800&period2=1793622754&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T123236Z_BOIL.json": {
+   "bytes": 256884,
+   "fetched_at": "2026-11-01T12:32:36Z",
+   "name": "BOIL.json",
+   "sha256": "c502c11d937a020077fa319475897f9a551dce3eb2a6740c54553539e01dccd2",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/BOIL?period1=946684800&period2=1793622754&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T123238Z_NGZ26.NYM.json": {
+   "bytes": 339742,
+   "fetched_at": "2026-11-01T12:32:38Z",
+   "name": "NGZ26.NYM.json",
+   "sha256": "ffccf162a20676dd84ddd3cee28f2fc36eb3d158614cbaedb3131aa8926f049e",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGZ26.NYM?period1=946684800&period2=1793622754&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T123239Z_NGF27.NYM.json": {
+   "bytes": 314427,
+   "fetched_at": "2026-11-01T12:32:39Z",
+   "name": "NGF27.NYM.json",
+   "sha256": "a49fe3e75067b746aa9dc5f408a7dafab9085e23a8ab86313055191b8f897533",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGF27.NYM?period1=946684800&period2=1793622754&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124236Z_NG_F.json": {
+   "bytes": 714684,
+   "fetched_at": "2026-11-01T12:42:36Z",
+   "name": "NG_F.json",
+   "sha256": "110d92dadf5d77ab774ab84ea91fdb140995b4769aa28fff5ee3b2c25321395a",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NG%3DF?period1=946684800&period2=1793623356&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124238Z_UNG.json": {
+   "bytes": 524339,
+   "fetched_at": "2026-11-01T12:42:38Z",
+   "name": "UNG.json",
+   "sha256": "79f7f5b097e0410bc71b9429d3b26567cd491d0617f84693a4aa6a6d83cb5756",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/UNG?period1=946684800&period2=1793623356&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124239Z_BOIL.json": {
+   "bytes": 256884,
+   "fetched_at": "2026-11-01T12:42:39Z",
+   "name": "BOIL.json",
+   "sha256": "83522acfd36d613a068b8ba225d0a1a8f39eb5229332b595830d3133defb009d",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/BOIL?period1=946684800&period2=1793623356&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124241Z_NGZ26.NYM.json": {
+   "bytes": 339742,
+   "fetched_at": "2026-11-01T12:42:41Z",
+   "name": "NGZ26.NYM.json",
+   "sha256": "44384bc3fa9354a57b56806546b32006808d217ac9a720698bc269e5320142dc",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGZ26.NYM?period1=946684800&period2=1793623356&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124243Z_NGF27.NYM.json": {
+   "bytes": 314427,
+   "fetched_at": "2026-11-01T12:42:43Z",
+   "name": "NGF27.NYM.json",
+   "sha256": "ef8f58d376ffa0367d63a9c96b8631b2816935301b91caded7df111cc9a0543f",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGF27.NYM?period1=946684800&period2=1793623356&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124257Z_NG_F.json": {
+   "bytes": 714684,
+   "fetched_at": "2026-11-01T12:42:57Z",
+   "name": "NG_F.json",
+   "sha256": "f6d7be96f3a0f578d20ad6fb3f4c84539aa2ac77a3bc56f691f66b876ed8c95f",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NG%3DF?period1=946684800&period2=1793623376&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124258Z_UNG.json": {
+   "bytes": 524339,
+   "fetched_at": "2026-11-01T12:42:58Z",
+   "name": "UNG.json",
+   "sha256": "e927a6e2a7d07ee037f9faab645ad50f106345fb2a04b7cdb0980d2b4778fd8e",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/UNG?period1=946684800&period2=1793623376&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124259Z_BOIL.json": {
+   "bytes": 256884,
+   "fetched_at": "2026-11-01T12:42:59Z",
+   "name": "BOIL.json",
+   "sha256": "76b2c344f4f4645e7b8a58919e1dd91dd8c9170234143a26551729879aa59242",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/BOIL?period1=946684800&period2=1793623376&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124300Z_NGZ26.NYM.json": {
+   "bytes": 339742,
+   "fetched_at": "2026-11-01T12:43:00Z",
+   "name": "NGZ26.NYM.json",
+   "sha256": "c76ef80e4eb0bd526fe63757d8372e526baa2dde42a144b7b2fe994697016e3c",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGZ26.NYM?period1=946684800&period2=1793623376&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/px/20261101T124302Z_NGF27.NYM.json": {
+   "bytes": 314427,
+   "fetched_at": "2026-11-01T12:43:02Z",
+   "name": "NGF27.NYM.json",
+   "sha256": "e15733b342437441ecb60b46797b6276102ed87c00418ff0d755c8e9dfca5710",
+   "source": "px",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/NGF27.NYM?period1=946684800&period2=1793623376&interval=1d&events=div%2Csplit&includeAdjustedClose=true"
+  },
+  "data/live/raw/storage/20261101T121858Z_ngshistory.xls": {
+   "bytes": 777216,
+   "fetched_at": "2026-11-01T12:18:58Z",
+   "name": "ngshistory.xls",
+   "sha256": "797d43481e578025097b9475857eae8df00e620a3a467e60703f1156432fef03",
+   "source": "storage",
+   "url": "https://ir.eia.gov/ngs/ngshistory.xls"
+  },
+  "data/live/raw/storage/20261101T121858Z_revisions.xls": {
+   "bytes": 121856,
+   "fetched_at": "2026-11-01T12:18:58Z",
+   "name": "revisions.xls",
+   "sha256": "ee7c703c6d30176d0253b879aa4c8c6dc0178b411c36d73036d89aeff412dd3c",
+   "source": "storage",
+   "url": "https://ir.eia.gov/ngs/revisions.xls"
+  },
+  "data/live/raw/storage/20261101T121858Z_schedule.html": {
+   "bytes": 8105,
+   "fetched_at": "2026-11-01T12:18:58Z",
+   "name": "schedule.html",
+   "sha256": "b54595ec6784c11c95ab448fa21d3f115b03a2bcc02960cab589fb0ad4cc1e04",
+   "source": "storage",
+   "url": "https://ir.eia.gov/ngs/schedule.html"
+  }
+ },
+ "unavailable": {
+  "eia_api": {
+   "checked_at": "2026-11-01T12:43:05Z",
+   "status": "EIA_API_KEY not set (skipped)"
+  },
+  "rigs": {
+   "checked_at": "2026-11-01T12:43:05Z",
+   "status": "unavailable: HTTP Error 403: Forbidden"
+  }
+ }
+}

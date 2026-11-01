@@ -1,0 +1,35 @@
+{"name": "c3_mlp_d", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 1}
+{"name": "c3_mlp_d", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 2}
+{"name": "c3_tf_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf", "wm": 1.0}, "seed": 1}
+{"name": "c3_tf_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf", "wm": 1.0}, "seed": 2}
+{"name": "c3_mlp_d32", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_d128", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 128, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_d256", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 256, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_s200", "cfg": {"steps": 200, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_s800", "cfg": {"steps": 800, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_s1500", "cfg": {"steps": 1500, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_lr1e3", "cfg": {"steps": 400, "bs": 32, "lr": 0.001, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_lr5e3", "cfg": {"steps": 400, "bs": 32, "lr": 0.005, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_wd1e2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wd": 0.01}, "seed": 0}
+{"name": "c3_mlp_drop2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "drop": 0.2}, "seed": 0}
+{"name": "c3_mlp_cd0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "coin_drop": 0.0}, "seed": 0}
+{"name": "c3_mlp_cd5", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 0}
+{"name": "c3_mlp_petf0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "p_etf": 0.0}, "seed": 0}
+{"name": "c3_mlp_wp3", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wp": 3.0}, "seed": 0}
+{"name": "c3_mlp_wq0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wq": 0.1}, "seed": 0}
+{"name": "c3_mlp_wp0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wp": 0.0}, "seed": 0}
+{"name": "c3_mlp_noharskip", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "har_skip": 0}, "seed": 0}
+{"name": "c3_mlp_bs64", "cfg": {"steps": 400, "bs": 64, "lr": 0.002, "d": 64, "enc_d": "mlp"}, "seed": 0}
+{"name": "c3_mlp_hd128", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "hd": 128}, "seed": 0}
+{"name": "c3_mlp_W7", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "W": 7}, "seed": 0}
+{"name": "c3_mlp_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "cross": "attn"}, "seed": 0}
+{"name": "c3_mlp_xmean", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "cross": "mean"}, "seed": 0}
+{"name": "c3_mlp_moe4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "head": "moe", "K": 4}, "seed": 0}
+{"name": "c3_mlp_moe8", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "head": "moe", "K": 8}, "seed": 0}
+{"name": "c3_mlp_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wm": 1.0}, "seed": 0}
+{"name": "c3_mlp_wm03", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "wm": 0.3}, "seed": 0}
+{"name": "c3_mlp_st4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "stoch": 4}, "seed": 0}
+{"name": "c3_mlp_st4_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "stoch": 4, "wm": 1.0}, "seed": 0}
+{"name": "c3_mlp_ens3", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "ens": 3}, "seed": 0}
+{"name": "c3_mlp_hconv", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "enc_h": "conv"}, "seed": 0}
+{"name": "c3_mlp_xattn_moe4_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "cross": "attn", "head": "moe", "K": 4, "wm": 1.0}, "seed": 0}

@@ -1,0 +1,601 @@
+{
+ "status": "complete",
+ "started": "2026-10-31T23:54:25-0400",
+ "commit": "a114cbe7e0bf2e02c5ceb06693d89afc6aafb2bb",
+ "tools_gas_dirty": "",
+ "frozen": {
+  "models": [
+   "wm_gas",
+   "wm_gas_direct"
+  ],
+  "sha256": {
+   "runs/gas/search/ckpt/wm_gas.pt": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "runs/gas/search/ckpt/wm_gas_direct.pt": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457"
+  },
+  "wm_architect": {
+   "frozen_at": "see the git commit time of the freeze commit that adds this file (no hand-written timestamp)",
+   "doc": "docs/gas_search.md sections 0-3",
+   "candidate": "wm_gas",
+   "twin": "wm_gas_direct",
+   "recipe": {
+    "arch": "wm",
+    "d": 32,
+    "assim": 1,
+    "regime": 1,
+    "steps": 1200,
+    "lr": 0.003,
+    "bs": 64,
+    "wd": 0.05,
+    "aux": 0.3,
+    "wl48": 3.0,
+    "mc": 0,
+    "drop_hh": 0,
+    "drop": 0.3,
+    "cal": 1
+   },
+   "recipe_text": "daily storage-balance state-space WM: encoder(released history) -> latent z; GRUCell rolled one DAY at a time over week W-1 (observed weather; innovation vs released dS_{W-1} written into the state) and then the 7 days of target week W; monotone-in-HDD/CDD regional injection readout anchored at avg5 (3-regime mixture); L48 = sum of 5 regions; quantiles = median + holdout residual quantiles (cal=1); d 32, AdamW lr 3e-3 OneCycle, wd 0.05, dropout 0.3, aux 0.3, wl48 3, 1200 steps, batch 64; seeds 0,1,2; quantile-average ensemble",
+   "twin_definition": "identical cfg except arch=direct: same modules, parameter count, data, steps, seeds; every day's state is ONE step of the same GRUCell from the origin state (no state carried day to day); the assimilation innovation is computed the same way",
+   "twin_match": {
+    "n_params_per_member": [
+     23534,
+     23534
+    ],
+    "seeds": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "cfg_diff": {
+     "arch": [
+      "wm",
+      "direct"
+     ]
+    },
+    "train_end": [
+     "2025-06-30",
+     "2025-06-30"
+    ],
+    "n_train_weeks": [
+     547,
+     547
+    ],
+    "train_release_range": [
+     "2015-01-08",
+     "2025-06-26"
+    ]
+   },
+   "training_data": "storage.train_weeks() via storage.build_context, target weeks released 2015-01-08..2025-06-26 (547 weeks x 2 origin kinds); calibration holdout = last 20% of those weeks",
+   "wrapper": "tools/gas/wm_gas.py (register; sha256 verified at load; meta ckpt/ckpt_sha256 for preflight; deterministic)",
+   "K": {
+    "scored_network_runs": 23,
+    "distinct_configs": 17,
+    "wm_recipes": 10,
+    "twin_recipes": 7,
+    "crashes": 0,
+    "reference_rows_not_in_K": 5,
+    "discarded_unseen_reference_rows": 2
+   },
+   "dev_backtest_rolling_2019-07_2025-06": {
+    "candidate_ensemble": {
+     "mae_thu": 16.5851,
+     "qs_thu": 6.3894,
+     "acc_thu": 0.8115,
+     "accreg_thu": 0.7357,
+     "cov80_thu": 0.7796,
+     "mae_fri": 16.5256,
+     "qs_fri": 6.3733,
+     "acc_fri": 0.8147,
+     "accreg_fri": 0.7331,
+     "cov80_fri": 0.7859,
+     "S": 0.7966
+    },
+    "twin_ensemble": {
+     "mae_thu": 16.1693,
+     "qs_thu": 6.2462,
+     "acc_thu": 0.8435,
+     "accreg_thu": 0.7429,
+     "cov80_thu": 0.8083,
+     "mae_fri": 16.0766,
+     "qs_fri": 6.2046,
+     "acc_fri": 0.8339,
+     "accreg_fri": 0.737,
+     "cov80_fri": 0.8147,
+     "S": 0.7765
+    },
+    "candidate_no_holiday_weeks": {
+     "mae_thu": 16.4621,
+     "qs_thu": 6.3654,
+     "acc_thu": 0.8142,
+     "accreg_thu": 0.7329,
+     "cov80_thu": 0.7945,
+     "mae_fri": 16.417,
+     "qs_fri": 6.354,
+     "acc_fri": 0.8142,
+     "accreg_fri": 0.7289,
+     "cov80_fri": 0.7945
+    },
+    "twin_no_holiday_weeks": {
+     "mae_thu": 16.1208,
+     "qs_thu": 6.2762,
+     "acc_thu": 0.8458,
+     "accreg_thu": 0.7361,
+     "cov80_thu": 0.8024,
+     "mae_fri": 16.1339,
+     "qs_fri": 6.2657,
+     "acc_fri": 0.834,
+     "accreg_fri": 0.7321,
+     "cov80_fri": 0.8063
+    },
+    "ref_ols_wx": {
+     "mae_thu": 20.7783,
+     "qs_thu": 8.0325,
+     "acc_thu": 0.738,
+     "accreg_thu": 0.6838,
+     "cov80_thu": 0.7891,
+     "mae_fri": 20.6856,
+     "qs_fri": 8.0274,
+     "acc_fri": 0.7444,
+     "accreg_fri": 0.6903,
+     "cov80_fri": 0.7827,
+     "S": 1.0
+    },
+    "ref_ols_seas": {
+     "mae_thu": 19.6378,
+     "qs_thu": 7.5954,
+     "acc_thu": 0.7412,
+     "accreg_thu": 0.6857,
+     "cov80_thu": 0.7796,
+     "mae_fri": 19.6835,
+     "qs_fri": 7.6205,
+     "acc_fri": 0.7284,
+     "accreg_fri": 0.6786,
+     "cov80_fri": 0.77,
+     "S": 0.9479
+    },
+    "wm_minus_twin": {
+     "thu": {
+      "abs_err": {
+       "mean_diff_a_minus_b": 0.4158054995206722,
+       "dm_hln_p": 0.3427484993033053,
+       "boot95": [
+        -0.49378322590781215,
+        1.2840331084367678
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": 0.3412743095352713,
+       "dm_hln_p": 0.47091219259711625,
+       "boot95": [
+        -0.5838415338744918,
+        1.2259020440270616
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": 0.14320794934112627,
+       "dm_hln_p": 0.35569596249255603,
+       "boot95": [
+        -0.16660456892826503,
+        0.4439948101410032
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": 0.08913015399735158,
+       "dm_hln_p": 0.5917413461650994,
+       "boot95": [
+        -0.23987279086564292,
+        0.41495465666363696
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 6,
+       "b_only": 16,
+       "p": 0.052478790283203125
+      }
+     },
+     "fri": {
+      "abs_err": {
+       "mean_diff_a_minus_b": 0.44895035326798294,
+       "dm_hln_p": 0.30602551874922057,
+       "boot95": [
+        -0.4276408342539434,
+        1.3199597119491573
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": 0.2830409320446819,
+       "dm_hln_p": 0.5456314529034568,
+       "boot95": [
+        -0.6162840385210842,
+        1.1807624416428286
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": 0.16869367506980562,
+       "dm_hln_p": 0.2800126168475606,
+       "boot95": [
+        -0.15218821094482826,
+        0.46785760040428953
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": 0.08834276507354871,
+       "dm_hln_p": 0.5939063116219082,
+       "boot95": [
+        -0.23830311563873252,
+        0.4136005099556086
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 8,
+       "b_only": 14,
+       "p": 0.28627872467041016
+      }
+     }
+    },
+    "wm_minus_ref_ols_wx": {
+     "thu": {
+      "abs_err": {
+       "mean_diff_a_minus_b": -4.1932261499937775,
+       "dm_hln_p": 8.197164502006795e-06,
+       "boot95": [
+        -6.059028607846479,
+        -2.457564656016222
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": -4.384348275756348,
+       "dm_hln_p": 5.455212369751941e-05,
+       "boot95": [
+        -6.440730784142407,
+        -2.3681354114469197
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": -1.643167108970977,
+       "dm_hln_p": 1.2924500715896324e-05,
+       "boot95": [
+        -2.3884723632600156,
+        -0.9268254412326585
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": -1.7528227611633602,
+       "dm_hln_p": 6.55841788094055e-05,
+       "boot95": [
+        -2.5757041708109374,
+        -0.9454508022028046
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 52,
+       "b_only": 29,
+       "p": 0.013999473719986937
+      }
+     },
+     "fri": {
+      "abs_err": {
+       "mean_diff_a_minus_b": -4.160042814920615,
+       "dm_hln_p": 1.0238732350515252e-05,
+       "boot95": [
+        -5.993875993805227,
+        -2.3728429960948834
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": -4.3906137933838165,
+       "dm_hln_p": 5.5594202064357634e-05,
+       "boot95": [
+        -6.428530211677554,
+        -2.344454878963732
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": -1.6541478030459422,
+       "dm_hln_p": 1.2504267029822434e-05,
+       "boot95": [
+        -2.399414962736705,
+        -0.9380750350605555
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": -1.7801534520708029,
+       "dm_hln_p": 5.618296875701536e-05,
+       "boot95": [
+        -2.611823597705719,
+        -0.9590717016856118
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 51,
+       "b_only": 29,
+       "p": 0.01831609751691632
+      }
+     }
+    },
+    "wm_minus_ref_ols_seas": {
+     "thu": {
+      "abs_err": {
+       "mean_diff_a_minus_b": -3.0527288987658854,
+       "dm_hln_p": 0.0004343092783247543,
+       "boot95": [
+        -4.782452665509902,
+        -1.405673793218205
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": -3.425082220422063,
+       "dm_hln_p": 0.0005420383853775809,
+       "boot95": [
+        -5.372634543281892,
+        -1.6192711883345619
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": -1.2060817267999075,
+       "dm_hln_p": 0.00042744585812326693,
+       "boot95": [
+        -1.8984070215149578,
+        -0.5543980731660294
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": -1.3525776843629616,
+       "dm_hln_p": 0.0006094422389958737,
+       "boot95": [
+        -2.121972848952752,
+        -0.6241246233502564
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 51,
+       "b_only": 29,
+       "p": 0.01831609751691632
+      }
+     },
+     "fri": {
+      "abs_err": {
+       "mean_diff_a_minus_b": -3.1579556308772094,
+       "dm_hln_p": 0.0002823129774282578,
+       "boot95": [
+        -4.907034449996103,
+        -1.4849091909670253
+       ]
+      },
+      "abs_err_no_holiday": {
+       "mean_diff_a_minus_b": -3.5547211314072924,
+       "dm_hln_p": 0.0003491444004886951,
+       "boot95": [
+        -5.491016355678922,
+        -1.707323582666344
+       ]
+      },
+      "qs": {
+       "mean_diff_a_minus_b": -1.2472103802718195,
+       "dm_hln_p": 0.000268693814108248,
+       "boot95": [
+        -1.9430376510295833,
+        -0.6044945414847843
+       ]
+      },
+      "qs_no_holiday": {
+       "mean_diff_a_minus_b": -1.4060825804366397,
+       "dm_hln_p": 0.0003730349966103932,
+       "boot95": [
+        -2.173470152440718,
+        -0.6611507030598045
+       ]
+      },
+      "g1_mcnemar": {
+       "a_only": 52,
+       "b_only": 25,
+       "p": 0.002799053877277624
+      }
+     }
+    }
+   },
+   "winners_curse_note": "Best single WM DEV row S 0.7915 (f_reg2_s2); chosen recipe's members 0.8267/0.8583/0.7915 (mean 0.826), ensemble 0.7966; seed sd ~0.03 >> 0.01 keep band; recipe A vs B difference (0.8031 vs 0.7966) is within seed noise. Architecture/regulariser adapted on the same 6 DEV folds; linear references untuned. DEV numbers of the candidate are optimistic.",
+   "wm_vs_twin_dev": "The WM does NOT beat its twin on DEV: twin ensemble numerically better (S 0.7765 vs 0.7966; L48 MAE diff WM-twin +0.42 Bcf thu [-0.49, 1.28], +0.45 fri [-0.43, 1.32]; not significant).",
+   "harness_dev_in_sample": "run_eval --split dev of the refit models is IN-SAMPLE (refit uses all DEV weeks): MAE ~6.5 Bcf, acc ~0.95; a plumbing check only, not evidence.",
+   "val_go_no_go_rule": "Written before VAL. GO (keep wm_gas/wm_gas_direct in the TEST model list) iff (1) the single VAL run completes with finite quantiles for all VAL weeks x 2 kinds x 6 series for both models, (2) wm_gas VAL L48 MAE <= 1.5 x st_ols_wx VAL L48 MAE at both origins (pipeline-breakage check), (3) wm_gas VAL cov80 in [0.5, 1.0] at both origins. Otherwise NO-GO: report, withdraw, no re-tuning. No candidate/twin swap or any other selection after VAL.",
+   "code_commit": "the freeze commit that adds this file"
+  }
+ },
+ "frozen_sha256": "bc4cb0e4818a1e9b8e98d62ea48aa9c78df1c47257a42c8a8ae056e83e309eb7",
+ "data_pins": {
+  "data/gas/daily.csv": "569dd1e10464f3487816650f9c1197d43bd06692319ec618aeab769396d5265c",
+  "data/gas/weekly.csv": "929d210b01d15bb034e7b0fdcb06a7319ed755484d15391f97ad158176892309",
+  "data/gas/cpc_obs.csv": "083991d243534519dbdecc70ec3261e81abfab7003f831a0e191869b46c52fc9",
+  "data/gas/cpc_fcst.csv": "fd7352d1b5a833b302d4d8644a7e4a4f396e46ea7c4f2e45b2fb8e0ff3265a3e"
+ },
+ "alma_pins": {
+  "data/ckpt/wm_ssm_none_s0.pt": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+  "data/ckpt/wm_ssm_direct_s0.pt": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be"
+ },
+ "models": {
+  "storage": [
+   "st_climatology",
+   "st_persistence",
+   "st_seasonal_naive",
+   "st_ols_wx",
+   "st_ols_wx_nolag",
+   "st_arima_dev",
+   "chronos2",
+   "chronos2_cov",
+   "chronos_bolt_base",
+   "tirex",
+   "timestral_5m",
+   "alma_s0",
+   "alma_direct_s0",
+   "wm_gas",
+   "wm_gas_direct"
+  ],
+  "price": [
+   "rw_gauss",
+   "auto_ets",
+   "auto_arima",
+   "px_fund_ols",
+   "chronos2",
+   "chronos2_cov",
+   "chronos_bolt_base",
+   "tirex",
+   "timestral_5m",
+   "kronos_small",
+   "alma_s0",
+   "alma_direct_s0",
+   "wm_gas",
+   "wm_gas_direct"
+  ]
+ },
+ "model_meta": {
+  "alma_direct_s0": {
+   "ckpt": "data/ckpt/wm_ssm_direct_s0.pt",
+   "ckpt_sha256": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 (price, B) / 52 (storage, W)"
+  },
+  "alma_s0": {
+   "ckpt": "data/ckpt/wm_ssm_none_s0.pt",
+   "ckpt_sha256": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 (price, B) / 52 (storage, W)"
+  },
+  "auto_arima": {
+   "context": "512 daily"
+  },
+  "auto_ets": {
+   "context": "512 daily"
+  },
+  "chronos2": {
+   "hf": "amazon/chronos-2"
+  },
+  "chronos2_cov": {
+   "hf": "amazon/chronos-2",
+   "covariates": "storage: weekly HDD/CDD past + target-week future; price: stor_dev5, hdd7, cdd7 past only (NaN -> 0)"
+  },
+  "chronos_bolt_base": {
+   "hf": "amazon/chronos-bolt-base"
+  },
+  "kronos_small": {
+   "hf": "NeoQuasar/Kronos-small",
+   "tokenizer": "NeoQuasar/Kronos-Tokenizer-base",
+   "code": "/Users/srimanarayana/MIKO/kronos/repo @ 67b630e",
+   "samples": 10,
+   "context": 256,
+   "T": 1.0,
+   "top_p": 0.9,
+   "top_k": 0,
+   "seed": "0 per origin",
+   "ohlc": "open=high=low=close=price, volume=0"
+  },
+  "px_fund_ols": {
+   "fit": "DEV origins 2015-01-01.. with targets <= 2025-06-30"
+  },
+  "rw_gauss": {
+   "sigma_window": 250
+  },
+  "st_arima_dev": {
+   "model": "AutoARIMA on the deviation series, season 1, last 520 weeks"
+  },
+  "st_climatology": {
+   "rule": "same-week past deviations"
+  },
+  "st_ols_wx": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": true
+  },
+  "st_ols_wx_nolag": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": false
+  },
+  "st_persistence": {
+   "rule": "dev persistence"
+  },
+  "st_seasonal_naive": {
+   "rule": "last year's same-week dS"
+  },
+  "timestral_5m": {
+   "hf": "mistralai/Timestral-5M",
+   "contamination": "released 2026-10-15: may cover TEST"
+  },
+  "tirex": {
+   "hf": "NX-AI/TiRex"
+  },
+  "wm_gas": {
+   "ckpt": "runs/gas/search/ckpt/wm_gas.pt",
+   "ckpt_sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "recipe": {
+    "arch": "wm",
+    "d": 32,
+    "assim": 1,
+    "regime": 1,
+    "steps": 1200,
+    "lr": 0.003,
+    "bs": 64,
+    "wd": 0.05,
+    "aux": 0.3,
+    "wl48": 3.0,
+    "mc": 0,
+    "drop_hh": 0,
+    "drop": 0.3,
+    "cal": 1
+   },
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "train_end": "2025-06-30",
+   "n_train_weeks": 547,
+   "n_params_per_member": 23534,
+   "rollout": true
+  },
+  "wm_gas_direct": {
+   "ckpt": "runs/gas/search/ckpt/wm_gas_direct.pt",
+   "ckpt_sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "recipe": {
+    "arch": "direct",
+    "d": 32,
+    "assim": 1,
+    "regime": 1,
+    "steps": 1200,
+    "lr": 0.003,
+    "bs": 64,
+    "wd": 0.05,
+    "aux": 0.3,
+    "wl48": 3.0,
+    "mc": 0,
+    "drop_hh": 0,
+    "drop": 0.3,
+    "cal": 1
+   },
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "train_end": "2025-06-30",
+   "n_train_weeks": 547,
+   "n_params_per_member": 23534,
+   "rollout": false
+  }
+ },
+ "split": "test",
+ "rehearsal": false,
+ "argv": [
+  "tools/gas/run_eval.py",
+  "--task",
+  "all",
+  "--split",
+  "test",
+  "--i-have-auditor-go"
+ ],
+ "finished": "2026-11-01T00:30:47-0400",
+ "hashes_sha256": "314752f3d4ee5ad83a8b0d9d7b84acacc9042307740e5f9d3b09a94d39fe186b"
+}

@@ -1,0 +1,152 @@
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 prev_hour: changed (223 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-03-06 cache parity (p max diff 3.97e-08)
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 prev_hour: changed (259 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2023-09-18 cache parity (p max diff 3.97e-08)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 prev_hour: changed (304 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-02-12 cache parity (p max diff 5.96e-08)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 prev_hour: changed (307 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-03 cache parity (p max diff 3.97e-08)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 prev_hour: changed (330 values)
+OK   crypto c6_b2_moe4_s300_F1.pt 2024-06-30 cache parity (p max diff 1.49e-08)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 deterministic
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 future: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 fill: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 prev_hour: changed (223 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-03-06 cache parity (p max diff 3.97e-08)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 deterministic
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 future: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 fill: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 prev_hour: changed (266 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2023-09-18 cache parity (p max diff 5.96e-08)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 deterministic
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 future: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 fill: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 prev_hour: changed (308 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-02-12 cache parity (p max diff 5.96e-08)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 deterministic
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 future: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 fill: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 prev_hour: changed (336 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-03 cache parity (p max diff 3.97e-08)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 deterministic
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 future: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 fill: unchanged
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 prev_hour: changed (336 values)
+OK   crypto c6_b2_hconv_ens3_F1.pt 2024-06-30 cache parity (p max diff 1.49e-08)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 prev_day: changed (15 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 prev_hour: changed (14 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 prev_day: changed (17 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 prev_hour: changed (15 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 prev_day: changed (21 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 prev_hour: changed (19 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 prev_day: changed (22 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 prev_hour: changed (21 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-30 deterministic
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-30 future: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-30 fill: unchanged
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-30 prev_day: changed (21 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:voltgt 2024-06-30 prev_hour: changed (20 values)
+OK   crypto c6_b2_moe4_s300_F1.pt:cl online: decisions for days <= 2024-02-18 bit-identical
+OK   crypto c6_b2_moe4_s300_F1.pt:cl online: later decisions differ
+OK   crypto c6_b2_moe4_s300_F1.pt:cl updates every day ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   etf c6_b2_moe4_s300_F1.pt 2023-03-06 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt 2023-03-06 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2023-03-06 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf c6_b2_moe4_s300_F1.pt 2023-09-18 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt 2023-09-18 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2023-09-18 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf c6_b2_moe4_s300_F1.pt 2024-02-12 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt 2024-02-12 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-02-12 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-03 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-03 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-03 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-28 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-28 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-28 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-03-06 deterministic
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-03-06 future: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-03-06 fill: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-09-18 deterministic
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-09-18 future: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-09-18 fill: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-02-12 deterministic
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-02-12 future: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-02-12 fill: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-03 deterministic
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-03 future: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-03 fill: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-28 deterministic
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-28 future: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-28 fill: unchanged
+OK   etf c6_b2_hconv_ens3_F1.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-03-06 prev_day: changed (13 values)
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2023-09-18 prev_day: changed (12 values)
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-02-12 prev_day: changed (7 values)
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-03 prev_day: changed (13 values)
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-28 deterministic
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-28 future: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-28 fill: unchanged
+OK   etf c6_b2_moe4_s300_F1.pt:voltgt 2024-06-28 prev_day: changed (6 values)
+OK   etf c6_b2_moe4_s300_F1.pt:cl online: decisions for days <= 2024-02-21 bit-identical
+OK   etf c6_b2_moe4_s300_F1.pt:cl online: later decisions differ
+OK   etf c6_b2_moe4_s300_F1.pt:cl updates every day ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+ALL OK

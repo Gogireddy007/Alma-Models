@@ -1,0 +1,25 @@
+[project]
+name = "ts-autoresearch"
+version = "0.1.0"
+description = "Autonomous research loop for a time-series world-model forecaster, scored against industry baselines"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+    "requests>=2.32",
+    "torch>=2.5",
+]
+
+[dependency-groups]
+# Only needed to run baselines.py. train.py must not import these.
+baselines = [
+    "statsforecast>=2.0",
+    "chronos-forecasting>=2.0",
+    "timestral",
+    "tirex-ts>=1.4.2",
+]
+
+[tool.uv.sources]
+timestral = { git = "https://github.com/mistralai/timestral.git" }

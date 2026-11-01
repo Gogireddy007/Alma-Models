@@ -1,0 +1,51 @@
+{
+ "models": [
+  "wm_power",
+  "wm_power_direct"
+ ],
+ "sha256": {
+  "runs/power/search/ckpt/frz_phys_none_s0.pt": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+  "runs/power/search/ckpt/frz_phys_none_s1.pt": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+  "runs/power/search/ckpt/frz_phys_none_s2.pt": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+  "runs/power/search/ckpt/frz_phys_direct_s0.pt": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+  "runs/power/search/ckpt/frz_phys_direct_s1.pt": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+  "runs/power/search/ckpt/frz_phys_direct_s2.pt": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838"
+ },
+ "wm_architect": {
+  "frozen_at": "2026-10-31T21:08-04:00",
+  "doc": "docs/power_search.md section 3",
+  "candidate": "wm_power",
+  "twin": "wm_power_direct",
+  "recipe": "phys world model (latent system state rolled 48h from end of D-2; residual-load head; monotone merit-order readout; 3-regime offsets), d=64, L=14 days, lr 1e-3 OneCycle, aux 0.3, 1500 steps, batch 64, 3 seeds (0,1,2), quantile-average ensemble",
+  "twin_definition": "same modules/params/data/steps/seeds; every hour one step of the same GRUCell from the origin state (no carried state)",
+  "training_data": "lead panel tools/power/data.train_panel(), target days 2018-10-16..2025-06-30 (refit; no selection on the refit)",
+  "wrapper": "tools/power/wm_power.py (register; sha256 verified at load; deterministic)",
+  "n_params_per_member": 91845,
+  "K": {
+   "training_eval_runs": 49,
+   "scored_model_rows": 45,
+   "smoke": 3,
+   "crash": 1,
+   "reference_rows": 3,
+   "refit_rows_unscored": 6,
+   "distinct_recipes": 33
+  },
+  "dev_backtest_2024-01-01_2025-06-30": {
+   "wm_power_recipe_ensemble_S": 0.6451,
+   "S_90ci": [
+    0.626,
+    0.664
+   ],
+   "P1": 0.808,
+   "P2": 0.753,
+   "QSskill_vs_naive_epf": 0.329,
+   "twin_ensemble_S": 0.6457,
+   "diff_90ci": [
+    -0.0063,
+    0.0057
+   ]
+  },
+  "winners_curse_note": "Best single DEV row (0.6464, recipe A seed 0) fell to a 3-seed mean of 0.6420; ~30 recipes lie within a +-0.005 seed band, so the selected recipe's DEV score is optimistic by about that much. The WM does not beat its direct twin on DEV (ensemble diff CI straddles 0).",
+  "code_commit": "(see git log for the freeze commit)"
+ }
+}

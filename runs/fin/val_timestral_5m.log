@@ -1,0 +1,10 @@
+[val/crypto] timestral_5m  1/123 2025-07-01 1s
+[val/crypto] timestral_5m  51/123 2025-08-20 3s
+[val/crypto] timestral_5m  101/123 2025-10-09 5s
+[val/crypto] timestral_5m  123/123 2025-10-31 6s
+[val/crypto] timestral_5m: done 6s, updates 0
+[val/etf] timestral_5m  1/87 2025-07-01 0s
+[val/etf] timestral_5m  51/87 2025-09-11 2s
+[val/etf] timestral_5m  87/87 2025-10-31 3s
+[val/etf] timestral_5m: done 3s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

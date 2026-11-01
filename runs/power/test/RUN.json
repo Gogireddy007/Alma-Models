@@ -1,0 +1,239 @@
+{
+ "status": "complete",
+ "started": "2026-10-31T21:18:40-0400",
+ "commit": "06b9a6486ee5d587ef64bb292e6ba3f82c51fcde",
+ "tools_power_dirty": "",
+ "frozen": {
+  "models": [
+   "wm_power",
+   "wm_power_direct"
+  ],
+  "sha256": {
+   "runs/power/search/ckpt/frz_phys_none_s0.pt": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "runs/power/search/ckpt/frz_phys_none_s1.pt": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "runs/power/search/ckpt/frz_phys_none_s2.pt": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "runs/power/search/ckpt/frz_phys_direct_s0.pt": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+   "runs/power/search/ckpt/frz_phys_direct_s1.pt": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+   "runs/power/search/ckpt/frz_phys_direct_s2.pt": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838"
+  },
+  "wm_architect": {
+   "frozen_at": "2026-10-31T21:08-04:00",
+   "doc": "docs/power_search.md section 3",
+   "candidate": "wm_power",
+   "twin": "wm_power_direct",
+   "recipe": "phys world model (latent system state rolled 48h from end of D-2; residual-load head; monotone merit-order readout; 3-regime offsets), d=64, L=14 days, lr 1e-3 OneCycle, aux 0.3, 1500 steps, batch 64, 3 seeds (0,1,2), quantile-average ensemble",
+   "twin_definition": "same modules/params/data/steps/seeds; every hour one step of the same GRUCell from the origin state (no carried state)",
+   "training_data": "lead panel tools/power/data.train_panel(), target days 2018-10-16..2025-06-30 (refit; no selection on the refit)",
+   "wrapper": "tools/power/wm_power.py (register; sha256 verified at load; deterministic)",
+   "n_params_per_member": 91845,
+   "K": {
+    "training_eval_runs": 49,
+    "scored_model_rows": 45,
+    "smoke": 3,
+    "crash": 1,
+    "reference_rows": 3,
+    "refit_rows_unscored": 6,
+    "distinct_recipes": 33
+   },
+   "dev_backtest_2024-01-01_2025-06-30": {
+    "wm_power_recipe_ensemble_S": 0.6451,
+    "S_90ci": [
+     0.626,
+     0.664
+    ],
+    "P1": 0.808,
+    "P2": 0.753,
+    "QSskill_vs_naive_epf": 0.329,
+    "twin_ensemble_S": 0.6457,
+    "diff_90ci": [
+     -0.0063,
+     0.0057
+    ]
+   },
+   "winners_curse_note": "Best single DEV row (0.6464, recipe A seed 0) fell to a 3-seed mean of 0.6420; ~30 recipes lie within a +-0.005 seed band, so the selected recipe's DEV score is optimistic by about that much. The WM does not beat its direct twin on DEV (ensemble diff CI straddles 0).",
+   "code_commit": "(see git log for the freeze commit)"
+  }
+ },
+ "frozen_sha256": "78c6e4821ad24468d433cf8e63e89c483710eecf8735a1c91553f1cd8b9af82c",
+ "data_sha256": "79a2c96e90b51ea7f6db1879830e63615b1f82b3a97392953e1b08e651f76dea",
+ "alma_pins": {
+  "data/ckpt/wm_ssm_none_s0.pt": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+  "data/ckpt/wm_ssm_direct_s0.pt": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be"
+ },
+ "models": [
+  "naive_d",
+  "naive_w",
+  "naive_epf",
+  "lear",
+  "lear_nocov",
+  "arx",
+  "chronos2",
+  "chronos2_cov",
+  "chronos_bolt_base",
+  "tirex",
+  "timestral_5m",
+  "kronos_small",
+  "alma_s0",
+  "alma_direct_s0",
+  "wm_power",
+  "wm_power_direct"
+ ],
+ "model_meta": {
+  "naive_d": {
+   "naive": "d",
+   "interval_window_days": 364
+  },
+  "naive_w": {
+   "naive": "w",
+   "interval_window_days": 364
+  },
+  "naive_epf": {
+   "naive": "epf",
+   "interval_window_days": 364
+  },
+  "lear": {
+   "calibration_days": 728,
+   "use_cov": true,
+   "vst": "asinh((x-median)/MAD)",
+   "alpha": "LassoLarsIC(aic) -> Lasso",
+   "intervals": "in-sample residual quantiles"
+  },
+  "lear_nocov": {
+   "calibration_days": 728,
+   "use_cov": false,
+   "vst": "asinh((x-median)/MAD)",
+   "alpha": "LassoLarsIC(aic) -> Lasso",
+   "intervals": "in-sample residual quantiles"
+  },
+  "arx": {
+   "calibration_days": 728,
+   "intervals": "gaussian residual sd (transformed scale)"
+  },
+  "chronos2": {
+   "hf": "amazon/chronos-2",
+   "context_hours": 2048,
+   "device": "cpu",
+   "covariates": null
+  },
+  "chronos2_cov": {
+   "hf": "amazon/chronos-2",
+   "context_hours": 2048,
+   "device": "cpu",
+   "covariates": "4 fundamentals shifted 24h (past only)"
+  },
+  "chronos_bolt_base": {
+   "hf": "amazon/chronos-bolt-base",
+   "context_hours": 2048,
+   "device": "cpu",
+   "covariates": null
+  },
+  "tirex": {
+   "hf": "NX-AI/TiRex",
+   "context_hours": 2048,
+   "device": "cpu"
+  },
+  "timestral_5m": {
+   "hf": "mistralai/Timestral-5M",
+   "context_hours": 2048,
+   "device": "cpu",
+   "contamination": "released 2026-10-15: training data may cover the TEST period"
+  },
+  "kronos_small": {
+   "hf": "NeoQuasar/Kronos-small",
+   "tokenizer": "NeoQuasar/Kronos-Tokenizer-base",
+   "code": "/Users/srimanarayana/MIKO/kronos/repo @ 67b630e",
+   "samples": 10,
+   "context_hours": 256,
+   "T": 1.0,
+   "top_p": 0.9,
+   "top_k": 0,
+   "seed": 0,
+   "ohlc": "open=high=low=close=price, volume=0"
+  },
+  "alma_s0": {
+   "ckpt": "data/ckpt/wm_ssm_none_s0.pt",
+   "ckpt_sha256": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": 24,
+   "freq": "H"
+  },
+  "alma_direct_s0": {
+   "ckpt": "data/ckpt/wm_ssm_direct_s0.pt",
+   "ckpt_sha256": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": 24,
+   "freq": "H"
+  },
+  "wm_power": {
+   "members": [
+    {
+     "path": "runs/power/search/ckpt/frz_phys_none_s0.pt",
+     "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+     "arch": "phys",
+     "abl": "none",
+     "seed": 0,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    },
+    {
+     "path": "runs/power/search/ckpt/frz_phys_none_s1.pt",
+     "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+     "arch": "phys",
+     "abl": "none",
+     "seed": 1,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    },
+    {
+     "path": "runs/power/search/ckpt/frz_phys_none_s2.pt",
+     "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+     "arch": "phys",
+     "abl": "none",
+     "seed": 2,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    }
+   ]
+  },
+  "wm_power_direct": {
+   "members": [
+    {
+     "path": "runs/power/search/ckpt/frz_phys_direct_s0.pt",
+     "sha256": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+     "arch": "phys",
+     "abl": "direct",
+     "seed": 0,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    },
+    {
+     "path": "runs/power/search/ckpt/frz_phys_direct_s1.pt",
+     "sha256": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+     "arch": "phys",
+     "abl": "direct",
+     "seed": 1,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    },
+    {
+     "path": "runs/power/search/ckpt/frz_phys_direct_s2.pt",
+     "sha256": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+     "arch": "phys",
+     "abl": "direct",
+     "seed": 2,
+     "steps": 1500,
+     "train_end": "2025-06-30"
+    }
+   ]
+  }
+ },
+ "split": "test",
+ "rehearsal": false,
+ "argv": [
+  "tools/power/run_eval.py",
+  "--split",
+  "test"
+ ],
+ "finished": "2026-10-31T22:06:31-0400",
+ "hashes_sha256": "d17923cb3108da302140659aa305a4f0d39d73745753d75ba0d0e565cfc3a6a5"
+}

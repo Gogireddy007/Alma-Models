@@ -1,0 +1,322 @@
+OK   crypto wm_fin 2025-02-03 deterministic
+OK   crypto wm_fin 2025-02-03 future: unchanged
+OK   crypto wm_fin 2025-02-03 fill: unchanged
+OK   crypto wm_fin 2025-02-03 prev_day: changed (360 values)
+OK   crypto wm_fin 2025-02-03 prev_hour: changed (360 values)
+OK   crypto wm_fin 2025-03-17 deterministic
+OK   crypto wm_fin 2025-03-17 future: unchanged
+OK   crypto wm_fin 2025-03-17 fill: unchanged
+OK   crypto wm_fin 2025-03-17 prev_day: changed (360 values)
+OK   crypto wm_fin 2025-03-17 prev_hour: changed (360 values)
+OK   crypto wm_fin 2025-04-28 deterministic
+OK   crypto wm_fin 2025-04-28 future: unchanged
+OK   crypto wm_fin 2025-04-28 fill: unchanged
+OK   crypto wm_fin 2025-04-28 prev_day: changed (360 values)
+OK   crypto wm_fin 2025-04-28 prev_hour: changed (360 values)
+OK   crypto wm_fin 2025-06-09 deterministic
+OK   crypto wm_fin 2025-06-09 future: unchanged
+OK   crypto wm_fin 2025-06-09 fill: unchanged
+OK   crypto wm_fin 2025-06-09 prev_day: changed (360 values)
+OK   crypto wm_fin 2025-06-09 prev_hour: changed (360 values)
+OK   crypto wm_fin 2025-06-30 deterministic
+OK   crypto wm_fin 2025-06-30 future: unchanged
+OK   crypto wm_fin 2025-06-30 fill: unchanged
+OK   crypto wm_fin 2025-06-30 prev_day: changed (360 values)
+OK   crypto wm_fin 2025-06-30 prev_hour: changed (360 values)
+OK   crypto wm_direct 2025-02-03 deterministic
+OK   crypto wm_direct 2025-02-03 future: unchanged
+OK   crypto wm_direct 2025-02-03 fill: unchanged
+OK   crypto wm_direct 2025-02-03 prev_day: changed (360 values)
+OK   crypto wm_direct 2025-02-03 prev_hour: changed (358 values)
+OK   crypto wm_direct 2025-03-17 deterministic
+OK   crypto wm_direct 2025-03-17 future: unchanged
+OK   crypto wm_direct 2025-03-17 fill: unchanged
+OK   crypto wm_direct 2025-03-17 prev_day: changed (360 values)
+OK   crypto wm_direct 2025-03-17 prev_hour: changed (360 values)
+OK   crypto wm_direct 2025-04-28 deterministic
+OK   crypto wm_direct 2025-04-28 future: unchanged
+OK   crypto wm_direct 2025-04-28 fill: unchanged
+OK   crypto wm_direct 2025-04-28 prev_day: changed (360 values)
+OK   crypto wm_direct 2025-04-28 prev_hour: changed (360 values)
+OK   crypto wm_direct 2025-06-09 deterministic
+OK   crypto wm_direct 2025-06-09 future: unchanged
+OK   crypto wm_direct 2025-06-09 fill: unchanged
+OK   crypto wm_direct 2025-06-09 prev_day: changed (360 values)
+OK   crypto wm_direct 2025-06-09 prev_hour: changed (360 values)
+OK   crypto wm_direct 2025-06-30 deterministic
+OK   crypto wm_direct 2025-06-30 future: unchanged
+OK   crypto wm_direct 2025-06-30 fill: unchanged
+OK   crypto wm_direct 2025-06-30 prev_day: changed (360 values)
+OK   crypto wm_direct 2025-06-30 prev_hour: changed (360 values)
+OK   crypto wm_fin_cl 2025-02-03 deterministic
+OK   crypto wm_fin_cl 2025-02-03 future: unchanged
+OK   crypto wm_fin_cl 2025-02-03 fill: unchanged
+OK   crypto wm_fin_cl 2025-02-03 prev_day: changed (360 values)
+OK   crypto wm_fin_cl 2025-02-03 prev_hour: changed (360 values)
+OK   crypto wm_fin_cl 2025-03-17 deterministic
+OK   crypto wm_fin_cl 2025-03-17 future: unchanged
+OK   crypto wm_fin_cl 2025-03-17 fill: unchanged
+OK   crypto wm_fin_cl 2025-03-17 prev_day: changed (360 values)
+OK   crypto wm_fin_cl 2025-03-17 prev_hour: changed (360 values)
+OK   crypto wm_fin_cl 2025-04-28 deterministic
+OK   crypto wm_fin_cl 2025-04-28 future: unchanged
+OK   crypto wm_fin_cl 2025-04-28 fill: unchanged
+OK   crypto wm_fin_cl 2025-04-28 prev_day: changed (360 values)
+OK   crypto wm_fin_cl 2025-04-28 prev_hour: changed (360 values)
+OK   crypto wm_fin_cl 2025-06-09 deterministic
+OK   crypto wm_fin_cl 2025-06-09 future: unchanged
+OK   crypto wm_fin_cl 2025-06-09 fill: unchanged
+OK   crypto wm_fin_cl 2025-06-09 prev_day: changed (360 values)
+OK   crypto wm_fin_cl 2025-06-09 prev_hour: changed (360 values)
+OK   crypto wm_fin_cl 2025-06-30 deterministic
+OK   crypto wm_fin_cl 2025-06-30 future: unchanged
+OK   crypto wm_fin_cl 2025-06-30 fill: unchanged
+OK   crypto wm_fin_cl 2025-06-30 prev_day: changed (360 values)
+OK   crypto wm_fin_cl 2025-06-30 prev_hour: changed (360 values)
+OK   crypto wm_agent 2025-02-03 deterministic
+OK   crypto wm_agent 2025-02-03 future: unchanged
+OK   crypto wm_agent 2025-02-03 fill: unchanged
+OK   crypto wm_agent 2025-02-03 prev_day: changed (24 values)
+OK   crypto wm_agent 2025-02-03 prev_hour: changed (24 values)
+OK   crypto wm_agent 2025-03-17 deterministic
+OK   crypto wm_agent 2025-03-17 future: unchanged
+OK   crypto wm_agent 2025-03-17 fill: unchanged
+OK   crypto wm_agent 2025-03-17 prev_day: changed (24 values)
+OK   crypto wm_agent 2025-03-17 prev_hour: changed (24 values)
+OK   crypto wm_agent 2025-04-28 deterministic
+OK   crypto wm_agent 2025-04-28 future: unchanged
+OK   crypto wm_agent 2025-04-28 fill: unchanged
+OK   crypto wm_agent 2025-04-28 prev_day: changed (24 values)
+OK   crypto wm_agent 2025-04-28 prev_hour: changed (24 values)
+OK   crypto wm_agent 2025-06-09 deterministic
+OK   crypto wm_agent 2025-06-09 future: unchanged
+OK   crypto wm_agent 2025-06-09 fill: unchanged
+OK   crypto wm_agent 2025-06-09 prev_day: changed (24 values)
+OK   crypto wm_agent 2025-06-09 prev_hour: changed (24 values)
+OK   crypto wm_agent 2025-06-30 deterministic
+OK   crypto wm_agent 2025-06-30 future: unchanged
+OK   crypto wm_agent 2025-06-30 fill: unchanged
+OK   crypto wm_agent 2025-06-30 prev_day: changed (24 values)
+OK   crypto wm_agent 2025-06-30 prev_hour: changed (24 values)
+OK   crypto ppo 2025-02-03 deterministic
+OK   crypto ppo 2025-02-03 future: unchanged
+OK   crypto ppo 2025-02-03 fill: unchanged
+OK   crypto ppo 2025-02-03 prev_day: changed (24 values)
+OK   crypto ppo 2025-02-03 prev_hour: changed (24 values)
+OK   crypto ppo 2025-03-17 deterministic
+OK   crypto ppo 2025-03-17 future: unchanged
+OK   crypto ppo 2025-03-17 fill: unchanged
+OK   crypto ppo 2025-03-17 prev_day: changed (24 values)
+OK   crypto ppo 2025-03-17 prev_hour: changed (24 values)
+OK   crypto ppo 2025-04-28 deterministic
+OK   crypto ppo 2025-04-28 future: unchanged
+OK   crypto ppo 2025-04-28 fill: unchanged
+OK   crypto ppo 2025-04-28 prev_day: changed (24 values)
+OK   crypto ppo 2025-04-28 prev_hour: changed (24 values)
+OK   crypto ppo 2025-06-09 deterministic
+OK   crypto ppo 2025-06-09 future: unchanged
+OK   crypto ppo 2025-06-09 fill: unchanged
+OK   crypto ppo 2025-06-09 prev_day: changed (24 values)
+OK   crypto ppo 2025-06-09 prev_hour: changed (24 values)
+OK   crypto ppo 2025-06-30 deterministic
+OK   crypto ppo 2025-06-30 future: unchanged
+OK   crypto ppo 2025-06-30 fill: unchanged
+OK   crypto ppo 2025-06-30 prev_day: changed (24 values)
+OK   crypto ppo 2025-06-30 prev_hour: changed (24 values)
+OK   crypto dqn 2025-02-03 deterministic
+OK   crypto dqn 2025-02-03 future: unchanged
+OK   crypto dqn 2025-02-03 fill: unchanged
+OK   crypto dqn 2025-02-03 prev_day: changed (24 values)
+OK   crypto dqn 2025-02-03 prev_hour: changed (8 values)
+OK   crypto dqn 2025-03-17 deterministic
+OK   crypto dqn 2025-03-17 future: unchanged
+OK   crypto dqn 2025-03-17 fill: unchanged
+OK   crypto dqn 2025-03-17 prev_day: changed (19 values)
+FAIL crypto dqn 2025-03-17 prev_hour: changed (0 values)
+OK   crypto dqn 2025-04-28 deterministic
+OK   crypto dqn 2025-04-28 future: unchanged
+OK   crypto dqn 2025-04-28 fill: unchanged
+OK   crypto dqn 2025-04-28 prev_day: changed (17 values)
+OK   crypto dqn 2025-04-28 prev_hour: changed (2 values)
+OK   crypto dqn 2025-06-09 deterministic
+OK   crypto dqn 2025-06-09 future: unchanged
+OK   crypto dqn 2025-06-09 fill: unchanged
+OK   crypto dqn 2025-06-09 prev_day: changed (23 values)
+FAIL crypto dqn 2025-06-09 prev_hour: changed (0 values)
+OK   crypto dqn 2025-06-30 deterministic
+OK   crypto dqn 2025-06-30 future: unchanged
+OK   crypto dqn 2025-06-30 fill: unchanged
+OK   crypto dqn 2025-06-30 prev_day: changed (17 values)
+OK   crypto dqn 2025-06-30 prev_hour: changed (1 values)
+OK   crypto wm_voltgt 2025-02-03 deterministic
+OK   crypto wm_voltgt 2025-02-03 future: unchanged
+OK   crypto wm_voltgt 2025-02-03 fill: unchanged
+OK   crypto wm_voltgt 2025-02-03 prev_day: changed (24 values)
+OK   crypto wm_voltgt 2025-02-03 prev_hour: changed (24 values)
+OK   crypto wm_voltgt 2025-03-17 deterministic
+OK   crypto wm_voltgt 2025-03-17 future: unchanged
+OK   crypto wm_voltgt 2025-03-17 fill: unchanged
+OK   crypto wm_voltgt 2025-03-17 prev_day: changed (24 values)
+OK   crypto wm_voltgt 2025-03-17 prev_hour: changed (24 values)
+OK   crypto wm_voltgt 2025-04-28 deterministic
+OK   crypto wm_voltgt 2025-04-28 future: unchanged
+OK   crypto wm_voltgt 2025-04-28 fill: unchanged
+OK   crypto wm_voltgt 2025-04-28 prev_day: changed (24 values)
+OK   crypto wm_voltgt 2025-04-28 prev_hour: changed (22 values)
+OK   crypto wm_voltgt 2025-06-09 deterministic
+OK   crypto wm_voltgt 2025-06-09 future: unchanged
+OK   crypto wm_voltgt 2025-06-09 fill: unchanged
+OK   crypto wm_voltgt 2025-06-09 prev_day: changed (23 values)
+OK   crypto wm_voltgt 2025-06-09 prev_hour: changed (22 values)
+OK   crypto wm_voltgt 2025-06-30 deterministic
+OK   crypto wm_voltgt 2025-06-30 future: unchanged
+OK   crypto wm_voltgt 2025-06-30 fill: unchanged
+OK   crypto wm_voltgt 2025-06-30 prev_day: changed (22 values)
+OK   crypto wm_voltgt 2025-06-30 prev_hour: changed (22 values)
+OK   crypto wm_fin_cl online: decisions for days <= 2025-05-04 bit-identical (updates [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])
+OK   crypto wm_fin_cl online: later decisions differ (perturbed rows observed)
+OK   crypto wm_fin_cl online: updates made every day
+OK   etf wm_fin 2025-02-03 deterministic
+OK   etf wm_fin 2025-02-03 future: unchanged
+OK   etf wm_fin 2025-02-03 fill: unchanged
+OK   etf wm_fin 2025-02-03 prev_day: changed (195 values)
+OK   etf wm_fin 2025-03-17 deterministic
+OK   etf wm_fin 2025-03-17 future: unchanged
+OK   etf wm_fin 2025-03-17 fill: unchanged
+OK   etf wm_fin 2025-03-17 prev_day: changed (195 values)
+OK   etf wm_fin 2025-04-28 deterministic
+OK   etf wm_fin 2025-04-28 future: unchanged
+OK   etf wm_fin 2025-04-28 fill: unchanged
+OK   etf wm_fin 2025-04-28 prev_day: changed (195 values)
+OK   etf wm_fin 2025-06-09 deterministic
+OK   etf wm_fin 2025-06-09 future: unchanged
+OK   etf wm_fin 2025-06-09 fill: unchanged
+OK   etf wm_fin 2025-06-09 prev_day: changed (195 values)
+OK   etf wm_fin 2025-06-30 deterministic
+OK   etf wm_fin 2025-06-30 future: unchanged
+OK   etf wm_fin 2025-06-30 fill: unchanged
+OK   etf wm_fin 2025-06-30 prev_day: changed (195 values)
+OK   etf wm_direct 2025-02-03 deterministic
+OK   etf wm_direct 2025-02-03 future: unchanged
+OK   etf wm_direct 2025-02-03 fill: unchanged
+OK   etf wm_direct 2025-02-03 prev_day: changed (194 values)
+OK   etf wm_direct 2025-03-17 deterministic
+OK   etf wm_direct 2025-03-17 future: unchanged
+OK   etf wm_direct 2025-03-17 fill: unchanged
+OK   etf wm_direct 2025-03-17 prev_day: changed (195 values)
+OK   etf wm_direct 2025-04-28 deterministic
+OK   etf wm_direct 2025-04-28 future: unchanged
+OK   etf wm_direct 2025-04-28 fill: unchanged
+OK   etf wm_direct 2025-04-28 prev_day: changed (195 values)
+OK   etf wm_direct 2025-06-09 deterministic
+OK   etf wm_direct 2025-06-09 future: unchanged
+OK   etf wm_direct 2025-06-09 fill: unchanged
+OK   etf wm_direct 2025-06-09 prev_day: changed (195 values)
+OK   etf wm_direct 2025-06-30 deterministic
+OK   etf wm_direct 2025-06-30 future: unchanged
+OK   etf wm_direct 2025-06-30 fill: unchanged
+OK   etf wm_direct 2025-06-30 prev_day: changed (195 values)
+OK   etf wm_fin_cl 2025-02-03 deterministic
+OK   etf wm_fin_cl 2025-02-03 future: unchanged
+OK   etf wm_fin_cl 2025-02-03 fill: unchanged
+OK   etf wm_fin_cl 2025-02-03 prev_day: changed (195 values)
+OK   etf wm_fin_cl 2025-03-17 deterministic
+OK   etf wm_fin_cl 2025-03-17 future: unchanged
+OK   etf wm_fin_cl 2025-03-17 fill: unchanged
+OK   etf wm_fin_cl 2025-03-17 prev_day: changed (195 values)
+OK   etf wm_fin_cl 2025-04-28 deterministic
+OK   etf wm_fin_cl 2025-04-28 future: unchanged
+OK   etf wm_fin_cl 2025-04-28 fill: unchanged
+OK   etf wm_fin_cl 2025-04-28 prev_day: changed (195 values)
+OK   etf wm_fin_cl 2025-06-09 deterministic
+OK   etf wm_fin_cl 2025-06-09 future: unchanged
+OK   etf wm_fin_cl 2025-06-09 fill: unchanged
+OK   etf wm_fin_cl 2025-06-09 prev_day: changed (195 values)
+OK   etf wm_fin_cl 2025-06-30 deterministic
+OK   etf wm_fin_cl 2025-06-30 future: unchanged
+OK   etf wm_fin_cl 2025-06-30 fill: unchanged
+OK   etf wm_fin_cl 2025-06-30 prev_day: changed (195 values)
+OK   etf wm_agent 2025-02-03 deterministic
+OK   etf wm_agent 2025-02-03 future: unchanged
+OK   etf wm_agent 2025-02-03 fill: unchanged
+OK   etf wm_agent 2025-02-03 prev_day: changed (13 values)
+OK   etf wm_agent 2025-03-17 deterministic
+OK   etf wm_agent 2025-03-17 future: unchanged
+OK   etf wm_agent 2025-03-17 fill: unchanged
+OK   etf wm_agent 2025-03-17 prev_day: changed (13 values)
+OK   etf wm_agent 2025-04-28 deterministic
+OK   etf wm_agent 2025-04-28 future: unchanged
+OK   etf wm_agent 2025-04-28 fill: unchanged
+OK   etf wm_agent 2025-04-28 prev_day: changed (13 values)
+OK   etf wm_agent 2025-06-09 deterministic
+OK   etf wm_agent 2025-06-09 future: unchanged
+OK   etf wm_agent 2025-06-09 fill: unchanged
+OK   etf wm_agent 2025-06-09 prev_day: changed (13 values)
+OK   etf wm_agent 2025-06-30 deterministic
+OK   etf wm_agent 2025-06-30 future: unchanged
+OK   etf wm_agent 2025-06-30 fill: unchanged
+OK   etf wm_agent 2025-06-30 prev_day: changed (13 values)
+OK   etf ppo 2025-02-03 deterministic
+OK   etf ppo 2025-02-03 future: unchanged
+OK   etf ppo 2025-02-03 fill: unchanged
+OK   etf ppo 2025-02-03 prev_day: changed (13 values)
+OK   etf ppo 2025-03-17 deterministic
+OK   etf ppo 2025-03-17 future: unchanged
+OK   etf ppo 2025-03-17 fill: unchanged
+OK   etf ppo 2025-03-17 prev_day: changed (13 values)
+OK   etf ppo 2025-04-28 deterministic
+OK   etf ppo 2025-04-28 future: unchanged
+OK   etf ppo 2025-04-28 fill: unchanged
+OK   etf ppo 2025-04-28 prev_day: changed (13 values)
+OK   etf ppo 2025-06-09 deterministic
+OK   etf ppo 2025-06-09 future: unchanged
+OK   etf ppo 2025-06-09 fill: unchanged
+OK   etf ppo 2025-06-09 prev_day: changed (13 values)
+OK   etf ppo 2025-06-30 deterministic
+OK   etf ppo 2025-06-30 future: unchanged
+OK   etf ppo 2025-06-30 fill: unchanged
+OK   etf ppo 2025-06-30 prev_day: changed (13 values)
+OK   etf dqn 2025-02-03 deterministic
+OK   etf dqn 2025-02-03 future: unchanged
+OK   etf dqn 2025-02-03 fill: unchanged
+OK   etf dqn 2025-02-03 prev_day: changed (11 values)
+OK   etf dqn 2025-03-17 deterministic
+OK   etf dqn 2025-03-17 future: unchanged
+OK   etf dqn 2025-03-17 fill: unchanged
+OK   etf dqn 2025-03-17 prev_day: changed (12 values)
+OK   etf dqn 2025-04-28 deterministic
+OK   etf dqn 2025-04-28 future: unchanged
+OK   etf dqn 2025-04-28 fill: unchanged
+OK   etf dqn 2025-04-28 prev_day: changed (13 values)
+OK   etf dqn 2025-06-09 deterministic
+OK   etf dqn 2025-06-09 future: unchanged
+OK   etf dqn 2025-06-09 fill: unchanged
+OK   etf dqn 2025-06-09 prev_day: changed (6 values)
+OK   etf dqn 2025-06-30 deterministic
+OK   etf dqn 2025-06-30 future: unchanged
+OK   etf dqn 2025-06-30 fill: unchanged
+OK   etf dqn 2025-06-30 prev_day: changed (11 values)
+OK   etf wm_voltgt 2025-02-03 deterministic
+OK   etf wm_voltgt 2025-02-03 future: unchanged
+OK   etf wm_voltgt 2025-02-03 fill: unchanged
+OK   etf wm_voltgt 2025-02-03 prev_day: changed (13 values)
+OK   etf wm_voltgt 2025-03-17 deterministic
+OK   etf wm_voltgt 2025-03-17 future: unchanged
+OK   etf wm_voltgt 2025-03-17 fill: unchanged
+OK   etf wm_voltgt 2025-03-17 prev_day: changed (13 values)
+OK   etf wm_voltgt 2025-04-28 deterministic
+OK   etf wm_voltgt 2025-04-28 future: unchanged
+OK   etf wm_voltgt 2025-04-28 fill: unchanged
+OK   etf wm_voltgt 2025-04-28 prev_day: changed (13 values)
+OK   etf wm_voltgt 2025-06-09 deterministic
+OK   etf wm_voltgt 2025-06-09 future: unchanged
+OK   etf wm_voltgt 2025-06-09 fill: unchanged
+OK   etf wm_voltgt 2025-06-09 prev_day: changed (12 values)
+OK   etf wm_voltgt 2025-06-30 deterministic
+OK   etf wm_voltgt 2025-06-30 future: unchanged
+OK   etf wm_voltgt 2025-06-30 fill: unchanged
+OK   etf wm_voltgt 2025-06-30 prev_day: changed (12 values)
+OK   etf wm_fin_cl online: decisions for days <= 2025-05-06 bit-identical (updates [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])
+OK   etf wm_fin_cl online: later decisions differ (perturbed rows observed)
+OK   etf wm_fin_cl online: updates made every day
+FAILURES

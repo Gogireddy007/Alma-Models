@@ -1,0 +1,10 @@
+[val/crypto] kronos_small  1/123 2025-07-01 16s
+[val/crypto] kronos_small  51/123 2025-08-20 850s
+[val/crypto] kronos_small  101/123 2025-10-09 1727s
+[val/crypto] kronos_small  123/123 2025-10-31 2111s
+[val/crypto] kronos_small: done 2111s, updates 0
+[val/etf] kronos_small  1/87 2025-07-01 10s
+[val/etf] kronos_small  51/87 2025-09-11 495s
+[val/etf] kronos_small  87/87 2025-10-31 845s
+[val/etf] kronos_small: done 845s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

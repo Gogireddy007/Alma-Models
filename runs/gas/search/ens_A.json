@@ -1,0 +1,41 @@
+{
+ "a": [
+  "r2_wm_reg",
+  "f_reg_s1",
+  "f_reg_s2"
+ ],
+ "b": null,
+ "a_metrics": {
+  "mae_thu": 16.7598,
+  "qs_thu": 6.4403,
+  "acc_thu": 0.8403,
+  "accreg_thu": 0.7318,
+  "cov80_thu": 0.7923,
+  "mae_fri": 16.645,
+  "qs_fri": 6.4177,
+  "acc_fri": 0.8371,
+  "accreg_fri": 0.7279,
+  "cov80_fri": 0.8051,
+  "S": 0.8031
+ },
+ "a_metrics_no_holiday": {
+  "mae_thu": 16.836,
+  "qs_thu": 6.5189,
+  "acc_thu": 0.8458,
+  "accreg_thu": 0.7281,
+  "cov80_thu": 0.7826,
+  "mae_fri": 16.7781,
+  "qs_fri": 6.512,
+  "acc_fri": 0.8419,
+  "accreg_fri": 0.7241,
+  "cov80_fri": 0.7984
+ },
+ "n_weeks": {
+  "thu": 313,
+  "fri": 313
+ },
+ "n_weeks_no_holiday": {
+  "thu": 253,
+  "fri": 253
+ }
+}

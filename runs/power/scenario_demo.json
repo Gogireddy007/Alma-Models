@@ -1,0 +1,142 @@
+{
+ "LABEL": "MODEL SIMULATION of the frozen world model; NOT a validated forecast. DEV days only.",
+ "model": "wm_power",
+ "members": [
+  {
+   "path": "runs/power/search/ckpt/frz_phys_none_s0.pt",
+   "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "arch": "phys",
+   "abl": "none",
+   "seed": 0,
+   "steps": 1500,
+   "train_end": "2025-06-30"
+  },
+  {
+   "path": "runs/power/search/ckpt/frz_phys_none_s1.pt",
+   "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "arch": "phys",
+   "abl": "none",
+   "seed": 1,
+   "steps": 1500,
+   "train_end": "2025-06-30"
+  },
+  {
+   "path": "runs/power/search/ckpt/frz_phys_none_s2.pt",
+   "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "arch": "phys",
+   "abl": "none",
+   "seed": 2,
+   "steps": 1500,
+   "train_end": "2025-06-30"
+  }
+ ],
+ "days": [
+  "2025-01-01",
+  "2025-06-30"
+ ],
+ "n_days": 180,
+ "scenarios": {
+  "-50%": {
+   "mean_daily_median_EUR": 97.46383666992188,
+   "shift_vs_base_EUR": 4.93442964553833,
+   "q10_mean_EUR": 64.31245422363281,
+   "q90_mean_EUR": 122.8131332397461,
+   "width80_mean_EUR": 58.50067138671875,
+   "mean_P_hour_up_vs_D-1": 0.5543801235977502,
+   "frac_days_daily_median_up_vs_D-1": 0.5611111111111111
+  },
+  "-30%": {
+   "mean_daily_median_EUR": 95.57707214355469,
+   "shift_vs_base_EUR": 3.047661304473877,
+   "q10_mean_EUR": 62.42568588256836,
+   "q90_mean_EUR": 120.92636108398438,
+   "width80_mean_EUR": 58.500675201416016,
+   "mean_P_hour_up_vs_D-1": 0.530813829153217,
+   "frac_days_daily_median_up_vs_D-1": 0.5277777777777778
+  },
+  "-20%": {
+   "mean_daily_median_EUR": 94.58936309814453,
+   "shift_vs_base_EUR": 2.0599544048309326,
+   "q10_mean_EUR": 61.4379768371582,
+   "q90_mean_EUR": 119.93865966796875,
+   "width80_mean_EUR": 58.50067138671875,
+   "mean_P_hour_up_vs_D-1": 0.5184085843278042,
+   "frac_days_daily_median_up_vs_D-1": 0.5055555555555555
+  },
+  "-10%": {
+   "mean_daily_median_EUR": 93.57295989990234,
+   "shift_vs_base_EUR": 1.0435469150543213,
+   "q10_mean_EUR": 60.42156982421875,
+   "q90_mean_EUR": 118.92225646972656,
+   "width80_mean_EUR": 58.500675201416016,
+   "mean_P_hour_up_vs_D-1": 0.5054441913661927,
+   "frac_days_daily_median_up_vs_D-1": 0.4888888888888889
+  },
+  "+0%": {
+   "mean_daily_median_EUR": 92.52940368652344,
+   "shift_vs_base_EUR": 0.0,
+   "q10_mean_EUR": 59.378028869628906,
+   "q90_mean_EUR": 117.87870025634766,
+   "width80_mean_EUR": 58.50067138671875,
+   "mean_P_hour_up_vs_D-1": 0.49214297667409396,
+   "frac_days_daily_median_up_vs_D-1": 0.4666666666666667
+  },
+  "+10%": {
+   "mean_daily_median_EUR": 91.46126556396484,
+   "shift_vs_base_EUR": -1.068148136138916,
+   "q10_mean_EUR": 58.30987548828125,
+   "q90_mean_EUR": 116.81055450439453,
+   "width80_mean_EUR": 58.50067138671875,
+   "mean_P_hour_up_vs_D-1": 0.47847585508613566,
+   "frac_days_daily_median_up_vs_D-1": 0.45
+  },
+  "+30%": {
+   "mean_daily_median_EUR": 89.26689147949219,
+   "shift_vs_base_EUR": -3.26251482963562,
+   "q10_mean_EUR": 56.115509033203125,
+   "q90_mean_EUR": 114.6161880493164,
+   "width80_mean_EUR": 58.50067138671875,
+   "mean_P_hour_up_vs_D-1": 0.45040098552984775,
+   "frac_days_daily_median_up_vs_D-1": 0.4
+  }
+ },
+ "monotonicity": {
+  "violations": 0,
+  "comparisons": 336960
+ },
+ "wind_-30%_median_shift_by_hour_EUR": [
+  3.363698720932007,
+  3.370018243789673,
+  3.3219971656799316,
+  3.3132219314575195,
+  3.2706384658813477,
+  3.201059341430664,
+  3.0843985080718994,
+  2.891733169555664,
+  2.7722105979919434,
+  2.7813687324523926,
+  2.837230682373047,
+  2.8942480087280273,
+  2.9433584213256836,
+  2.9636592864990234,
+  3.0088999271392822,
+  3.075559139251709,
+  3.1153249740600586,
+  3.1080586910247803,
+  2.953267812728882,
+  2.793095111846924,
+  2.8012022972106934,
+  2.953284978866577,
+  3.055551528930664,
+  3.2707912921905518
+ ],
+ "lagged_wind_tercile_bounds_MW": [
+  9301.475347222222,
+  16014.548611111111
+ ],
+ "wind_-30%_daily_shift_by_lagged_wind_tercile_EUR": {
+  "low wind": 1.119358777999878,
+  "mid wind": 2.5906460285186768,
+  "high wind": 5.432980537414551
+ }
+}

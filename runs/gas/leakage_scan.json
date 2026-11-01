@@ -1,0 +1,209 @@
+{
+ "dominick": {
+  "series": 100014,
+  "gram_hits": {
+   "stor_ds_east": {
+    "level": 8,
+    "ratio": 0
+   },
+   "stor_ds_midwest": {
+    "level": 74,
+    "ratio": 0
+   },
+   "stor_ds_mountain": {
+    "level": 240,
+    "ratio": 0
+   },
+   "stor_lvl_pacific": {
+    "level": 0,
+    "ratio": 2
+   },
+   "stor_ds_pacific": {
+    "level": 82,
+    "ratio": 0
+   },
+   "stor_ds_south_central": {
+    "level": 2,
+    "ratio": 0
+   },
+   "hh_eia_daily": {
+    "level": 0,
+    "ratio": 2633
+   }
+  },
+  "longest_consecutive_run": {
+   "hh_eia_daily/ratio": 4,
+   "stor_ds_east/change": 1,
+   "stor_ds_mountain/change": 4,
+   "stor_ds_midwest/change": 2,
+   "stor_ds_pacific/change": 2,
+   "stor_ds_south_central/change": 1,
+   "stor_lvl_pacific/ratio": 1
+  }
+ },
+ "ercot": {
+  "series": 8,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "m5": {
+  "series": 30490,
+  "gram_hits": {
+   "stor_ds_mountain": {
+    "level": 41138,
+    "ratio": 0
+   },
+   "stor_ds_pacific": {
+    "level": 39268,
+    "ratio": 0
+   }
+  },
+  "longest_consecutive_run": {
+   "stor_ds_mountain/change": 6,
+   "stor_ds_pacific/change": 6
+  }
+ },
+ "monash_australian_electricity": {
+  "series": 5,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_cif_2016": {
+  "series": 72,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_m1_monthly": {
+  "series": 617,
+  "gram_hits": {
+   "stor_ds_midwest": {
+    "level": 2,
+    "ratio": 0
+   },
+   "stor_ds_mountain": {
+    "level": 58,
+    "ratio": 0
+   },
+   "stor_ds_pacific": {
+    "level": 3,
+    "ratio": 0
+   },
+   "hh_eia_daily": {
+    "level": 0,
+    "ratio": 1
+   }
+  },
+  "longest_consecutive_run": {
+   "hh_eia_daily/ratio": 1,
+   "stor_ds_mountain/change": 4,
+   "stor_ds_pacific/change": 1,
+   "stor_ds_midwest/change": 1
+  }
+ },
+ "monash_m3_monthly": {
+  "series": 1428,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_m3_quarterly": {
+  "series": 756,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_nn5_weekly": {
+  "series": 111,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_tourism_monthly": {
+  "series": 366,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_tourism_quarterly": {
+  "series": 427,
+  "gram_hits": {},
+  "longest_consecutive_run": {}
+ },
+ "monash_traffic": {
+  "series": 862,
+  "gram_hits": {
+   "stor_ds_pacific": {
+    "level": 7,
+    "ratio": 0
+   },
+   "hh_eia_daily": {
+    "level": 0,
+    "ratio": 2
+   }
+  },
+  "longest_consecutive_run": {
+   "stor_ds_pacific/change": 1,
+   "hh_eia_daily/ratio": 1
+  }
+ },
+ "monash_weather": {
+  "series": 3010,
+  "gram_hits": {
+   "stor_ds_east": {
+    "level": 138,
+    "ratio": 0
+   },
+   "stor_ds_midwest": {
+    "level": 729,
+    "ratio": 0
+   },
+   "stor_lvl_mountain": {
+    "level": 0,
+    "ratio": 4
+   },
+   "stor_ds_mountain": {
+    "level": 4934,
+    "ratio": 0
+   },
+   "stor_lvl_pacific": {
+    "level": 0,
+    "ratio": 3
+   },
+   "stor_ds_pacific": {
+    "level": 2863,
+    "ratio": 0
+   },
+   "stor_ds_south_central": {
+    "level": 35,
+    "ratio": 0
+   },
+   "hh_eia_daily": {
+    "level": 0,
+    "ratio": 98
+   }
+  },
+  "longest_consecutive_run": {
+   "stor_ds_mountain/change": 15,
+   "stor_ds_pacific/change": 6,
+   "hh_eia_daily/ratio": 1,
+   "stor_ds_midwest/change": 4,
+   "stor_ds_east/change": 2,
+   "stor_ds_south_central/change": 2,
+   "stor_lvl_pacific/ratio": 1,
+   "stor_lvl_mountain/ratio": 1
+  }
+ },
+ "nn5": {
+  "series": 111,
+  "gram_hits": {
+   "stor_ds_mountain": {
+    "level": 1,
+    "ratio": 0
+   },
+   "stor_ds_pacific": {
+    "level": 1,
+    "ratio": 0
+   }
+  },
+  "longest_consecutive_run": {
+   "stor_ds_pacific/change": 1,
+   "stor_ds_mountain/change": 1
+  }
+ }
+}

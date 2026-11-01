@@ -1,0 +1,7 @@
+--name r3_phys_none_lr1e3_s750 --arch phys --abl none --lr 1e-3 --steps 750
+--name r3_phys_none_lr1e3_d32 --arch phys --abl none --lr 1e-3 --d 32
+--name r3_phys_none_lr1e3_aux1 --arch phys --abl none --lr 1e-3 --aux 1.0
+--name r3_phys_none_lr1e3_L28 --arch phys --abl none --lr 1e-3 --L 28
+--name r3_cycle_none_lr1e3 --arch cycle --abl none --lr 1e-3
+--name r3_regime_none_lr1e3 --arch regime --abl none --lr 1e-3
+--name r3_cycle_none_lr5e4 --arch cycle --abl none --lr 5e-4

@@ -1,0 +1,6 @@
+r2_wm_inc_cal	0	{"arch":"wm","assim":1,"regime":1,"cal":1}
+r2_dir_inc_cal	0	{"arch":"direct","assim":1,"regime":1,"cal":1}
+r2_wm_reg	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.01,"drop":0.2}
+r2_wm_d16	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"d":16}
+r2_wm_s600	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"steps":600}
+r2_wm_aux1	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"aux":1.0}

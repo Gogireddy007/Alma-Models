@@ -1,0 +1,47 @@
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/&delimiter=/&marker=data/futures/um/monthly/klines/WMTUSDT/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 2: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/&delimiter=/&marker=data/futures/um/monthly/klines/WMTUSDT/: <urlopen error [Errno 54] Connection reset by peer>
+900 symbols ending 'USDT'
+  0/900 0GUSDT: ['2025-09']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/AGIXUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  50/900 AKTUSDT: ['2024-11']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/ASTERUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  100/900 AVAUSDT: ['2024-12']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/BIGTIMEUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  150/900 BNTUSDT: ['2023-08']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/CHZUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  200/900 CKBUSDT: ['2023-02']..['2026-09']
+  250/900 DELLUSDT: ['2026-06']..['2026-09']
+  300/900 EWYUSDT: ['2026-03']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/FISUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  350/900 GRAMUSDT: ['2026-07']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/HOLOUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  400/900 ILVUSDT: ['2023-11']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/KOUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  450/900 LAYERUSDT: ['2025-02']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/MAGICUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/MAGMAUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/MELANIAUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  500/900 MEUSDT: ['2024-12']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/MUUUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  550/900 NOTUSDT: ['2024-05']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/OKLOUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/OURAUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  600/900 PHBUSDT: ['2023-02']..['2026-09']
+  650/900 RESOLVUSDT: ['2025-06']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SANDUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SLERFUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  700/900 SLXUSDT: ['2026-06']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SPELLUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SPYUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/STABLEUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/STARUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SWARMSUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/SXTUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  750/900 SXPUSDT: ['2020-07']..['2026-05']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/TRUMPUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/TRXUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  800/900 TXNUSDT: ['2026-07']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/WAVESUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+  850/900 XAIUSDT: ['2024-01']..['2026-09']
+  retry 1: https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?prefix=data/futures/um/monthly/klines/XPDUSDT/1d/&delimiter=/: <urlopen error [Errno 54] Connection reset by peer>
+-> /Users/srimanarayana/Timeseries/data/fin/listing_um.json

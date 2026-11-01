@@ -1,0 +1,775 @@
+<title>World Models for Time Series</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a field guide. Narrow reading column for the argument, wide filterable shelf below. */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --fg:#14211f; --muted:#5a6b69; --line:#d9e1e0;
+  --accent:#0d6b63; --accent-soft:#d7ece9; --warn:#9a5b00; --warn-soft:#fbecd3; --star:#2b4fb8; --star-soft:#e1e8fa;
+  --display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --body:"Literata",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --surface:#16211f; --fg:#e3ecea; --muted:#94a7a4; --line:#2a3a37;
+  --accent:#5cc8bb; --accent-soft:#163a36; --warn:#f0b35a; --warn-soft:#3a2c14; --star:#9db4ff; --star-soft:#1e2a4a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --surface:#16211f; --fg:#e3ecea; --muted:#94a7a4; --line:#2a3a37;
+  --accent:#5cc8bb; --accent-soft:#163a36; --warn:#f0b35a; --warn-soft:#3a2c14; --star:#9db4ff; --star-soft:#1e2a4a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto}
+.col{max-width:720px}
+header{padding-block:48px 24px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.02;letter-spacing:-.02em;margin:10px 0 14px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.01em;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;font-size:17px;margin:0}
+.lede{font-size:18px;color:var(--fg);margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.stats b{color:var(--fg);font-weight:600}
+section{padding-block:40px 8px}
+.sub{color:var(--muted);margin:0 0 20px}
+/* Thesis */
+.thesis{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.thesis div{border-top:3px solid var(--accent);padding-top:10px;min-width:0}
+.thesis p{margin:6px 0 0;font-size:15px}
+/* Path */
+ol.path{list-style:none;padding:0;margin:0;counter-reset:p;display:grid;gap:0}
+ol.path li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:12px;padding-block:12px;border-bottom:1px solid var(--line)}
+ol.path li::before{content:counter(p,decimal-leading-zero);font-family:var(--mono);color:var(--accent);font-weight:600;padding-top:2px}
+ol.path .why{display:block;color:var(--muted);font-size:14.5px}
+.stage{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:18px 0 4px 56px}
+/* Callouts */
+.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.check{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;min-width:0}
+.verdict{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:3px;background:var(--warn-soft);color:var(--warn)}
+.verdict.ok{background:var(--accent-soft);color:var(--accent)}
+.check p{margin:8px 0 0;font-size:15px}
+/* Table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.n{text-align:right;font-family:var(--mono)}
+tr:last-child td{border-bottom:0}
+.bar{display:inline-block;height:8px;background:var(--accent);border-radius:2px;vertical-align:middle;margin-left:8px}
+.note{font-size:13.5px;color:var(--muted);margin-top:10px}
+/* Gaps */
+.gaps{columns:2 300px;column-gap:32px;padding-left:20px;margin:0}
+.gaps li{break-inside:avoid;margin-bottom:12px;font-size:15px}
+/* Library */
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search]{flex:1 1 240px;min-width:0;font:inherit;font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.chip{font-family:var(--display);font-size:13px;font-weight:500;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip.star[aria-pressed="true"]{background:var(--star);border-color:var(--star);color:var(--bg)}
+.count{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.shelf{padding-top:28px}
+.shelf>h2{font-size:22px}
+.subhead{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:20px 0 4px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding-block:11px;border-bottom:1px dashed var(--line)}
+.item .t{font-family:var(--display);font-weight:500;font-size:15.5px;line-height:1.35;min-width:0}
+.item .t a{color:var(--fg);text-decoration:none}
+.item .t a:hover{color:var(--accent);text-decoration:underline}
+.item .meta{grid-column:1/-1;font-size:13.5px;color:var(--muted)}
+.item .n{grid-column:1/-1;font-size:14.5px;margin-top:2px}
+.item .id{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;text-align:right}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:3px;margin-right:6px;vertical-align:2px}
+.tag.s{background:var(--star-soft);color:var(--star)}
+.tag.c{background:var(--warn-soft);color:var(--warn)}
+.tag.m{background:var(--line);color:var(--muted)}
+.code{font-family:var(--mono);font-size:12px;margin-left:8px}
+.empty{padding:40px 0;color:var(--muted)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+@media (max-width:560px){.item{grid-template-columns:1fr}.item .id{text-align:left}ol.path li{grid-template-columns:32px 1fr}.stage{padding-left:44px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Research field guide · compiled 29 Oct 2026</div>
+  <h1>World Models for Time&#8209;Series Forecasting</h1>
+  <p class="lede col">A verified reading list across the literatures that meet here: world models from reinforcement learning, JEPA, latent state-space models, time-series foundation models, AI weather systems, counterfactual forecasting and market simulators. It also covers the ground under all of them: messy real-world data, forecasting competitions and evaluation, enterprise forecasting platforms and treasury practice.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<section class="col">
+  <h2>The short version</h2>
+  <p class="sub">What a forecaster needs before it can be called a world model, and where the field actually stands.</p>
+  <div class="thesis">
+    <div><h3>Latent state, not raw values</h3><p>A world model encodes observations into a state, rolls that state forward and decodes only when needed. RSSM (PlaNet, Dreamer), Kalman-style models (RKN, MTS3) and JEPA predictors all share this split.</p></div>
+    <div><h3>Actions change the future</h3><p>Forecasters treat covariates as passive context. World models condition on actions you control. ActTime, TimeWorld, BeliefGraph-JEPA and WhatIf-Bench are the first time-series work to take this seriously, all from 2026.</p></div>
+    <div><h3>Today's foundation models are not there yet</h3><p>Chronos-2, TimesFM and TiRex answer what-if questions by association, not causation. JEPA pretraining helps some backbones and hurts others. Weather models (GenCast, AIFS-CRPS, NeuralGCM) are the most mature working examples.</p></div>
+  </div>
+</section>
+
+<section class="col">
+  <h2>Reading path</h2>
+  <p class="sub">An order to read in, from the core ideas to the open frontier. Each title links to the paper.</p>
+  <ol class="path" id="path"></ol>
+</section>
+
+<section>
+  <div class="col"><h2>Checking what Google AI told you</h2>
+  <p class="sub">Two of the four items in the Google AI summary needed correcting.</p></div>
+  <div class="checks">
+    <div class="check"><span class="verdict">Real, but overstated</span>
+      <h3 style="margin-top:8px">Looped World Models (LoopWM)</h3>
+      <p>The paper exists: <a href="https://arxiv.org/abs/2606.18208">arXiv 2606.18208</a>, FaceMind Research, June 2026. It does use a weight-shared transformer block run in a loop to refine the latent state.</p>
+      <p>The "100x parameter efficiency" compares a ~1B model against closed chat models whose sizes are guesses. The "spectral stability guarantee" covers only the linear part of the update. It is tested on text environments (ScienceWorld, AlfWorld), not time series.</p></div>
+    <div class="check"><span class="verdict">Garbled name</span>
+      <h3 style="margin-top:8px">"TAM Gen" (Nixtla / Azure)</h3>
+      <p>This is <b>TimeGEN-1</b>, Nixtla's TimeGPT hosted in the Azure AI model catalog. It is a pretrained zero-shot forecaster, not a world model. Paper: <a href="https://arxiv.org/abs/2310.03589">TimeGPT-1</a>. Azure: <a href="https://learn.microsoft.com/en-us/azure/ai-studio/how-to/deploy-models-timegen-1">deployment guide</a>.</p></div>
+    <div class="check"><span class="verdict ok">Accurate</span>
+      <h3 style="margin-top:8px">ECMWF AIFS and GenCast</h3>
+      <p>Both are real and among the strongest AI weather systems. AIFS-ENS, trained with a CRPS loss, went operational at ECMWF on 1 July 2025. GenCast is a diffusion ensemble that beat ECMWF ENS on 97% of targets (Nature, 2024).</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="col"><h2>Who leads the forecasting benchmarks today</h2>
+  <p class="sub">fev-bench, 100 tasks. Skill score is the improvement over a seasonal-naive forecast, so higher is better. Recomputed from the official result files on 29 Oct 2026.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Model</th><th>Organisation</th><th style="text-align:right">Skill</th><th>Weights</th></tr></thead>
+    <tbody id="lb"></tbody>
+  </table></div>
+  <p class="note">TimeRSI-1.5 is an agent wrapped around a foundation model, not a single model. TimesFM-2.5 and Moirai-2.0 are flagged as having trained on some of the test tasks. On GIFT-Eval the order is similar: Timestral, TimeH2O, t0 and TimesFM-3 lead the single models, and agent or ensemble systems sit above them.</p>
+</section>
+
+<section>
+  <div class="col"><h2>Open research gaps</h2>
+  <p class="sub">Gaps that came up independently in several of the literatures below. Good places to look for a thesis topic.</p></div>
+  <ol class="gaps">
+    <li><b>No survey of time-series world models.</b> Every world-model survey covers robots, video or games. A taxonomy for time series (latent dynamics, action conditioning, JEPA vs. generative, filtering vs. rollout) does not exist yet.</li>
+    <li><b>Action data is scarce.</b> Most datasets log no interventions. Genie-style discovery of latent actions from unlabelled data has never been tried on time series.</li>
+    <li><b>Foundation models are associational.</b> No foundation-scale model has been trained to answer interventional questions correctly.</li>
+    <li><b>Calibrated uncertainty and scale rarely meet.</b> Kalman-style belief states (RKN, MTS3, KalMamba) have never been benchmarked at foundation-model scale on GIFT-Eval or fev-bench.</li>
+    <li><b>JEPA for time series has no reliable recipe.</b> Results swing by backbone. Collapse prevention, masking and horizon conditioning are unsettled.</li>
+    <li><b>Looped and recurrent-depth models are untested on standard forecasting benchmarks.</b> LoopWM has no time-series results. Adaptive depth per horizon step is unexplored.</li>
+    <li><b>Joint trajectories, not marginal quantiles.</b> A usable simulator needs coherent multi-variable sample paths. PathFM and Sundial are early attempts.</li>
+    <li><b>Few models are judged by the decisions they enable.</b> Planning or MPC inside the latent space is rarely evaluated. That matters most for finance and treasury.</li>
+    <li><b>Long-horizon drift.</b> Weather models solved it with geometry-aware operators, multi-step training and hard constraints. Those fixes have not been carried over to general time series.</li>
+    <li><b>Benchmark contamination.</b> Several leading models are flagged for training on test data. Leak-free suites (TIME, IND-Eval) are new and small.</li>
+    <li><b>No public benchmark for messy data.</b> No dataset combines per-channel sampling rates, block missingness and real cross-channel dependence. ChannelTokenFormer's most realistic dataset is proprietary.</li>
+    <li><b>Foundation models assume one frequency.</b> Moirai and its successors set frequency per dataset, not per channel. A cash position fed by daily bank data, weekly receivables and monthly macro drivers is out of reach for them zero-shot.</li>
+    <li><b>Treasury has almost no academic literature.</b> The strongest papers predict invoice payment dates. Corporate cash forecasting with world models or foundation models is open ground, and most published accuracy figures come from vendors.</li>
+  </ol>
+</section>
+
+<section id="library">
+  <div class="col"><h2>The full library</h2>
+  <p class="sub">Every source the six research passes found and checked. Search, or filter by shelf. <span class="tag s">Start here</span> marks a core reading. <span class="tag c">Critique</span> marks a sceptical or corrective paper. <span class="tag m">Unchecked link</span> marks a link that came from memory and was not opened.</p></div>
+  <div class="controls">
+    <div class="row"><input type="search" id="q" placeholder="Search titles, authors, notes, arXiv IDs" aria-label="Search the library"><button class="chip star" id="starOnly" aria-pressed="false">Start here only</button><button class="chip" id="critOnly" aria-pressed="false">Critiques only</button></div>
+    <div class="row" id="shelves"></div>
+    <div class="row"><span class="count" id="count"></span></div>
+  </div>
+  <div id="out"></div>
+</section>
+
+<footer class="col">
+  <p>Compiled by six parallel research passes on 29 October 2026. Each pass checked arXiv IDs against the arXiv API and confirmed GitHub links returned HTTP 200, dropping anything it could not confirm. Most 2026 papers are preprints without peer review. Venues and links tagged "unchecked" came from memory.</p>
+</footer>
+</div>
+
+<script>
+// [shelf, sub, title, by, year, url, code, note, flags]  flags: s=start here, c=critique, m=unchecked link
+const D = [
+// ---------- Your links
+["Your links","Seed papers","World Machine: Towards Generative World Modeling for Time-Series","do Nascimento et al. (UNICAMP)","2026","https://arxiv.org/abs/2605.23025","https://github.com/H-IAAC/WorldMachine","Decoder-only transformer over persistent latent world states. Sensory inputs modulate the state through adaLN-Zero blocks. Tested only on a synthetic 1-D toy dataset.",""],
+["Your links","Seed papers","Pythia: Toward Foundation World Models for Multimodal Time Series","Dai et al. (Ant International)","2026","https://arxiv.org/abs/2610.05240","","JEPA-style latent dynamics seeded from Chronos-2, corrected by entity descriptions, events and covariates. Zero-shot on MUSE it scores MASE 0.688 against Chronos-2's 0.734. Code not yet released.","s"],
+["Your links","Seed papers","Multi Time Scale World Models (MTS3)","Shaj et al. (KIT)","2023 · NeurIPS spotlight","https://arxiv.org/abs/2310.18534","https://github.com/ALRhub/MTS3","Fast and slow state-space models with closed-form Kalman inference. The slow level infers a task descriptor that sets the fast dynamics. Best long-horizon action-conditional forecasts on robot data.","s"],
+["Your links","Seed papers","MOMENT: A Family of Open Time-series Foundation Models","Goswami et al. (CMU)","2024 · ICML","https://arxiv.org/abs/2402.03885","https://github.com/moment-timeseries-foundation-model/moment","Masked-reconstruction T5 encoder pretrained on the Time-series Pile. Multi-task backbone. Not a world model, but a candidate encoder for one.",""],
+["Your links","Seed papers","Global Models for Time Series Forecasting: A Simulation Study","Hewamalage, Bergmeir, Bandara","2022 · Pattern Recognition","https://arxiv.org/abs/2012.12485","","When one model trained across many series beats per-series models. The theory behind shared-dynamics models. This is not the Informer paper.",""],
+["Your links","Seed papers","skforecast: independent multi-series forecasting guide","skforecast project","v0.12.1 docs","https://skforecast.org/0.12.1/user_guides/independent-multi-time-series-forecasting","https://github.com/skforecast/skforecast","Practical global-model baseline with any scikit-learn regressor. The page is several versions old; classes were renamed in later releases.",""],
+["Your links","Claim checks","Looped World Models (LoopWM)","Lu et al. (FaceMind Research)","2026","https://arxiv.org/abs/2606.18208","","Weight-shared transformer block run in a loop with contractive linear dynamics and adaptive early exit. Its efficiency and stability claims are overstated, and it has no time-series results.","c"],
+["Your links","Claim checks","TimeGEN-1 on Azure AI (the real 'TAM Gen')","Nixtla / Microsoft","2024","https://techcommunity.microsoft.com/blog/machinelearningblog/announcing-timegen-1-in-azure-ai-leap-forward-in-time-series-forecasting/4140446","","Nixtla's TimeGPT offered as a serverless Azure API for forecasting and anomaly detection with covariates.",""],
+
+// ---------- World-model foundations
+["World-model foundations","Control and imagination","World Models","Ha & Schmidhuber","2018 · NeurIPS","https://arxiv.org/abs/1803.10122","https://worldmodels.github.io","VAE encoder, MDN-RNN dynamics and a tiny controller trained inside the dream. The encode, roll forward, decode template.","s"],
+["World-model foundations","Control and imagination","PlaNet: Learning Latent Dynamics for Planning from Pixels","Hafner et al.","2019 · ICML","https://arxiv.org/abs/1811.04551","https://github.com/google-research/planet","Introduces the RSSM, a latent state with deterministic and stochastic parts, plus latent overshooting. The most reusable piece for probabilistic multi-horizon forecasting.","s"],
+["World-model foundations","Control and imagination","Dream to Control (Dreamer v1)","Hafner et al.","2020 · ICLR","https://arxiv.org/abs/1912.01603","https://github.com/danijar/dreamer","Learns behaviour purely from imagined latent rollouts.",""],
+["World-model foundations","Control and imagination","Mastering Atari with Discrete World Models (DreamerV2)","Hafner et al.","2021 · ICLR","https://arxiv.org/abs/2010.02193","https://github.com/danijar/dreamerv2","Categorical latents. Relevant to regime switching and tokenised time-series latents.",""],
+["World-model foundations","Control and imagination","Mastering Diverse Domains through World Models (DreamerV3)","Hafner et al.","2023 · Nature 2025","https://arxiv.org/abs/2301.04104","https://github.com/danijar/dreamerv3","One configuration across 150+ tasks. Symlog, KL balancing and return normalisation carry straight over to heavy-tailed financial and energy series.","s"],
+["World-model foundations","Control and imagination","MuZero: Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model","Schrittwieser et al.","2020 · Nature","https://arxiv.org/abs/1911.08265","https://github.com/google-deepmind/mctx","A value-equivalent model that predicts only what matters for decisions. The case for decision-focused forecasting.",""],
+["World-model foundations","Control and imagination","Transformers are Sample-Efficient World Models (IRIS)","Micheli et al.","2023 · ICLR","https://arxiv.org/abs/2209.00588","https://github.com/eloialonso/iris","Discrete tokeniser plus autoregressive transformer. Structurally the same as Chronos-style tokenised forecasters.",""],
+["World-model foundations","Control and imagination","Diffusion for World Modeling (DIAMOND)","Alonso et al.","2024 · NeurIPS","https://arxiv.org/abs/2405.12399","https://github.com/eloialonso/diamond","Diffusion-based world model, mirroring the move to diffusion and flow forecasters.",""],
+["World-model foundations","Control and imagination","TD-MPC2: Scalable, Robust World Models for Continuous Control","Hansen et al.","2024 · ICLR","https://arxiv.org/abs/2310.16828","https://github.com/nicklashansen/tdmpc2","Decoder-free self-predictive latent model used for MPC. Closest in spirit to forecasting for control in energy or HVAC.",""],
+["World-model foundations","Control and imagination","DINO-WM: World Models on Pre-trained Visual Features","Zhou et al.","2025 · ICML","https://arxiv.org/abs/2411.04983","https://github.com/gaoyuezhou/dino_wm","World model on frozen pretrained features. The time-series analogue is a world model on a frozen foundation-model encoder.",""],
+["World-model foundations","Control and imagination","Time-Aware World Model for Adaptive Prediction and Control","Nhu et al.","2025 · ICML","https://arxiv.org/abs/2506.08441","https://github.com/anh-nn01/Time-Aware-World-Model","Conditions on step size and trains across mixed sampling rates.",""],
+["World-model foundations","Generative and interactive","Genie: Generative Interactive Environments","Bruce et al. (DeepMind)","2024 · ICML","https://arxiv.org/abs/2402.15391","","Infers latent actions from unlabelled video. A route to discovering interventions in time series with no action logs.",""],
+["World-model foundations","Generative and interactive","Genie 2: A large-scale foundation world model","Google DeepMind","2024","https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/","","Action-controllable 3D world generation at foundation scale.",""],
+["World-model foundations","Generative and interactive","Genie 3: A new frontier for world models","Google DeepMind","2025","https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/","","Real-time interaction with minutes-long consistency. Its long-horizon memory problem is the same one forecasters face.",""],
+["World-model foundations","Generative and interactive","Cosmos World Foundation Model Platform for Physical AI","NVIDIA","2025","https://arxiv.org/abs/2501.03575","https://github.com/nvidia-cosmos/cosmos-predict1","The pretrain-then-post-train world foundation model recipe that Pythia explicitly copies.",""],
+["World-model foundations","JEPA","A Path Towards Autonomous Machine Intelligence","LeCun","2022","https://openreview.net/forum?id=BZ5a1r-kVsf","","Defines JEPA: predict in representation space, not observation space. Cited by almost every 2026 latent time-series world model.","s"],
+["World-model foundations","JEPA","I-JEPA: Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture","Assran et al. (Meta)","2023 · CVPR","https://arxiv.org/abs/2301.08243","https://github.com/facebookresearch/ijepa","The first working JEPA recipe: context and target encoders, EMA and predictor.",""],
+["World-model foundations","JEPA","V-JEPA: Revisiting Feature Prediction for Learning Visual Representations from Video","Bardes et al. (Meta)","2024 · TMLR","https://arxiv.org/abs/2404.08471","https://github.com/facebookresearch/jepa","Feature prediction over time. The closest JEPA analogue to forecasting.",""],
+["World-model foundations","JEPA","V-JEPA 2","Assran et al. (Meta)","2025","https://arxiv.org/abs/2506.09985","https://github.com/facebookresearch/vjepa2","Adds an action-conditioned latent predictor used for zero-shot planning. The model for action-conditioned time-series world models.","s"],
+["World-model foundations","JEPA","EB-JEPA: A Lightweight Library for Energy-Based JEPAs","Terver et al. (Meta FAIR)","2026","https://arxiv.org/abs/2602.03604","https://github.com/facebookresearch/eb_jepa","Open library for JEPA world models. A practical start for time-series JEPA experiments.",""],
+["World-model foundations","JEPA","VJEPA: Variational JEPA as Probabilistic World Models","Huang","2026","https://arxiv.org/abs/2601.14354","","Makes JEPA probabilistic, which calibrated forecasts require.",""],
+["World-model foundations","JEPA","SJEPA: Hybrid Symbolic-Neural Predictors","Huang","2026","https://arxiv.org/abs/2608.04060","","Symbolic plus neural latent transitions for interpretable dynamics.",""],
+["World-model foundations","JEPA","Value-guided action planning with JEPA world models","Destrade et al.","2025","https://arxiv.org/abs/2601.00844","","How to plan inside a JEPA latent space.",""],
+["World-model foundations","JEPA","TD-JEPA: Latent-predictive Representations for Zero-Shot RL","Bagatella et al.","2025","https://arxiv.org/abs/2510.00739","","Multi-step self-predictive objectives linking JEPA to successor features.",""],
+["World-model foundations","Looped and recurrent depth","Test-Time Forecasting: Recurrent Depth Enables In-Context Dynamics Prediction","Lai et al.","2026","https://arxiv.org/abs/2610.19552","","Links looped linear attention to DMD/Koopman and forecasts unseen ODEs and PDEs in context. The most direct looped-transformer forecasting result.","s"],
+["World-model foundations","Looped and recurrent depth","Kalman Linear Attention: Parallel Bayesian Filtering for Efficient Language Modelling","Shaj et al.","2026 · ICML","https://arxiv.org/abs/2602.10743","","The MTS3 author rewrites Kalman filtering as a parallel linear-attention operator.",""],
+["World-model foundations","Surveys and definitions","Understanding World or Predicting Future? A Comprehensive Survey of World Models","Ding et al.","2024","https://arxiv.org/abs/2411.14499","","The most-cited taxonomy of world models.","s"],
+["World-model foundations","Surveys and definitions","A Comprehensive Survey on World Models for Embodied AI","Li et al.","2025","https://arxiv.org/abs/2510.16732","","",""],
+["World-model foundations","Surveys and definitions","From Masks to Worlds: A Hitchhiker's Guide to World Models","Bai et al.","2025","https://arxiv.org/abs/2510.20668","","A builder's guide from masked modelling to interactive world models.",""],
+["World-model foundations","Surveys and definitions","World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications","Zidan et al.","2026","https://arxiv.org/abs/2606.00133","","",""],
+["World-model foundations","Surveys and definitions","A Definition and Roadmap for World Models","Chen et al. (Shanghai AI Lab)","2026","https://arxiv.org/abs/2607.06401","","Useful for deciding whether a given forecaster counts as a world model.",""],
+["World-model foundations","Surveys and definitions","OpenWorldLib: A Unified Codebase and Definition of Advanced World Models","DataFlow Team (PKU)","2026","https://arxiv.org/abs/2604.04707","","",""],
+["World-model foundations","Surveys and definitions","World Model for Robot Learning: A Comprehensive Survey","Hou et al.","2026","https://arxiv.org/abs/2605.00080","","",""],
+
+// ---------- Time-series world models
+["Time-series world models","Explicit time-series world models","WorldTS: World Modeling for Multimodal Covariate-aware Time Series Forecasting","Zhu et al.","2026","https://arxiv.org/abs/2609.31162","","Forecasts by evolving a latent world state that multimodal covariates shape. A clean statement of forecasting as world modelling.","s"],
+["Time-series world models","Explicit time-series world models","TimeWorld: Towards Action-Conditioned Multimodal World Models for Forecasting","Ni et al.","2026","https://arxiv.org/abs/2610.34797","","Introduces TSWM-Bench, with textual interventions grounded in real action and outcome data. Multimodal forecasters lose to history-only foundation models on it.","s"],
+["Time-series world models","Explicit time-series world models","ActTime: Action-Conditioned World Modeling for Time Series","Zhou et al.","2026","https://arxiv.org/abs/2610.25764","","Per-variable latent states with predict-then-correct transitions, rolled forward under candidate actions. Evaluated on simulator-grounded counterfactuals.","s"],
+["Time-series world models","Explicit time-series world models","BeliefGraph-JEPA: Structured Latent World Models for Action-Conditioned Time Series","Li et al.","2026","https://arxiv.org/abs/2610.05409","","Typed latent effect states routed through a graph. Handles delayed and persistent effects of actions.",""],
+["Time-series world models","Explicit time-series world models","Phys-JEPA: Physics-Informed Latent World Models for Multivariate Forecasting","Nie et al.","2026","https://arxiv.org/abs/2606.16076","","Splits the latent into physical and residual parts and constrains the latent transitions with physics.",""],
+["Time-series world models","Explicit time-series world models","From Observations to States: Latent Time Series Forecasting (LatentTSF)","Yang et al.","2026 · ICML","https://arxiv.org/abs/2602.00297","https://github.com/Muyiiiii/LatentTSF","Names the 'latent chaos' failure and moves forecasting into an autoencoder latent. The strongest empirical case for forecasting in latent space.","s"],
+["Time-series world models","Explicit time-series world models","Correct then Forecast: Observer State-Space Models for Time Series Forecasting","Brachet et al.","2026","https://arxiv.org/abs/2609.33566","","One shared transition with an observer correction step. The RSSM/Kalman split restated for forecasting.",""],
+["Time-series world models","Explicit time-series world models","ViBR-WM: Visual Bayesian Regression for World Modeling","Li et al.","2026","https://arxiv.org/abs/2609.33844","","Interpretable Bayesian structural (trend, season, cycle) world model with visual features and covariates.",""],
+["Time-series world models","Explicit time-series world models","MHWA: Multi-timescale Hierarchical World-Action Model","Pan et al.","2026","https://arxiv.org/abs/2610.14727","","MTS3-style multi-timescale hierarchy extended to action models.",""],
+["Time-series world models","Explicit time-series world models","Diffusion-Driven State Space Models","Ruder et al.","2026","https://arxiv.org/abs/2606.21036","","The clearest bridge between diffusion forecasters and a filterable latent state.",""],
+["Time-series world models","Explicit time-series world models","Time-JEPA: Grounding Video World Models with Physical Time Series","Li et al.","2026","https://arxiv.org/abs/2610.23982","https://github.com/Lishenyi2004/Time-JEPA","The reverse direction: physical time series used to ground video world models.",""],
+["Time-series world models","JEPA for time series","Joint Embeddings Go Temporal (TS-JEPA)","Ennadir et al.","2025 · NeurIPS TSALM workshop","https://arxiv.org/abs/2509.25449","","The canonical time-series JEPA, tested on classification and forecasting.","s"],
+["Time-series world models","JEPA for time series","Time-Series JEPA for Predictive Remote Control under Capacity-Limited Networks","Girgis et al.","2024","https://arxiv.org/abs/2406.04853","","Possibly the earliest time-series JEPA. Latent prediction for control over limited bandwidth.",""],
+["Time-series world models","JEPA for time series","Hierarchical JEPA Meets Predictive Remote Control in Beyond 5G Networks","Univ. of Oulu / Nokia Bell Labs","2026","https://arxiv.org/abs/2602.07000","","Hierarchical follow-up to the previous paper.","m"],
+["Time-series world models","JEPA for time series","Koopman Invariants as Drivers of Emergent Time-Series Clustering in JEPAs","Ruiz-Morales et al.","2025","https://arxiv.org/abs/2511.09783","","Theory: the JEPA loss is minimised by learning the Koopman invariant subspace.",""],
+["Time-series world models","JEPA for time series","Does JEPA Pretraining Help Time Series Forecasting?","Feng et al.","2026","https://arxiv.org/abs/2609.31680","","Across 9 backbones and 11 benchmarks, gains depend on the backbone and some get worse. Read this before betting on time-series JEPA.","sc"],
+["Time-series world models","JEPA for time series","SC-JEPA: Stabilizing Latent Predictive Learning for Anomaly Prediction","He et al.","2026 · SDM","https://arxiv.org/abs/2602.04643","","Tackles representation collapse in time-series JEPA.",""],
+["Time-series world models","JEPA for time series","HEPA: Horizon-Conditioned Event Predictive Architecture","Petersen et al.","2026 · ICML FMSD workshop","https://arxiv.org/abs/2605.11130","https://github.com/Forgis-Labs/HEPA","Horizon-conditioned JEPA predictor for rare events.",""],
+["Time-series world models","JEPA for time series","Distributed JEPA: A Self-Supervised Framework for Energy Forecasting","Toderean et al.","2026","https://arxiv.org/abs/2609.17029","","",""],
+["Time-series world models","JEPA for time series","Giving Sensors a Voice: Multimodal JEPA for Semantic Time-Series Embeddings","Dutta et al. (C3 AI)","2026 · ICML","https://arxiv.org/abs/2605.31580","","",""],
+["Time-series world models","Interventions and counterfactuals","WhatIf-Bench: Benchmarking Intervention-Aware Time Series Forecasting","Ashok et al. (Google, Mila)","2026","https://arxiv.org/abs/2610.26582","https://github.com/ashok-arjun/whatif-bench","Simulator-grounded tasks (data centres, grids, traffic, water) testing whether forecasters respond correctly to interventions. The best current benchmark for action-conditioned world models.","s"],
+["Time-series world models","Interventions and counterfactuals","Forecasting Associations, Not Interventions: A Causal Audit of Covariate-Aware Foundation Models","Bai","2026","https://arxiv.org/abs/2610.31869","","Chronos-2, TiRex-2, TabPFN-TS and TimesFM-2.5 answer what-if questions by association, not causation.","sc"],
+["Time-series world models","Interventions and counterfactuals","DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting","Wu et al.","2026 · ICLR","https://arxiv.org/abs/2511.02137","","Flow model over a causal graph supporting observational, interventional and counterfactual rollouts.",""],
+["Time-series world models","Interventions and counterfactuals","DoTime: A Synthetic Benchmark Generator for Interventional and Counterfactual Time Series","Thumm et al.","2026","https://arxiv.org/abs/2607.27263","","",""],
+["Time-series world models","Interventions and counterfactuals","What If TSF: Scenario-Guided Multimodal Forecasting","Jang et al.","2026","https://arxiv.org/abs/2601.08509","","Tests whether forecasters respond to alternative textual scenarios.",""],
+["Time-series world models","Interventions and counterfactuals","What if Tomorrow is the World Cup Final? Counterfactual Forecasting with Textual Conditions","Gu et al.","2026","https://arxiv.org/abs/2605.14422","","",""],
+["Time-series world models","Interventions and counterfactuals","World2TS: Real-World Event Context for Time Series Forecasting","Liu et al.","2026","https://arxiv.org/abs/2610.14861","","Large dataset aligning real events with the series they affect: the event supervision world models need.",""],
+["Time-series world models","Interventions and counterfactuals","Benchmarking Counterfactual Prediction in Epidemic Time Series with Time-Varying Interventions","Mu et al.","2026","https://arxiv.org/abs/2606.05692","","",""],
+["Time-series world models","Agents and reasoning","Position: Beyond Model-Centric Prediction, Agentic Time Series Forecasting","Cheng et al.","2026","https://arxiv.org/abs/2602.01776","","Argues for iterative, tool-using forecasting.",""],
+["Time-series world models","Agents and reasoning","Toward Reasoning-Centric Time-Series Analysis","Wang et al.","2025","https://arxiv.org/abs/2510.13029","","",""],
+["Time-series world models","Agents and reasoning","Achieving Time Series Reasoning Requires Rethinking Model Design, Tasks Formulation, and Evaluation","Kong et al.","2025","https://arxiv.org/abs/2502.01477","","",""],
+["Time-series world models","Agents and reasoning","LLM Agents for Time-Series: A Survey","Chen et al.","2026","https://arxiv.org/abs/2608.26226","","Covers LLMs used as planners and simulators over time series.",""],
+
+// ---------- Latent dynamics
+["Latent dynamics","Deep Kalman and VAE state-space models","Deep Kalman Filters","Krishnan et al.","2015","https://arxiv.org/abs/1511.05121","https://github.com/clinicalml/structuredinference","Variational inference over a nonlinear latent state with treatments as inputs. The ancestor of the RSSM.","s"],
+["Latent dynamics","Deep Kalman and VAE state-space models","Deep Variational Bayes Filters","Karl et al.","2017 · ICLR","https://arxiv.org/abs/1605.06432","","Forces the latent to follow the transition model, so it behaves like a true system state.",""],
+["Latent dynamics","Deep Kalman and VAE state-space models","A Disentangled Recognition and Nonlinear Dynamics Model (Kalman VAE)","Fraccaro et al.","2017 · NeurIPS","https://arxiv.org/abs/1710.05741","https://github.com/simonkamronn/kvae","Observation encoder plus linear-Gaussian latent dynamics with exact Kalman smoothing.",""],
+["Latent dynamics","Deep Kalman and VAE state-space models","Deep State Space Models for Time Series Forecasting","Rangapuram et al. (Amazon)","2018 · NeurIPS","https://papers.nips.cc/paper/2018/hash/5cf68969fb67aa6082363a6d4e6468e2-Abstract.html","https://github.com/awslabs/gluonts","An RNN sets the parameters of a per-series linear SSM. Interpretable state with calibrated uncertainty.","s"],
+["Latent dynamics","Deep Kalman and VAE state-space models","DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks","Salinas et al. (Amazon)","2020 · IJF","https://arxiv.org/abs/1704.04110","https://github.com/awslabs/gluonts","The autoregressive RNN baseline that explicit state-space forecasters are measured against.",""],
+["Latent dynamics","Deep Kalman and VAE state-space models","Learning Interpretable Deep State Space Model for Probabilistic Forecasting","Li et al.","2019 · IJCAI","https://arxiv.org/abs/2102.00397","","",""],
+["Latent dynamics","Deep Kalman and VAE state-space models","Normalizing Kalman Filters for Multivariate Time Series Analysis","de Bézenac et al.","2020 · NeurIPS","https://proceedings.neurips.cc/paper/2020/hash/1f47cef5e38c952f94c5d61726027439-Abstract.html","","Flow on top of a linear-Gaussian SSM keeps exact filtering with non-Gaussian observations.",""],
+["Latent dynamics","Deep Kalman and VAE state-space models","GP-VAE: Deep Probabilistic Time Series Imputation","Fortuin et al.","2020 · AISTATS","https://arxiv.org/abs/1907.04155","https://github.com/ratschlab/GP-VAE","Gaussian-process prior over the latent trajectory.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Recurrent Kalman Networks","Becker et al. (KIT)","2019 · ICML","https://arxiv.org/abs/1905.07357","https://github.com/ALRhub/rkn_share","Factorised locally-linear Kalman updates in a learned latent space, trained end to end.","s"],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Action-Conditional Recurrent Kalman Networks","Shaj et al.","2020 · CoRL","https://arxiv.org/abs/2010.10201","https://github.com/ALRhub/action-conditional-rkn","Adds control inputs to the RKN transition.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Switching Recurrent Kalman Networks","Nguyen-Quynh et al.","2021","https://arxiv.org/abs/2111.08291","","Mixes several dynamics regimes for multimodal forecasts.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Hidden Parameter Recurrent State Space Models (HiP-RSSM)","Shaj et al.","2022 · ICLR","https://arxiv.org/abs/2206.14697","https://github.com/ALRhub/HiP-RSSM","Infers a latent context variable that conditions the dynamics. Direct precursor to MTS3's slow level.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","On Uncertainty in Deep State Space Models for Model-Based RL","Becker & Neumann","2022 · TMLR","https://arxiv.org/abs/2210.09256","","Shows standard RSSM inference underestimates uncertainty.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Learning World Models With Hierarchical Temporal Abstractions (thesis)","Shaj","2024","https://arxiv.org/abs/2404.16078","","Unifies RKN, Ac-RKN, HiP-RSSM and MTS3 into one framework. The best single read on this lineage.","s"],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","KalMamba: Efficient Probabilistic State Space Models","Becker et al.","2024","https://arxiv.org/abs/2406.15131","","Mamba sets the parameters of a linear-Gaussian SSM so Kalman inference runs in parallel.",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Uncertainty Representations in State-Space Layers for Deep RL","Luis et al.","2025 · TMLR","https://arxiv.org/abs/2409.16824","","",""],
+["Latent dynamics","Recurrent Kalman Networks and the MTS3 lineage","Adaptive World Models: Learning Behaviors by Latent Imagination Under Non-Stationarity","Gospodinov et al.","2024","https://arxiv.org/abs/2411.01342","","",""],
+["Latent dynamics","Continuous time","Neural Ordinary Differential Equations","Chen et al.","2018 · NeurIPS","https://arxiv.org/abs/1806.07366","","Continuous-time latent dynamics.","s"],
+["Latent dynamics","Continuous time","Latent ODEs for Irregularly-Sampled Time Series","Rubanova et al.","2019 · NeurIPS","https://arxiv.org/abs/1907.03907","https://github.com/YuliaRubanova/latent_ode","ODE-RNN encoder plus latent ODE: a continuous-time generative world model.",""],
+["Latent dynamics","Continuous time","Neural Controlled Differential Equations for Irregular Time Series","Kidger et al.","2020 · NeurIPS","https://arxiv.org/abs/2005.08926","https://github.com/patrick-kidger/torchcde","Latent state driven by a control path built from observations.",""],
+["Latent dynamics","Continuous time","Scalable Gradients for Stochastic Differential Equations (Latent SDE)","Li et al.","2020 · AISTATS","https://arxiv.org/abs/2001.01328","https://github.com/google-research/torchsde","",""],
+["Latent dynamics","Continuous time","Neural SDEs as Infinite-Dimensional GANs","Kidger et al.","2021 · ICML","https://arxiv.org/abs/2102.03657","https://github.com/patrick-kidger/diffrax","",""],
+["Latent dynamics","Continuous time","Modeling Irregular Time Series with Continuous Recurrent Units","Schirmer et al.","2022 · ICML","https://arxiv.org/abs/2111.11344","https://github.com/boschresearch/Continuous-Recurrent-Units","A continuous-time Kalman filter in latent space.",""],
+["Latent dynamics","Continuous time","Variational Streaming Flow: Probabilistic Forecasting in Physical Time","Hsu et al.","2026","https://arxiv.org/abs/2610.00976","","",""],
+["Latent dynamics","Koopman operators","Deep learning for universal linear embeddings of nonlinear dynamics","Lusch et al.","2018 · Nature Comms","https://arxiv.org/abs/1712.09707","https://github.com/BethanyL/DeepKoopman","Autoencoder into a space where dynamics are linear.","s"],
+["Latent dynamics","Koopman operators","Forecasting Sequential Data using Consistent Koopman Autoencoders","Azencot et al.","2020 · ICML","https://arxiv.org/abs/2003.02236","https://github.com/erichson/koopmanAE","",""],
+["Latent dynamics","Koopman operators","Koopman Neural Forecaster for Time Series with Temporal Distribution Shifts","Wang et al.","2023 · ICLR","https://arxiv.org/abs/2210.03675","","",""],
+["Latent dynamics","Koopman operators","Koopa: Learning Non-stationary Time Series Dynamics with Koopman Predictors","Liu et al. (Tsinghua)","2023 · NeurIPS","https://arxiv.org/abs/2305.18803","https://github.com/thuml/Koopa","Separate Koopman predictors for time-invariant and time-variant parts.","s"],
+["Latent dynamics","Koopman operators","Koopman-informed recurrent neural networks","Bolager et al.","2024","https://arxiv.org/abs/2410.23467","","",""],
+["Latent dynamics","Koopman operators","K²VAE: Koopman-Kalman Enhanced VAE for Probabilistic Forecasting","Wu et al.","2025","https://arxiv.org/abs/2505.23017","","Koopman transition plus Kalman correction: a filtering world model.",""],
+["Latent dynamics","Koopman operators","Principled Koopman Representations with Kalman Inference","Li et al.","2026","https://arxiv.org/abs/2609.17815","","",""],
+["Latent dynamics","Koopman operators","Variational Augmented Invertible Koopman Autoencoder","Frion et al.","2026","https://arxiv.org/abs/2609.37435","","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Combining Recurrent, Convolutional, and Continuous-time Models with Linear State-Space Layers","Gu et al.","2021 · NeurIPS","https://arxiv.org/abs/2110.13985","","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Efficiently Modeling Long Sequences with Structured State Spaces (S4)","Gu et al.","2022 · ICLR","https://arxiv.org/abs/2111.00396","https://github.com/state-spaces/s4","","s"],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Simplified State Space Layers for Sequence Modeling (S5)","Smith et al.","2023 · ICLR","https://arxiv.org/abs/2208.04933","https://github.com/lindermanlab/S5","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Resurrecting Recurrent Neural Networks for Long Sequences (LRU)","Orvieto et al.","2023 · ICML","https://arxiv.org/abs/2303.06349","","Stable-eigenvalue linear recurrence. Relevant to the stability claims in LoopWM.",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Effectively Modeling Time Series with Simple Discrete State Spaces (SpaceTime)","Zhang et al.","2023 · ICLR","https://arxiv.org/abs/2303.09489","https://github.com/HazyResearch/spacetime","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Mamba: Linear-Time Sequence Modeling with Selective State Spaces","Gu & Dao","2023","https://arxiv.org/abs/2312.00752","https://github.com/state-spaces/mamba","","s"],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Transformers are SSMs (Mamba-2)","Dao & Gu","2024 · ICML","https://arxiv.org/abs/2405.21060","https://github.com/state-spaces/mamba","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Is Mamba Effective for Time Series Forecasting? (S-Mamba)","Wang et al.","2024","https://arxiv.org/abs/2403.11144","https://github.com/wzhwzhwzh0921/S-D-Mamba","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","TimeMachine: A Time Series is Worth 4 Mambas","Ahamed & Cheng","2024 · ECAI","https://arxiv.org/abs/2403.09898","https://github.com/Atik-Ahamed/TimeMachine","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Bi-Mamba+: Bidirectional Mamba for Time Series Forecasting","Liang et al.","2024","https://arxiv.org/abs/2404.15772","","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","SST: Multi-Scale Hybrid Mamba-Transformer Experts","Xu et al.","2025 · CIKM","https://arxiv.org/abs/2404.14757","https://github.com/xiongxiaoxu/SST","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","Chimera: 2-Dimensional State Space Models for Multivariate Time Series","Behrouz et al.","2024 · NeurIPS","https://arxiv.org/abs/2406.04320","","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","xLSTM: Extended Long Short-Term Memory","Beck et al.","2024 · NeurIPS","https://arxiv.org/abs/2405.04517","https://github.com/NX-AI/xlstm","",""],
+["Latent dynamics","Structured SSMs, Mamba and xLSTM","xLSTMTime: Long-term Time Series Forecasting With xLSTM","Alharthi & Mahmood","2024","https://arxiv.org/abs/2407.10240","https://github.com/muslehal/xLSTMTime","",""],
+["Latent dynamics","Diffusion and flow forecasters","Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Forecasting (TimeGrad)","Rasul et al.","2021 · ICML","https://arxiv.org/abs/2101.12072","https://github.com/zalandoresearch/pytorch-ts","RNN latent state conditions a per-step diffusion head.",""],
+["Latent dynamics","Diffusion and flow forecasters","CSDI: Conditional Score-based Diffusion Models for Imputation","Tashiro et al.","2021 · NeurIPS","https://arxiv.org/abs/2107.03502","https://github.com/ermongroup/CSDI","",""],
+["Latent dynamics","Diffusion and flow forecasters","Predict, Refine, Synthesize: Self-Guiding Diffusion Models (TSDiff)","Kollovieh et al. (Amazon)","2023 · NeurIPS","https://arxiv.org/abs/2307.11494","https://github.com/amazon-science/unconditional-time-series-diffusion","",""],
+["Latent dynamics","Diffusion and flow forecasters","Diffusion-TS: Interpretable Diffusion for General Time Series Generation","Yuan & Qiao","2024 · ICLR","https://arxiv.org/abs/2403.01742","https://github.com/Y-debug-sys/Diffusion-TS","",""],
+["Latent dynamics","Diffusion and flow forecasters","Flow Matching with Gaussian Process Priors (TSFlow)","Kollovieh et al.","2025 · ICLR","https://arxiv.org/abs/2410.03024","https://github.com/marcelkollovieh/TSFlow","",""],
+["Latent dynamics","Diffusion and flow forecasters","FlowTime: Probabilistic Forecasting via Autoregressive Flow Matching","ElGazzar et al.","2025","https://arxiv.org/abs/2503.10375","","",""],
+["Latent dynamics","Diffusion and flow forecasters","PathFM: Fast Generative Forecasting of Multivariate Trajectories","Yao et al. (Caltech, Amazon)","2026","https://arxiv.org/abs/2610.22358","","Generates joint multivariate sample paths instead of marginal quantiles.",""],
+["Latent dynamics","Diffusion and flow forecasters","DiTS: Multimodal Diffusion Transformers Are Time Series Forecasters","Zhang et al.","2026","https://arxiv.org/abs/2602.06597","","",""],
+["Latent dynamics","Physics and hybrid","Augmenting Physical Models with Deep Networks (APHYNITY)","Yin et al.","2021 · ICLR","https://arxiv.org/abs/2010.04456","https://github.com/yuan-yin/APHYNITY","Physical ODE plus a minimal neural residual.",""],
+["Latent dynamics","Physics and hybrid","Four Principles for Physically Interpretable World Models","Peper et al.","2025","https://arxiv.org/abs/2503.02143","","",""],
+
+// ---------- Foundation models
+["Foundation models","Pretrained forecasters","TimeGPT-1","Garza & Mergenthaler-Canseco (Nixtla)","2023","https://arxiv.org/abs/2310.03589","https://github.com/Nixtla/nixtla","First commercial foundation forecaster, API only. Sold on Azure as TimeGEN-1.",""],
+["Foundation models","Pretrained forecasters","Lag-Llama: Towards Foundation Models for Probabilistic Forecasting","Rasul et al.","2023","https://arxiv.org/abs/2310.08278","https://github.com/time-series-foundation-models/lag-llama","Lag-feature tokens, Student-t output. Now weak on GIFT-Eval.",""],
+["Foundation models","Pretrained forecasters","A decoder-only foundation model for time-series forecasting (TimesFM)","Das et al. (Google)","2024 · ICML","https://arxiv.org/abs/2310.10688","https://github.com/google-research/timesfm","Patched decoder. TimesFM-3 (Aug 2026) is multivariate with covariates, non-commercial licence.","s"],
+["Foundation models","Pretrained forecasters","In-Context Fine-Tuning for Time-Series Foundation Models","Das et al. (Google)","2025 · ICML","https://arxiv.org/abs/2410.24087","","Few-shot by putting related series in context.",""],
+["Foundation models","Pretrained forecasters","Chronos: Learning the Language of Time Series","Ansari et al. (Amazon)","2024 · TMLR","https://arxiv.org/abs/2403.07815","https://github.com/amazon-science/chronos-forecasting","Quantises values into tokens and trains T5. Sampling-based probabilistic forecasts.","s"],
+["Foundation models","Pretrained forecasters","Chronos-2: From Univariate to Universal Forecasting","Ansari et al. (Amazon)","2025","https://arxiv.org/abs/2510.15821","https://huggingface.co/amazon/chronos-2","Group attention for multivariate series and in-context covariates. Apache-2.0. Pythia's starting point.","s"],
+["Foundation models","Pretrained forecasters","Unified Training of Universal Time Series Forecasting Transformers (Moirai)","Woo et al. (Salesforce)","2024 · ICML","https://arxiv.org/abs/2402.02592","https://github.com/SalesforceAIResearch/uni2ts","Any-variate attention, mixture output, LOTSA corpus.",""],
+["Foundation models","Pretrained forecasters","Moirai-MoE","Liu et al. (Salesforce)","2024","https://arxiv.org/abs/2410.10469","","",""],
+["Foundation models","Pretrained forecasters","Moirai 2.0: When Less Is More for Time Series Forecasting","Liu et al. (Salesforce)","2025","https://arxiv.org/abs/2511.11698","https://huggingface.co/Salesforce/moirai-2.0-R-small","",""],
+["Foundation models","Pretrained forecasters","Timer: Generative Pre-trained Transformers Are Large Time Series Models","Liu et al. (Tsinghua)","2024 · ICML","https://arxiv.org/abs/2402.02368","https://github.com/thuml/Large-Time-Series-Model","",""],
+["Foundation models","Pretrained forecasters","Timer-XL","Liu et al. (Tsinghua)","2025 · ICLR","https://arxiv.org/abs/2410.04803","https://github.com/thuml/Timer-XL","",""],
+["Foundation models","Pretrained forecasters","Sundial: A Family of Highly Capable Time Series Foundation Models","Liu et al. (Tsinghua)","2025 · ICML","https://arxiv.org/abs/2502.00816","https://github.com/thuml/Sundial","Continuous values with a flow-matching head: a generative forecaster.",""],
+["Foundation models","Pretrained forecasters","Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts","Shi et al.","2025 · ICLR","https://arxiv.org/abs/2409.16040","https://github.com/Time-MoE/Time-MoE","",""],
+["Foundation models","Pretrained forecasters","Toto 2.0: Time Series Forecasting Enters the Scaling Era","Khwaja et al. (Datadog)","2026","https://arxiv.org/abs/2605.20119","https://github.com/DataDog/toto","Clean scaling from 4M to 2.5B parameters. Open weights.",""],
+["Foundation models","Pretrained forecasters","TiRex: Zero-Shot Forecasting Across Long and Short Horizons","Auer et al. (NX-AI)","2025 · NeurIPS","https://arxiv.org/abs/2505.23719","https://github.com/NX-AI/tirex","xLSTM, not a transformer. Keeps a recurrent state, the closest foundation model to a state-tracking world model.","s"],
+["Foundation models","Pretrained forecasters","Tiny Time Mixers (TTM)","Ekambaram et al. (IBM)","2024 · NeurIPS","https://arxiv.org/abs/2401.03955","https://github.com/ibm-granite/granite-tsfm","Under a few million parameters. Runs on CPU.",""],
+["Foundation models","Pretrained forecasters","UniTS: A Unified Multi-Task Time Series Model","Gao et al. (Harvard)","2024 · NeurIPS","https://arxiv.org/abs/2403.00131","https://github.com/mims-harvard/UniTS","",""],
+["Foundation models","Pretrained forecasters","Mamba4Cast: Efficient Zero-Shot Forecasting with State Space Models","Bhethanabhotla et al.","2024","https://arxiv.org/abs/2410.09385","https://github.com/automl/Mamba4Cast","",""],
+["Foundation models","Pretrained forecasters","ForecastPFN: Synthetically-Trained Zero-Shot Forecasting","Dooley et al.","2023 · NeurIPS","https://arxiv.org/abs/2311.01933","https://github.com/abacusai/ForecastPFN","",""],
+["Foundation models","Pretrained forecasters","From Tables to Time: Extending TabPFN-v2 to Time Series (TabPFN-TS)","Hoo et al. (Prior Labs)","2025","https://arxiv.org/abs/2501.02945","https://github.com/PriorLabs/tabpfn-time-series","",""],
+["Foundation models","Pretrained forecasters","Kairos: Toward Adaptive and Parameter-Efficient Foundation Models","Feng et al.","2025","https://arxiv.org/abs/2509.25826","https://github.com/foundation-model-research/Kairos","",""],
+["Foundation models","Pretrained forecasters","Timestral","Petralia et al. (Mistral)","2026","https://arxiv.org/abs/2610.37585","https://github.com/mistralai/timestral","Released 27 Oct 2026. Top single model on fev-bench and GIFT-Eval. Accepts known-future covariates.","s"],
+["Foundation models","Pretrained forecasters","t0: A Time-Series Foundation Model for Forecasting with Context","Meyer et al.","2026","https://arxiv.org/abs/2609.24559","https://huggingface.co/TheForecastingCompany","",""],
+["Foundation models","Pretrained forecasters","Timer-M1","Zhang et al. (Tsinghua, ByteDance)","2026","https://arxiv.org/abs/2610.11734","","",""],
+["Foundation models","Pretrained forecasters","Tabby: An Open Pretraining Recipe for Time Series Foundation Models","Xie et al. (Huawei)","2026","https://arxiv.org/abs/2609.13956","","",""],
+["Foundation models","LLM-based","Time-LLM: Time Series Forecasting by Reprogramming Large Language Models","Jin et al.","2024 · ICLR","https://arxiv.org/abs/2310.01728","https://github.com/KimMeen/Time-LLM","",""],
+["Foundation models","LLM-based","One Fits All: Power General Time Series Analysis by Pretrained LM (GPT4TS)","Zhou et al.","2023 · NeurIPS","https://arxiv.org/abs/2302.11939","https://github.com/DAMO-DI-ML/NeurIPS2023-One-Fits-All","",""],
+["Foundation models","LLM-based","Large Language Models Are Zero-Shot Time Series Forecasters (LLMTime)","Gruver et al.","2023 · NeurIPS","https://arxiv.org/abs/2310.07820","https://github.com/ngruver/llmtime","",""],
+["Foundation models","LLM-based","Are Language Models Actually Useful for Time Series Forecasting?","Tan et al.","2024 · NeurIPS spotlight","https://arxiv.org/abs/2406.16964","https://github.com/BennyTMT/LLMsForTimeSeries","Removing the LLM matches or beats these methods at a fraction of the compute.","sc"],
+["Foundation models","LLM-based","TimeBraid","","2026","https://arxiv.org/abs/2609.29792","","Interleaves LLM and time-series foundation-model backbones.",""],
+["Foundation models","Supervised baselines","Are Transformers Effective for Time Series Forecasting? (DLinear)","Zeng et al.","2023 · AAAI","https://arxiv.org/abs/2205.13504","https://github.com/cure-lab/LTSF-Linear","Linear layers beat early long-horizon transformers.","c"],
+["Foundation models","Supervised baselines","A Time Series is Worth 64 Words (PatchTST)","Nie et al.","2023 · ICLR","https://arxiv.org/abs/2211.14730","https://github.com/yuqinie98/PatchTST","Patching and channel independence. Most foundation models inherit this tokenisation.","s"],
+["Foundation models","Supervised baselines","iTransformer: Inverted Transformers Are Effective for Forecasting","Liu et al.","2024 · ICLR","https://arxiv.org/abs/2310.06625","https://github.com/thuml/iTransformer","",""],
+["Foundation models","Supervised baselines","TimesNet: Temporal 2D-Variation Modeling","Wu et al.","2023 · ICLR","https://arxiv.org/abs/2210.02186","https://github.com/thuml/Time-Series-Library","",""],
+["Foundation models","Supervised baselines","TimeMixer: Decomposable Multiscale Mixing","Wang et al.","2024 · ICLR","https://arxiv.org/abs/2405.14616","https://github.com/kwuking/TimeMixer","",""],
+["Foundation models","Supervised baselines","Informer: Beyond Efficient Transformer for Long Sequence Forecasting","Zhou et al.","2021 · AAAI","https://arxiv.org/abs/2012.07436","https://github.com/zhouhaoyi/Informer2020","Set up the long-horizon benchmark datasets used across this field.",""],
+["Foundation models","Benchmarks","GIFT-Eval: A Benchmark for General Time Series Forecasting","Aksu et al. (Salesforce)","2024","https://arxiv.org/abs/2410.10393","https://huggingface.co/spaces/Salesforce/GIFT-Eval","97 configurations from 23 datasets, with leakage flags.","s"],
+["Foundation models","Benchmarks","fev-bench","Shchur et al. (AutoGluon)","2025","https://arxiv.org/abs/2509.26468","https://huggingface.co/spaces/autogluon/fev-bench","100 tasks, many with covariates. Bootstrap confidence intervals.","s"],
+["Foundation models","Benchmarks","GIFT-Eval-CTX: contextual forecasting","Liu et al.","2026","https://arxiv.org/abs/2610.17794","","",""],
+["Foundation models","Benchmarks","TIME: leak-free zero-shot evaluation","Qiao et al.","2026 · ICML","https://arxiv.org/abs/2602.12147","","50 newly collected datasets.",""],
+["Foundation models","Benchmarks","TFB: Towards Comprehensive and Fair Benchmarking","Qiu et al.","2024 · PVLDB","https://arxiv.org/abs/2403.20150","https://github.com/decisionintelligence/TFB","",""],
+["Foundation models","Benchmarks","BasicTS","Shao et al.","2023 · TKDE","https://arxiv.org/abs/2310.06119","https://github.com/GestaltCogTeam/BasicTS","",""],
+["Foundation models","Benchmarks","ProbTS: Benchmarking Point and Distributional Forecasting","Zhang et al. (Microsoft)","2024 · NeurIPS D&B","https://arxiv.org/abs/2310.07446","https://github.com/microsoft/ProbTS","",""],
+["Foundation models","Benchmarks","Monash Time Series Forecasting Archive","Godahewa et al.","2021 · NeurIPS D&B","https://arxiv.org/abs/2105.06643","https://forecastingdata.org","",""],
+["Foundation models","Benchmarks","Deep Time Series Models: A Comprehensive Survey and Benchmark (TSLib)","Wang et al. (Tsinghua)","2024","https://arxiv.org/abs/2407.13278","https://github.com/thuml/Time-Series-Library","",""],
+["Foundation models","Benchmarks","Beyond Static Leaderboards","Zhang et al.","2026","https://arxiv.org/abs/2610.26251","","Capability-focused evaluation with synthetic structure.",""],
+["Foundation models","Surveys and analyses","Foundation Models for Time Series Analysis: A Tutorial and Survey","Liang et al.","2024 · KDD","https://arxiv.org/abs/2403.14735","","","s"],
+["Foundation models","Surveys and analyses","Large Models for Time Series and Spatio-Temporal Data: A Survey","Jin et al.","2023","https://arxiv.org/abs/2310.10196","","",""],
+["Foundation models","Surveys and analyses","Large Language Models for Time Series: A Survey","Zhang et al.","2024","https://arxiv.org/abs/2402.01801","","",""],
+["Foundation models","Surveys and analyses","Position: What Can LLMs Tell Us about Time Series Analysis","Jin et al.","2024 · ICML","https://arxiv.org/abs/2402.02713","","",""],
+["Foundation models","Surveys and analyses","Foundation Models for Time Series: A Survey","Kottapalli et al.","2025","https://arxiv.org/abs/2504.04011","","",""],
+["Foundation models","Surveys and analyses","Post-Training in Time Series Foundation Models: A Unifying Framework","Xie et al.","2026","https://arxiv.org/abs/2607.20002","","",""],
+["Foundation models","Surveys and analyses","Zero-shot forecasting of chaotic systems","Zhang & Gilpin","2024","https://arxiv.org/abs/2409.15771","","Do foundation models learn dynamics or match patterns?",""],
+["Foundation models","Surveys and analyses","Transformers for dynamical systems learn transfer operators in-context","Bao et al.","2026","https://arxiv.org/abs/2602.18679","","",""],
+["Foundation models","Surveys and analyses","A Mechanistic Analysis of Transformers for Dynamical Systems","Duthé et al.","2025","https://arxiv.org/abs/2512.21113","","",""],
+["Foundation models","Surveys and analyses","(Un)known Information Leakage in Time Series Benchmarks","Meyer et al.","2025","https://arxiv.org/abs/2510.13654","","","c"],
+["Foundation models","Surveys and analyses","Are Time Series Foundation Models Well-Calibrated?","Adler et al.","2025","https://arxiv.org/abs/2510.16060","","","c"],
+["Foundation models","Surveys and analyses","Zero-Shot Blind Spots in Time Series Foundation Models","Ghoroghchian et al.","2026","https://arxiv.org/abs/2610.02058","","Models fail basic temporal logic with covariates.","c"],
+["Foundation models","Surveys and analyses","Implicit Biases of Design Choices for Time Series Foundation Models","Yu et al.","2025","https://arxiv.org/abs/2510.19236","","",""],
+
+// ---------- Weather & Earth
+["Weather and Earth","Deterministic","FourCastNet: Adaptive Fourier Neural Operators","Pathak et al. (NVIDIA)","2022","https://arxiv.org/abs/2202.11214","https://github.com/NVIDIA/physicsnemo","",""],
+["Weather and Earth","Deterministic","Spherical Fourier Neural Operators (FourCastNet v2)","Bonev et al. (NVIDIA)","2023 · ICML","https://arxiv.org/abs/2306.03838","https://github.com/NVIDIA/makani","Geometry-aware operators make year-long rollouts stable.",""],
+["Weather and Earth","Deterministic","Pangu-Weather: Accurate medium-range global weather forecasting","Bi et al. (Huawei)","2023 · Nature","https://arxiv.org/abs/2211.02556","https://github.com/198808xc/Pangu-Weather","Hierarchy of 1, 3, 6 and 24-hour models to cut accumulated error.",""],
+["Weather and Earth","Deterministic","GraphCast: Learning skillful medium-range global weather forecasting","Lam et al. (DeepMind)","2023 · Science","https://arxiv.org/abs/2212.12794","https://github.com/google-deepmind/graphcast","Encode, process, decode on a latent mesh. Multi-step rollout training.","s"],
+["Weather and Earth","Deterministic","FuXi: a cascade ML system for 15-day forecasts","Chen et al. (Fudan)","2023","https://arxiv.org/abs/2306.12873","https://github.com/tpys/FuXi","",""],
+["Weather and Earth","Deterministic","FengWu: beyond 10 days lead","Chen et al. (Shanghai AI Lab)","2023","https://arxiv.org/abs/2304.02948","https://github.com/OpenEarthLab/FengWu","Replay buffer trains on the model's own past predictions.",""],
+["Weather and Earth","Deterministic","Stormer: Scaling transformers for medium-range weather","Nguyen et al.","2024 · NeurIPS","https://arxiv.org/abs/2312.03876","https://github.com/tung-nd/stormer","",""],
+["Weather and Earth","Deterministic","ArchesWeather and ArchesWeatherGen","Couairon et al. (Inria)","2024","https://arxiv.org/abs/2412.12971","https://github.com/INRIA/geoarches","Deterministic mean plus a generative residual.",""],
+["Weather and Earth","Deterministic","AIFS: ECMWF's data-driven forecasting system","Lang et al. (ECMWF)","2024","https://arxiv.org/abs/2406.01465","https://github.com/ecmwf/anemoi-core","",""],
+["Weather and Earth","Deterministic","An update to AIFS (AIFS Single v1)","ECMWF","2025","https://arxiv.org/abs/2509.18994","https://huggingface.co/ecmwf/aifs-single-1.0","",""],
+["Weather and Earth","Deterministic","Otter Weather","Univ. of Cambridge","2026","https://arxiv.org/abs/2606.26421","","",""],
+["Weather and Earth","Probabilistic ensembles","GenCast: Probabilistic weather forecasting with machine learning","Price et al. (DeepMind)","2024 · Nature","https://arxiv.org/abs/2312.15796","https://github.com/google-deepmind/graphcast","Diffusion ensemble beat ECMWF ENS on 97% of targets.","s"],
+["Weather and Earth","Probabilistic ensembles","Skillful joint probabilistic weather forecasting from marginals (WeatherNext 2)","Alet et al. (DeepMind)","2025","https://arxiv.org/abs/2506.10772","https://github.com/google-deepmind/weathernext","Trained on per-variable CRPS only. Joint structure emerges. About 8x faster than diffusion.",""],
+["Weather and Earth","Probabilistic ensembles","AIFS-CRPS: Ensemble forecasting with a CRPS loss","Lang et al. (ECMWF)","2024","https://arxiv.org/abs/2412.15832","","Operational since 1 July 2025. The best template for probabilistic time-series world models.","s"],
+["Weather and Earth","Probabilistic ensembles","FourCastNet 3","Bonev et al. (NVIDIA)","2025","https://arxiv.org/abs/2507.12144","https://github.com/NVIDIA/makani","",""],
+["Weather and Earth","Probabilistic ensembles","U-Cast","UC San Diego","2026","https://arxiv.org/abs/2604.09041","","A simple U-Net baseline at frontier skill.",""],
+["Weather and Earth","Probabilistic ensembles","Stochastically Perturbed Weights","MeteoSwiss, ETH, Cambridge","2026","https://arxiv.org/abs/2609.08412","","Ensembles from any deterministic model by perturbing weights.",""],
+["Weather and Earth","Probabilistic ensembles","Proper Scoring Rule-based Diffusion for Probabilistic Weather Forecasting","KAIST","2026","https://arxiv.org/abs/2609.38632","","",""],
+["Weather and Earth","Probabilistic ensembles","SDECast: Probabilistic Weather Forecasting in Continuous Time with Neural SDEs","Marchenko et al.","2026","https://arxiv.org/abs/2610.03313","","",""],
+["Weather and Earth","Hybrid physics and ML","Neural General Circulation Models (NeuralGCM)","Kochkov et al. (Google)","2024 · Nature","https://arxiv.org/abs/2311.07222","https://github.com/google-research/neuralgcm","Differentiable physics core plus learned physics. Stable for decades.","s"],
+["Weather and Earth","Hybrid physics and ML","CorrDiff: Residual Corrective Diffusion for Km-scale Downscaling","Mardani et al. (NVIDIA)","2023","https://arxiv.org/abs/2309.15214","https://github.com/NVIDIA/physicsnemo","",""],
+["Weather and Earth","Observations to forecast","Aardvark Weather: End-to-end data-driven weather prediction","Allen et al. (Cambridge, Turing)","2025 · Nature","https://arxiv.org/abs/2404.00411","https://github.com/annavaughan/aardvark-weather-public","Encoder fuses raw irregular observations into a latent state. The perception layer of a world model.","s"],
+["Weather and Earth","Observations to forecast","GraphDOP: forecasts learnt directly from observations","Alexe et al. (ECMWF)","2024","https://arxiv.org/abs/2412.15687","","",""],
+["Weather and Earth","Observations to forecast","Learning Coupled Earth System Dynamics with GraphDOP","ECMWF","2025","https://arxiv.org/abs/2510.20416","","",""],
+["Weather and Earth","Observations to forecast","AIFS-DOP: End-to-End Medium-Range Weather Prediction from Observations Alone","ECMWF","2026","https://arxiv.org/abs/2606.19093","","",""],
+["Weather and Earth","Observations to forecast","Earth-o1: A Grid-free Observation-native Atmospheric World Model","Shanghai AI Lab","2026","https://arxiv.org/abs/2605.06337","","Explicitly called a world model.",""],
+["Weather and Earth","Observations to forecast","Uncertainty-Aware End-to-End AI Weather Forecasting","Fraunhofer HHI","2026","https://arxiv.org/abs/2608.30795","","",""],
+["Weather and Earth","Earth foundation models","Aurora: A foundation model for the Earth system","Bodnar et al. (Microsoft)","2025 · Nature","https://arxiv.org/abs/2405.13063","https://github.com/microsoft/aurora","Perceiver encoder maps heterogeneous variables to one latent. Fine-tuned for air quality, waves and cyclones.","s"],
+["Weather and Earth","Earth foundation models","ClimaX: A foundation model for weather and climate","Nguyen et al. (Microsoft)","2023 · ICML","https://arxiv.org/abs/2301.10343","https://github.com/microsoft/ClimaX","",""],
+["Weather and Earth","Earth foundation models","Prithvi WxC","Schmude et al. (IBM, NASA)","2024","https://arxiv.org/abs/2409.13598","https://github.com/NASA-IMPACT/Prithvi-WxC","",""],
+["Weather and Earth","Earth foundation models","Climate in a Bottle (cBottle)","Brenowitz et al. (NVIDIA)","2025","https://arxiv.org/abs/2505.06474","https://github.com/NVlabs/cBottle","",""],
+["Weather and Earth","Climate and ocean emulators","ACE: A fast, skillful learned global atmospheric model","Watt-Meyer et al. (AI2)","2023","https://arxiv.org/abs/2310.02074","https://github.com/ai2cm/ace","",""],
+["Weather and Earth","Climate and ocean emulators","ACE2","Watt-Meyer et al. (AI2)","2024","https://arxiv.org/abs/2411.11268","","Forcing-conditioned, so it answers what-if questions.",""],
+["Weather and Earth","Climate and ocean emulators","Samudra: An AI Global Ocean Emulator","Dheeshjith et al.","2024","https://arxiv.org/abs/2412.03795","https://github.com/m2lines/Samudra","",""],
+["Weather and Earth","Climate and ocean emulators","XiHe: Global Ocean Eddy-Resolving Forecasting","Wang et al.","2024","https://arxiv.org/abs/2402.02995","","",""],
+["Weather and Earth","Climate and ocean emulators","GLONET: Mercator's neural global ocean forecasting","Mercator Ocean","2024","https://arxiv.org/abs/2412.05454","","",""],
+["Weather and Earth","Climate and ocean emulators","DLESyM-Ocean","UW, NVIDIA","2026","https://arxiv.org/abs/2608.11545","","",""],
+["Weather and Earth","Climate and ocean emulators","AI pathways from weather to climate","Multi-institution","2026","https://arxiv.org/abs/2610.09770","","",""],
+["Weather and Earth","Benchmarks and surveys","WeatherBench 2","Rasp et al. (Google)","2024 · JAMES","https://arxiv.org/abs/2308.15560","https://github.com/google-research/weatherbench2","The shared benchmark that sped up the whole field.","s"],
+["Weather and Earth","Benchmarks and surveys","AIMIP Phase 1","","2026","https://arxiv.org/abs/2605.06944","","",""],
+["Weather and Earth","Benchmarks and surveys","Extreme Weather Bench","Brightband, NOAA, ECMWF","2026","https://arxiv.org/abs/2605.01126","","",""],
+["Weather and Earth","Benchmarks and surveys","Can AI Forecast the Extremes?","INRIA, AXA","2026","https://arxiv.org/abs/2610.22077","","",""],
+["Weather and Earth","Benchmarks and surveys","Deep Learning and Foundation Models for Weather Prediction: A Survey","Shi et al.","2025","https://arxiv.org/abs/2501.06907","","",""],
+["Weather and Earth","Benchmarks and surveys","AIFS: a new ECMWF forecasting system (Newsletter 178)","ECMWF","2024","https://www.ecmwf.int/en/newsletter/178/news/aifs-new-ecmwf-forecasting-system","","The article Google AI cited.",""],
+["Weather and Earth","Benchmarks and surveys","Data-driven ensemble forecasting with the AIFS (Newsletter 181)","ECMWF","2025","https://www.ecmwf.int/en/newsletter/181/earth-system-science/data-driven-ensemble-forecasting-aifs","","",""],
+["Weather and Earth","Benchmarks and surveys","GraphCast: AI model for faster and more accurate global weather forecasting","Google DeepMind","2023","https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/","","",""],
+["Weather and Earth","Benchmarks and surveys","GenCast predicts weather and the risks of extreme conditions","Google DeepMind","2024","https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/","","",""],
+
+// ---------- Finance & treasury
+["Finance and treasury","Market world models","Towards Financial World Modeling (Market-1T)","Merchant et al. (UChicago, Brown, JHU)","2026","https://arxiv.org/abs/2610.09048","","About 1 trillion observations of US equities at 1 Hz, and a comparison of 18 encoders for planning-quality state.","s"],
+["Finance and treasury","Market world models","MarS: A Financial Market Simulation Engine Powered by Generative Foundation Model","Li et al. (Microsoft)","2025 · ICLR","https://arxiv.org/abs/2409.07486","https://github.com/microsoft/MarS","Order-level generative market model that reacts to injected orders. An action-conditioned market world model.","s"],
+["Finance and treasury","Market world models","MarS blog","Microsoft Research","2024","https://www.microsoft.com/en-us/research/blog/mars-a-unified-financial-market-simulation-engine-in-the-era-of-generative-foundation-models/","","",""],
+["Finance and treasury","Market world models","M3: A State-Event Generative Foundation Model for Market Microstructure","Zhang et al.","2026","https://arxiv.org/abs/2608.19227","","",""],
+["Finance and treasury","Market world models","Understanding the Inner Workings of a State-Space Foundation Model for Limit Order Books","Mohl et al.","2026 · ICAIF","https://arxiv.org/abs/2610.28753","","",""],
+["Finance and treasury","Market world models","Kronos: A Foundation Model for the Language of Financial Markets","Shi et al.","2025","https://arxiv.org/abs/2508.02739","https://github.com/shiyu-coder/Kronos","Tokenised candlestick data from 45 exchanges.",""],
+["Finance and treasury","Market world models","TRADES: Generating Realistic Market Simulations with Diffusion Models","Berti et al.","2025 · ECAI","https://arxiv.org/abs/2502.07071","","",""],
+["Finance and treasury","Market world models","LOB-Bench: Benchmarking Generative AI for Finance","Nagy et al. (Oxford)","2025","https://arxiv.org/abs/2502.09172","","",""],
+["Finance and treasury","Market world models","Painting the market: diffusion models for LOB simulation","Backhouse et al. (Oxford)","2025","https://arxiv.org/abs/2509.05107","","",""],
+["Finance and treasury","Market world models","Financial Wind Tunnel: A Retrieval-Augmented Market Simulator","Cao et al.","2025","https://arxiv.org/abs/2503.17909","","",""],
+["Finance and treasury","Market world models","FinCast: A Foundation Model for Financial Time-Series Forecasting","","2025","https://arxiv.org/abs/2508.19609","","",""],
+["Finance and treasury","Market world models","Re(Visiting) Time Series Foundation Models in Finance","Rahimikia et al.","2025","https://arxiv.org/abs/2511.18578","","Off-the-shelf foundation models do poorly on finance; finance-pretrained ones do well.","c"],
+["Finance and treasury","Market world models","ABIDES-JPMC agent-based market simulator","J.P. Morgan AI Research","","https://github.com/jpmorganchase/abides-jpmc-public","","",""],
+["Finance and treasury","Market world models","Qlib","Microsoft","","https://github.com/microsoft/qlib","","",""],
+["Finance and treasury","Market world models","FinRL","AI4Finance Foundation","","https://github.com/AI4Finance-Foundation/FinRL","","",""],
+["Finance and treasury","Treasury and cash forecasting","AI-driven cash flow forecasting: the future of treasury","J.P. Morgan","","https://www.jpmorgan.com/insights/treasury/forecasting-planning/ai-driven-cash-flow-forecasting-the-future-of-treasury","","","s"],
+["Finance and treasury","Treasury and cash forecasting","Amtrak cash flow forecasting case study","J.P. Morgan","","https://www.jpmorgan.com/insights/payments/analytics-and-insights/amtrak-cash-flow-forecasting","","Vendor-reported results.",""],
+["Finance and treasury","Treasury and cash forecasting","Machine learning advances the cash forecast","CFO.com","2022","https://www.cfo.com/accounting-2/cash-flow-accounting-2/2022/10/machine-learning-cash-forecasting-ai-treasury-amtrak-evoqua-banking/","","Independent reporting with candid notes on outliers.",""],
+["Finance and treasury","Treasury and cash forecasting","Ways to improve forecasting in a period of heightened uncertainty","Standard Chartered","","https://www.sc.com/en/?p=143598","","",""],
+["Finance and treasury","Treasury and cash forecasting","Arcosa: Best Cash Flow Forecasting Solution","Treasury Today","2023","https://treasurytoday.com/?p=79195","","",""],
+["Finance and treasury","Treasury and cash forecasting","Augmenting cash flow forecasting with machine learning","ION Group","","https://iongroup.com/blog/treasury/augmenting-cash-flow-forecasting-with-machine-learning/","","Vendor content.",""],
+["Finance and treasury","Treasury and cash forecasting","Predictive analytics in cash flow forecasting","Nomentia","","https://www.nomentia.com/blog/predictive-analytics-in-cash-flow-forecasting","","Vendor content.",""],
+
+// ---------- Other domains
+["Other domains","Traffic, energy, health, environment","MobiWM: Beyond Static Forecasting, World Models for Mobile Traffic","Qi et al.","2026","https://arxiv.org/abs/2604.08199","","Cell traffic as state, antenna settings as actions. The clearest traffic world model.","s"],
+["Other domains","Traffic, energy, health, environment","Toward World Models for Epidemiology","Memon et al.","2026","https://arxiv.org/abs/2604.09519","","",""],
+["Other domains","Traffic, energy, health, environment","VegSim: A Geospatial World Model for Scenario-Conditioned Vegetation","Iele et al.","2026","https://arxiv.org/abs/2606.21961","https://github.com/arco-group/vegsim","",""],
+["Other domains","Traffic, energy, health, environment","Intervention Granularity Matters: Counterfactual Simulation with Clinical World Models","Wang et al.","2026","https://arxiv.org/abs/2609.21906","","",""],
+["Other domains","Traffic, energy, health, environment","Global prediction of extreme floods in ungauged watersheds","Nearing et al. (Google)","2024 · Nature","https://doi.org/10.1038/s41586-024-07145-1","https://github.com/google-research/flood-forecasting","",""],
+["Other domains","Traffic, energy, health, environment","OutageDiT: generative foundation model for power-outage scenarios","","2026","https://arxiv.org/abs/2609.01896","","",""],
+["Other domains","Traffic, energy, health, environment","Covariate-informed grid load forecasting with a foundation model","","2026","https://arxiv.org/abs/2609.06656","","",""],
+["Other domains","Traffic, energy, health, environment","Graph forecasting of rainfall disruption on road networks","","2026","https://arxiv.org/abs/2610.14622","","",""],
+
+// ---------- Blogs, talks & tools
+["Blogs, talks and tools","Explainers","World Models (interactive article)","Ha & Schmidhuber","2018","https://worldmodels.github.io/","","Read this first.","s"],
+["Blogs, talks and tools","Explainers","1990: Planning and RL with Recurrent World Models","Schmidhuber","","https://people.idsia.ch/~juergen/world-models-planning-curiosity-fki-1990.html","","Schmidhuber's history of the field. Priority claims are contested.",""],
+["Blogs, talks and tools","Explainers","Objective-Driven AI (talk)","LeCun","","https://www.youtube.com/watch?v=MiqLoAZFRSE","","",""],
+["Blogs, talks and tools","Explainers","V-JEPA: The next step toward LeCun's vision","Meta AI","2024","https://ai.meta.com/blog/v-jepa-yann-lecun-ai-model-video-joint-embedding-predictive-architecture/","","",""],
+["Blogs, talks and tools","Explainers","V-JEPA 2 world model and benchmarks","Meta AI","2025","https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/","","",""],
+["Blogs, talks and tools","Explainers","NVIDIA Cosmos world foundation models","NVIDIA","2025","https://blogs.nvidia.com/blog/cosmos-world-foundation-models/","","",""],
+["Blogs, talks and tools","Explainers","DreamerV3 project page","Hafner","","https://danijar.com/project/dreamerv3/","","",""],
+["Blogs, talks and tools","Explainers","Diffusion Models for Video Generation","Lilian Weng","2024","https://lilianweng.github.io/posts/2024-04-12-diffusion-video/","","",""],
+["Blogs, talks and tools","Explainers","A decoder-only foundation model for time-series forecasting","Google Research","2024","https://research.google/blog/a-decoder-only-foundation-model-for-time-series-forecasting/","","",""],
+["Blogs, talks and tools","Explainers","Time series foundation models can be few-shot learners","Google Research","","https://research.google/blog/time-series-foundation-models-can-be-few-shot-learners/","","",""],
+["Blogs, talks and tools","Explainers","Adapting language model architectures for time series forecasting (Chronos)","Amazon Science","2024","https://www.amazon.science/blog/adapting-language-model-architectures-for-time-series-forecasting","","",""],
+["Blogs, talks and tools","Explainers","Introducing Chronos-2","Amazon Science","2025","https://www.amazon.science/blog/introducing-chronos-2-from-univariate-to-universal-forecasting","","",""],
+["Blogs, talks and tools","Explainers","Moirai: a time series foundation model","Salesforce AI Research","2024","https://www.salesforce.com/blog/moirai/","","",""],
+["Blogs, talks and tools","Explainers","Toto: Time Series Optimized Transformer for Observability","Datadog","2024","https://www.datadoghq.com/blog/datadog-time-series-foundation-model/","","",""],
+["Blogs, talks and tools","Explainers","TiRex: xLSTM-based time series model","NX-AI","2025","https://huggingface.co/blog/BobWue/tirex","","",""],
+["Blogs, talks and tools","Explainers","Timestral announcement","Mistral","2026","https://mistral.ai/news/timestral","","",""],
+["Blogs, talks and tools","Explainers","Nixtla blog","Nixtla","","https://nixtla.io/blog","","",""],
+["Blogs, talks and tools","Explainers","AI Horizon Forecast newsletter","Nikos Kafritsas","","https://aihorizonforecast.substack.com/","","Ongoing in-depth coverage of every new foundation forecaster.",""],
+["Blogs, talks and tools","Explainers","Evaluating time series foundation model claims","Rob Hyndman","","https://robjhyndman.com/hyndsight/foundation_models.html","","A sceptic's checklist.","sc"],
+["Blogs, talks and tools","Explainers","Forecasting: Principles and Practice, 3rd edition","Hyndman & Athanasopoulos","","https://otexts.com/fpp3/","","Free textbook. The baseline every new model should beat.","s"],
+["Blogs, talks and tools","Explainers","LLMs and Foundational Models: Not (Yet) as Good as Hoped","Christoph Bergmeir","2024 · Foresight","https://econpapers.repec.org/RePEc:for:ijafaa:y:2024:i:73:p:33-38","","The strongest independent critique of how the field evaluates itself.","c"],
+["Blogs, talks and tools","Workshops and courses","Time Series in the Age of Large Models (NeurIPS 2024)","NeurIPS","2024","https://neurips.cc/virtual/2024/workshop/84712","","",""],
+["Blogs, talks and tools","Workshops and courses","TSALM workshop series","","2026","https://tsalm-workshop.github.io/","","",""],
+["Blogs, talks and tools","Workshops and courses","BERT²S: Have we reached the BERT moment for time series? (NeurIPS 2025)","","2025","https://berts-workshop.github.io/","","",""],
+["Blogs, talks and tools","Workshops and courses","Foundation Models for Structured Data (ICML 2025)","","2025","https://icml-structured-fm-workshop.github.io/","","",""],
+["Blogs, talks and tools","Workshops and courses","World Models: Understanding, Modelling and Scaling (ICLR 2026)","","2026","https://sites.google.com/view/iclr-2026-workshop-world-model","","",""],
+["Blogs, talks and tools","Workshops and courses","AutoGluon-TimeSeries tutorials","AutoGluon","","https://auto.gluon.ai/stable/tutorials/timeseries/index.html","","Ensemble Chronos with statistical models in a few lines.",""],
+["Blogs, talks and tools","Libraries","Nixtla statsforecast","Nixtla","","https://github.com/Nixtla/statsforecast","","Fast ARIMA, ETS and Theta baselines.",""],
+["Blogs, talks and tools","Libraries","Nixtla neuralforecast","Nixtla","","https://github.com/Nixtla/neuralforecast","","",""],
+["Blogs, talks and tools","Libraries","Darts","Unit8","","https://github.com/unit8co/darts","","",""],
+["Blogs, talks and tools","Libraries","GluonTS","AWS","","https://github.com/awslabs/gluonts","","",""],
+["Blogs, talks and tools","Libraries","sktime","","","https://github.com/sktime/sktime","","",""],
+["Blogs, talks and tools","Libraries","pytorch-forecasting","","","https://github.com/sktime/pytorch-forecasting","","",""],
+["Blogs, talks and tools","Libraries","fev (benchmark package)","AutoGluon","","https://github.com/autogluon/fev","","",""],
+["Blogs, talks and tools","Libraries","dreamerv3-torch","NM512","","https://github.com/NM512/dreamerv3-torch","","PyTorch DreamerV3 to adapt for sequential forecasting.",""],
+["Blogs, talks and tools","Reading lists","Awesome-World-Models (knightnemo)","","","https://github.com/knightnemo/Awesome-World-Models","","",""],
+["Blogs, talks and tools","Reading lists","Awesome-World-Models (leofan90)","","","https://github.com/leofan90/Awesome-World-Models","","",""],
+["Blogs, talks and tools","Reading lists","World-Model survey companion","Tsinghua FIB Lab","","https://github.com/tsinghua-fib-lab/World-Model","","",""],
+["Blogs, talks and tools","Reading lists","Awesome-TimeSeries-SpatioTemporal-LM-LLM","Qingsong Wen","","https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM","","",""],
+["Blogs, talks and tools","Reading lists","awesome-AI-for-time-series-papers","Qingsong Wen","","https://github.com/qingsongedu/awesome-AI-for-time-series-papers","","",""],
+["Blogs, talks and tools","Reading lists","awesome-time-series-forecasting","TongjiFinLab","","https://github.com/TongjiFinLab/awesome-time-series-forecasting","","",""],
+
+// ---------- Round 2: Messy real-world data
+["Messy real-world data","Seed paper","ChannelTokenFormer: Robust Real-World Multivariate Forecasting under Dependency, Asynchrony and Missingness","Jang et al. (Seoul National Univ.)","2026 · ICLR","https://arxiv.org/abs/2506.08660","https://github.com/jinkwan1115/ChannelTokenFormer","Per-channel patch lengths set from each channel's dominant period, learnable channel tokens with masked attention, and missing patches simply dropped. Best on 5 of 6 datasets, and its lead grows as more data goes missing.","s"],
+["Messy real-world data","Irregular and asynchronous sampling","Recurrent Neural Networks for Multivariate Time Series with Missing Values (GRU-D)","Che et al.","2018 · Sci. Reports","https://arxiv.org/abs/1606.01865","https://github.com/PeterChe1990/GRU-D","Decays inputs and hidden state by time since last observation. The canonical missing-aware RNN.","s"],
+["Messy real-world data","Irregular and asynchronous sampling","Set Functions for Time Series (SeFT)","Horn et al.","2020 · ICML","https://arxiv.org/abs/1909.12064","https://github.com/BorgwardtLab/Set_Functions_for_Time_Series","Treats observations as an unordered set of (time, channel, value) triplets. No alignment needed.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Multi-Time Attention Networks (mTAN)","Shukla & Marlin","2021 · ICLR","https://arxiv.org/abs/2101.10318","https://github.com/reml-lab/mTAN","Learned time embeddings map irregular observations to fixed reference points.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Graph-Guided Network for Irregularly Sampled Multivariate Time Series (Raindrop)","Zhang et al. (Harvard)","2022 · ICLR","https://arxiv.org/abs/2110.05357","https://github.com/mims-harvard/Raindrop","Message passing between sensors to model asynchronous channels.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Warpformer: Multi-scale Modeling for Irregular Clinical Time Series","Zhang et al.","2023 · KDD","https://arxiv.org/abs/2306.09368","https://github.com/imJiawen/Warpformer","",""],
+["Messy real-world data","Irregular and asynchronous sampling","ContiFormer: Continuous-Time Transformer for Irregular Time Series","Chen et al. (Microsoft)","2023 · NeurIPS","https://arxiv.org/abs/2402.10635","https://github.com/microsoft/SeqML","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Forecasting Irregularly Sampled Time Series using Graphs (GraFITi)","Yalavarthi et al.","2024 · AAAI","https://arxiv.org/abs/2305.12932","https://github.com/yalavarthivk/GraFITi","Forecasting as edge prediction on a sparse channel–timestamp graph. Strong and efficient.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Irregular Multivariate Time Series Forecasting: A Transformable Patching GNN (t-PatchGNN)","Zhang et al.","2024 · ICML","https://proceedings.mlr.press/v235/zhang24bw.html","https://github.com/usail-hkust/t-PatchGNN","Time-aligned patching and the standard 4-dataset irregular benchmark.","s"],
+["Messy real-world data","Irregular and asynchronous sampling","TimeCHEAT: A Channel Harmony Strategy for Irregularly Sampled Time Series","Liu et al.","2025 · AAAI","https://arxiv.org/abs/2412.12886","","Channel-dependent inside patches, channel-independent globally.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Hi-Patch: Hierarchical Patch GNN for Irregular Time Series","Luo et al.","2025 · ICML","https://proceedings.mlr.press/v267/luo25r.html","https://github.com/qianlima-lab/Hi-Patch","",""],
+["Messy real-world data","Irregular and asynchronous sampling","HyperIMTS: Hypergraph Neural Network for Irregular Time Series Forecasting","Li et al.","2025 · ICML","https://arxiv.org/abs/2505.17431","","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Irregular Time Series is Worth Time × Channel Patches (VIMTS)","Hu et al.","2025 · ICML","https://arxiv.org/abs/2505.22815","","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Rethinking Irregular Time Series Forecasting: A Simple yet Effective Baseline (APN)","Liu et al.","2025","https://arxiv.org/abs/2505.11250","https://github.com/decisionintelligence/APN","Adaptive patching plus a light backbone matches complex models. Questions how much progress the benchmarks show.","c"],
+["Messy real-world data","Irregular and asynchronous sampling","Mixing It Up: Mixer Networks for Irregular Time Series (IMTS-Mixer)","Klötergens et al.","2025","https://arxiv.org/abs/2502.11816","","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Model-Agnostic and Imputation-Free Approach for Irregular Time Series","Neog et al.","2025 · TMLR","https://arxiv.org/abs/2502.15785","","Lets regular-grid models use irregular data without imputing.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Learning Recursive Multi-Scale Representations for Irregular Forecasting","Li et al.","2026 · ICLR","https://arxiv.org/abs/2602.21498","","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Online Irregular Forecasting via Uncertainty-Driven Dual-Expert Calibration","Wen et al.","2026 · KDD","https://arxiv.org/abs/2605.28603","","Adapts online as missingness patterns change.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Domain Generalization under Sampling Pattern Shifts in Irregular Time Series","Kim et al.","2026","https://arxiv.org/abs/2609.33279","","Changes in sampling pattern between training and deployment break irregular-data models.","c"],
+["Messy real-world data","Irregular and asynchronous sampling","QiYao-I: A Manifold-Based Foundation Model for Irregular Time Series","Wang et al.","2026","https://arxiv.org/abs/2610.06936","","One of the first foundation models built for irregular series.",""],
+["Messy real-world data","Irregular and asynchronous sampling","Time-IMM: Dataset and Benchmark for Irregular Multimodal Time Series","Chang et al.","2025 · NeurIPS D&B","https://arxiv.org/abs/2506.10412","","Benchmark organised by the real-world causes of irregularity.",""],
+["Messy real-world data","Irregular and asynchronous sampling","BITS: Fair and Comprehensive Evaluation for Irregular Forecasting","Yan et al.","2026","https://arxiv.org/abs/2609.33303","","",""],
+["Messy real-world data","Irregular and asynchronous sampling","Beyond MSE: Evaluation Metric and Benchmarking for Irregular Forecasting","Li et al.","2026","https://arxiv.org/abs/2608.17293","","MSE over sparse targets misleads.","c"],
+["Messy real-world data","Mixed frequencies","Machine Learning Time Series Regressions with an Application to Nowcasting","Babii et al.","2022 · JBES","https://arxiv.org/abs/2005.14057","","Sparse-group LASSO MIDAS: the high-dimensional ML extension of mixed-frequency regression.","s"],
+["Messy real-world data","Mixed frequencies","Nowcasting with Mixed Frequency Data Using Gaussian Processes","Hauzenberger et al.","2024","https://arxiv.org/abs/2402.10574","","",""],
+["Messy real-world data","Mixed frequencies","Nowcasting Distributions: A Functional MIDAS Model","Marcellino et al.","2024","https://arxiv.org/abs/2411.05629","","",""],
+["Messy real-world data","Mixed frequencies","Comparative Analysis of MIDAS vs Lag-Llama for Inflation Nowcasting","Bahelka et al.","2024","https://arxiv.org/abs/2407.08510","","A foundation model head-to-head with MIDAS.",""],
+["Messy real-world data","Mixed frequencies","A Multi-modal Approach for Mixed-Frequency Time Series Forecasting","Werneck et al.","2024 · Neural Comp. & Appl.","https://doi.org/10.1007/s00521-024-10305-z","","Keeps high-frequency inputs at native rate. Beats MIDAS and N-HiTS on oil-industry data.",""],
+["Messy real-world data","Mixed frequencies","LightGTS: A Lightweight General Time Series Forecasting Model","Wang et al.","2025","https://arxiv.org/abs/2506.06005","","Period-based adaptive patching, a precedent for ChannelTokenFormer.",""],
+["Messy real-world data","Mixed frequencies","Macro-aware Forecasting via Hierarchical Mixed-Frequency Attention","Oliveira et al.","2026","https://arxiv.org/abs/2606.00624","","Fuses monthly macro data with daily financial series. Relevant to cash forecasts driven by rates and FX.",""],
+["Messy real-world data","Mixed frequencies","Mixed-Frequency Forecasting via Depth-Separable Neural Networks","Wang et al.","2026","https://arxiv.org/abs/2607.14771","","",""],
+["Messy real-world data","Mixed frequencies","Supervised Mixed-Frequency Learning for Macro-Financial Forecasting When Factors are Weak","Hounyo et al.","2026","https://arxiv.org/abs/2608.12589","","",""],
+["Messy real-world data","Missing values","BRITS: Bidirectional Recurrent Imputation for Time Series","Cao et al.","2018 · NeurIPS","https://arxiv.org/abs/1805.10572","https://github.com/caow13/BRITS","",""],
+["Messy real-world data","Missing values","Filling the Gaps: Multivariate Imputation by Graph Neural Networks (GRIN)","Cini et al.","2022 · ICLR","https://arxiv.org/abs/2108.00298","https://github.com/Graph-Machine-Learning-Group/grin","",""],
+["Messy real-world data","Missing values","SAITS: Self-Attention-based Imputation for Time Series","Du et al.","2023 · ESWA","https://arxiv.org/abs/2202.08516","https://github.com/WenjieDu/SAITS","",""],
+["Messy real-world data","Missing values","SERT: Transformer for Spatio-Temporal Sensor Data with Missing Values","Shoari Nejad et al.","2023","https://arxiv.org/abs/2306.03042","","",""],
+["Messy real-world data","Missing values","Biased Temporal Convolution Graph Network for Forecasting with Missing Values (BiTGraph)","Chen et al.","2024 · ICLR","https://iclr.cc/virtual/2024/poster/18754","https://github.com/chenxiaodanhit/BiTGraph","Feeds the missingness pattern into the model instead of imputing first.","s"],
+["Messy real-world data","Missing values","GinAR: End-to-End Forecasting for Variable Missing","Yu et al.","2024 · KDD","https://arxiv.org/abs/2405.11333","https://github.com/GestaltCogTeam/GinAR","Whole variables missing: the extreme case.",""],
+["Messy real-world data","Missing values","S4M: S4 for Multivariate Forecasting with Missing Values","Peng et al.","2025 · ICLR","https://arxiv.org/abs/2503.00900","https://github.com/WINTERWEEL/S4M","State-space model for block-missing data.",""],
+["Messy real-world data","Missing values","Merlin: Multi-View Representation Learning for Unfixed Missing Rates","Yu et al.","2025 · KDD","https://arxiv.org/abs/2506.12459","","",""],
+["Messy real-world data","Missing values","CoIFNet: Unified Framework for Forecasting with Missing Values","Tang et al.","2025","https://arxiv.org/abs/2506.13064","","",""],
+["Messy real-world data","Missing values","Revisiting Multivariate Forecasting with Missing Values","Yang et al.","2025","https://arxiv.org/abs/2509.23494","","Critiques impute-then-forecast pipelines.","c"],
+["Messy real-world data","Missing values","LIFTS: Latent-driven Imputation and Forecasting for Partially Observed Time Series","Wu et al.","2026","https://arxiv.org/abs/2610.03916","","",""],
+["Messy real-world data","Missing values","Deep Learning for Multivariate Time Series Imputation: A Survey","Wang et al.","2025 · IJCAI","https://arxiv.org/abs/2402.04059","","","s"],
+["Messy real-world data","Missing values","TSI-Bench: Benchmarking Time Series Imputation","Du et al.","2024","https://arxiv.org/abs/2406.12747","https://github.com/WenjieDu/AwesomeImputation","",""],
+["Messy real-world data","Missing values","PyPOTS: Toolkit for Machine Learning on Partially-Observed Time Series","Du","2023","https://arxiv.org/abs/2305.18811","https://github.com/WenjieDu/PyPOTS","The main library for missing-value models.",""],
+["Messy real-world data","Channel independence vs dependence","Crossformer: Cross-Dimension Dependency for Multivariate Forecasting","Zhang & Yan","2023 · ICLR","https://openreview.net/forum?id=vSVLM2j9eie","https://github.com/Thinklab-SJTU/Crossformer","","m"],
+["Messy real-world data","Channel independence vs dependence","TSMixer: An All-MLP Architecture for Time Series Forecasting","Chen et al. (Google)","2023 · TMLR","https://arxiv.org/abs/2303.06053","","",""],
+["Messy real-world data","Channel independence vs dependence","The Capacity and Robustness Trade-off: Revisiting the Channel Independent Strategy","Han et al.","2024 · TKDE","https://arxiv.org/abs/2304.05206","","Channel independence wins through robustness to distribution shift, not capacity.","s"],
+["Messy real-world data","Channel independence vs dependence","CARD: Channel Aligned Robust Blend Transformer","Xue et al.","2024 · ICLR","https://arxiv.org/abs/2305.12095","https://github.com/wxie9/CARD","",""],
+["Messy real-world data","Channel independence vs dependence","Rethinking Channel Dependence: Learning from Leading Indicators (LIFT)","Zhao et al.","2024 · ICLR","https://arxiv.org/abs/2401.17548","","Lead–lag dependence between channels.",""],
+["Messy real-world data","Channel independence vs dependence","SAMformer: Sharpness-Aware Minimization and Channel-Wise Attention","Ilbert et al.","2024 · ICML oral","https://arxiv.org/abs/2402.10198","https://github.com/romilbert/samformer","",""],
+["Messy real-world data","Channel independence vs dependence","TimeXer: Transformers with Exogenous Variables","Wang et al. (Tsinghua)","2024 · NeurIPS","https://arxiv.org/abs/2402.19072","https://github.com/thuml/TimeXer","Learnable global tokens: a close relative of channel tokens.",""],
+["Messy real-world data","Channel independence vs dependence","From Similarity to Superiority: Channel Clustering (CCM)","Chen et al.","2024 · NeurIPS","https://arxiv.org/abs/2404.01340","https://github.com/Graph-and-Geometric-Learning/TimeSeriesCCM","",""],
+["Messy real-world data","Channel independence vs dependence","DUET: Dual Clustering Enhanced Multivariate Forecasting","Qiu et al.","2025 · KDD","https://arxiv.org/abs/2412.10859","https://github.com/decisionintelligence/DUET","ChannelTokenFormer's strongest baseline.",""],
+["Messy real-world data","Channel independence vs dependence","TimeFilter: Patch-Specific Spatial-Temporal Graph Filtration","Hu et al.","2025 · ICML","https://arxiv.org/abs/2501.13041","","",""],
+["Messy real-world data","Channel independence vs dependence","A Comprehensive Survey of Deep Multivariate Forecasting: A Channel Strategy Perspective","Qiu et al.","2025","https://arxiv.org/abs/2502.10721","","The map of independent, dependent and hybrid strategies.","s"],
+["Messy real-world data","Channel independence vs dependence","CPiRi: Channel Permutation-Invariant Relational Interaction","Xu et al.","2026 · ICLR","https://arxiv.org/abs/2601.20318","","",""],
+["Messy real-world data","Channel independence vs dependence","MixBench-TS: A Benchmark Where Channel Mixing Pays Off","Abdelmalak et al.","2026","https://arxiv.org/abs/2609.32656","","Standard benchmarks hide when channel dependence helps.","c"],
+["Messy real-world data","Benchmarks vs practice","Cherry-Picking in Time Series Forecasting","Roque et al.","2025 · AAAI","https://arxiv.org/abs/2412.14435","","Dataset selection inflates reported wins.","c"],
+["Messy real-world data","Benchmarks vs practice","Position: Current Benchmarking Hinders Real Progress in Deep Forecasting","Moretti et al.","2026 · ICML","https://arxiv.org/abs/2512.22702","","","c"],
+["Messy real-world data","Benchmarks vs practice","Forecasting Benchmarks Need Scenario-Grounded Stress Testing","Zhao et al.","2026","https://arxiv.org/abs/2610.02608","","",""],
+["Messy real-world data","Benchmarks vs practice","Beyond Model Ranking: Regime Diagnosis in Industrial Forecasting","Nie et al. (JD)","2026","https://arxiv.org/abs/2609.40117","","The gap between training and deployment in industry.",""],
+["Messy real-world data","Benchmarks vs practice","IND-Eval: Industrial Time Series Foundation Model Evaluation","Haugland et al. (Cognite)","2026","https://arxiv.org/abs/2610.16652","","",""],
+
+// ---------- Round 2: Forecasting practice
+["Forecasting practice","Seed thread","Automated Time Series Processing and Forecasting (Nixtla launch thread)","Hacker News","2021","https://news.ycombinator.com/item?id=29453707","https://github.com/Nixtla/nixtla","Prophet as a weak benchmark, LightGBM winning M5, and where automated pipelines fit.",""],
+["Forecasting practice","Prophet and its critics","Forecasting at Scale (Prophet)","Taylor & Letham (Facebook)","2018 · The American Statistician","https://doi.org/10.1080/00031305.2017.1380080","https://github.com/facebook/prophet","Curve-fitting model of trend, seasonality and holidays, built for analysts.","s"],
+["Forecasting practice","Prophet and its critics","Benchmarking Facebook's Prophet","Nikolaos Kourentzes","2017","https://kourentzes.com/forecasting/2017/07/29/benchmarking-facebooks-prophet/","","Early independent test: generally behind ETS and ARIMA.","c"],
+["Forecasting practice","Prophet and its critics","Is Facebook's Prophet the Time-Series Messiah, or Just a Very Naughty Boy? (discussion)","Peter Cotton (Microprediction)","2021","https://news.ycombinator.com/item?id=27695574","","The most-cited critique. The original blog post now returns 404, so this links to the discussion.","c"],
+["Forecasting practice","Prophet and its critics","NeuralProphet: Explainable Forecasting at Scale","Triebe et al.","2021","https://arxiv.org/abs/2111.15397","","Prophet plus autoregression and lagged regressors in PyTorch.",""],
+["Forecasting practice","Prophet and its critics","AutoARIMA vs Prophet on M4 Daily","Nixtla","2022","https://github.com/Nixtla/statsforecast/tree/main/experiments/arima","","MASE 3.26 vs 14.26, runtime 1.4 s vs 514 s. Run by the vendor.",""],
+["Forecasting practice","Prophet and its critics","Exponential smoothing vs NeuralProphet","Nixtla","2022","https://github.com/Nixtla/statsforecast/blob/main/experiments/neuralprophet/README.md","","Run by the vendor.",""],
+["Forecasting practice","Competitions","The M3-Competition: results, conclusions and implications","Makridakis & Hibon","2000 · IJF","https://doi.org/10.1016/S0169-2070(00)00057-1","","Simple methods matched or beat complex ones on 3,003 series.",""],
+["Forecasting practice","Competitions","Statistical and Machine Learning forecasting methods: Concerns and ways forward","Makridakis, Spiliotis, Assimakopoulos","2018 · PLOS ONE","https://doi.org/10.1371/journal.pone.0194889","","ML methods lost to statistical ones on M3 monthly data.","c"],
+["Forecasting practice","Competitions","The M4 Competition: 100,000 time series and 61 forecasting methods","Makridakis et al.","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.04.014","https://github.com/Mcompetitions/M4-methods","","s"],
+["Forecasting practice","Competitions","A hybrid method of exponential smoothing and RNNs (ES-RNN, M4 winner)","Slawek Smyl (Uber)","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.03.017","","Per-series smoothing combined with a global RNN.",""],
+["Forecasting practice","Competitions","FFORMA: Feature-based forecast model averaging","Montero-Manso et al.","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.02.011","","",""],
+["Forecasting practice","Competitions","The M4 forecasting competition: A practitioner's view","Fry & Brundage (Google)","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.02.013","","M4 lacks the hierarchy, covariates and scale of real problems.","c"],
+["Forecasting practice","Competitions","M5 accuracy competition: Results, findings, and conclusions","Makridakis, Spiliotis, Assimakopoulos","2022 · IJF","https://doi.org/10.1016/j.ijforecast.2021.11.013","https://github.com/Mcompetitions/M5-methods","LightGBM global models dominated. The first M competition where ML won.","s"],
+["Forecasting practice","Competitions","The M5 uncertainty competition: Results, findings and conclusions","Makridakis et al.","2022 · IJF","https://doi.org/10.1016/j.ijforecast.2021.10.009","","",""],
+["Forecasting practice","Competitions","Commentary on the M5 forecasting competition","Stephan Kolassa","2022 · IJF","https://doi.org/10.1016/j.ijforecast.2021.08.006","","",""],
+["Forecasting practice","Competitions","The M6 forecasting competition: Bridging forecasting and investment decisions","Makridakis et al.","2023","https://arxiv.org/abs/2310.13357","https://github.com/Mcompetitions/M6-methods","Forecast accuracy barely correlated with investment returns.","c"],
+["Forecasting practice","Competitions","A brief history of forecasting competitions","Rob Hyndman","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.03.015","","",""],
+["Forecasting practice","Competitions","Forecasting: theory and practice","Petropoulos et al. (80+ authors)","2022 · IJF","https://arxiv.org/abs/2012.03854","","Encyclopedic review of methods and applications. The reference to keep open.","s"],
+["Forecasting practice","Trees and global models","Forecasting with trees","Januschowski et al. (Amazon)","2022 · IJF","https://doi.org/10.1016/j.ijforecast.2021.10.004","","Why gradient-boosted trees keep winning.","s"],
+["Forecasting practice","Trees and global models","Kaggle forecasting competitions: An overlooked learning opportunity","Bojer & Meldgaard","2021 · IJF","https://doi.org/10.1016/j.ijforecast.2020.07.007","","Reviews six Kaggle forecasting contests.",""],
+["Forecasting practice","Trees and global models","Principles and algorithms for forecasting groups of time series: Locality and globality","Montero-Manso & Hyndman","2021 · IJF","https://doi.org/10.1016/j.ijforecast.2021.03.004","","Theory for why one model across many series works.",""],
+["Forecasting practice","Trees and global models","M5 Accuracy: 1st place solution","YJ_STU (Kaggle)","2020","https://www.kaggle.com/competitions/m5-forecasting-accuracy/discussion/163684","","An ensemble of LightGBM models with Tweedie loss.",""],
+["Forecasting practice","Trees and global models","Favorita Grocery Sales: 1st place solution","Kaggle","2018","https://www.kaggle.com/competitions/favorita-grocery-sales-forecasting/discussion/47582","","",""],
+["Forecasting practice","Trees and global models","Web Traffic Forecasting: 1st place solution","Arthur Suilin","2017","https://www.kaggle.com/competitions/web-traffic-time-series-forecasting/discussion/43795","https://github.com/Arturus/kaggle-web-traffic","A rare deep-learning winner.",""],
+["Forecasting practice","Trees and global models","Rossmann Store Sales: 1st place model documentation","Kaggle","2015","https://www.kaggle.com/competitions/rossmann-store-sales/discussion/18024","","",""],
+["Forecasting practice","Trees and global models","Entity Embeddings of Categorical Variables","Guo & Berkhahn","2016","https://arxiv.org/abs/1604.06737","","",""],
+["Forecasting practice","Trees and global models","mlforecast","Nixtla","","https://github.com/Nixtla/mlforecast","","The M5 recipe as a library.",""],
+["Forecasting practice","Trees and global models","Probabilistic demand forecasting at scale","Böse et al. (Amazon)","2017 · PVLDB","https://doi.org/10.14778/3137765.3137775","","",""],
+["Forecasting practice","Trees and global models","A Multi-Horizon Quantile Recurrent Forecaster (MQ-RNN)","Wen et al. (Amazon)","2017","https://arxiv.org/abs/1711.11053","","",""],
+["Forecasting practice","Trees and global models","N-BEATS: Neural basis expansion analysis","Oreshkin et al.","2020 · ICLR","https://arxiv.org/abs/1905.10437","","Pure deep learning that beat the M4 winner after the fact.",""],
+["Forecasting practice","Evaluation","Another look at measures of forecast accuracy (MASE)","Hyndman & Koehler","2006 · IJF","https://doi.org/10.1016/j.ijforecast.2006.03.001","","Why MAPE misleads, and the scaled error that replaced it.","s"],
+["Forecasting practice","Evaluation","Out-of-sample tests of forecasting accuracy","Tashman","2000 · IJF","https://doi.org/10.1016/S0169-2070(00)00065-0","","The standard reference on rolling-origin evaluation.",""],
+["Forecasting practice","Evaluation","On the use of cross-validation for time series predictor evaluation","Bergmeir & Benítez","2012 · Inf. Sciences","https://doi.org/10.1016/j.ins.2011.12.028","","",""],
+["Forecasting practice","Evaluation","A note on the validity of cross-validation for autoregressive time series","Bergmeir, Hyndman, Koo","2018 · CSDA","https://doi.org/10.1016/j.csda.2017.11.003","","",""],
+["Forecasting practice","Evaluation","Forecast evaluation for data scientists: common pitfalls and best practices","Hewamalage, Ackermann, Bergmeir","2023 · DMKD","https://arxiv.org/abs/2203.10716","","Leakage, weak benchmarks and wrong metrics. Essential.","sc"],
+["Forecasting practice","Evaluation","Why the best point forecast depends on the error measure","Stephan Kolassa","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.02.017","","",""],
+["Forecasting practice","Evaluation","Forecast Value Added Analysis: Step-by-Step","Michael Gilliland (SAS)","","https://www.sas.com/en/whitepapers/forecast-value-added-analysis-106186.html","","Does each step of your process, including manual overrides, beat naive?",""],
+["Forecasting practice","Evaluation","Optimal Forecast Reconciliation for Hierarchical Time Series (MinT)","Wickramasuriya, Athanasopoulos, Hyndman","2019 · JASA","https://doi.org/10.1080/01621459.2018.1448825","https://github.com/Nixtla/hierarchicalforecast","Makes entity, region and group forecasts add up. Directly useful for treasury hierarchies.","s"],
+["Forecasting practice","Evaluation","Forecast reconciliation: A review","Athanasopoulos et al.","2024 · IJF","https://doi.org/10.1016/j.ijforecast.2023.10.010","","",""],
+["Forecasting practice","Evaluation","Forecasting and Stock Control for Intermittent Demands","Croston","1972 · ORQ","https://doi.org/10.2307/3007885","","",""],
+["Forecasting practice","Evaluation","The accuracy of intermittent demand estimates","Syntetos & Boylan","2005 · IJF","https://doi.org/10.1016/j.ijforecast.2004.10.001","","",""],
+["Forecasting practice","Evaluation","Conformal prediction interval for dynamic time-series (EnbPI)","Xu & Xie","2021 · ICML","https://arxiv.org/abs/2010.09107","","",""],
+["Forecasting practice","Evaluation","Adaptive Conformal Inference Under Distribution Shift","Gibbs & Candès","2021 · NeurIPS","https://arxiv.org/abs/2106.00170","","Keeps interval coverage under shift.",""],
+["Forecasting practice","Industry essays and tools","Forecasting at Uber: An Introduction","Uber Engineering","2018","https://www.uber.com/blog/forecasting-introduction/","","",""],
+["Forecasting practice","Industry essays and tools","Orbit: Probabilistic Forecast with Exponential Smoothing","Ng et al. (Uber)","2020","https://arxiv.org/abs/2004.08492","https://github.com/uber/orbit","",""],
+["Forecasting practice","Industry essays and tools","Greykite: Deploying Flexible Forecasting at Scale at LinkedIn","Hosseini et al.","2022 · KDD","https://arxiv.org/abs/2207.07788","","",""],
+["Forecasting practice","Industry essays and tools","Kats: one-stop shop for time series analysis","Meta Engineering","2021","https://engineering.fb.com/2021/06/21/open-source/kats/","https://github.com/facebookresearch/Kats","",""],
+["Forecasting practice","Industry essays and tools","The history of Amazon's forecasting algorithm","Amazon Science","2021","https://www.amazon.science/latest-news/the-history-of-amazons-forecasting-algorithm","","",""],
+["Forecasting practice","Industry essays and tools","Criteria for classifying forecasting methods","Januschowski et al.","2020 · IJF","https://doi.org/10.1016/j.ijforecast.2019.05.008","","The statistical-versus-ML split is a false dichotomy.",""],
+["Forecasting practice","Industry essays and tools","Forecasting: Principles and Practice, the Pythonic Way","OTexts","","https://otexts.com/fpppy/","","FPP using the Nixtla stack.",""],
+["Forecasting practice","Industry essays and tools","Cross-validation for time series","Rob Hyndman","","https://robjhyndman.com/hyndsight/tscv/","","",""],
+["Forecasting practice","Industry essays and tools","Open Forecasting blog","Ivan Svetunkov","","https://openforecast.org/","","",""],
+["Forecasting practice","Hacker News threads","Timestral: Mistral's time-series foundation models (623 pts)","Hacker News","2026","https://news.ycombinator.com/item?id=50150434","","",""],
+["Forecasting practice","Hacker News threads","TimeGPT-1 (411 pts)","Hacker News","2023","https://news.ycombinator.com/item?id=37874891","","Scepticism about vendor-chosen benchmarks.",""],
+["Forecasting practice","Hacker News threads","Prophet: forecasting at scale (520 pts)","Hacker News","2017","https://news.ycombinator.com/item?id=13742102","","",""],
+["Forecasting practice","Hacker News threads","TimesFM (317 pts)","Hacker News","2024","https://news.ycombinator.com/item?id=40297946","","",""],
+["Forecasting practice","Hacker News threads","Google's 200M-parameter foundation model with 16k context (327 pts)","Hacker News","2026","https://news.ycombinator.com/item?id=47583045","","",""],
+["Forecasting practice","Hacker News threads","Prophet: Automatic Forecasting Procedure (298 pts)","Hacker News","2023","https://news.ycombinator.com/item?id=37663820","","By 2023: use it as a baseline, not a solution.",""],
+["Forecasting practice","Hacker News threads","Ask HN: what libraries do you use for time series forecasting?","Hacker News","2022","https://news.ycombinator.com/item?id=33447976","","",""],
+["Forecasting practice","Hacker News threads","Statistical vs. Deep Learning forecasting methods (222 pts)","Hacker News","2022","https://news.ycombinator.com/item?id=33818531","","A statistical ensemble beat deep learning at a fraction of the cost.",""],
+["Forecasting practice","Hacker News threads","The unreasonable difficulty of time series forecasting","Hacker News","2026","https://news.ycombinator.com/item?id=48960582","","",""],
+["Forecasting practice","Hacker News threads","Chronos: Learning the Language of Time Series","Hacker News","2024","https://news.ycombinator.com/item?id=39787176","","",""],
+["Forecasting practice","Hacker News threads","Time Series Forecasting vs Regression: an informal guide","Hacker News","2024","https://news.ycombinator.com/item?id=39350866","","",""],
+["Forecasting practice","Hacker News threads","Zero-Shot Forecasting: Our Search for a Foundation Model","Hacker News","2025","https://news.ycombinator.com/item?id=44265833","","A field report from production.",""],
+
+// ---------- Round 2: Enterprise platforms
+["Enterprise platforms","Microsoft","Train and evaluate a time series forecasting model (Fabric)","Microsoft Learn","2026","https://learn.microsoft.com/en-us/fabric/data-science/time-series-forecasting","https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb","Your seed: Prophet with multiplicative seasonality and MCMC, rolling-origin evaluation, MLflow, PREDICT batch scoring.","s"],
+["Enterprise platforms","Microsoft","Machine learning model scoring with PREDICT","Microsoft Learn","","https://learn.microsoft.com/en-us/fabric/data-science/model-scoring-predict","","",""],
+["Enterprise platforms","Microsoft","AutoML in Fabric","Microsoft Learn","","https://learn.microsoft.com/en-us/fabric/data-science/how-to-use-automated-machine-learning-fabric","","",""],
+["Enterprise platforms","Microsoft","Set up AutoML to train a time-series forecasting model","Microsoft Learn (Azure ML)","","https://learn.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast","","Includes many-models and hierarchical components.","s"],
+["Enterprise platforms","Microsoft","Overview of forecasting methods in AutoML","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/concept-automl-forecasting-methods","","",""],
+["Enterprise platforms","Microsoft","Forecasting at scale: many models and distributed training","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/concept-automl-forecasting-at-scale","","One model per entity, account or currency.",""],
+["Enterprise platforms","Microsoft","Inference and evaluation of forecasting models","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/concept-automl-forecasting-evaluation","","",""],
+["Enterprise platforms","Microsoft","Lagged features for time series forecasting in AutoML","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/concept-automl-forecasting-lags","","",""],
+["Enterprise platforms","Microsoft","Deep learning with AutoML forecasting (TCNForecaster)","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/concept-automl-forecasting-deep-learning","","",""],
+["Enterprise platforms","Microsoft","Many Models Solution Accelerator","Microsoft","","https://github.com/microsoft/solution-accelerator-many-models","","",""],
+["Enterprise platforms","Microsoft","How to deploy and use TimeGEN-1 in Azure AI Foundry","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/deploy-models-timegen-1","","",""],
+["Enterprise platforms","Microsoft","series_decompose_forecast() in KQL","Microsoft Learn","","https://learn.microsoft.com/en-us/kusto/query/series-decompose-forecast-function","","Lightweight forecasting inside Fabric Real-Time Intelligence.",""],
+["Enterprise platforms","Microsoft","Model monitoring in Azure ML","Microsoft Learn","","https://learn.microsoft.com/en-us/azure/machine-learning/how-to-monitor-model-performance","","",""],
+["Enterprise platforms","Google","CREATE MODEL for ARIMA_PLUS (BigQuery ML)","Google Cloud","","https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-time-series","","",""],
+["Enterprise platforms","Google","CREATE MODEL for ARIMA_PLUS_XREG","Google Cloud","","https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-multivariate-time-series","","Adds external regressors such as rates or sales drivers.",""],
+["Enterprise platforms","Google","AI.FORECAST function (TimesFM in SQL)","Google Cloud","","https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-ai-forecast","","Zero-shot TimesFM inside the warehouse, with no training.","s"],
+["Enterprise platforms","Google","Forecasting overview (BigQuery)","Google Cloud","","https://cloud.google.com/bigquery/docs/forecasting-overview","","",""],
+["Enterprise platforms","Google","Vertex AI forecasting overview","Google Cloud","","https://cloud.google.com/vertex-ai/docs/tabular-data/forecasting/overview","","",""],
+["Enterprise platforms","AWS","What is Amazon Forecast (closed to new customers)","AWS","2024","https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html","","Closed to new customers since July 2024.","c"],
+["Enterprise platforms","AWS","Transition your Amazon Forecast usage to SageMaker Canvas","AWS ML Blog","2024","https://aws.amazon.com/blogs/machine-learning/transition-your-amazon-forecast-usage-to-amazon-sagemaker-canvas/","","",""],
+["Enterprise platforms","AWS","Time series forecasts in SageMaker Canvas","AWS","","https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-time-series.html","","",""],
+["Enterprise platforms","AWS","Fast and accurate zero-shot forecasting with Chronos-Bolt and AutoGluon","AWS ML Blog","2024","https://aws.amazon.com/blogs/machine-learning/fast-and-accurate-zero-shot-forecasting-with-chronos-bolt-and-autogluon/","","",""],
+["Enterprise platforms","AWS","AutoGluon-TimeSeries: AutoML for Probabilistic Forecasting","Shchur et al.","2023","https://arxiv.org/abs/2308.05566","","A strong open-source baseline ensemble.","s"],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","AutoML forecasting","Databricks","","https://docs.databricks.com/aws/en/machine-learning/automl/forecasting","","",""],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","Many Model Forecasting (MMF)","Databricks","","https://github.com/databricks-industry-solutions/many-model-forecasting","","Statistical, ML and foundation models (Chronos, TimesFM, Moirai) side by side.",""],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","Time series forecasting with Prophet and Spark","Databricks Blog","2020","https://www.databricks.com/blog/2020/01/27/time-series-forecasting-prophet-spark.html","","",""],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","Time-Series Forecasting (Cortex ML FORECAST)","Snowflake","","https://docs.snowflake.com/en/user-guide/ml-functions/forecasting","","",""],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","hana-ml AutoExponentialSmoothing (SAP HANA PAL)","SAP","2025","https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/2025_4_QRC/en-US/pal/algorithms/hana_ml.algorithms.pal.tsa.exponential_smoothing.AutoExponentialSmoothing.html","","Relevant where treasury data lives in S/4HANA.",""],
+["Enterprise platforms","Databricks, Snowflake, SAP, Oracle","Exponential smoothing in Oracle Machine Learning for SQL","Oracle","","https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/23/dmcon/exponential-smoothing.html","","",""],
+["Enterprise platforms","Production practice","Prophet diagnostics: cross-validation","Meta","","https://github.com/facebook/prophet/blob/main/docs/_docs/diagnostics.md","","The docs site now returns 404, so these link to the source pages.",""],
+["Enterprise platforms","Production practice","Prophet uncertainty intervals","Meta","","https://github.com/facebook/prophet/blob/main/docs/_docs/uncertainty_intervals.md","","Why the Fabric tutorial turns on MCMC.",""],
+["Enterprise platforms","Production practice","Prophet multiplicative seasonality","Meta","","https://github.com/facebook/prophet/blob/main/docs/_docs/multiplicative_seasonality.md","","",""],
+["Enterprise platforms","Production practice","Building an ML-based demand forecasting platform","Walmart Global Tech","2021","https://medium.com/walmartglobaltech/building-a-machine-learning-based-demand-forecasting-platform-d8c0841c1f07","","",""],
+["Enterprise platforms","Production practice","Leveraging elastic demand for forecasting","Instacart Tech","2018","https://tech.instacart.com/leveraging-elastic-demand-for-forecasting-6278b45f805f","","When your own actions shape demand: the world-model problem in production.",""],
+["Enterprise platforms","Production practice","Assessing the Operational Viability of Foundation Models for Forecasting","","2026","https://arxiv.org/abs/2605.24381","","",""],
+
+// ---------- Round 2: Treasury additions
+["Finance and treasury","Treasury and cash forecasting","Predicting Account Receivables with Machine Learning","Appel et al.","2020","https://arxiv.org/abs/2008.07363","","Invoice payment-date prediction with a multinational bank. The best academic input to receipt forecasts.","s"],
+["Finance and treasury","Treasury and cash forecasting","Optimize Cash Collection: Use ML to Predict Invoice Payment","","2019","https://arxiv.org/abs/1912.10828","","",""],
+["Finance and treasury","Treasury and cash forecasting","Financial Management System for SMEs: Real-World Deployment of AR and Cash Flow Prediction","Jagiellonian Univ.","2025","https://arxiv.org/abs/2511.03631","","A rare deployed receivables-to-cash pipeline.",""],
+["Finance and treasury","Treasury and cash forecasting","PRAGMA: Revolut Foundation Model","Revolut, NVIDIA","2026","https://arxiv.org/abs/2604.08649","","Foundation model on banking transaction data.",""],
+["Finance and treasury","Treasury and cash forecasting","Forecasting Company Fundamentals","TU Darmstadt et al.","2024","https://arxiv.org/abs/2411.05791","","",""],
+["Finance and treasury","Treasury and cash forecasting","An AI agent for intraday liquidity management (BIS WP 1310)","Aldasoro & Desai (BIS)","2025","https://www.bis.org/publ/work1310.htm","","",""],
+["Finance and treasury","Treasury and cash forecasting","ML anomaly detection in payment systems (BIS WP 1188)","BIS","2024","https://www.bis.org/publ/work1188.htm","","",""],
+["Finance and treasury","Treasury and cash forecasting","AFP Guide to Strategic Cash Forecasting","AFP (underwritten by Kyriba)","2022","https://www.financialprofessionals.org/docs/default-source/registered/afp-guide-to-strategic-cash-forecasting.pdf","","Practitioner method guide. May require registration.",""],
+["Finance and treasury","Treasury and cash forecasting","2024 Global Corporate Treasury Survey","Deloitte","2024","https://www2.deloitte.com/content/dam/Deloitte/us/Documents/Advisory/us-global-treasury-survey-2024.pdf","","Fewer than a quarter of treasuries rate their forecasting maturity above average. Fragmented data is the blocker.",""],
+["Finance and treasury","Treasury and cash forecasting","How finance teams are putting AI to work today","McKinsey","2025","https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-finance-teams-are-putting-ai-to-work-today","","",""],
+["Finance and treasury","Treasury and cash forecasting","How AI can add value for treasury","PwC","2024","https://www.pwc.com/us/en/technology/alliances/pwc-how-ai-can-add-value-for-treasury.pdf","","Partly a consulting pitch.",""],
+["Finance and treasury","Treasury and cash forecasting","Kyriba Cash Management AI","Kyriba","2024","https://kyriba.com/resource/kyriba-cash-management-ai","","Vendor content.",""],
+["Finance and treasury","Treasury and cash forecasting","HighRadius cash forecasting","HighRadius","","https://www.highradius.com/product/cash-forecasting-software/","","Vendor content. Accuracy claims unverified.",""],
+["Finance and treasury","Treasury and cash forecasting","GTreasury SmartPredictions launch","Finextra","2023","https://www.finextra.com/pressarticle/83862/gtreasury-unveils-ai-tool-to-improve-cash-forecasting","","Vendor press release.",""]
+];
+// Drop later duplicates (same URL) so each source appears once, under its first shelf.
+{ const seen = new Set(); for (let i = 0; i < D.length;) { if (seen.has(D[i][5])) D.splice(i, 1); else { seen.add(D[i][5]); i++; } } }
+// Group rows by first-seen shelf, then first-seen sub-shelf, keeping original order within each.
+{ const so = new Map(), bo = new Map(); D.forEach((d, i) => { if (!so.has(d[0])) so.set(d[0], so.size); const k = d[0] + "|" + d[1]; if (!bo.has(k)) bo.set(k, i); });
+  D.forEach((d, i) => d.push(i)); D.sort((a, b) => so.get(a[0]) - so.get(b[0]) || bo.get(a[0] + "|" + a[1]) - bo.get(b[0] + "|" + b[1]) || a[9] - b[9]); }
+
+const PATH = [
+ ["Foundations",[
+  ["World Models (interactive article)","https://worldmodels.github.io/","The encode, roll forward, decode idea in one afternoon."],
+  ["PlaNet, then DreamerV3","https://arxiv.org/abs/2301.04104","The RSSM latent state, and the tricks that make it work on messy data."],
+  ["LeCun, A Path Towards Autonomous Machine Intelligence","https://openreview.net/forum?id=BZ5a1r-kVsf","Why predict in latent space. Skim sections 1 to 4."],
+  ["V-JEPA 2","https://arxiv.org/abs/2506.09985","An action-conditioned JEPA used to plan."]]],
+ ["The time-series lineage",[
+  ["Deep State Space Models (Rangapuram et al.)","https://papers.nips.cc/paper/2018/hash/5cf68969fb67aa6082363a6d4e6468e2-Abstract.html","The classical bridge from Kalman filters to deep forecasting."],
+  ["Shaj thesis, then MTS3","https://arxiv.org/abs/2404.16078","Probabilistic multi-timescale world models for sensor time series."],
+  ["Chronos-2 and the GIFT-Eval paper","https://arxiv.org/abs/2510.15821","What today's foundation forecasters can and cannot do."]]],
+ ["The 2026 frontier",[
+  ["Pythia","https://arxiv.org/abs/2610.05240","The most complete foundation world model for time series so far."],
+  ["ActTime and WhatIf-Bench","https://arxiv.org/abs/2610.25764","Action-conditioned forecasting and how to test it."],
+  ["Forecasting Associations, Not Interventions","https://arxiv.org/abs/2610.31869","Why current foundation models are not world models yet."],
+  ["Does JEPA Pretraining Help Time Series Forecasting?","https://arxiv.org/abs/2609.31680","The sobering counterpoint."],
+  ["AIFS-CRPS and NeuralGCM","https://arxiv.org/abs/2412.15832","Lessons from the most mature working world models: weather."]]]
+];
+
+const LB = [
+ ["TimeRSI-1.5","agent system",51.8,""],["TimeH2O-v1","H2O.ai",50.8,""],["Timestral-209M","Mistral",50.4,"Open"],
+ ["t0-gamma","The Forecasting Co.",49.4,"Open"],["TimesFM-3","Google",49.0,"Non-commercial"],["Chronos-2","Amazon",47.3,"Apache-2.0"],
+ ["TimesFM-2.5","Google",46.7,"Open"],["TiRex-2","NX-AI",45.5,"Gated"],["Toto-2.0-2.5B","Datadog",44.4,"Open"],
+ ["Moirai-2.0","Salesforce",40.2,"Open"],["Sundial","Tsinghua",33.9,"Open"],["TFT (supervised)","baseline",32.2,""],["PatchTST (supervised)","baseline",30.1,""]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const arx = u => { const m = u.match(/arxiv\.org\/abs\/([\d.]+)/); return m ? "arXiv " + m[1] : (u.includes("github.com") ? "GitHub" : new URL(u).hostname.replace(/^www\./,"")); };
+
+// stats
+const shelves = [...new Set(D.map(d => d[0]))];
+const papers = D.filter(d => /arxiv|papers\.nips|proceedings|openreview|doi\.org/.test(d[5])).length;
+$("#stats").innerHTML = `<span><b>${D.length}</b> sources</span><span><b>${papers}</b> papers</span><span><b>${D.filter(d=>d[8].includes("s")).length}</b> marked start here</span><span><b>${shelves.length}</b> shelves</span>`;
+
+// path
+$("#path").innerHTML = PATH.map(([stage, items]) =>
+  `<div class="stage">${esc(stage)}</div>` + items.map(([t,u,w]) => `<li><span><a href="${u}">${esc(t)}</a><span class="why">${esc(w)}</span></span></li>`).join("")
+).join("");
+
+// leaderboard
+const max = 55;
+$("#lb").innerHTML = LB.map(([m,o,s,w]) => `<tr><td>${esc(m)}</td><td>${esc(o)}</td><td class="n">${s.toFixed(1)}<span class="bar" style="width:${Math.round(s/max*90)}px"></span></td><td>${esc(w)}</td></tr>`).join("");
+
+// library
+let active = "All", star = false, crit = false;
+try { const v = localStorage.getItem("wm-shelf"); if (v && (v === "All" || shelves.includes(v))) active = v; } catch(e) {}
+const sb = $("#shelves");
+function drawChips(){
+  sb.innerHTML = ["All", ...shelves].map(s => `<button class="chip" aria-pressed="${s===active}" data-s="${esc(s)}">${esc(s)}</button>`).join("");
+}
+sb.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; active = b.dataset.s; try{localStorage.setItem("wm-shelf",active)}catch(err){} drawChips(); render(); });
+$("#starOnly").addEventListener("click", e => { star = !star; e.currentTarget.setAttribute("aria-pressed", star); render(); });
+$("#critOnly").addEventListener("click", e => { crit = !crit; e.currentTarget.setAttribute("aria-pressed", crit); render(); });
+$("#q").addEventListener("input", render);
+
+function render(){
+  const q = $("#q").value.trim().toLowerCase();
+  const rows = D.filter(d => (active==="All" || d[0]===active) && (!star || d[8].includes("s")) && (!crit || d[8].includes("c"))
+    && (!q || (d.slice(1,8).join(" ") + " " + arx(d[5])).toLowerCase().includes(q)));
+  $("#count").textContent = `Showing ${rows.length} of ${D.length}`;
+  if (!rows.length) { $("#out").innerHTML = `<p class="empty">Nothing matches. Clear the search or pick another shelf.</p>`; return; }
+  let html = "", shelf = "", sub = "";
+  for (const d of rows) {
+    if (d[0] !== shelf) { if (shelf) html += "</div>"; shelf = d[0]; sub = ""; html += `<div class="shelf"><h2>${esc(shelf)}</h2>`; }
+    if (d[1] !== sub) { sub = d[1]; html += `<div class="subhead">${esc(sub)}</div>`; }
+    const tags = (d[8].includes("s")?'<span class="tag s">Start here</span>':"") + (d[8].includes("c")?'<span class="tag c">Critique</span>':"") + (d[8].includes("m")?'<span class="tag m">Unchecked link</span>':"");
+    const meta = [d[3], d[4]].filter(Boolean).map(esc).join(" · ");
+    const code = d[6] ? `<a class="code" href="${d[6]}">code ↗</a>` : "";
+    html += `<div class="item"><div class="t">${tags}<a href="${d[5]}">${esc(d[2])}</a></div><div class="id">${esc(arx(d[5]))}</div>
+      <div class="meta">${meta}${code}</div>${d[7] ? `<div class="n">${esc(d[7])}</div>` : ""}</div>`;
+  }
+  $("#out").innerHTML = html + "</div>";
+}
+drawChips(); render();
+</script>

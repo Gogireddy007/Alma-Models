@@ -1,0 +1,16 @@
+# finalists A=r3_phys_none_lr1e3_aux1 B=r2_phys_none_lr1e3 C=r3_phys_none_lr1e3_L28 (seed 0 = those rows)
+--name f_A_none_s1 --arch phys --lr 1e-3 --aux 1.0 --abl none --seed 1
+--name f_A_none_s2 --arch phys --lr 1e-3 --aux 1.0 --abl none --seed 2
+--name f_B_none_s1 --arch phys --lr 1e-3 --abl none --seed 1
+--name f_B_none_s2 --arch phys --lr 1e-3 --abl none --seed 2
+--name f_C_none_s1 --arch phys --lr 1e-3 --L 28 --abl none --seed 1
+--name f_C_none_s2 --arch phys --lr 1e-3 --L 28 --abl none --seed 2
+--name f_A_direct_s0 --arch phys --lr 1e-3 --aux 1.0 --abl direct --seed 0
+--name f_A_direct_s1 --arch phys --lr 1e-3 --aux 1.0 --abl direct --seed 1
+--name f_A_direct_s2 --arch phys --lr 1e-3 --aux 1.0 --abl direct --seed 2
+--name f_B_direct_s0 --arch phys --lr 1e-3 --abl direct --seed 0
+--name f_B_direct_s1 --arch phys --lr 1e-3 --abl direct --seed 1
+--name f_B_direct_s2 --arch phys --lr 1e-3 --abl direct --seed 2
+--name f_C_direct_s0 --arch phys --lr 1e-3 --L 28 --abl direct --seed 0
+--name f_C_direct_s1 --arch phys --lr 1e-3 --L 28 --abl direct --seed 1
+--name f_C_direct_s2 --arch phys --lr 1e-3 --L 28 --abl direct --seed 2

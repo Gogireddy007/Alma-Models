@@ -1,0 +1,31 @@
+ETHUSDT: 2494 days, rv NaN 0, outliers 2
+BTCUSDT: 2494 days, rv NaN 0, outliers 0
+BNBUSDT: 2454 days, rv NaN 1, outliers 0
+DOGEUSDT: 2303 days, rv NaN 1, outliers 4
+ZECUSDT: 2454 days, rv NaN 1, outliers 1
+SUIUSDT: 1276 days, rv NaN 1, outliers 3
+LINKUSDT: 2478 days, rv NaN 1, outliers 2
+ENAUSDT: 941 days, rv NaN 1, outliers 2
+ADAUSDT: 2464 days, rv NaN 1, outliers 1
+LTCUSDT: 2481 days, rv NaN 1, outliers 1
+WLDUSDT: 1194 days, rv NaN 1, outliers 3
+AAVEUSDT: 2205 days, rv NaN 1, outliers 4
+WIFUSDT: 1016 days, rv NaN 1, outliers 2
+NEARUSDT: 2201 days, rv NaN 1, outliers 3
+CAKEUSDT: 1093 days, rv NaN 1, outliers 1
+APTUSDT: 1472 days, rv NaN 1, outliers 1
+SOLUSDT: 2232 days, rv NaN 1, outliers 0
+XRPUSDT: 2484 days, rv NaN 1, outliers 2
+1000PEPEUSDT: 1274 days, rv NaN 1, outliers 3
+AVAXUSDT: 2228 days, rv NaN 1, outliers 3
+TAOUSDT: 932 days, rv NaN 1, outliers 2
+DOTUSDT: 2260 days, rv NaN 1, outliers 4
+BCHUSDT: 2494 days, rv NaN 0, outliers 2
+1000BONKUSDT: 1073 days, rv NaN 1, outliers 1
+{"crypto_hourly": 894635, "crypto_daily": 37285, "etf_daily": 34361} {"crypto_hourly": 209088, "crypto_daily": 8712, "etf_daily": 3250}
+5bdccc569c4638e995469423fc233285afc95f94cabe9345049354c8499ac084 data/fin/crypto_hourly.parquet
+1b5c9ee8cfe60bcc618d0a742027ff4318c6947b82e59895b9fb5af8af574904 data/fin/crypto_daily.parquet
+964a1f50f5f74aeb368b6e48368d51bdbcd0f1ede0f1b3e487a688f10775f1b0 data/fin/etf_daily.parquet
+b72f5d60d1abddff7c1c9819e973e464c346e6762160422000b0b3a5f154ac96 data/fin/crypto_hourly_SEALED.parquet
+6429949adf5aadc18c230845355b69f375cafdef3f5f39976a62a581a2258cc4 data/fin/crypto_daily_SEALED.parquet
+9a720627b71dc0b9b2e68580f49bbab946ef652399b79f37dc20d0b000c5dc06 data/fin/etf_daily_SEALED.parquet

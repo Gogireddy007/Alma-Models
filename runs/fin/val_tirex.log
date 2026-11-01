@@ -1,0 +1,10 @@
+[val/crypto] tirex  1/123 2025-07-01 12s
+[val/crypto] tirex  51/123 2025-08-20 373s
+[val/crypto] tirex  101/123 2025-10-09 680s
+[val/crypto] tirex  123/123 2025-10-31 835s
+[val/crypto] tirex: done 836s, updates 0
+[val/etf] tirex  1/87 2025-07-01 4s
+[val/etf] tirex  51/87 2025-09-11 133s
+[val/etf] tirex  87/87 2025-10-31 220s
+[val/etf] tirex: done 220s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

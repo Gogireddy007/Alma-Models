@@ -1,0 +1,272 @@
+{
+ "status": "complete",
+ "started": "2026-10-31T19:46:01-0400",
+ "commit": "97be9e5e5e6432fe6cae2769455583585a2717c6",
+ "tools_commodity_dirty": "",
+ "frozen": {
+  "models": [
+   "wm_sv",
+   "wm_sv_direct"
+  ],
+  "wm_architect": {
+   "frozen_at": "2026-10-31 (before any VAL read of these models)",
+   "candidate": "wm_sv",
+   "direct_twin": "wm_sv_direct",
+   "recipe": "sv stochastic-volatility world model, WTI only, L=128, d=64, lr 2e-3 cosine, batch 64, max_steps 600, seeds 0-2, train windows with last target < 2023-01-01; 3-seed mean of log-level quantiles",
+   "checkpoints": {
+    "wm_sv": [
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_none_s0.pt",
+      "sha256": "392a58a3a3596a1e8e71fe98061458e246bc5ab29a3326807f69af49edb8f2e2"
+     },
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_none_s1.pt",
+      "sha256": "19a14e94e3834c3f35b42bd4bf9903c3d635548685401c8a78a9bdd15299ca27"
+     },
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_none_s2.pt",
+      "sha256": "9d65eb3f6931001ef798c614a7a9cf6bcacf993755c106d07aa0c5461e13fdb1"
+     }
+    ],
+    "wm_sv_direct": [
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_direct_s0.pt",
+      "sha256": "8da818568e4e7ff344765ad31080c3e6236793c124d448f9faff91269dd80295"
+     },
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_direct_s1.pt",
+      "sha256": "173c123ce6dfedafcf4a1531d15ae9c457deb8618bdae694f41ba17511604953"
+     },
+     {
+      "path": "runs/commodity/search/ckpt/f_sv_direct_s2.pt",
+      "sha256": "e92697cf7a90a7a5aa7caaacafe84fd319fae2a1852ecf941d5219c473927390"
+     }
+    ]
+   },
+   "wrapper": "tools/commodity/wm_commodity.py (register(), FROZEN dict; sha verified at load)",
+   "K_configurations_tried": "34 trained/evaluated search rows (incl. 1 smoke, 2 diverged obs+xc) + 5 untrained reference rows + 6 final matched-step retrains",
+   "winners_curse": "DEV best WM row 0.7234 (r1_sv_pool_none) fell to 0.7556 seed-mean; finalist seed-mean ~0.747-0.749 vs random walk 0.750 with per-model 90% bootstrap interval about +-0.03: the candidate is within noise of the random walk on DEV.",
+   "dev_scope": "trained on data to 2022-12-30: do NOT score on harness DEV origins before 2023 (in-sample)",
+   "univariate_only": "cross-commodity checkpoints cannot be frozen under the 1-D context API"
+  },
+  "alma_sha256": {
+   "data/ckpt/wm_ssm_none_s0.pt": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "data/ckpt/wm_ssm_direct_s0.pt": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "data/ckpt/wm_ssm_none_s1.pt": "92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33",
+   "data/ckpt/wm_ssm_none_s2.pt": "86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5",
+   "data/ckpt/wm_ssm_none_s3.pt": "cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308",
+   "data/ckpt/wm_ssm_none_s4.pt": "08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6"
+  },
+  "alma_note": "Alma checkpoints pinned by the commodity lead (prereg amendment A2); WM test = s0 pair only; s1-s4 rollouts descriptive."
+ },
+ "frozen_sha256": "af7bfa792ee44796dd0fb26d2c81525b2d436aa9feec0194b667ce8aaa052e43",
+ "alma_pins": {
+  "data/ckpt/wm_ssm_none_s0.pt": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+  "data/ckpt/wm_ssm_direct_s0.pt": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+  "data/ckpt/wm_ssm_none_s1.pt": "92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33",
+  "data/ckpt/wm_ssm_none_s2.pt": "86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5",
+  "data/ckpt/wm_ssm_none_s3.pt": "cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308",
+  "data/ckpt/wm_ssm_none_s4.pt": "08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6"
+ },
+ "models": [
+  "alma_s0",
+  "alma_s0_tta",
+  "alma_direct_s0",
+  "alma_direct_s0_tta",
+  "alma_s1",
+  "alma_s2",
+  "alma_s3",
+  "alma_s4",
+  "chronos2",
+  "chronos_bolt_base",
+  "tirex",
+  "timestral_5m",
+  "kronos_small",
+  "auto_ets",
+  "auto_arima",
+  "rw_gauss",
+  "wm_sv",
+  "wm_sv_direct"
+ ],
+ "model_meta": {
+  "alma_s0": {
+   "ckpt": "data/ckpt/wm_ssm_none_s0.pt",
+   "ckpt_sha256": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_s0_tta": {
+   "ckpt": "data/ckpt/wm_ssm_none_s0.pt",
+   "ckpt_sha256": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "tta": "1",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_direct_s0": {
+   "ckpt": "data/ckpt/wm_ssm_direct_s0.pt",
+   "ckpt_sha256": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_direct_s0_tta": {
+   "ckpt": "data/ckpt/wm_ssm_direct_s0.pt",
+   "ckpt_sha256": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "tta": "1",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_s1": {
+   "ckpt": "data/ckpt/wm_ssm_none_s1.pt",
+   "ckpt_sha256": "92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_s2": {
+   "ckpt": "data/ckpt/wm_ssm_none_s2.pt",
+   "ckpt_sha256": "86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_s3": {
+   "ckpt": "data/ckpt/wm_ssm_none_s3.pt",
+   "ckpt_sha256": "cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "alma_s4": {
+   "ckpt": "data/ckpt/wm_ssm_none_s4.pt",
+   "ckpt_sha256": "08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6",
+   "tta": "0",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 daily (B), 52 weekly (W)"
+  },
+  "chronos2": {
+   "hf": "amazon/chronos-2",
+   "context": 1024,
+   "device": "cpu"
+  },
+  "chronos_bolt_base": {
+   "hf": "amazon/chronos-bolt-base",
+   "context": 1024,
+   "device": "cpu"
+  },
+  "tirex": {
+   "hf": "NX-AI/TiRex",
+   "context": 1024,
+   "device": "cpu"
+  },
+  "timestral_5m": {
+   "hf": "mistralai/Timestral-5M",
+   "context": 1024,
+   "device": "cpu",
+   "contamination": "released 2026-10-15: training data may cover the TEST period"
+  },
+  "kronos_small": {
+   "hf": "NeoQuasar/Kronos-small",
+   "tokenizer": "NeoQuasar/Kronos-Tokenizer-base",
+   "code": "/Users/srimanarayana/MIKO/kronos/repo @ 67b630e",
+   "samples": 10,
+   "context": 256,
+   "T": 1.0,
+   "top_p": 0.9,
+   "top_k": 0,
+   "seed": 0,
+   "ohlc": "open=high=low=close=price, volume=0"
+  },
+  "auto_ets": {
+   "context": 512,
+   "season_length": "1 (daily and weekly)"
+  },
+  "auto_arima": {
+   "context": 512,
+   "season_length": "1 (daily and weekly)"
+  },
+  "rw_gauss": {
+   "sigma_window": 250
+  },
+  "wm_sv": {
+   "members": [
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_none_s0.pt",
+     "ckpt_sha256": "392a58a3a3596a1e8e71fe98061458e246bc5ab29a3326807f69af49edb8f2e2",
+     "arch": "sv",
+     "abl": "none",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    },
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_none_s1.pt",
+     "ckpt_sha256": "19a14e94e3834c3f35b42bd4bf9903c3d635548685401c8a78a9bdd15299ca27",
+     "arch": "sv",
+     "abl": "none",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    },
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_none_s2.pt",
+     "ckpt_sha256": "9d65eb3f6931001ef798c614a7a9cf6bcacf993755c106d07aa0c5461e13fdb1",
+     "arch": "sv",
+     "abl": "none",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    }
+   ],
+   "combine": "mean of log-level quantiles"
+  },
+  "wm_sv_direct": {
+   "members": [
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_direct_s0.pt",
+     "ckpt_sha256": "8da818568e4e7ff344765ad31080c3e6236793c124d448f9faff91269dd80295",
+     "arch": "sv",
+     "abl": "direct",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    },
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_direct_s1.pt",
+     "ckpt_sha256": "173c123ce6dfedafcf4a1531d15ae9c457deb8618bdae694f41ba17511604953",
+     "arch": "sv",
+     "abl": "direct",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    },
+    {
+     "ckpt": "runs/commodity/search/ckpt/f_sv_direct_s2.pt",
+     "ckpt_sha256": "e92697cf7a90a7a5aa7caaacafe84fd319fae2a1852ecf941d5219c473927390",
+     "arch": "sv",
+     "abl": "direct",
+     "context": 128,
+     "trained_horizon": 20,
+     "train_cut": "2023-01-01"
+    }
+   ],
+   "combine": "mean of log-level quantiles"
+  }
+ },
+ "series": [
+  "wti",
+  "brent",
+  "hh",
+  "inv"
+ ],
+ "split": "test",
+ "rehearsal": false,
+ "argv": [
+  "tools/commodity/run_eval.py",
+  "--split",
+  "test"
+ ],
+ "finished": "2026-10-31T20:00:57-0400",
+ "hashes_sha256": "ebc4d2d3476618546ac2468cb3f6b206c9cf2978d8d8604c08d2cf0e56db9fb1"
+}

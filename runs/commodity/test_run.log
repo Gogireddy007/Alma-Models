@@ -1,0 +1,736 @@
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s0: n=246 1.3s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s0_tta: n=246 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_direct_s0: n=246 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_direct_s0_tta: n=246 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s1.pt  sha256=92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 30.6 min trained, complete=True
+eval_only_ckpt_sha256: 92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1838.7
+predict_seconds:  0.0
+total_seconds:    1838.7
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s1: n=246 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s2.pt  sha256=86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 29.0 min trained, complete=True
+eval_only_ckpt_sha256: 86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1740.8
+predict_seconds:  0.0
+total_seconds:    1740.8
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s2: n=246 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s3.pt  sha256=cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 24.8 min trained, complete=True
+eval_only_ckpt_sha256: cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1490.0
+predict_seconds:  0.0
+total_seconds:    1490.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s3: n=246 0.3s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s4.pt  sha256=08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 77.8 min trained, complete=True
+eval_only_ckpt_sha256: 08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 4670.0
+predict_seconds:  0.0
+total_seconds:    4670.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/wti] alma_s4: n=246 0.2s nonfinite(0.1..0.9)=0
+W1031 19:46:06.866000 17401 .venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4324.39it/s]
+[test/wti] chronos2: n=246 11.1s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 5479.29it/s]
+[test/wti] chronos_bolt_base: n=246 6.8s nonfinite(0.1..0.9)=0
+[test/wti] tirex: n=246 34.9s nonfinite(0.1..0.9)=0
+[test/wti] timestral_5m: n=246 0.6s nonfinite(0.1..0.9)=0
+[test/wti] kronos_small: n=50 397.7s nonfinite(0.1..0.9)=0
+[test/wti] auto_ets: n=246 7.9s nonfinite(0.1..0.9)=0
+[test/wti] auto_arima: n=246 76.1s nonfinite(0.1..0.9)=0
+[test/wti] rw_gauss: n=246 0.0s nonfinite(0.1..0.9)=0
+[test/wti] wm_sv: n=246 16.2s nonfinite(0.1..0.9)=0
+[test/wti] wm_sv_direct: n=246 8.3s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s0: n=249 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s0_tta: n=249 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_direct_s0: n=249 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_direct_s0_tta: n=249 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s1.pt  sha256=92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 30.6 min trained, complete=True
+eval_only_ckpt_sha256: 92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1838.7
+predict_seconds:  0.0
+total_seconds:    1838.7
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s1: n=249 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s2.pt  sha256=86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 29.0 min trained, complete=True
+eval_only_ckpt_sha256: 86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1740.8
+predict_seconds:  0.0
+total_seconds:    1740.8
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s2: n=249 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s3.pt  sha256=cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 24.8 min trained, complete=True
+eval_only_ckpt_sha256: cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1490.0
+predict_seconds:  0.0
+total_seconds:    1490.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s3: n=249 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s4.pt  sha256=08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 77.8 min trained, complete=True
+eval_only_ckpt_sha256: 08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 4670.0
+predict_seconds:  0.0
+total_seconds:    4670.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/brent] alma_s4: n=249 0.1s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 5305.89it/s]
+[test/brent] chronos2: n=249 7.1s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 4058.11it/s]
+[test/brent] chronos_bolt_base: n=249 6.7s nonfinite(0.1..0.9)=0
+[test/brent] tirex: n=249 32.8s nonfinite(0.1..0.9)=0
+[test/brent] timestral_5m: n=249 0.6s nonfinite(0.1..0.9)=0
+[test/brent] auto_ets: n=249 5.9s nonfinite(0.1..0.9)=0
+[test/brent] auto_arima: n=249 35.9s nonfinite(0.1..0.9)=0
+[test/brent] rw_gauss: n=249 0.0s nonfinite(0.1..0.9)=0
+[test/brent] wm_sv: n=249 16.1s nonfinite(0.1..0.9)=0
+[test/brent] wm_sv_direct: n=249 8.4s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s0: n=243 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s0_tta: n=243 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_direct_s0: n=243 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_direct_s0_tta: n=243 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s1.pt  sha256=92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 30.6 min trained, complete=True
+eval_only_ckpt_sha256: 92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1838.7
+predict_seconds:  0.0
+total_seconds:    1838.7
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s1: n=243 0.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s2.pt  sha256=86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 29.0 min trained, complete=True
+eval_only_ckpt_sha256: 86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1740.8
+predict_seconds:  0.0
+total_seconds:    1740.8
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s2: n=243 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s3.pt  sha256=cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 24.8 min trained, complete=True
+eval_only_ckpt_sha256: cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1490.0
+predict_seconds:  0.0
+total_seconds:    1490.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s3: n=243 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s4.pt  sha256=08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 77.8 min trained, complete=True
+eval_only_ckpt_sha256: 08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 4670.0
+predict_seconds:  0.0
+total_seconds:    4670.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/hh] alma_s4: n=243 0.1s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 5153.86it/s]
+[test/hh] chronos2: n=243 7.0s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 4062.11it/s]
+[test/hh] chronos_bolt_base: n=243 6.6s nonfinite(0.1..0.9)=0
+[test/hh] tirex: n=243 31.9s nonfinite(0.1..0.9)=0
+[test/hh] timestral_5m: n=243 0.6s nonfinite(0.1..0.9)=0
+[test/hh] auto_ets: n=243 4.7s nonfinite(0.1..0.9)=0
+[test/hh] auto_arima: n=243 77.9s nonfinite(0.1..0.9)=0
+[test/hh] rw_gauss: n=243 0.0s nonfinite(0.1..0.9)=0
+[test/hh] wm_sv: n=243 15.7s nonfinite(0.1..0.9)=0
+[test/hh] wm_sv_direct: n=243 8.2s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s0: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s0_tta: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_direct_s0: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only WARNING: inference setting TSAR_WM_TTA=1 differs from training (None): exploratory, VAL only
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+tta:              1 (sym=1 clip=1)
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_direct_s0_tta: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s1.pt  sha256=92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 30.6 min trained, complete=True
+eval_only_ckpt_sha256: 92a6301a2f2acff345526e330c5d33e57063187c4517faa07941709be02a9a33
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1838.7
+predict_seconds:  0.0
+total_seconds:    1838.7
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s1: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s2.pt  sha256=86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 29.0 min trained, complete=True
+eval_only_ckpt_sha256: 86a8aa4590efc3688ae3e9ba6c3b91a03c9bdcfd67bbd8dde25338d2c187efc5
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1740.8
+predict_seconds:  0.0
+total_seconds:    1740.8
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s2: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s3.pt  sha256=cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 24.8 min trained, complete=True
+eval_only_ckpt_sha256: cd14fbf3d0b370fef62046971e9b40f8c30bb98ca1319d21bb55518b137d4308
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 1490.0
+predict_seconds:  0.0
+total_seconds:    1490.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s3: n=51 0.1s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s4.pt  sha256=08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 77.8 min trained, complete=True
+eval_only_ckpt_sha256: 08c2574ffc13592c3319371945e9a3bf1cfb6cac942ebfb39140f09b23029bb6
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 4670.0
+predict_seconds:  0.0
+total_seconds:    4670.0
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/inv] alma_s4: n=51 0.1s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4622.93it/s]
+[test/inv] chronos2: n=51 2.6s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 3036.05it/s]
+[test/inv] chronos_bolt_base: n=51 3.4s nonfinite(0.1..0.9)=0
+[test/inv] tirex: n=51 12.7s nonfinite(0.1..0.9)=0
+[test/inv] timestral_5m: n=51 0.2s nonfinite(0.1..0.9)=0
+[test/inv] auto_ets: n=51 2.3s nonfinite(0.1..0.9)=0
+[test/inv] auto_arima: n=51 24.3s nonfinite(0.1..0.9)=0
+[test/inv] rw_gauss: n=51 0.0s nonfinite(0.1..0.9)=0
+[test/inv] wm_sv: n=51 1.7s nonfinite(0.1..0.9)=0
+[test/inv] wm_sv_direct: n=51 1.3s nonfinite(0.1..0.9)=0
+metrics -> /Users/srimanarayana/Timeseries/runs/commodity/test/metrics.json
+exit=0

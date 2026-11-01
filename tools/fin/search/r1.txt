@@ -1,0 +1,4 @@
+--d 64 --abl none --seed 0
+--d 64 --abl direct --seed 0
+--d 128 --abl none --seed 0
+--d 128 --abl direct --seed 0

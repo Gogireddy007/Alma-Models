@@ -1,0 +1,4 @@
+f_reg_s1	1	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.01,"drop":0.2}
+f_reg_s2	2	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.01,"drop":0.2}
+f_reg2_s1	1	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}
+f_reg2_s2	2	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}

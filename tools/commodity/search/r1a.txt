@@ -1,0 +1,8 @@
+--name r1_obs_none --arch obs --abl none --minutes 5
+--name r1_obs_direct --arch obs --abl direct --minutes 5
+--name r1_sv_none --arch sv --abl none --minutes 5
+--name r1_sv_direct --arch sv --abl direct --minutes 5
+--name r1_rs_none --arch rs --abl none --minutes 5
+--name r1_rs_direct --arch rs --abl direct --minutes 5
+--name r1_sv_pool_none --arch sv --abl none --pool 1 --minutes 5
+--name r1_sv_pool_direct --arch sv --abl direct --pool 1 --minutes 5

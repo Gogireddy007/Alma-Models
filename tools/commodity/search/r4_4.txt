@@ -1,0 +1,1 @@
+--name r4_sv_pool_direct_s2 --arch sv --abl direct --pool 1 --seed 2 --minutes 5

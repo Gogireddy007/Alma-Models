@@ -1,0 +1,83 @@
+=== storage:chronos_bolt_base start 21:56:48 swap=4522.50
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 3870.04it/s]
+[val/storage/thu] chronos_bolt_base: n=18 70.2s nonfinite=0
+[val/storage/fri] chronos_bolt_base: n=18 48.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:chronos_bolt_base end 21:59:00 rc=0
+=== storage:tirex start 21:59:00 swap=4888.25
+[val/storage/thu] tirex: n=18 50.7s nonfinite=0
+[val/storage/fri] tirex: n=18 44.9s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:tirex end 22:00:45 rc=0
+=== storage:chronos2 start 22:00:45 swap=4847.75
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4757.38it/s]
+[val/storage/thu] chronos2: n=18 18.1s nonfinite=0
+[val/storage/fri] chronos2: n=18 4.9s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:chronos2 end 22:01:18 rc=0
+=== storage:chronos2_cov start 22:01:18 swap=4760.38
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 3123.73it/s]
+[val/storage/thu] chronos2_cov: n=18 22.2s nonfinite=0
+[val/storage/fri] chronos2_cov: n=18 13.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:chronos2_cov end 22:02:01 rc=0
+=== storage:timestral_5m start 22:02:01 swap=4767.56
+[val/storage/thu] timestral_5m: n=18 4.6s nonfinite=0
+[val/storage/fri] timestral_5m: n=18 1.0s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:timestral_5m end 22:02:17 rc=0
+=== storage:alma_s0 start 22:02:17 swap=4751.56
+family_wql_rel:   nan
+[val/storage/thu] alma_s0: n=18 2.9s nonfinite=0
+[val/storage/fri] alma_s0: n=18 0.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:alma_s0 end 22:02:34 rc=0
+=== storage:alma_direct_s0 start 22:02:34 swap=4695.56
+family_wql_rel:   nan
+[val/storage/thu] alma_direct_s0: n=18 1.8s nonfinite=0
+[val/storage/fri] alma_direct_s0: n=18 0.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== storage:alma_direct_s0 end 22:02:48 rc=0
+=== price:chronos_bolt_base start 22:02:48 swap=4720.31
+W1031 22:02:58.890000 66919 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 3275.89it/s]
+[val/price] chronos_bolt_base: n=87 46.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:chronos_bolt_base end 22:03:44 rc=0
+=== price:tirex start 22:03:44 swap=5261.88
+[val/price] tirex: n=87 41.5s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:tirex end 22:04:34 rc=0
+=== price:chronos2 start 22:04:34 swap=5103.31
+W1031 22:04:44.000000 67153 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 7444.01it/s]
+[val/price] chronos2: n=87 19.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:chronos2 end 22:05:01 rc=0
+=== price:chronos2_cov start 22:05:01 swap=5060.56
+W1031 22:05:11.256000 67215 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 3396.20it/s]
+[val/price] chronos2_cov: n=87 33.6s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:chronos2_cov end 22:05:43 rc=0
+=== price:timestral_5m start 22:05:43 swap=5207.81
+[val/price] timestral_5m: n=87 3.3s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:timestral_5m end 22:05:54 rc=0
+=== price:alma_s0 start 22:05:54 swap=5199.81
+num_steps:        2500
+family_wql_rel:   nan
+[val/price] alma_s0: n=87 1.8s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:alma_s0 end 22:06:05 rc=0
+=== price:alma_direct_s0 start 22:06:05 swap=5159.81
+num_steps:        2500
+family_wql_rel:   nan
+[val/price] alma_direct_s0: n=87 1.7s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:alma_direct_s0 end 22:06:15 rc=0
+=== price:kronos_small start 22:06:15 swap=4967.81
+[val/price] kronos_small: n=18 147.1s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/val/metrics.json
+=== price:kronos_small end 22:08:47 rc=0
+ALLDONE

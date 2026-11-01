@@ -1,0 +1,82 @@
+[val/crypto] wm_fin  1/123 2025-07-01 0s
+[val/crypto] wm_fin  51/123 2025-08-20 2s
+[val/crypto] wm_fin  101/123 2025-10-09 4s
+[val/crypto] wm_fin  123/123 2025-10-31 5s
+[val/crypto] wm_fin: done 5s, updates 0
+[val/crypto] wm_direct  1/123 2025-07-01 0s
+[val/crypto] wm_direct  51/123 2025-08-20 1s
+[val/crypto] wm_direct  101/123 2025-10-09 2s
+[val/crypto] wm_direct  123/123 2025-10-31 2s
+[val/crypto] wm_direct: done 2s, updates 0
+[val/crypto] wm_fin_cl  1/123 2025-07-01 1s
+[val/crypto] wm_fin_cl  51/123 2025-08-20 23s
+[val/crypto] wm_fin_cl  101/123 2025-10-09 46s
+[val/crypto] wm_fin_cl  123/123 2025-10-31 57s
+[val/crypto] wm_fin_cl: done 57s, updates 369
+[val/crypto] wm_fin_cl:frozen  1/123 2025-07-01 0s
+[val/crypto] wm_fin_cl:frozen  51/123 2025-08-20 2s
+[val/crypto] wm_fin_cl:frozen  101/123 2025-10-09 4s
+[val/crypto] wm_fin_cl:frozen  123/123 2025-10-31 5s
+[val/crypto] wm_fin_cl:frozen: done 5s, updates 0
+[val/crypto] wm_agent  1/123 2025-07-01 0s
+[val/crypto] wm_agent  51/123 2025-08-20 3s
+[val/crypto] wm_agent  101/123 2025-10-09 6s
+[val/crypto] wm_agent  123/123 2025-10-31 7s
+[val/crypto] wm_agent: done 7s, updates 0
+[val/crypto] ppo  1/123 2025-07-01 0s
+[val/crypto] ppo  51/123 2025-08-20 3s
+[val/crypto] ppo  101/123 2025-10-09 6s
+[val/crypto] ppo  123/123 2025-10-31 7s
+[val/crypto] ppo: done 7s, updates 0
+[val/crypto] dqn  1/123 2025-07-01 0s
+[val/crypto] dqn  51/123 2025-08-20 3s
+[val/crypto] dqn  101/123 2025-10-09 6s
+[val/crypto] dqn  123/123 2025-10-31 7s
+[val/crypto] dqn: done 7s, updates 0
+[val/crypto] wm_voltgt  1/123 2025-07-01 0s
+[val/crypto] wm_voltgt  51/123 2025-08-20 2s
+[val/crypto] wm_voltgt  101/123 2025-10-09 4s
+[val/crypto] wm_voltgt  123/123 2025-10-31 5s
+[val/crypto] wm_voltgt: done 5s, updates 0
+[val/crypto] wm_b_moe4  1/123 2025-07-01 0s
+[val/crypto] wm_b_moe4  51/123 2025-08-20 0s
+[val/crypto] wm_b_moe4  101/123 2025-10-09 0s
+[val/crypto] wm_b_moe4  123/123 2025-10-31 0s
+[val/crypto] wm_b_moe4: done 0s, updates 0
+[val/etf] wm_fin  1/87 2025-07-01 0s
+[val/etf] wm_fin  51/87 2025-09-11 2s
+[val/etf] wm_fin  87/87 2025-10-31 3s
+[val/etf] wm_fin: done 3s, updates 0
+[val/etf] wm_direct  1/87 2025-07-01 0s
+[val/etf] wm_direct  51/87 2025-09-11 1s
+[val/etf] wm_direct  87/87 2025-10-31 1s
+[val/etf] wm_direct: done 1s, updates 0
+[val/etf] wm_fin_cl  1/87 2025-07-01 0s
+[val/etf] wm_fin_cl  51/87 2025-09-11 17s
+[val/etf] wm_fin_cl  87/87 2025-10-31 30s
+[val/etf] wm_fin_cl: done 30s, updates 261
+[val/etf] wm_fin_cl:frozen  1/87 2025-07-01 0s
+[val/etf] wm_fin_cl:frozen  51/87 2025-09-11 2s
+[val/etf] wm_fin_cl:frozen  87/87 2025-10-31 3s
+[val/etf] wm_fin_cl:frozen: done 3s, updates 0
+[val/etf] wm_agent  1/87 2025-07-01 0s
+[val/etf] wm_agent  51/87 2025-09-11 2s
+[val/etf] wm_agent  87/87 2025-10-31 4s
+[val/etf] wm_agent: done 4s, updates 0
+[val/etf] ppo  1/87 2025-07-01 0s
+[val/etf] ppo  51/87 2025-09-11 2s
+[val/etf] ppo  87/87 2025-10-31 4s
+[val/etf] ppo: done 4s, updates 0
+[val/etf] dqn  1/87 2025-07-01 0s
+[val/etf] dqn  51/87 2025-09-11 2s
+[val/etf] dqn  87/87 2025-10-31 4s
+[val/etf] dqn: done 4s, updates 0
+[val/etf] wm_voltgt  1/87 2025-07-01 0s
+[val/etf] wm_voltgt  51/87 2025-09-11 2s
+[val/etf] wm_voltgt  87/87 2025-10-31 3s
+[val/etf] wm_voltgt: done 3s, updates 0
+[val/etf] wm_b_moe4  1/87 2025-07-01 0s
+[val/etf] wm_b_moe4  51/87 2025-09-11 0s
+[val/etf] wm_b_moe4  87/87 2025-10-31 0s
+[val/etf] wm_b_moe4: done 0s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

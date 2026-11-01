@@ -1,0 +1,238 @@
+{
+ "hist": [
+  {
+   "key": "241a43a188",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": null,
+   "decision": "START",
+   "em": -0.0002713336046669494
+  },
+  {
+   "key": "4c77e5d308",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "heads",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "params",
+   "decision": "REVERT",
+   "e3": 0.0,
+   "em": -0.00030216696883363553,
+   "sec": 54
+  },
+  {
+   "key": "9da65786ea",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0003,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "lr",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0007461674128341015,
+   "sec": 174
+  },
+  {
+   "key": "105e3c293c",
+   "cfg": {
+    "steps": 2,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "steps",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0008411341744675171,
+   "sec": 185
+  },
+  {
+   "key": "3bd2d5ba15",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "lr_adapt",
+    "eta": 0.2
+   },
+   "knob": "meta",
+   "decision": "REVERT",
+   "e3": 0.00024420024420024333,
+   "em": -0.0003243669910336644,
+   "sec": 93
+  },
+  {
+   "key": "7cfba6bbe7",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.05
+   },
+   "knob": "eta",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0002713336046669494,
+   "sec": 81
+  },
+  {
+   "key": "5761732c78",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 20,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "replay_days",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": 1.3566680233334516e-05,
+   "sec": 43
+  },
+  {
+   "key": "e3a83729cf",
+   "cfg": {
+    "steps": 3,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "steps",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0007461674128341015,
+   "sec": 230
+  },
+  {
+   "key": "a39c3357d1",
+   "cfg": {
+    "steps": 1,
+    "lr": 3e-05,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "lr",
+   "decision": "REVERT",
+   "e3": 0.0,
+   "em": 0.00012950012950011894,
+   "sec": 82
+  },
+  {
+   "key": "3c409eb89f",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 120,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "replay_days",
+   "decision": "REVERT",
+   "e3": 0.0,
+   "em": -9.496676163345263e-05,
+   "sec": 130
+  },
+  {
+   "key": "a9ebcdb477",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 0.1,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "l2_init",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0002713336046669494,
+   "sec": 83
+  },
+  {
+   "key": "5e95f9d7b1",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 10.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "l2_init",
+   "decision": "REVERT",
+   "e3": -0.00024420024420024333,
+   "em": -0.0001936335269668484,
+   "sec": 81
+  },
+  {
+   "key": "6add6e91a2",
+   "cfg": {
+    "steps": 1,
+    "lr": 0.001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "knob": "lr",
+   "decision": "REVERT",
+   "e3": -0.00146520146520146,
+   "em": -0.0014035347368680506,
+   "sec": 80
+  }
+ ],
+ "incumbent": {
+  "steps": 1,
+  "lr": 0.0001,
+  "l2_init": 1.0,
+  "replay_days": 60,
+  "params": "all",
+  "meta": "none",
+  "eta": 0.2
+ },
+ "inc_scores": {
+  "E1": 0.0,
+  "E2": -0.0005698005698006048,
+  "E3": -0.00024420024420024333
+ },
+ "inc_em": -0.0002713336046669494
+}

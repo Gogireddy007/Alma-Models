@@ -1,0 +1,13 @@
+W1101 01:15:17.123000 15914 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4859.35it/s]
+[val/crypto] chronos2  1/123 2025-07-01 7s
+[val/crypto] chronos2  51/123 2025-08-20 25s
+[val/crypto] chronos2  101/123 2025-10-09 44s
+[val/crypto] chronos2  123/123 2025-10-31 58s
+[val/crypto] chronos2: done 58s, updates 0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 13716.37it/s]
+[val/etf] chronos2  1/87 2025-07-01 0s
+[val/etf] chronos2  51/87 2025-09-11 12s
+[val/etf] chronos2  87/87 2025-10-31 20s
+[val/etf] chronos2: done 20s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

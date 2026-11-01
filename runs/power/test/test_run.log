@@ -1,0 +1,244 @@
+[test] naive_d: 32/365 0s
+[test] naive_d: 64/365 0s
+[test] naive_d: 96/365 0s
+[test] naive_d: 128/365 0s
+[test] naive_d: 160/365 0s
+[test] naive_d: 192/365 0s
+[test] naive_d: 224/365 0s
+[test] naive_d: 256/365 0s
+[test] naive_d: 288/365 0s
+[test] naive_d: 320/365 1s
+[test] naive_d: 352/365 1s
+[test] naive_d: 365/365 1s
+[test] naive_d: n=365 0.6s nonfinite(0.1..0.9)=0
+[test] naive_w: 32/365 0s
+[test] naive_w: 64/365 0s
+[test] naive_w: 96/365 0s
+[test] naive_w: 128/365 0s
+[test] naive_w: 160/365 0s
+[test] naive_w: 192/365 0s
+[test] naive_w: 224/365 0s
+[test] naive_w: 256/365 0s
+[test] naive_w: 288/365 0s
+[test] naive_w: 320/365 1s
+[test] naive_w: 352/365 1s
+[test] naive_w: 365/365 1s
+[test] naive_w: n=365 0.6s nonfinite(0.1..0.9)=0
+[test] naive_epf: 32/365 0s
+[test] naive_epf: 64/365 0s
+[test] naive_epf: 96/365 0s
+[test] naive_epf: 128/365 0s
+[test] naive_epf: 160/365 0s
+[test] naive_epf: 192/365 0s
+[test] naive_epf: 224/365 0s
+[test] naive_epf: 256/365 0s
+[test] naive_epf: 288/365 0s
+[test] naive_epf: 320/365 1s
+[test] naive_epf: 352/365 1s
+[test] naive_epf: 365/365 1s
+[test] naive_epf: n=365 0.6s nonfinite(0.1..0.9)=0
+[test] lear: 32/365 106s
+[test] lear: 64/365 215s
+[test] lear: 96/365 317s
+[test] lear: 128/365 419s
+[test] lear: 160/365 518s
+[test] lear: 192/365 618s
+[test] lear: 224/365 716s
+[test] lear: 256/365 815s
+[test] lear: 288/365 915s
+[test] lear: 320/365 1018s
+[test] lear: 352/365 1124s
+[test] lear: 365/365 1167s
+[test] lear: n=365 1167.1s nonfinite(0.1..0.9)=0
+[test] lear_nocov: 32/365 23s
+[test] lear_nocov: 64/365 45s
+[test] lear_nocov: 96/365 68s
+[test] lear_nocov: 128/365 90s
+[test] lear_nocov: 160/365 111s
+[test] lear_nocov: 192/365 132s
+[test] lear_nocov: 224/365 154s
+[test] lear_nocov: 256/365 178s
+[test] lear_nocov: 288/365 201s
+[test] lear_nocov: 320/365 224s
+[test] lear_nocov: 352/365 251s
+[test] lear_nocov: 365/365 262s
+[test] lear_nocov: n=365 261.9s nonfinite(0.1..0.9)=0
+[test] arx: 32/365 6s
+[test] arx: 64/365 11s
+[test] arx: 96/365 17s
+[test] arx: 128/365 23s
+[test] arx: 160/365 28s
+[test] arx: 192/365 34s
+[test] arx: 224/365 40s
+[test] arx: 256/365 45s
+[test] arx: 288/365 51s
+[test] arx: 320/365 56s
+[test] arx: 352/365 62s
+[test] arx: 365/365 64s
+[test] arx: n=365 64.0s nonfinite(0.1..0.9)=0
+W1031 21:43:39.386000 27326 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4110.92it/s]
+[test] chronos2: 32/365 7s
+[test] chronos2: 64/365 9s
+[test] chronos2: 96/365 11s
+[test] chronos2: 128/365 12s
+[test] chronos2: 160/365 14s
+[test] chronos2: 192/365 16s
+[test] chronos2: 224/365 18s
+[test] chronos2: 256/365 20s
+[test] chronos2: 288/365 22s
+[test] chronos2: 320/365 24s
+[test] chronos2: 352/365 26s
+[test] chronos2: 365/365 27s
+[test] chronos2: n=365 26.9s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 13556.77it/s]
+[test] chronos2_cov: 32/365 12s
+[test] chronos2_cov: 64/365 22s
+[test] chronos2_cov: 96/365 33s
+[test] chronos2_cov: 128/365 44s
+[test] chronos2_cov: 160/365 54s
+[test] chronos2_cov: 192/365 64s
+[test] chronos2_cov: 224/365 74s
+[test] chronos2_cov: 256/365 83s
+[test] chronos2_cov: 288/365 94s
+[test] chronos2_cov: 320/365 103s
+[test] chronos2_cov: 352/365 114s
+[test] chronos2_cov: 365/365 119s
+[test] chronos2_cov: n=365 119.3s nonfinite(0.1..0.9)=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 4740.92it/s]
+[test] chronos_bolt_base: 32/365 6s
+[test] chronos_bolt_base: 64/365 8s
+[test] chronos_bolt_base: 96/365 10s
+[test] chronos_bolt_base: 128/365 12s
+[test] chronos_bolt_base: 160/365 14s
+[test] chronos_bolt_base: 192/365 16s
+[test] chronos_bolt_base: 224/365 18s
+[test] chronos_bolt_base: 256/365 20s
+[test] chronos_bolt_base: 288/365 22s
+[test] chronos_bolt_base: 320/365 24s
+[test] chronos_bolt_base: 352/365 26s
+[test] chronos_bolt_base: 365/365 27s
+[test] chronos_bolt_base: n=365 26.8s nonfinite(0.1..0.9)=0
+[test] tirex: 32/365 5s
+[test] tirex: 64/365 9s
+[test] tirex: 96/365 14s
+[test] tirex: 128/365 18s
+[test] tirex: 160/365 22s
+[test] tirex: 192/365 26s
+[test] tirex: 224/365 30s
+[test] tirex: 256/365 35s
+[test] tirex: 288/365 40s
+[test] tirex: 320/365 48s
+[test] tirex: 352/365 55s
+[test] tirex: 365/365 58s
+[test] tirex: n=365 57.6s nonfinite(0.1..0.9)=0
+[test] timestral_5m: 32/365 0s
+[test] timestral_5m: 64/365 1s
+[test] timestral_5m: 96/365 1s
+[test] timestral_5m: 128/365 1s
+[test] timestral_5m: 160/365 2s
+[test] timestral_5m: 192/365 2s
+[test] timestral_5m: 224/365 2s
+[test] timestral_5m: 256/365 3s
+[test] timestral_5m: 288/365 3s
+[test] timestral_5m: 320/365 3s
+[test] timestral_5m: 352/365 3s
+[test] timestral_5m: 365/365 3s
+[test] timestral_5m: n=365 3.4s nonfinite(0.1..0.9)=0
+[test] kronos_small: 32/73 479s
+[test] kronos_small: 64/73 1001s
+[test] kronos_small: 73/73 1123s
+[test] kronos_small: n=73 1122.5s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test] alma_s0: 32/365 0s
+[test] alma_s0: 64/365 0s
+[test] alma_s0: 96/365 0s
+[test] alma_s0: 128/365 0s
+[test] alma_s0: 160/365 0s
+[test] alma_s0: 192/365 1s
+[test] alma_s0: 224/365 1s
+[test] alma_s0: 256/365 1s
+[test] alma_s0: 288/365 1s
+[test] alma_s0: 320/365 1s
+[test] alma_s0: 352/365 1s
+[test] alma_s0: 365/365 1s
+[test] alma_s0: n=365 0.7s nonfinite(0.1..0.9)=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test] alma_direct_s0: 32/365 0s
+[test] alma_direct_s0: 64/365 0s
+[test] alma_direct_s0: 96/365 0s
+[test] alma_direct_s0: 128/365 0s
+[test] alma_direct_s0: 160/365 0s
+[test] alma_direct_s0: 192/365 0s
+[test] alma_direct_s0: 224/365 0s
+[test] alma_direct_s0: 256/365 0s
+[test] alma_direct_s0: 288/365 0s
+[test] alma_direct_s0: 320/365 0s
+[test] alma_direct_s0: 352/365 0s
+[test] alma_direct_s0: 365/365 0s
+[test] alma_direct_s0: n=365 0.5s nonfinite(0.1..0.9)=0
+[test] wm_power: 32/365 0s
+[test] wm_power: 64/365 0s
+[test] wm_power: 96/365 0s
+[test] wm_power: 128/365 0s
+[test] wm_power: 160/365 0s
+[test] wm_power: 192/365 0s
+[test] wm_power: 224/365 0s
+[test] wm_power: 256/365 0s
+[test] wm_power: 288/365 0s
+[test] wm_power: 320/365 1s
+[test] wm_power: 352/365 1s
+[test] wm_power: 365/365 1s
+[test] wm_power: n=365 0.6s nonfinite(0.1..0.9)=0
+[test] wm_power_direct: 32/365 0s
+[test] wm_power_direct: 64/365 0s
+[test] wm_power_direct: 96/365 0s
+[test] wm_power_direct: 128/365 0s
+[test] wm_power_direct: 160/365 0s
+[test] wm_power_direct: 192/365 0s
+[test] wm_power_direct: 224/365 0s
+[test] wm_power_direct: 256/365 0s
+[test] wm_power_direct: 288/365 0s
+[test] wm_power_direct: 320/365 1s
+[test] wm_power_direct: 352/365 1s
+[test] wm_power_direct: 365/365 1s
+[test] wm_power_direct: n=365 0.6s nonfinite(0.1..0.9)=0
+metrics -> /Users/srimanarayana/Timeseries/runs/power/test/metrics.json

@@ -1,0 +1,10 @@
+{"name": "p_vt_k1_c1.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": 1, "c": 1.0}}
+{"name": "p_vt_k1_c2.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": 1, "c": 2.0}}
+{"name": "p_vt_k1_c4.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": 1, "c": 4.0}}
+{"name": "p_vt_k2_c2.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": 2, "c": 2.0}}
+{"name": "p_vt_k3_c2.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": 3, "c": 2.0}}
+{"name": "p_vt_k-1_c1.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": -1, "c": 1.0}}
+{"name": "p_vt_k-1_c2.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": -1, "c": 2.0}}
+{"name": "p_vt_k-1_c4.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "k": -1, "c": 4.0}}
+{"name": "p_resid_k1_lam0.5_kap1.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "type": "resid", "k": 1, "c": 2.0, "lam": 0.5, "kappa": 1.0}}
+{"name": "p_resid_k-1_lam0.5_kap1.0", "cfg": {"fc": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "fc_name": "b2", "type": "resid", "k": -1, "c": 2.0, "lam": 0.5, "kappa": 1.0}}

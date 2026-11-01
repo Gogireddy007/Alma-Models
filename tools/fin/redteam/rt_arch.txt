@@ -1,0 +1,1139 @@
+# 2026-11-01 00:18:43.345885 --only I1,C1
+OK   I1 loop_b9d2692d92_none_s0_E1.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E1.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_b9d2692d92_none_s0_E2.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_direct_s0_2024-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d128_none_s0_2024-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_direct_s0_2024-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 wm_d64_none_s0_2024-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   C1 WMContinual(loop_b9d2692d92_none_s0_E1.pt): decisions <= perturbation day identical (updates [1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   C1 WMContinual: later decisions differ (it does learn from revealed rows)
+ALL OK
+# 2026-11-01 00:28:16.044898 --only A1
+OK   A1 A dataset legacy (clean) == cached search dataset ds_2024-06-30.npz (keys 13)
+OK   A1 A dataset legacy (future) == cached search dataset ds_2024-06-30.npz (keys 13)
+OK   A1 A dataset legacy (heldout) == cached search dataset ds_2024-06-30.npz (keys 13)
+OK   A1 A dataset loop (clean) == cached search dataset ds_w28_2024-06-30.npz (keys 16)
+OK   A1 A dataset loop (future) == cached search dataset ds_w28_2024-06-30.npz (keys 16)
+OK   A1 A dataset loop (heldout) == cached search dataset ds_w28_2024-06-30.npz (keys 16)
+ALL OK
+# 2026-11-01 00:28:50.896701 --only P1b
+OK   P1b b_har_gru_h s0 E1: recomputed 0.6185 vs results_b 0.6185
+OK   P1b b_har_gru_h s0 E2: recomputed 0.6661 vs results_b 0.6661
+OK   P1b b_har_gru_h s0 E3: recomputed 0.6781 vs results_b 0.6781
+OK   P1b b_har_gru s0 E1: recomputed 0.6374 vs results_b 0.6374
+OK   P1b b_har_gru s0 E2: recomputed 0.6940 vs results_b 0.6940
+OK   P1b b_har_gru s0 E3: recomputed 0.6811 vs results_b 0.6811
+OK   P1b b_har_lin s0 E1: recomputed 0.6286 vs results_b 0.6286
+OK   P1b b_har_lin s0 E2: recomputed 0.6724 vs results_b 0.6724
+OK   P1b b_har_lin s0 E3: recomputed 0.6659 vs results_b 0.6659
+OK   P1b b_har_mlp s0 E1: recomputed 0.6283 vs results_b 0.6283
+OK   P1b b_har_mlp s0 E2: recomputed 0.6749 vs results_b 0.6749
+OK   P1b b_har_mlp s0 E3: recomputed 0.6672 vs results_b 0.6672
+OK   P1b b_lru_d s0 E1: recomputed 0.6357 vs results_b 0.6357
+OK   P1b b_lru_d s0 E2: recomputed 0.6957 vs results_b 0.6957
+OK   P1b b_lru_d s0 E3: recomputed 0.6830 vs results_b 0.6830
+OK   P1b b_lru_dh s0 E1: recomputed 0.6236 vs results_b 0.6236
+OK   P1b b_lru_dh s0 E2: recomputed 0.6920 vs results_b 0.6920
+OK   P1b b_lru_dh s0 E3: recomputed 0.6860 vs results_b 0.6860
+OK   P1b b_tf_d s0 E1: recomputed 0.6387 vs results_b 0.6387
+OK   P1b b_tf_d s0 E2: recomputed 0.6892 vs results_b 0.6892
+OK   P1b b_tf_d s0 E3: recomputed 0.6974 vs results_b 0.6974
+OK   P1b smoke_gru s0 E3: recomputed 0.6745 vs results_b 0.6745
+OK   P1b: 22 B fold scores re-derived
+ALL OK
+# 2026-11-01 00:49:54.072824 --only I1
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_c2a0ff73dc_none_s0_E3.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E3.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_bb100ccd25_none_s0_E1.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+ALL OK
+# 2026-11-01 01:08:19.349975 --only P1b
+INFO P1b b_har_gru_h_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6185
+INFO P1b b_har_gru_h_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6661
+INFO P1b b_har_gru_h_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6781
+INFO P1b b_har_gru_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6374
+INFO P1b b_har_gru_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6940
+INFO P1b b_har_gru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6811
+INFO P1b b_har_lin_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6286
+INFO P1b b_har_lin_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6724
+INFO P1b b_har_lin_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6659
+INFO P1b b_har_mlp_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6283
+INFO P1b b_har_mlp_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6749
+INFO P1b b_har_mlp_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6672
+INFO P1b b_lru_d_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6357
+INFO P1b b_lru_d_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6957
+INFO P1b b_lru_d_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6830
+INFO P1b b_lru_dh_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6236
+INFO P1b b_lru_dh_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6920
+INFO P1b b_lru_dh_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6860
+INFO P1b b_tf_d_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6387
+INFO P1b b_tf_d_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6892
+INFO P1b b_tf_d_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6974
+INFO P1b b_tf_dh_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6343
+INFO P1b b_tf_dh_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6895
+INFO P1b b_tf_dh_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6899
+INFO P1b b_x_mean_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6313
+INFO P1b b_x_mean_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6464
+INFO P1b c3_gru_hconv_petf0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6333
+INFO P1b c3_gru_hconv_petf0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6695
+INFO P1b c3_gru_hconv_petf0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6818
+INFO P1b c3_gru_moe4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6323
+INFO P1b c3_gru_moe4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6826
+INFO P1b c3_gru_moe4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6840
+INFO P1b c3_gru_petf0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6236
+INFO P1b c3_gru_petf0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6792
+INFO P1b c3_gru_petf0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6838
+INFO P1b c3_gru_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6283
+INFO P1b c3_gru_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6826
+INFO P1b c3_gru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6823
+INFO P1b c3_gru_st4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6293
+INFO P1b c3_gru_st4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6843
+INFO P1b c3_gru_st4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6886
+INFO P1b c3_gru_wm_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6300
+INFO P1b c3_gru_wm_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6781
+INFO P1b c3_gru_wm_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6825
+INFO P1b c3_gru_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6397
+INFO P1b c3_gru_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6835
+INFO P1b c3_gru_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6801
+INFO P1b c3_gru_xmean_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6256
+INFO P1b c3_gru_xmean_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6749
+INFO P1b c3_gru_xmean_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6828
+INFO P1b c3_har_lin_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6286
+INFO P1b c3_har_lin_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6724
+INFO P1b c3_har_lin_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6659
+INFO P1b c3_lru_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6296
+INFO P1b c3_lru_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6732
+INFO P1b c3_lru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6850
+INFO P1b c3_mlp_W7_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6515
+INFO P1b c3_mlp_W7_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6883
+INFO P1b c3_mlp_W7_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6977
+INFO P1b c3_mlp_bs64_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6172
+INFO P1b c3_mlp_bs64_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6863
+INFO P1b c3_mlp_bs64_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6764
+INFO P1b c3_mlp_cd0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6384
+INFO P1b c3_mlp_cd0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6937
+INFO P1b c3_mlp_cd0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6889
+INFO P1b c3_mlp_cd5_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6468
+INFO P1b c3_mlp_cd5_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6960
+INFO P1b c3_mlp_cd5_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6940
+INFO P1b c3_mlp_d128_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6350
+INFO P1b c3_mlp_d128_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6926
+INFO P1b c3_mlp_d128_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6830
+INFO P1b c3_mlp_d256_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6202
+INFO P1b c3_mlp_d256_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6917
+INFO P1b c3_mlp_d256_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6935
+INFO P1b c3_mlp_d32_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6444
+INFO P1b c3_mlp_d32_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6952
+INFO P1b c3_mlp_d32_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6989
+INFO P1b c3_mlp_d_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6481
+INFO P1b c3_mlp_d_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6940
+INFO P1b c3_mlp_d_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6872
+INFO P1b c3_mlp_d_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6343
+INFO P1b c3_mlp_d_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6872
+INFO P1b c3_mlp_d_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6864
+INFO P1b c3_mlp_d_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6461
+INFO P1b c3_mlp_d_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6903
+INFO P1b c3_mlp_d_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6886
+INFO P1b c3_mlp_drop2_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6519
+INFO P1b c3_mlp_drop2_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6934
+INFO P1b c3_mlp_drop2_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6884
+INFO P1b c3_mlp_ens3_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6394
+INFO P1b c3_mlp_ens3_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7017
+INFO P1b c3_mlp_ens3_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6940
+INFO P1b c3_mlp_hconv_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6360
+INFO P1b c3_mlp_hconv_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6986
+INFO P1b c3_mlp_hconv_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7065
+INFO P1b c3_mlp_hd128_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6441
+INFO P1b c3_mlp_hd128_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7043
+INFO P1b c3_mlp_hd128_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6867
+INFO P1b c3_mlp_lr1e3_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6444
+INFO P1b c3_mlp_lr1e3_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6972
+INFO P1b c3_mlp_lr1e3_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6896
+INFO P1b c3_mlp_lr5e3_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6448
+INFO P1b c3_mlp_lr5e3_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6994
+INFO P1b c3_mlp_lr5e3_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6816
+INFO P1b c3_mlp_moe4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6293
+INFO P1b c3_mlp_moe4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6952
+INFO P1b c3_mlp_moe4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6864
+INFO P1b c3_mlp_moe8_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6337
+INFO P1b c3_mlp_moe8_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6943
+INFO P1b c3_mlp_moe8_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6835
+INFO P1b c3_mlp_noharskip_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6404
+INFO P1b c3_mlp_noharskip_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6960
+INFO P1b c3_mlp_noharskip_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6952
+INFO P1b c3_mlp_petf0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6283
+INFO P1b c3_mlp_petf0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6903
+INFO P1b c3_mlp_petf0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6943
+INFO P1b c3_mlp_s1500_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.5906
+INFO P1b c3_mlp_s1500_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6692
+INFO P1b c3_mlp_s1500_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6654
+INFO P1b c3_mlp_s200_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6421
+INFO P1b c3_mlp_s200_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6897
+INFO P1b c3_mlp_s200_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6926
+INFO P1b c3_mlp_s800_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6013
+INFO P1b c3_mlp_s800_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6735
+INFO P1b c3_mlp_s800_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6706
+INFO P1b c3_mlp_st4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6471
+INFO P1b c3_mlp_st4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6903
+INFO P1b c3_mlp_st4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6947
+INFO P1b c3_mlp_st4_wm_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6330
+INFO P1b c3_mlp_st4_wm_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6963
+INFO P1b c3_mlp_st4_wm_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6969
+INFO P1b c3_mlp_wd1e2_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6492
+INFO P1b c3_mlp_wd1e2_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6937
+INFO P1b c3_mlp_wd1e2_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6877
+INFO P1b c3_mlp_wm03_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6411
+INFO P1b c3_mlp_wm03_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6991
+INFO P1b c3_mlp_wm03_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6935
+INFO P1b c3_mlp_wm_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6357
+INFO P1b c3_mlp_wm_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7017
+INFO P1b c3_mlp_wm_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6923
+INFO P1b c3_mlp_wp0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.5444
+INFO P1b c3_mlp_wp0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.5587
+INFO P1b c3_mlp_wp0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.5753
+INFO P1b c3_mlp_wp3_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6478
+INFO P1b c3_mlp_wp3_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6900
+INFO P1b c3_mlp_wp3_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6879
+INFO P1b c3_mlp_wq0_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6354
+INFO P1b c3_mlp_wq0_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6926
+INFO P1b c3_mlp_wq0_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6874
+INFO P1b c3_mlp_xattn_moe4_wm_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6269
+INFO P1b c3_mlp_xattn_moe4_wm_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6937
+INFO P1b c3_mlp_xattn_moe4_wm_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6833
+INFO P1b c3_mlp_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6495
+INFO P1b c3_mlp_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6994
+INFO P1b c3_mlp_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6911
+INFO P1b c3_mlp_xmean_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6444
+INFO P1b c3_mlp_xmean_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6869
+INFO P1b c3_mlp_xmean_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6935
+INFO P1b c3_tf_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6438
+INFO P1b c3_tf_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6849
+INFO P1b c3_tf_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6852
+INFO P1b c3_tf_wm_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6455
+INFO P1b c3_tf_wm_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6829
+INFO P1b c3_tf_wm_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6899
+INFO P1b c3_tf_wm_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6360
+INFO P1b c3_tf_wm_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6769
+INFO P1b c3_tf_wm_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6933
+INFO P1b c3_tf_wm_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6343
+INFO P1b c3_tf_wm_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6744
+INFO P1b c3_tf_wm_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6918
+INFO P1b c3_tf_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6428
+INFO P1b c3_tf_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6769
+INFO P1b c3_tf_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6911
+INFO P1b c4_b2_W7_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6542
+INFO P1b c4_b2_W7_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6869
+INFO P1b c4_b2_W7_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6899
+INFO P1b c4_b2_W7_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6519
+INFO P1b c4_b2_W7_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6789
+INFO P1b c4_b2_W7_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6869
+INFO P1b c4_b2_W7_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6478
+INFO P1b c4_b2_W7_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6858
+INFO P1b c4_b2_W7_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6864
+INFO P1b c4_b2_d64_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6478
+INFO P1b c4_b2_d64_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6994
+INFO P1b c4_b2_d64_xattn_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_d64_xattn_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_drop2_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6411
+INFO P1b c4_b2_drop2_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7009
+INFO P1b c4_b2_drop2_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7001
+INFO P1b c4_b2_drop2_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6589
+INFO P1b c4_b2_drop2_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7020
+INFO P1b c4_b2_drop2_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6908
+INFO P1b c4_b2_drop2_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6340
+INFO P1b c4_b2_drop2_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6852
+INFO P1b c4_b2_drop2_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6952
+INFO P1b c4_b2_gru_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6306
+INFO P1b c4_b2_gru_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6729
+INFO P1b c4_b2_gru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6818
+INFO P1b c4_b2_gru_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6391
+INFO P1b c4_b2_gru_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6783
+INFO P1b c4_b2_gru_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6828
+INFO P1b c4_b2_gru_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6421
+INFO P1b c4_b2_gru_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6721
+INFO P1b c4_b2_gru_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6806
+INFO P1b c4_b2_hconv_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6370
+INFO P1b c4_b2_hconv_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6960
+INFO P1b c4_b2_hconv_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7011
+INFO P1b c4_b2_hconv_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6387
+INFO P1b c4_b2_hconv_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7140
+INFO P1b c4_b2_hconv_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6938
+INFO P1b c4_b2_hconv_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6502
+INFO P1b c4_b2_hconv_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6849
+INFO P1b c4_b2_hconv_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7023
+INFO P1b c4_b2_lru_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6273
+INFO P1b c4_b2_lru_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6729
+INFO P1b c4_b2_lru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6816
+INFO P1b c4_b2_lru_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6323
+INFO P1b c4_b2_lru_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6741
+INFO P1b c4_b2_lru_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6872
+INFO P1b c4_b2_lru_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6266
+INFO P1b c4_b2_lru_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6644
+INFO P1b c4_b2_lru_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6803
+INFO P1b c4_b2_moe4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6364
+INFO P1b c4_b2_moe4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7006
+INFO P1b c4_b2_moe4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6923
+INFO P1b c4_b2_moe4_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6444
+INFO P1b c4_b2_moe4_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6937
+INFO P1b c4_b2_moe4_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6933
+INFO P1b c4_b2_moe4_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6485
+INFO P1b c4_b2_moe4_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6860
+INFO P1b c4_b2_moe4_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6916
+INFO P1b c4_b2_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6428
+INFO P1b c4_b2_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7011
+INFO P1b c4_b2_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7057
+INFO P1b c4_b2_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6569
+INFO P1b c4_b2_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7020
+INFO P1b c4_b2_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6911
+INFO P1b c4_b2_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6266
+INFO P1b c4_b2_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6840
+INFO P1b c4_b2_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6945
+INFO P1b c4_b2_s300_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6468
+INFO P1b c4_b2_s300_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6909
+INFO P1b c4_b2_s300_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6996
+INFO P1b c4_b2_s300_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6616
+INFO P1b c4_b2_s300_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7023
+INFO P1b c4_b2_s300_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6874
+INFO P1b c4_b2_s300_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6347
+INFO P1b c4_b2_s300_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6940
+INFO P1b c4_b2_s300_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6974
+INFO P1b c4_b2_st4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6471
+INFO P1b c4_b2_st4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6877
+INFO P1b c4_b2_st4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6930
+INFO P1b c4_b2_st4_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6441
+INFO P1b c4_b2_st4_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6895
+INFO P1b c4_b2_st4_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6879
+INFO P1b c4_b2_st4_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6441
+INFO P1b c4_b2_st4_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6900
+INFO P1b c4_b2_st4_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.7004
+INFO P1b c4_b2_tf_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6380
+INFO P1b c4_b2_tf_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6712
+INFO P1b c4_b2_tf_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6850
+INFO P1b c4_b2_tf_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6424
+INFO P1b c4_b2_tf_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6695
+INFO P1b c4_b2_tf_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6869
+INFO P1b c4_b2_tf_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6367
+INFO P1b c4_b2_tf_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6709
+INFO P1b c4_b2_tf_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6884
+INFO P1b c4_b2_tf_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6256
+INFO P1b c4_b2_tf_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6906
+INFO P1b c4_b2_tf_xattn_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_tf_xattn_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_wm03_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6421
+INFO P1b c4_b2_wm03_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6943
+INFO P1b c4_b2_wm03_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6996
+INFO P1b c4_b2_wm03_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6451
+INFO P1b c4_b2_wm03_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.7028
+INFO P1b c4_b2_wm03_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6923
+INFO P1b c4_b2_wm03_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6444
+INFO P1b c4_b2_wm03_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.6872
+INFO P1b c4_b2_wm03_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6921
+INFO P1b c4_b2_xattn_W7_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6529
+INFO P1b c4_b2_xattn_W7_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6933
+INFO P1b c4_b2_xattn_W7_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_W7_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6441
+INFO P1b c4_b2_xattn_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6899
+INFO P1b c4_b2_xattn_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s0_E1: no matching results_b row (policy fc preds or unlogged): acc 0.6404
+INFO P1b c4_b2_xattn_wm03_st4_s0_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6935
+INFO P1b c4_b2_xattn_wm03_st4_s1_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s1_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s1_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s2_E1: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s2_E2: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b c4_b2_xattn_wm03_st4_s2_E3: no matching results_b row (policy fc preds or unlogged): acc 0.0000
+INFO P1b smoke_gru_s0_E3: no matching results_b row (policy fc preds or unlogged): acc 0.6745
+FAIL P1b: 0 B fold scores re-derived
+FAILURES
+# 2026-11-01 01:09:03.066251 --only P1b
+OK   P1b b_har_gru_h s0 E1: recomputed 0.6185 vs results_b 0.6185
+OK   P1b b_har_gru_h s0 E2: recomputed 0.6661 vs results_b 0.6661
+OK   P1b b_har_gru_h s0 E3: recomputed 0.6781 vs results_b 0.6781
+OK   P1b b_har_gru s0 E1: recomputed 0.6374 vs results_b 0.6374
+OK   P1b b_har_gru s0 E2: recomputed 0.6940 vs results_b 0.6940
+OK   P1b b_har_gru s0 E3: recomputed 0.6811 vs results_b 0.6811
+OK   P1b b_har_lin s0 E1: recomputed 0.6286 vs results_b 0.6286
+OK   P1b b_har_lin s0 E2: recomputed 0.6724 vs results_b 0.6724
+OK   P1b b_har_lin s0 E3: recomputed 0.6659 vs results_b 0.6659
+OK   P1b b_har_mlp s0 E1: recomputed 0.6283 vs results_b 0.6283
+OK   P1b b_har_mlp s0 E2: recomputed 0.6749 vs results_b 0.6749
+OK   P1b b_har_mlp s0 E3: recomputed 0.6672 vs results_b 0.6672
+OK   P1b b_lru_d s0 E1: recomputed 0.6357 vs results_b 0.6357
+OK   P1b b_lru_d s0 E2: recomputed 0.6957 vs results_b 0.6957
+OK   P1b b_lru_d s0 E3: recomputed 0.6830 vs results_b 0.6830
+OK   P1b b_lru_dh s0 E1: recomputed 0.6236 vs results_b 0.6236
+OK   P1b b_lru_dh s0 E2: recomputed 0.6920 vs results_b 0.6920
+OK   P1b b_lru_dh s0 E3: recomputed 0.6860 vs results_b 0.6860
+OK   P1b b_tf_d s0 E1: recomputed 0.6387 vs results_b 0.6387
+OK   P1b b_tf_d s0 E2: recomputed 0.6892 vs results_b 0.6892
+OK   P1b b_tf_d s0 E3: recomputed 0.6974 vs results_b 0.6974
+OK   P1b b_tf_dh s0 E1: recomputed 0.6343 vs results_b 0.6343
+OK   P1b b_tf_dh s0 E2: recomputed 0.6895 vs results_b 0.6895
+OK   P1b b_tf_dh s0 E3: recomputed 0.6899 vs results_b 0.6899
+OK   P1b b_x_mean s0 E1: recomputed 0.6313 vs results_b 0.6313
+OK   P1b b_x_mean s0 E2: recomputed 0.6464 vs results_b 0.6464
+OK   P1b c3_gru_hconv_petf0 s0 E1: recomputed 0.6333 vs results_b 0.6333
+OK   P1b c3_gru_hconv_petf0 s0 E2: recomputed 0.6695 vs results_b 0.6695
+OK   P1b c3_gru_hconv_petf0 s0 E3: recomputed 0.6818 vs results_b 0.6818
+OK   P1b c3_gru_moe4 s0 E1: recomputed 0.6323 vs results_b 0.6323
+OK   P1b c3_gru_moe4 s0 E2: recomputed 0.6826 vs results_b 0.6826
+OK   P1b c3_gru_moe4 s0 E3: recomputed 0.6840 vs results_b 0.6840
+OK   P1b c3_gru_petf0 s0 E1: recomputed 0.6236 vs results_b 0.6236
+OK   P1b c3_gru_petf0 s0 E2: recomputed 0.6792 vs results_b 0.6792
+OK   P1b c3_gru_petf0 s0 E3: recomputed 0.6838 vs results_b 0.6838
+OK   P1b c3_gru s0 E1: recomputed 0.6283 vs results_b 0.6283
+OK   P1b c3_gru s0 E2: recomputed 0.6826 vs results_b 0.6826
+OK   P1b c3_gru s0 E3: recomputed 0.6823 vs results_b 0.6823
+OK   P1b c3_gru_st4 s0 E1: recomputed 0.6293 vs results_b 0.6293
+OK   P1b c3_gru_st4 s0 E2: recomputed 0.6843 vs results_b 0.6843
+OK   P1b c3_gru_st4 s0 E3: recomputed 0.6886 vs results_b 0.6886
+OK   P1b c3_gru_wm s0 E1: recomputed 0.6300 vs results_b 0.6300
+OK   P1b c3_gru_wm s0 E2: recomputed 0.6781 vs results_b 0.6781
+OK   P1b c3_gru_wm s0 E3: recomputed 0.6825 vs results_b 0.6825
+OK   P1b c3_gru_xattn s0 E1: recomputed 0.6397 vs results_b 0.6397
+OK   P1b c3_gru_xattn s0 E2: recomputed 0.6835 vs results_b 0.6835
+OK   P1b c3_gru_xattn s0 E3: recomputed 0.6801 vs results_b 0.6801
+OK   P1b c3_gru_xmean s0 E1: recomputed 0.6256 vs results_b 0.6256
+OK   P1b c3_gru_xmean s0 E2: recomputed 0.6749 vs results_b 0.6749
+OK   P1b c3_gru_xmean s0 E3: recomputed 0.6828 vs results_b 0.6828
+OK   P1b c3_har_lin s0 E1: recomputed 0.6286 vs results_b 0.6286
+OK   P1b c3_har_lin s0 E2: recomputed 0.6724 vs results_b 0.6724
+OK   P1b c3_har_lin s0 E3: recomputed 0.6659 vs results_b 0.6659
+OK   P1b c3_lru s0 E1: recomputed 0.6296 vs results_b 0.6296
+OK   P1b c3_lru s0 E2: recomputed 0.6732 vs results_b 0.6732
+OK   P1b c3_lru s0 E3: recomputed 0.6850 vs results_b 0.6850
+OK   P1b c3_mlp_W7 s0 E1: recomputed 0.6515 vs results_b 0.6515
+OK   P1b c3_mlp_W7 s0 E2: recomputed 0.6883 vs results_b 0.6883
+OK   P1b c3_mlp_W7 s0 E3: recomputed 0.6977 vs results_b 0.6977
+OK   P1b c3_mlp_bs64 s0 E1: recomputed 0.6172 vs results_b 0.6172
+OK   P1b c3_mlp_bs64 s0 E2: recomputed 0.6863 vs results_b 0.6863
+OK   P1b c3_mlp_bs64 s0 E3: recomputed 0.6764 vs results_b 0.6764
+OK   P1b c3_mlp_cd0 s0 E1: recomputed 0.6384 vs results_b 0.6384
+OK   P1b c3_mlp_cd0 s0 E2: recomputed 0.6937 vs results_b 0.6937
+OK   P1b c3_mlp_cd0 s0 E3: recomputed 0.6889 vs results_b 0.6889
+OK   P1b c3_mlp_cd5 s0 E1: recomputed 0.6468 vs results_b 0.6468
+OK   P1b c3_mlp_cd5 s0 E2: recomputed 0.6960 vs results_b 0.6960
+OK   P1b c3_mlp_cd5 s0 E3: recomputed 0.6940 vs results_b 0.6940
+OK   P1b c3_mlp_d128 s0 E1: recomputed 0.6350 vs results_b 0.6350
+OK   P1b c3_mlp_d128 s0 E2: recomputed 0.6926 vs results_b 0.6926
+OK   P1b c3_mlp_d128 s0 E3: recomputed 0.6830 vs results_b 0.6830
+OK   P1b c3_mlp_d256 s0 E1: recomputed 0.6202 vs results_b 0.6202
+OK   P1b c3_mlp_d256 s0 E2: recomputed 0.6917 vs results_b 0.6917
+OK   P1b c3_mlp_d256 s0 E3: recomputed 0.6935 vs results_b 0.6935
+OK   P1b c3_mlp_d32 s0 E1: recomputed 0.6444 vs results_b 0.6444
+OK   P1b c3_mlp_d32 s0 E2: recomputed 0.6952 vs results_b 0.6952
+OK   P1b c3_mlp_d32 s0 E3: recomputed 0.6989 vs results_b 0.6989
+OK   P1b c3_mlp_d s0 E1: recomputed 0.6481 vs results_b 0.6482
+OK   P1b c3_mlp_d s0 E2: recomputed 0.6940 vs results_b 0.6940
+OK   P1b c3_mlp_d s0 E3: recomputed 0.6872 vs results_b 0.6872
+OK   P1b c3_mlp_d s1 E1: recomputed 0.6343 vs results_b 0.6343
+OK   P1b c3_mlp_d s1 E2: recomputed 0.6872 vs results_b 0.6872
+OK   P1b c3_mlp_d s1 E3: recomputed 0.6864 vs results_b 0.6865
+OK   P1b c3_mlp_d s2 E1: recomputed 0.6461 vs results_b 0.6461
+OK   P1b c3_mlp_d s2 E2: recomputed 0.6903 vs results_b 0.6903
+OK   P1b c3_mlp_d s2 E3: recomputed 0.6886 vs results_b 0.6886
+OK   P1b c3_mlp_drop2 s0 E1: recomputed 0.6519 vs results_b 0.6519
+OK   P1b c3_mlp_drop2 s0 E2: recomputed 0.6934 vs results_b 0.6935
+OK   P1b c3_mlp_drop2 s0 E3: recomputed 0.6884 vs results_b 0.6884
+OK   P1b c3_mlp_ens3 s0 E1: recomputed 0.6394 vs results_b 0.6394
+OK   P1b c3_mlp_ens3 s0 E2: recomputed 0.7017 vs results_b 0.7017
+OK   P1b c3_mlp_ens3 s0 E3: recomputed 0.6940 vs results_b 0.6940
+OK   P1b c3_mlp_hconv s0 E1: recomputed 0.6360 vs results_b 0.6360
+OK   P1b c3_mlp_hconv s0 E2: recomputed 0.6986 vs results_b 0.6986
+OK   P1b c3_mlp_hconv s0 E3: recomputed 0.7065 vs results_b 0.7065
+OK   P1b c3_mlp_hd128 s0 E1: recomputed 0.6441 vs results_b 0.6441
+OK   P1b c3_mlp_hd128 s0 E2: recomputed 0.7043 vs results_b 0.7043
+OK   P1b c3_mlp_hd128 s0 E3: recomputed 0.6867 vs results_b 0.6867
+OK   P1b c3_mlp_lr1e3 s0 E1: recomputed 0.6444 vs results_b 0.6444
+OK   P1b c3_mlp_lr1e3 s0 E2: recomputed 0.6972 vs results_b 0.6972
+OK   P1b c3_mlp_lr1e3 s0 E3: recomputed 0.6896 vs results_b 0.6896
+OK   P1b c3_mlp_lr5e3 s0 E1: recomputed 0.6448 vs results_b 0.6448
+OK   P1b c3_mlp_lr5e3 s0 E2: recomputed 0.6994 vs results_b 0.6994
+OK   P1b c3_mlp_lr5e3 s0 E3: recomputed 0.6816 vs results_b 0.6816
+OK   P1b c3_mlp_moe4 s0 E1: recomputed 0.6293 vs results_b 0.6293
+OK   P1b c3_mlp_moe4 s0 E2: recomputed 0.6952 vs results_b 0.6952
+OK   P1b c3_mlp_moe4 s0 E3: recomputed 0.6864 vs results_b 0.6865
+OK   P1b c3_mlp_moe8 s0 E1: recomputed 0.6337 vs results_b 0.6337
+OK   P1b c3_mlp_moe8 s0 E2: recomputed 0.6943 vs results_b 0.6943
+OK   P1b c3_mlp_moe8 s0 E3: recomputed 0.6835 vs results_b 0.6835
+OK   P1b c3_mlp_noharskip s0 E1: recomputed 0.6404 vs results_b 0.6404
+OK   P1b c3_mlp_noharskip s0 E2: recomputed 0.6960 vs results_b 0.6960
+OK   P1b c3_mlp_noharskip s0 E3: recomputed 0.6952 vs results_b 0.6952
+OK   P1b c3_mlp_petf0 s0 E1: recomputed 0.6283 vs results_b 0.6283
+OK   P1b c3_mlp_petf0 s0 E2: recomputed 0.6903 vs results_b 0.6903
+OK   P1b c3_mlp_petf0 s0 E3: recomputed 0.6943 vs results_b 0.6943
+OK   P1b c3_mlp_s1500 s0 E1: recomputed 0.5906 vs results_b 0.5906
+OK   P1b c3_mlp_s1500 s0 E2: recomputed 0.6692 vs results_b 0.6692
+OK   P1b c3_mlp_s1500 s0 E3: recomputed 0.6654 vs results_b 0.6654
+OK   P1b c3_mlp_s200 s0 E1: recomputed 0.6421 vs results_b 0.6421
+OK   P1b c3_mlp_s200 s0 E2: recomputed 0.6897 vs results_b 0.6897
+OK   P1b c3_mlp_s200 s0 E3: recomputed 0.6926 vs results_b 0.6925
+OK   P1b c3_mlp_s800 s0 E1: recomputed 0.6013 vs results_b 0.6014
+OK   P1b c3_mlp_s800 s0 E2: recomputed 0.6735 vs results_b 0.6735
+OK   P1b c3_mlp_s800 s0 E3: recomputed 0.6706 vs results_b 0.6706
+OK   P1b c3_mlp_st4 s0 E1: recomputed 0.6471 vs results_b 0.6471
+OK   P1b c3_mlp_st4 s0 E2: recomputed 0.6903 vs results_b 0.6903
+OK   P1b c3_mlp_st4 s0 E3: recomputed 0.6947 vs results_b 0.6947
+OK   P1b c3_mlp_st4_wm s0 E1: recomputed 0.6330 vs results_b 0.6330
+OK   P1b c3_mlp_st4_wm s0 E2: recomputed 0.6963 vs results_b 0.6963
+OK   P1b c3_mlp_st4_wm s0 E3: recomputed 0.6969 vs results_b 0.6969
+OK   P1b c3_mlp_wd1e2 s0 E1: recomputed 0.6492 vs results_b 0.6492
+OK   P1b c3_mlp_wd1e2 s0 E2: recomputed 0.6937 vs results_b 0.6937
+OK   P1b c3_mlp_wd1e2 s0 E3: recomputed 0.6877 vs results_b 0.6877
+OK   P1b c3_mlp_wm03 s0 E1: recomputed 0.6411 vs results_b 0.6411
+OK   P1b c3_mlp_wm03 s0 E2: recomputed 0.6991 vs results_b 0.6992
+OK   P1b c3_mlp_wm03 s0 E3: recomputed 0.6935 vs results_b 0.6935
+OK   P1b c3_mlp_wm s0 E1: recomputed 0.6357 vs results_b 0.6357
+OK   P1b c3_mlp_wm s0 E2: recomputed 0.7017 vs results_b 0.7017
+OK   P1b c3_mlp_wm s0 E3: recomputed 0.6923 vs results_b 0.6923
+OK   P1b c3_mlp_wp0 s0 E1: recomputed 0.5444 vs results_b 0.5444
+OK   P1b c3_mlp_wp0 s0 E2: recomputed 0.5587 vs results_b 0.5587
+OK   P1b c3_mlp_wp0 s0 E3: recomputed 0.5753 vs results_b 0.5753
+OK   P1b c3_mlp_wp3 s0 E1: recomputed 0.6478 vs results_b 0.6478
+OK   P1b c3_mlp_wp3 s0 E2: recomputed 0.6900 vs results_b 0.6900
+OK   P1b c3_mlp_wp3 s0 E3: recomputed 0.6879 vs results_b 0.6879
+OK   P1b c3_mlp_wq0 s0 E1: recomputed 0.6354 vs results_b 0.6353
+OK   P1b c3_mlp_wq0 s0 E2: recomputed 0.6926 vs results_b 0.6926
+OK   P1b c3_mlp_wq0 s0 E3: recomputed 0.6874 vs results_b 0.6874
+OK   P1b c3_mlp_xattn_moe4_wm s0 E1: recomputed 0.6269 vs results_b 0.6269
+OK   P1b c3_mlp_xattn_moe4_wm s0 E2: recomputed 0.6937 vs results_b 0.6937
+OK   P1b c3_mlp_xattn_moe4_wm s0 E3: recomputed 0.6833 vs results_b 0.6833
+OK   P1b c3_mlp_xattn s0 E1: recomputed 0.6495 vs results_b 0.6495
+OK   P1b c3_mlp_xattn s0 E2: recomputed 0.6994 vs results_b 0.6994
+OK   P1b c3_mlp_xattn s0 E3: recomputed 0.6911 vs results_b 0.6911
+OK   P1b c3_mlp_xmean s0 E1: recomputed 0.6444 vs results_b 0.6444
+OK   P1b c3_mlp_xmean s0 E2: recomputed 0.6869 vs results_b 0.6869
+OK   P1b c3_mlp_xmean s0 E3: recomputed 0.6935 vs results_b 0.6935
+OK   P1b c3_tf s0 E1: recomputed 0.6438 vs results_b 0.6438
+OK   P1b c3_tf s0 E2: recomputed 0.6849 vs results_b 0.6849
+OK   P1b c3_tf s0 E3: recomputed 0.6852 vs results_b 0.6852
+OK   P1b c3_tf_wm s0 E1: recomputed 0.6455 vs results_b 0.6454
+OK   P1b c3_tf_wm s0 E2: recomputed 0.6829 vs results_b 0.6829
+OK   P1b c3_tf_wm s0 E3: recomputed 0.6899 vs results_b 0.6899
+OK   P1b c3_tf_wm s1 E1: recomputed 0.6360 vs results_b 0.6360
+OK   P1b c3_tf_wm s1 E2: recomputed 0.6769 vs results_b 0.6769
+OK   P1b c3_tf_wm s1 E3: recomputed 0.6933 vs results_b 0.6933
+OK   P1b c3_tf_wm s2 E1: recomputed 0.6343 vs results_b 0.6343
+OK   P1b c3_tf_wm s2 E2: recomputed 0.6744 vs results_b 0.6744
+OK   P1b c3_tf_wm s2 E3: recomputed 0.6918 vs results_b 0.6918
+OK   P1b c3_tf_xattn s0 E1: recomputed 0.6428 vs results_b 0.6428
+OK   P1b c3_tf_xattn s0 E2: recomputed 0.6769 vs results_b 0.6769
+OK   P1b c3_tf_xattn s0 E3: recomputed 0.6911 vs results_b 0.6911
+OK   P1b c4_b2_W7 s0 E1: recomputed 0.6542 vs results_b 0.6542
+OK   P1b c4_b2_W7 s0 E2: recomputed 0.6869 vs results_b 0.6869
+OK   P1b c4_b2_W7 s0 E3: recomputed 0.6899 vs results_b 0.6899
+OK   P1b c4_b2_W7 s1 E1: recomputed 0.6519 vs results_b 0.6519
+OK   P1b c4_b2_W7 s1 E2: recomputed 0.6789 vs results_b 0.6789
+OK   P1b c4_b2_W7 s1 E3: recomputed 0.6869 vs results_b 0.6869
+OK   P1b c4_b2_W7 s2 E1: recomputed 0.6478 vs results_b 0.6478
+OK   P1b c4_b2_W7 s2 E2: recomputed 0.6858 vs results_b 0.6857
+OK   P1b c4_b2_W7 s2 E3: recomputed 0.6864 vs results_b 0.6865
+OK   P1b c4_b2_d64_xattn s0 E1: recomputed 0.6478 vs results_b 0.6478
+OK   P1b c4_b2_d64_xattn s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s0 E3: recomputed 0.6994 vs results_b 0.6994
+OK   P1b c4_b2_d64_xattn s1 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s1 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s1 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s2 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s2 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_d64_xattn s2 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_drop2 s0 E1: recomputed 0.6411 vs results_b 0.6411
+OK   P1b c4_b2_drop2 s0 E2: recomputed 0.7009 vs results_b 0.7008
+OK   P1b c4_b2_drop2 s0 E3: recomputed 0.7001 vs results_b 0.7001
+OK   P1b c4_b2_drop2 s1 E1: recomputed 0.6589 vs results_b 0.6589
+OK   P1b c4_b2_drop2 s1 E2: recomputed 0.7020 vs results_b 0.7020
+OK   P1b c4_b2_drop2 s1 E3: recomputed 0.6908 vs results_b 0.6908
+OK   P1b c4_b2_drop2 s2 E1: recomputed 0.6340 vs results_b 0.6340
+OK   P1b c4_b2_drop2 s2 E2: recomputed 0.6852 vs results_b 0.6852
+OK   P1b c4_b2_drop2 s2 E3: recomputed 0.6952 vs results_b 0.6952
+OK   P1b c4_b2_gru s0 E1: recomputed 0.6306 vs results_b 0.6306
+OK   P1b c4_b2_gru s0 E2: recomputed 0.6729 vs results_b 0.6729
+OK   P1b c4_b2_gru s0 E3: recomputed 0.6818 vs results_b 0.6818
+OK   P1b c4_b2_gru s1 E1: recomputed 0.6391 vs results_b 0.6391
+OK   P1b c4_b2_gru s1 E2: recomputed 0.6783 vs results_b 0.6784
+OK   P1b c4_b2_gru s1 E3: recomputed 0.6828 vs results_b 0.6828
+OK   P1b c4_b2_gru s2 E1: recomputed 0.6421 vs results_b 0.6421
+OK   P1b c4_b2_gru s2 E2: recomputed 0.6721 vs results_b 0.6721
+OK   P1b c4_b2_gru s2 E3: recomputed 0.6806 vs results_b 0.6806
+OK   P1b c4_b2_hconv s0 E1: recomputed 0.6370 vs results_b 0.6370
+OK   P1b c4_b2_hconv s0 E2: recomputed 0.6960 vs results_b 0.6960
+OK   P1b c4_b2_hconv s0 E3: recomputed 0.7011 vs results_b 0.7011
+OK   P1b c4_b2_hconv s1 E1: recomputed 0.6387 vs results_b 0.6387
+OK   P1b c4_b2_hconv s1 E2: recomputed 0.7140 vs results_b 0.7140
+OK   P1b c4_b2_hconv s1 E3: recomputed 0.6938 vs results_b 0.6938
+OK   P1b c4_b2_hconv s2 E1: recomputed 0.6502 vs results_b 0.6502
+OK   P1b c4_b2_hconv s2 E2: recomputed 0.6849 vs results_b 0.6849
+OK   P1b c4_b2_hconv s2 E3: recomputed 0.7023 vs results_b 0.7023
+OK   P1b c4_b2_lru s0 E1: recomputed 0.6273 vs results_b 0.6273
+OK   P1b c4_b2_lru s0 E2: recomputed 0.6729 vs results_b 0.6729
+OK   P1b c4_b2_lru s0 E3: recomputed 0.6816 vs results_b 0.6816
+OK   P1b c4_b2_lru s1 E1: recomputed 0.6323 vs results_b 0.6323
+OK   P1b c4_b2_lru s1 E2: recomputed 0.6741 vs results_b 0.6741
+OK   P1b c4_b2_lru s1 E3: recomputed 0.6872 vs results_b 0.6872
+OK   P1b c4_b2_lru s2 E1: recomputed 0.6266 vs results_b 0.6266
+OK   P1b c4_b2_lru s2 E2: recomputed 0.6644 vs results_b 0.6644
+OK   P1b c4_b2_lru s2 E3: recomputed 0.6803 vs results_b 0.6803
+OK   P1b c4_b2_moe4 s0 E1: recomputed 0.6364 vs results_b 0.6364
+OK   P1b c4_b2_moe4 s0 E2: recomputed 0.7006 vs results_b 0.7006
+OK   P1b c4_b2_moe4 s0 E3: recomputed 0.6923 vs results_b 0.6923
+OK   P1b c4_b2_moe4 s1 E1: recomputed 0.6444 vs results_b 0.6444
+OK   P1b c4_b2_moe4 s1 E2: recomputed 0.6937 vs results_b 0.6937
+OK   P1b c4_b2_moe4 s1 E3: recomputed 0.6933 vs results_b 0.6933
+OK   P1b c4_b2_moe4 s2 E1: recomputed 0.6485 vs results_b 0.6485
+OK   P1b c4_b2_moe4 s2 E2: recomputed 0.6860 vs results_b 0.6860
+OK   P1b c4_b2_moe4 s2 E3: recomputed 0.6916 vs results_b 0.6916
+OK   P1b c4_b2 s0 E1: recomputed 0.6428 vs results_b 0.6428
+OK   P1b c4_b2 s0 E2: recomputed 0.7011 vs results_b 0.7011
+OK   P1b c4_b2 s0 E3: recomputed 0.7057 vs results_b 0.7057
+OK   P1b c4_b2 s1 E1: recomputed 0.6569 vs results_b 0.6569
+OK   P1b c4_b2 s1 E2: recomputed 0.7020 vs results_b 0.7020
+OK   P1b c4_b2 s1 E3: recomputed 0.6911 vs results_b 0.6911
+OK   P1b c4_b2 s2 E1: recomputed 0.6266 vs results_b 0.6266
+OK   P1b c4_b2 s2 E2: recomputed 0.6840 vs results_b 0.6841
+OK   P1b c4_b2 s2 E3: recomputed 0.6945 vs results_b 0.6945
+OK   P1b c4_b2_s300 s0 E1: recomputed 0.6468 vs results_b 0.6468
+OK   P1b c4_b2_s300 s0 E2: recomputed 0.6909 vs results_b 0.6909
+OK   P1b c4_b2_s300 s0 E3: recomputed 0.6996 vs results_b 0.6996
+OK   P1b c4_b2_s300 s1 E1: recomputed 0.6616 vs results_b 0.6616
+OK   P1b c4_b2_s300 s1 E2: recomputed 0.7023 vs results_b 0.7023
+OK   P1b c4_b2_s300 s1 E3: recomputed 0.6874 vs results_b 0.6874
+OK   P1b c4_b2_s300 s2 E1: recomputed 0.6347 vs results_b 0.6347
+OK   P1b c4_b2_s300 s2 E2: recomputed 0.6940 vs results_b 0.6940
+OK   P1b c4_b2_s300 s2 E3: recomputed 0.6974 vs results_b 0.6974
+OK   P1b c4_b2_st4 s0 E1: recomputed 0.6471 vs results_b 0.6471
+OK   P1b c4_b2_st4 s0 E2: recomputed 0.6877 vs results_b 0.6877
+OK   P1b c4_b2_st4 s0 E3: recomputed 0.6930 vs results_b 0.6930
+OK   P1b c4_b2_st4 s1 E1: recomputed 0.6441 vs results_b 0.6441
+OK   P1b c4_b2_st4 s1 E2: recomputed 0.6895 vs results_b 0.6895
+OK   P1b c4_b2_st4 s1 E3: recomputed 0.6879 vs results_b 0.6879
+OK   P1b c4_b2_st4 s2 E1: recomputed 0.6441 vs results_b 0.6441
+OK   P1b c4_b2_st4 s2 E2: recomputed 0.6900 vs results_b 0.6900
+OK   P1b c4_b2_st4 s2 E3: recomputed 0.7004 vs results_b 0.7004
+OK   P1b c4_b2_tf s0 E1: recomputed 0.6380 vs results_b 0.6381
+OK   P1b c4_b2_tf s0 E2: recomputed 0.6712 vs results_b 0.6712
+OK   P1b c4_b2_tf s0 E3: recomputed 0.6850 vs results_b 0.6850
+OK   P1b c4_b2_tf s1 E1: recomputed 0.6424 vs results_b 0.6424
+OK   P1b c4_b2_tf s1 E2: recomputed 0.6695 vs results_b 0.6695
+OK   P1b c4_b2_tf s1 E3: recomputed 0.6869 vs results_b 0.6869
+OK   P1b c4_b2_tf s2 E1: recomputed 0.6367 vs results_b 0.6367
+OK   P1b c4_b2_tf s2 E2: recomputed 0.6709 vs results_b 0.6709
+OK   P1b c4_b2_tf s2 E3: recomputed 0.6884 vs results_b 0.6884
+OK   P1b c4_b2_tf_xattn s0 E1: recomputed 0.6256 vs results_b 0.6256
+OK   P1b c4_b2_tf_xattn s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s0 E3: recomputed 0.6906 vs results_b 0.6906
+OK   P1b c4_b2_tf_xattn s1 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s1 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s1 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s2 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s2 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_tf_xattn s2 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_wm03 s0 E1: recomputed 0.6421 vs results_b 0.6421
+OK   P1b c4_b2_wm03 s0 E2: recomputed 0.6943 vs results_b 0.6943
+OK   P1b c4_b2_wm03 s0 E3: recomputed 0.6996 vs results_b 0.6996
+OK   P1b c4_b2_wm03 s1 E1: recomputed 0.6451 vs results_b 0.6451
+OK   P1b c4_b2_wm03 s1 E2: recomputed 0.7028 vs results_b 0.7028
+OK   P1b c4_b2_wm03 s1 E3: recomputed 0.6923 vs results_b 0.6923
+OK   P1b c4_b2_wm03 s2 E1: recomputed 0.6444 vs results_b 0.6444
+OK   P1b c4_b2_wm03 s2 E2: recomputed 0.6872 vs results_b 0.6872
+OK   P1b c4_b2_wm03 s2 E3: recomputed 0.6921 vs results_b 0.6921
+OK   P1b c4_b2_xattn_W7 s0 E1: recomputed 0.6529 vs results_b 0.6529
+OK   P1b c4_b2_xattn_W7 s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s0 E3: recomputed 0.6933 vs results_b 0.6933
+OK   P1b c4_b2_xattn_W7 s1 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s1 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s1 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s2 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s2 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_W7 s2 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_hconv s0 E1: recomputed 0.6266 vs results_b 0.6266
+OK   P1b c4_b2_xattn_hconv s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s0 E1: recomputed 0.6441 vs results_b 0.6441
+OK   P1b c4_b2_xattn s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s0 E3: recomputed 0.6899 vs results_b 0.6899
+OK   P1b c4_b2_xattn s1 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s1 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s1 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s2 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s2 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn s2 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s0 E1: recomputed 0.6404 vs results_b 0.6404
+OK   P1b c4_b2_xattn_wm03_st4 s0 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s0 E3: recomputed 0.6935 vs results_b 0.6935
+OK   P1b c4_b2_xattn_wm03_st4 s1 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s1 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s1 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s2 E1: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s2 E2: recomputed 0.0000 vs results_b 0.0000
+OK   P1b c4_b2_xattn_wm03_st4 s2 E3: recomputed 0.0000 vs results_b 0.0000
+OK   P1b smoke_gru s0 E3: recomputed 0.6745 vs results_b 0.6745
+OK   P1b: 320 B fold scores re-derived
+ALL OK
+# 2026-11-01 01:04:23.218437 --only I1b
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt BContinual: decisions <= perturbation day identical
+ALL OK
+# 2026-11-01 01:08:06.039986 --only I1b
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b wm_b_moe4_refit.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt BContinual: decisions <= perturbation day identical
+ALL OK
+# 2026-11-01 01:12:26.378659 --only I1b
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_ens3_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_hconv_s300_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b c6_b2_moe4_s300_F1.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_gru.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_gru.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_hartf.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_hartf.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_lru.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_lru.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_tf.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_tf.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_wm_st.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_wm_st.pt BContinual: decisions <= perturbation day identical
+OK   I1b leak_xattn.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b leak_xattn.pt BContinual: decisions <= perturbation day identical
+OK   I1b wm_b_moe4_refit.pt fc crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt fc etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt crypto 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2024-08-01: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2024-12-02: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2025-03-03: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt voltgt etf 2025-06-30: future randomised -> identical; D-1 -> changed
+OK   I1b wm_b_moe4_refit.pt BContinual: decisions <= perturbation day identical
+ALL OK
+# 2026-11-01 01:13:14.857973 --only I1
+OK   I1 loop_977526d9b0_none_s0_E3.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_977526d9b0_none_s0_E3.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E3.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_4070a99430_none_s0_E1.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+ALL OK
+# 2026-11-01 01:33:31.247251 --only I1,C1
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E3.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 loop_0dbccd3e62_none_s0_E1.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   C1 WMContinual(loop_0dbccd3e62_none_s0_E3.pt): decisions <= perturbation day identical (updates [1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   C1 WMContinual: later decisions differ (it does learn from revealed rows)
+ALL OK
+# 2026-11-01 02:32:51.683223 --only I1
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+ALL OK
+# 2026-11-01 02:33:07.360400 --only I1
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s2_2024-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s0_2025-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s1_2025-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_none_s2_2025-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 frozen_wm_fin.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt crypto 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2024-08-01: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2024-12-02: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2025-03-03: future randomised -> identical; D-1 randomised -> changed
+OK   I1 fin_50b221e074_direct_s0_2025-06-30.pt etf 2025-06-30: future randomised -> identical; D-1 randomised -> changed
+ALL OK

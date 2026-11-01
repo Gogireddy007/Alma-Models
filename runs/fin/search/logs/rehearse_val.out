@@ -1,0 +1,286 @@
+[val/crypto] majority  1/123 2025-07-01 0s
+[val/crypto] majority  51/123 2025-08-20 0s
+[val/crypto] majority  101/123 2025-10-09 0s
+[val/crypto] majority  123/123 2025-10-31 0s
+[val/crypto] majority: done 0s, updates 0
+[val/crypto] rv_persist  1/123 2025-07-01 0s
+[val/crypto] rv_persist  51/123 2025-08-20 0s
+[val/crypto] rv_persist  101/123 2025-10-09 0s
+[val/crypto] rv_persist  123/123 2025-10-31 0s
+[val/crypto] rv_persist: done 0s, updates 0
+[val/crypto] har  1/123 2025-07-01 0s
+[val/crypto] har  51/123 2025-08-20 0s
+[val/crypto] har  101/123 2025-10-09 0s
+[val/crypto] har  123/123 2025-10-31 0s
+[val/crypto] har: done 0s, updates 0
+[val/crypto] harx  1/123 2025-07-01 0s
+[val/crypto] harx  51/123 2025-08-20 0s
+[val/crypto] harx  101/123 2025-10-09 0s
+[val/crypto] harx  123/123 2025-10-31 0s
+[val/crypto] harx: done 0s, updates 0
+[val/crypto] har_roll  1/123 2025-07-01 0s
+[val/crypto] har_roll  51/123 2025-08-20 1s
+[val/crypto] har_roll  101/123 2025-10-09 1s
+[val/crypto] har_roll  123/123 2025-10-31 2s
+[val/crypto] har_roll: done 2s, updates 0
+[val/crypto] garch  1/123 2025-07-01 1s
+[val/crypto] garch  51/123 2025-08-20 61s
+[val/crypto] garch  101/123 2025-10-09 119s
+[val/crypto] garch  123/123 2025-10-31 147s
+[val/crypto] garch: done 147s, updates 0
+[val/crypto] lgbm  1/123 2025-07-01 0s
+[val/crypto] lgbm  51/123 2025-08-20 0s
+[val/crypto] lgbm  101/123 2025-10-09 0s
+[val/crypto] lgbm  123/123 2025-10-31 0s
+[val/crypto] lgbm: done 0s, updates 0
+[val/crypto] lgbm_asset  1/123 2025-07-01 0s
+[val/crypto] lgbm_asset  51/123 2025-08-20 1s
+[val/crypto] lgbm_asset  101/123 2025-10-09 2s
+[val/crypto] lgbm_asset  123/123 2025-10-31 2s
+[val/crypto] lgbm_asset: done 2s, updates 0
+[val/crypto] har_dow  1/123 2025-07-01 0s
+[val/crypto] har_dow  51/123 2025-08-20 0s
+[val/crypto] har_dow  101/123 2025-10-09 0s
+[val/crypto] har_dow  123/123 2025-10-31 0s
+[val/crypto] har_dow: done 0s, updates 0
+[val/crypto] lgbm_dow  1/123 2025-07-01 0s
+[val/crypto] lgbm_dow  51/123 2025-08-20 0s
+[val/crypto] lgbm_dow  101/123 2025-10-09 0s
+[val/crypto] lgbm_dow  123/123 2025-10-31 0s
+[val/crypto] lgbm_dow: done 0s, updates 0
+[val/crypto] har_intra_dow  1/123 2025-07-01 0s
+[val/crypto] har_intra_dow  51/123 2025-08-20 0s
+[val/crypto] har_intra_dow  101/123 2025-10-09 0s
+[val/crypto] har_intra_dow  123/123 2025-10-31 0s
+[val/crypto] har_intra_dow: done 0s, updates 0
+W1101 02:52:14.747000 60131 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 5332.35it/s]
+[val/crypto] chronos2  1/123 2025-07-01 5s
+[val/crypto] chronos2  51/123 2025-08-20 17s
+[val/crypto] chronos2  101/123 2025-10-09 29s
+[val/crypto] chronos2  123/123 2025-10-31 35s
+[val/crypto] chronos2: done 35s, updates 0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 5212.99it/s]
+[val/crypto] chronos_bolt_base  1/123 2025-07-01 2s
+[val/crypto] chronos_bolt_base  51/123 2025-08-20 13s
+[val/crypto] chronos_bolt_base  101/123 2025-10-09 24s
+[val/crypto] chronos_bolt_base  123/123 2025-10-31 29s
+[val/crypto] chronos_bolt_base: done 29s, updates 0
+[val/crypto] tirex  1/123 2025-07-01 3s
+[val/crypto] tirex  51/123 2025-08-20 155s
+[val/crypto] tirex  101/123 2025-10-09 307s
+[val/crypto] tirex  123/123 2025-10-31 374s
+[val/crypto] tirex: done 374s, updates 0
+[val/crypto] timestral_5m  1/123 2025-07-01 0s
+[val/crypto] timestral_5m  51/123 2025-08-20 2s
+[val/crypto] timestral_5m  101/123 2025-10-09 3s
+[val/crypto] timestral_5m  123/123 2025-10-31 4s
+[val/crypto] timestral_5m: done 4s, updates 0
+[val/crypto] kronos_small  1/123 2025-07-01 8s
+[val/crypto] kronos_small  51/123 2025-08-20 379s
+[val/crypto] kronos_small  101/123 2025-10-09 747s
+[val/crypto] kronos_small  123/123 2025-10-31 909s
+[val/crypto] kronos_small: done 909s, updates 0
+[val/crypto] buy_hold  1/123 2025-07-01 0s
+[val/crypto] buy_hold  51/123 2025-08-20 0s
+[val/crypto] buy_hold  101/123 2025-10-09 0s
+[val/crypto] buy_hold  123/123 2025-10-31 0s
+[val/crypto] buy_hold: done 0s, updates 0
+[val/crypto] tsmom_1  1/123 2025-07-01 0s
+[val/crypto] tsmom_1  51/123 2025-08-20 0s
+[val/crypto] tsmom_1  101/123 2025-10-09 0s
+[val/crypto] tsmom_1  123/123 2025-10-31 0s
+[val/crypto] tsmom_1: done 0s, updates 0
+[val/crypto] tsmom_7  1/123 2025-07-01 0s
+[val/crypto] tsmom_7  51/123 2025-08-20 0s
+[val/crypto] tsmom_7  101/123 2025-10-09 0s
+[val/crypto] tsmom_7  123/123 2025-10-31 0s
+[val/crypto] tsmom_7: done 0s, updates 0
+[val/crypto] tsmom_30  1/123 2025-07-01 0s
+[val/crypto] tsmom_30  51/123 2025-08-20 0s
+[val/crypto] tsmom_30  101/123 2025-10-09 0s
+[val/crypto] tsmom_30  123/123 2025-10-31 0s
+[val/crypto] tsmom_30: done 0s, updates 0
+[val/crypto] meanrev_1  1/123 2025-07-01 0s
+[val/crypto] meanrev_1  51/123 2025-08-20 0s
+[val/crypto] meanrev_1  101/123 2025-10-09 0s
+[val/crypto] meanrev_1  123/123 2025-10-31 0s
+[val/crypto] meanrev_1: done 0s, updates 0
+[val/crypto] voltgt_tsmom  1/123 2025-07-01 0s
+[val/crypto] voltgt_tsmom  51/123 2025-08-20 0s
+[val/crypto] voltgt_tsmom  101/123 2025-10-09 0s
+[val/crypto] voltgt_tsmom  123/123 2025-10-31 0s
+[val/crypto] voltgt_tsmom: done 0s, updates 0
+[val/crypto] lgbm_policy  1/123 2025-07-01 0s
+[val/crypto] lgbm_policy  51/123 2025-08-20 0s
+[val/crypto] lgbm_policy  101/123 2025-10-09 0s
+[val/crypto] lgbm_policy  123/123 2025-10-31 0s
+[val/crypto] lgbm_policy: done 0s, updates 0
+[val/crypto] wm_fin  1/123 2025-07-01 0s
+[val/crypto] wm_fin  51/123 2025-08-20 2s
+[val/crypto] wm_fin  101/123 2025-10-09 4s
+[val/crypto] wm_fin  123/123 2025-10-31 5s
+[val/crypto] wm_fin: done 5s, updates 0
+[val/crypto] wm_direct  1/123 2025-07-01 0s
+[val/crypto] wm_direct  51/123 2025-08-20 1s
+[val/crypto] wm_direct  101/123 2025-10-09 2s
+[val/crypto] wm_direct  123/123 2025-10-31 2s
+[val/crypto] wm_direct: done 2s, updates 0
+[val/crypto] wm_fin_cl  1/123 2025-07-01 1s
+[val/crypto] wm_fin_cl  51/123 2025-08-20 24s
+[val/crypto] wm_fin_cl  101/123 2025-10-09 46s
+[val/crypto] wm_fin_cl  123/123 2025-10-31 56s
+[val/crypto] wm_fin_cl: done 56s, updates 369
+[val/crypto] wm_fin_cl:frozen  1/123 2025-07-01 0s
+[val/crypto] wm_fin_cl:frozen  51/123 2025-08-20 2s
+[val/crypto] wm_fin_cl:frozen  101/123 2025-10-09 4s
+[val/crypto] wm_fin_cl:frozen  123/123 2025-10-31 5s
+[val/crypto] wm_fin_cl:frozen: done 5s, updates 0
+[val/crypto] wm_agent  1/123 2025-07-01 0s
+[val/crypto] wm_agent  51/123 2025-08-20 3s
+[val/crypto] wm_agent  101/123 2025-10-09 6s
+[val/crypto] wm_agent  123/123 2025-10-31 7s
+[val/crypto] wm_agent: done 7s, updates 0
+[val/crypto] ppo  1/123 2025-07-01 0s
+[val/crypto] ppo  51/123 2025-08-20 3s
+[val/crypto] ppo  101/123 2025-10-09 6s
+[val/crypto] ppo  123/123 2025-10-31 7s
+[val/crypto] ppo: done 7s, updates 0
+[val/crypto] dqn  1/123 2025-07-01 0s
+[val/crypto] dqn  51/123 2025-08-20 3s
+[val/crypto] dqn  101/123 2025-10-09 6s
+[val/crypto] dqn  123/123 2025-10-31 7s
+[val/crypto] dqn: done 7s, updates 0
+[val/crypto] wm_voltgt  1/123 2025-07-01 0s
+[val/crypto] wm_voltgt  51/123 2025-08-20 2s
+[val/crypto] wm_voltgt  101/123 2025-10-09 4s
+[val/crypto] wm_voltgt  123/123 2025-10-31 5s
+[val/crypto] wm_voltgt: done 5s, updates 0
+[val/crypto] wm_b_moe4  1/123 2025-07-01 0s
+[val/crypto] wm_b_moe4  51/123 2025-08-20 0s
+[val/crypto] wm_b_moe4  101/123 2025-10-09 0s
+[val/crypto] wm_b_moe4  123/123 2025-10-31 0s
+[val/crypto] wm_b_moe4: done 0s, updates 0
+[val/etf] majority  1/87 2025-07-01 0s
+[val/etf] majority  51/87 2025-09-11 0s
+[val/etf] majority  87/87 2025-10-31 0s
+[val/etf] majority: done 0s, updates 0
+[val/etf] rv_persist  1/87 2025-07-01 0s
+[val/etf] rv_persist  51/87 2025-09-11 0s
+[val/etf] rv_persist  87/87 2025-10-31 0s
+[val/etf] rv_persist: done 0s, updates 0
+[val/etf] har  1/87 2025-07-01 0s
+[val/etf] har  51/87 2025-09-11 0s
+[val/etf] har  87/87 2025-10-31 0s
+[val/etf] har: done 0s, updates 0
+[val/etf] har_roll  1/87 2025-07-01 0s
+[val/etf] har_roll  51/87 2025-09-11 1s
+[val/etf] har_roll  87/87 2025-10-31 1s
+[val/etf] har_roll: done 1s, updates 0
+[val/etf] garch  1/87 2025-07-01 1s
+[val/etf] garch  51/87 2025-09-11 26s
+[val/etf] garch  87/87 2025-10-31 45s
+[val/etf] garch: done 45s, updates 0
+[val/etf] lgbm  1/87 2025-07-01 0s
+[val/etf] lgbm  51/87 2025-09-11 0s
+[val/etf] lgbm  87/87 2025-10-31 0s
+[val/etf] lgbm: done 0s, updates 0
+[val/etf] lgbm_asset  1/87 2025-07-01 0s
+[val/etf] lgbm_asset  51/87 2025-09-11 0s
+[val/etf] lgbm_asset  87/87 2025-10-31 1s
+[val/etf] lgbm_asset: done 1s, updates 0
+[val/etf] har_dow  1/87 2025-07-01 0s
+[val/etf] har_dow  51/87 2025-09-11 0s
+[val/etf] har_dow  87/87 2025-10-31 0s
+[val/etf] har_dow: done 0s, updates 0
+[val/etf] lgbm_dow  1/87 2025-07-01 0s
+[val/etf] lgbm_dow  51/87 2025-09-11 0s
+[val/etf] lgbm_dow  87/87 2025-10-31 0s
+[val/etf] lgbm_dow: done 0s, updates 0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 5099.49it/s]
+[val/etf] chronos2  1/87 2025-07-01 1s
+[val/etf] chronos2  51/87 2025-09-11 9s
+[val/etf] chronos2  87/87 2025-10-31 14s
+[val/etf] chronos2: done 14s, updates 0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 5115.14it/s]
+[val/etf] chronos_bolt_base  1/87 2025-07-01 2s
+[val/etf] chronos_bolt_base  51/87 2025-09-11 9s
+[val/etf] chronos_bolt_base  87/87 2025-10-31 14s
+[val/etf] chronos_bolt_base: done 14s, updates 0
+[val/etf] tirex  1/87 2025-07-01 2s
+[val/etf] tirex  51/87 2025-09-11 85s
+[val/etf] tirex  87/87 2025-10-31 145s
+[val/etf] tirex: done 145s, updates 0
+[val/etf] timestral_5m  1/87 2025-07-01 0s
+[val/etf] timestral_5m  51/87 2025-09-11 1s
+[val/etf] timestral_5m  87/87 2025-10-31 2s
+[val/etf] timestral_5m: done 2s, updates 0
+[val/etf] kronos_small  1/87 2025-07-01 5s
+[val/etf] kronos_small  51/87 2025-09-11 205s
+[val/etf] kronos_small  87/87 2025-10-31 349s
+[val/etf] kronos_small: done 349s, updates 0
+[val/etf] buy_hold  1/87 2025-07-01 0s
+[val/etf] buy_hold  51/87 2025-09-11 0s
+[val/etf] buy_hold  87/87 2025-10-31 0s
+[val/etf] buy_hold: done 0s, updates 0
+[val/etf] tsmom_1  1/87 2025-07-01 0s
+[val/etf] tsmom_1  51/87 2025-09-11 0s
+[val/etf] tsmom_1  87/87 2025-10-31 0s
+[val/etf] tsmom_1: done 0s, updates 0
+[val/etf] tsmom_7  1/87 2025-07-01 0s
+[val/etf] tsmom_7  51/87 2025-09-11 0s
+[val/etf] tsmom_7  87/87 2025-10-31 0s
+[val/etf] tsmom_7: done 0s, updates 0
+[val/etf] tsmom_30  1/87 2025-07-01 0s
+[val/etf] tsmom_30  51/87 2025-09-11 0s
+[val/etf] tsmom_30  87/87 2025-10-31 0s
+[val/etf] tsmom_30: done 0s, updates 0
+[val/etf] meanrev_1  1/87 2025-07-01 0s
+[val/etf] meanrev_1  51/87 2025-09-11 0s
+[val/etf] meanrev_1  87/87 2025-10-31 0s
+[val/etf] meanrev_1: done 0s, updates 0
+[val/etf] voltgt_tsmom  1/87 2025-07-01 0s
+[val/etf] voltgt_tsmom  51/87 2025-09-11 0s
+[val/etf] voltgt_tsmom  87/87 2025-10-31 0s
+[val/etf] voltgt_tsmom: done 0s, updates 0
+[val/etf] lgbm_policy  1/87 2025-07-01 0s
+[val/etf] lgbm_policy  51/87 2025-09-11 0s
+[val/etf] lgbm_policy  87/87 2025-10-31 0s
+[val/etf] lgbm_policy: done 0s, updates 0
+[val/etf] wm_fin  1/87 2025-07-01 0s
+[val/etf] wm_fin  51/87 2025-09-11 2s
+[val/etf] wm_fin  87/87 2025-10-31 3s
+[val/etf] wm_fin: done 3s, updates 0
+[val/etf] wm_direct  1/87 2025-07-01 0s
+[val/etf] wm_direct  51/87 2025-09-11 1s
+[val/etf] wm_direct  87/87 2025-10-31 1s
+[val/etf] wm_direct: done 1s, updates 0
+[val/etf] wm_fin_cl  1/87 2025-07-01 0s
+[val/etf] wm_fin_cl  51/87 2025-09-11 17s
+[val/etf] wm_fin_cl  87/87 2025-10-31 30s
+[val/etf] wm_fin_cl: done 30s, updates 261
+[val/etf] wm_fin_cl:frozen  1/87 2025-07-01 0s
+[val/etf] wm_fin_cl:frozen  51/87 2025-09-11 2s
+[val/etf] wm_fin_cl:frozen  87/87 2025-10-31 3s
+[val/etf] wm_fin_cl:frozen: done 3s, updates 0
+[val/etf] wm_agent  1/87 2025-07-01 0s
+[val/etf] wm_agent  51/87 2025-09-11 2s
+[val/etf] wm_agent  87/87 2025-10-31 4s
+[val/etf] wm_agent: done 4s, updates 0
+[val/etf] ppo  1/87 2025-07-01 0s
+[val/etf] ppo  51/87 2025-09-11 2s
+[val/etf] ppo  87/87 2025-10-31 4s
+[val/etf] ppo: done 4s, updates 0
+[val/etf] dqn  1/87 2025-07-01 0s
+[val/etf] dqn  51/87 2025-09-11 2s
+[val/etf] dqn  87/87 2025-10-31 4s
+[val/etf] dqn: done 4s, updates 0
+[val/etf] wm_voltgt  1/87 2025-07-01 0s
+[val/etf] wm_voltgt  51/87 2025-09-11 2s
+[val/etf] wm_voltgt  87/87 2025-10-31 3s
+[val/etf] wm_voltgt: done 3s, updates 0
+[val/etf] wm_b_moe4  1/87 2025-07-01 0s
+[val/etf] wm_b_moe4  51/87 2025-09-11 0s
+[val/etf] wm_b_moe4  87/87 2025-10-31 0s
+[val/etf] wm_b_moe4: done 0s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/rehearsal_val/metrics.json

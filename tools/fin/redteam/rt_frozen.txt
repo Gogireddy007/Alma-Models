@@ -1,0 +1,22 @@
+OK   K recorded 985 >= rows excl. refs now (A 109 + B 876 = 985); detail {'architect_A_rows_excl_refs': 109, 'architect_B_rows_excl_refs': 876, 'results_tsv_rows': 116, 'results_b_tsv_rows': 923}
+OK   var_sharpe_trials 0.002180628405783579 over n=74 rows (per-period units; expected ~1e-3..1e-2 for 6-12 month windows)
+OK   field models present
+OK   field claim_models present
+OK   field sha256 present
+OK   field K present
+OK   field var_sharpe_trials present
+OK   ckpt runs/fin/search/ckpt/frozen_wm_fin.pt on disk sha matches FROZEN
+OK   ckpt runs/fin/search/ckpt/frozen_wm_direct.pt on disk sha matches FROZEN
+OK   ckpt runs/fin/search/ckpt/frozen_wm_agent.pt on disk sha matches FROZEN
+OK   ckpt runs/fin/search/ckpt/frozen_ppo.pt on disk sha matches FROZEN
+OK   ckpt runs/fin/search/ckpt/frozen_dqn.pt on disk sha matches FROZEN
+OK   ckpt runs/fin/search_b/ckpt/wm_b_moe4_refit.pt on disk sha matches FROZEN
+OK   wrapper constants pin frozen_wm_fin.pt
+OK   wrapper constants pin frozen_wm_direct.pt
+OK   wrapper constants pin frozen_wm_agent.pt
+OK   wrapper constants pin frozen_ppo.pt
+OK   wrapper constants pin frozen_dqn.pt
+OK   wrapper constants pin wm_b_moe4_refit.pt
+OK   go/no-go rule for VAL recorded
+OK   post-selection / winner's-curse label on F1 numbers
+OK   FROZEN.json committed (commit time 1793519180)

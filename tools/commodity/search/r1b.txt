@@ -1,0 +1,8 @@
+--name r1_alma_zs_none --arch alma --abl none --minutes 0 --note zero-shot
+--name r1_alma_zs_direct --arch alma --abl direct --minutes 0 --note "zero-shot (pretrained none weights run as direct)"
+--name r1_alma_ft_none --arch alma --abl none --minutes 5 --lr 3e-4 --batch 32
+--name r1_alma_ft_direct --arch alma --abl direct --minutes 5 --lr 3e-4 --batch 32
+--name r1_sv_xc_none --arch sv --abl none --xc 1 --minutes 5
+--name r1_sv_xc_direct --arch sv --abl direct --xc 1 --minutes 5
+--name r1_obs_xc_none --arch obs --abl none --xc 1 --minutes 5
+--name r1_obs_xc_direct --arch obs --abl direct --xc 1 --minutes 5

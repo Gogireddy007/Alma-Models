@@ -1,0 +1,2 @@
+--name r3_sv_none_s1 --arch sv --abl none --seed 1 --minutes 5
+--name r3_sv_none_s2 --arch sv --abl none --seed 2 --minutes 5

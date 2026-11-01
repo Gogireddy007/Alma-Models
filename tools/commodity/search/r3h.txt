@@ -1,0 +1,2 @@
+--name r3_sv_direct_s1 --arch sv --abl direct --seed 1 --minutes 5
+--name r3_sv_direct_s2 --arch sv --abl direct --seed 2 --minutes 5

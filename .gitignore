@@ -1,0 +1,13 @@
+.venv/
+/run.log
+/results.tsv
+/results_bench.tsv
+/research_log.md
+__pycache__/
+vendor/
+baselines/*.log
+.venv-eval/
+
+# raw market data is not redistributed; rebuild with the fetch scripts (sha256 pins in data/**/manifest*.json)
+data/**/*.csv
+data/**/*.parquet

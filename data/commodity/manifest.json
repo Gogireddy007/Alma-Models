@@ -1,0 +1,67 @@
+{
+ "download_date": "2026-10-31",
+ "files": {
+  "data/commodity/raw/DCOILWTICO.csv": {
+   "sha256": "d85c38f6f6e9078151ec4232b3c3653e8953bbd3b0506f72375e9912503d8295",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO"
+  },
+  "data/commodity/raw/DCOILBRENTEU.csv": {
+   "sha256": "f3ad22ec3aa8800fc5edfa638d364ae388a5612ed895d233f0b2af67c807a393",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU"
+  },
+  "data/commodity/raw/DHHNGSP.csv": {
+   "sha256": "009cb63436a4492e1bd85df95de80181244fc3856a1a6a81e7ae6afbe5336899",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+  },
+  "data/commodity/raw/WCESTUS1_leaf.html": {
+   "sha256": "593b05e4fa7ebe50382903edafb9e5f77babfb51423ac8e0d90e140805496cb1",
+   "source": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCESTUS1&f=W"
+  }
+ },
+ "series": {
+  "wti": {
+   "id": "DCOILWTICO",
+   "csv": "data/commodity/wti.csv",
+   "sha256": "07b754bb375501542d31f0d9dfff2d1269b94bf186e124582d6cd7a4c0c1d22a",
+   "n": 9532,
+   "first": "1986-01-02",
+   "last": "2026-10-27",
+   "n_nonpositive": 1,
+   "n_test": 246,
+   "n_val": 86
+  },
+  "brent": {
+   "id": "DCOILBRENTEU",
+   "csv": "data/commodity/brent.csv",
+   "sha256": "035ce78430e4c921b8c9f1bc591dca92f721e990ceb19a254ca2611ce6914670",
+   "n": 9117,
+   "first": "1987-05-20",
+   "last": "2026-10-27",
+   "n_nonpositive": 0,
+   "n_test": 249,
+   "n_val": 88
+  },
+  "hh": {
+   "id": "DHHNGSP",
+   "csv": "data/commodity/hh.csv",
+   "sha256": "b67f37a24ee03f4c2d203b766bd67d1565916ec7c52eed60389919bdc8e671b5",
+   "n": 5717,
+   "first": "1997-01-07",
+   "last": "2026-10-27",
+   "n_nonpositive": 0,
+   "n_test": 243,
+   "n_val": 87
+  },
+  "inv": {
+   "id": "WCESTUS1",
+   "csv": "data/commodity/inv.csv",
+   "sha256": "95cb2c49bb395559d61567dc6a2b5751bc16f98e546542c8bca0e8bbaa3478bf",
+   "n": 2300,
+   "first": "1982-08-20",
+   "last": "2026-10-23",
+   "n_nonpositive": 0,
+   "n_test": 51,
+   "n_val": 18
+  }
+ }
+}

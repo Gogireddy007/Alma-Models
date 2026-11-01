@@ -1,0 +1,357 @@
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 deterministic
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 future: unchanged
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 fill: unchanged
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 prev_hour: changed (224 values)
+OK   crypto wm_b_moe4_refit.pt 2023-03-06 cache parity (p max diff 2.98e-08)
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 deterministic
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 future: unchanged
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 fill: unchanged
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 prev_hour: changed (263 values)
+OK   crypto wm_b_moe4_refit.pt 2023-09-18 cache parity (p max diff 5.96e-08)
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 deterministic
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 future: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 fill: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 prev_hour: changed (305 values)
+OK   crypto wm_b_moe4_refit.pt 2024-02-12 cache parity (p max diff 5.96e-08)
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 deterministic
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 future: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 fill: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 prev_hour: changed (315 values)
+OK   crypto wm_b_moe4_refit.pt 2024-06-03 cache parity (p max diff 5.96e-08)
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 deterministic
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 future: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 fill: unchanged
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 prev_hour: changed (326 values)
+OK   crypto wm_b_moe4_refit.pt 2024-06-30 cache parity (p max diff 1.99e-08)
+OK   crypto leak_tf.pt 2023-03-06 deterministic
+OK   crypto leak_tf.pt 2023-03-06 future: unchanged
+OK   crypto leak_tf.pt 2023-03-06 fill: unchanged
+OK   crypto leak_tf.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_tf.pt 2023-03-06 prev_hour: changed (223 values)
+OK   crypto leak_tf.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_tf.pt 2023-09-18 deterministic
+OK   crypto leak_tf.pt 2023-09-18 future: unchanged
+OK   crypto leak_tf.pt 2023-09-18 fill: unchanged
+OK   crypto leak_tf.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto leak_tf.pt 2023-09-18 prev_hour: changed (259 values)
+OK   crypto leak_tf.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_tf.pt 2024-02-12 deterministic
+OK   crypto leak_tf.pt 2024-02-12 future: unchanged
+OK   crypto leak_tf.pt 2024-02-12 fill: unchanged
+OK   crypto leak_tf.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_tf.pt 2024-02-12 prev_hour: changed (284 values)
+OK   crypto leak_tf.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_tf.pt 2024-06-03 deterministic
+OK   crypto leak_tf.pt 2024-06-03 future: unchanged
+OK   crypto leak_tf.pt 2024-06-03 fill: unchanged
+OK   crypto leak_tf.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_tf.pt 2024-06-03 prev_hour: changed (312 values)
+OK   crypto leak_tf.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_tf.pt 2024-06-30 deterministic
+OK   crypto leak_tf.pt 2024-06-30 future: unchanged
+OK   crypto leak_tf.pt 2024-06-30 fill: unchanged
+OK   crypto leak_tf.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_tf.pt 2024-06-30 prev_hour: changed (326 values)
+OK   crypto leak_tf.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto leak_gru.pt 2023-03-06 deterministic
+OK   crypto leak_gru.pt 2023-03-06 future: unchanged
+OK   crypto leak_gru.pt 2023-03-06 fill: unchanged
+OK   crypto leak_gru.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_gru.pt 2023-03-06 prev_hour: changed (218 values)
+OK   crypto leak_gru.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_gru.pt 2023-09-18 deterministic
+OK   crypto leak_gru.pt 2023-09-18 future: unchanged
+OK   crypto leak_gru.pt 2023-09-18 fill: unchanged
+OK   crypto leak_gru.pt 2023-09-18 prev_day: changed (265 values)
+OK   crypto leak_gru.pt 2023-09-18 prev_hour: changed (238 values)
+OK   crypto leak_gru.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_gru.pt 2024-02-12 deterministic
+OK   crypto leak_gru.pt 2024-02-12 future: unchanged
+OK   crypto leak_gru.pt 2024-02-12 fill: unchanged
+OK   crypto leak_gru.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_gru.pt 2024-02-12 prev_hour: changed (255 values)
+OK   crypto leak_gru.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_gru.pt 2024-06-03 deterministic
+OK   crypto leak_gru.pt 2024-06-03 future: unchanged
+OK   crypto leak_gru.pt 2024-06-03 fill: unchanged
+OK   crypto leak_gru.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_gru.pt 2024-06-03 prev_hour: changed (252 values)
+OK   crypto leak_gru.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_gru.pt 2024-06-30 deterministic
+OK   crypto leak_gru.pt 2024-06-30 future: unchanged
+OK   crypto leak_gru.pt 2024-06-30 fill: unchanged
+OK   crypto leak_gru.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_gru.pt 2024-06-30 prev_hour: changed (230 values)
+OK   crypto leak_gru.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto leak_lru.pt 2023-03-06 deterministic
+OK   crypto leak_lru.pt 2023-03-06 future: unchanged
+OK   crypto leak_lru.pt 2023-03-06 fill: unchanged
+OK   crypto leak_lru.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_lru.pt 2023-03-06 prev_hour: changed (224 values)
+OK   crypto leak_lru.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_lru.pt 2023-09-18 deterministic
+OK   crypto leak_lru.pt 2023-09-18 future: unchanged
+OK   crypto leak_lru.pt 2023-09-18 fill: unchanged
+OK   crypto leak_lru.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto leak_lru.pt 2023-09-18 prev_hour: changed (254 values)
+OK   crypto leak_lru.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_lru.pt 2024-02-12 deterministic
+OK   crypto leak_lru.pt 2024-02-12 future: unchanged
+OK   crypto leak_lru.pt 2024-02-12 fill: unchanged
+OK   crypto leak_lru.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_lru.pt 2024-02-12 prev_hour: changed (294 values)
+OK   crypto leak_lru.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_lru.pt 2024-06-03 deterministic
+OK   crypto leak_lru.pt 2024-06-03 future: unchanged
+OK   crypto leak_lru.pt 2024-06-03 fill: unchanged
+OK   crypto leak_lru.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_lru.pt 2024-06-03 prev_hour: changed (334 values)
+OK   crypto leak_lru.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_lru.pt 2024-06-30 deterministic
+OK   crypto leak_lru.pt 2024-06-30 future: unchanged
+OK   crypto leak_lru.pt 2024-06-30 fill: unchanged
+OK   crypto leak_lru.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_lru.pt 2024-06-30 prev_hour: changed (323 values)
+OK   crypto leak_lru.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto leak_xattn.pt 2023-03-06 deterministic
+OK   crypto leak_xattn.pt 2023-03-06 future: unchanged
+OK   crypto leak_xattn.pt 2023-03-06 fill: unchanged
+OK   crypto leak_xattn.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_xattn.pt 2023-03-06 prev_hour: changed (224 values)
+OK   crypto leak_xattn.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_xattn.pt 2023-09-18 deterministic
+OK   crypto leak_xattn.pt 2023-09-18 future: unchanged
+OK   crypto leak_xattn.pt 2023-09-18 fill: unchanged
+OK   crypto leak_xattn.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto leak_xattn.pt 2023-09-18 prev_hour: changed (257 values)
+OK   crypto leak_xattn.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_xattn.pt 2024-02-12 deterministic
+OK   crypto leak_xattn.pt 2024-02-12 future: unchanged
+OK   crypto leak_xattn.pt 2024-02-12 fill: unchanged
+OK   crypto leak_xattn.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_xattn.pt 2024-02-12 prev_hour: changed (305 values)
+OK   crypto leak_xattn.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_xattn.pt 2024-06-03 deterministic
+OK   crypto leak_xattn.pt 2024-06-03 future: unchanged
+OK   crypto leak_xattn.pt 2024-06-03 fill: unchanged
+OK   crypto leak_xattn.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_xattn.pt 2024-06-03 prev_hour: changed (334 values)
+OK   crypto leak_xattn.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_xattn.pt 2024-06-30 deterministic
+OK   crypto leak_xattn.pt 2024-06-30 future: unchanged
+OK   crypto leak_xattn.pt 2024-06-30 fill: unchanged
+OK   crypto leak_xattn.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_xattn.pt 2024-06-30 prev_hour: changed (273 values)
+OK   crypto leak_xattn.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto leak_wm_st.pt 2023-03-06 deterministic
+OK   crypto leak_wm_st.pt 2023-03-06 future: unchanged
+OK   crypto leak_wm_st.pt 2023-03-06 fill: unchanged
+OK   crypto leak_wm_st.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_wm_st.pt 2023-03-06 prev_hour: changed (224 values)
+OK   crypto leak_wm_st.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_wm_st.pt 2023-09-18 deterministic
+OK   crypto leak_wm_st.pt 2023-09-18 future: unchanged
+OK   crypto leak_wm_st.pt 2023-09-18 fill: unchanged
+OK   crypto leak_wm_st.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto leak_wm_st.pt 2023-09-18 prev_hour: changed (252 values)
+OK   crypto leak_wm_st.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_wm_st.pt 2024-02-12 deterministic
+OK   crypto leak_wm_st.pt 2024-02-12 future: unchanged
+OK   crypto leak_wm_st.pt 2024-02-12 fill: unchanged
+OK   crypto leak_wm_st.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_wm_st.pt 2024-02-12 prev_hour: changed (293 values)
+OK   crypto leak_wm_st.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_wm_st.pt 2024-06-03 deterministic
+OK   crypto leak_wm_st.pt 2024-06-03 future: unchanged
+OK   crypto leak_wm_st.pt 2024-06-03 fill: unchanged
+OK   crypto leak_wm_st.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_wm_st.pt 2024-06-03 prev_hour: changed (313 values)
+OK   crypto leak_wm_st.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_wm_st.pt 2024-06-30 deterministic
+OK   crypto leak_wm_st.pt 2024-06-30 future: unchanged
+OK   crypto leak_wm_st.pt 2024-06-30 fill: unchanged
+OK   crypto leak_wm_st.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_wm_st.pt 2024-06-30 prev_hour: changed (336 values)
+OK   crypto leak_wm_st.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto leak_hartf.pt 2023-03-06 deterministic
+OK   crypto leak_hartf.pt 2023-03-06 future: unchanged
+OK   crypto leak_hartf.pt 2023-03-06 fill: unchanged
+OK   crypto leak_hartf.pt 2023-03-06 prev_day: changed (224 values)
+OK   crypto leak_hartf.pt 2023-03-06 prev_hour: changed (224 values)
+OK   crypto leak_hartf.pt 2023-03-06 cache parity (p max diff 0.00e+00)
+OK   crypto leak_hartf.pt 2023-09-18 deterministic
+OK   crypto leak_hartf.pt 2023-09-18 future: unchanged
+OK   crypto leak_hartf.pt 2023-09-18 fill: unchanged
+OK   crypto leak_hartf.pt 2023-09-18 prev_day: changed (266 values)
+OK   crypto leak_hartf.pt 2023-09-18 prev_hour: changed (266 values)
+OK   crypto leak_hartf.pt 2023-09-18 cache parity (p max diff 0.00e+00)
+OK   crypto leak_hartf.pt 2024-02-12 deterministic
+OK   crypto leak_hartf.pt 2024-02-12 future: unchanged
+OK   crypto leak_hartf.pt 2024-02-12 fill: unchanged
+OK   crypto leak_hartf.pt 2024-02-12 prev_day: changed (308 values)
+OK   crypto leak_hartf.pt 2024-02-12 prev_hour: changed (308 values)
+OK   crypto leak_hartf.pt 2024-02-12 cache parity (p max diff 0.00e+00)
+OK   crypto leak_hartf.pt 2024-06-03 deterministic
+OK   crypto leak_hartf.pt 2024-06-03 future: unchanged
+OK   crypto leak_hartf.pt 2024-06-03 fill: unchanged
+OK   crypto leak_hartf.pt 2024-06-03 prev_day: changed (336 values)
+OK   crypto leak_hartf.pt 2024-06-03 prev_hour: changed (336 values)
+OK   crypto leak_hartf.pt 2024-06-03 cache parity (p max diff 0.00e+00)
+OK   crypto leak_hartf.pt 2024-06-30 deterministic
+OK   crypto leak_hartf.pt 2024-06-30 future: unchanged
+OK   crypto leak_hartf.pt 2024-06-30 fill: unchanged
+OK   crypto leak_hartf.pt 2024-06-30 prev_day: changed (336 values)
+OK   crypto leak_hartf.pt 2024-06-30 prev_hour: changed (336 values)
+OK   crypto leak_hartf.pt 2024-06-30 cache parity (p max diff 0.00e+00)
+OK   crypto wm_b_moe4_refit.pt:cl online: decisions for days <= 2024-02-18 bit-identical
+OK   crypto wm_b_moe4_refit.pt:cl online: later decisions differ
+OK   crypto wm_b_moe4_refit.pt:cl updates every day ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   etf wm_b_moe4_refit.pt 2023-03-06 deterministic
+OK   etf wm_b_moe4_refit.pt 2023-03-06 future: unchanged
+OK   etf wm_b_moe4_refit.pt 2023-03-06 fill: unchanged
+OK   etf wm_b_moe4_refit.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf wm_b_moe4_refit.pt 2023-09-18 deterministic
+OK   etf wm_b_moe4_refit.pt 2023-09-18 future: unchanged
+OK   etf wm_b_moe4_refit.pt 2023-09-18 fill: unchanged
+OK   etf wm_b_moe4_refit.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf wm_b_moe4_refit.pt 2024-02-12 deterministic
+OK   etf wm_b_moe4_refit.pt 2024-02-12 future: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-02-12 fill: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf wm_b_moe4_refit.pt 2024-06-03 deterministic
+OK   etf wm_b_moe4_refit.pt 2024-06-03 future: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-06-03 fill: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf wm_b_moe4_refit.pt 2024-06-28 deterministic
+OK   etf wm_b_moe4_refit.pt 2024-06-28 future: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-06-28 fill: unchanged
+OK   etf wm_b_moe4_refit.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_tf.pt 2023-03-06 deterministic
+OK   etf leak_tf.pt 2023-03-06 future: unchanged
+OK   etf leak_tf.pt 2023-03-06 fill: unchanged
+OK   etf leak_tf.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_tf.pt 2023-09-18 deterministic
+OK   etf leak_tf.pt 2023-09-18 future: unchanged
+OK   etf leak_tf.pt 2023-09-18 fill: unchanged
+OK   etf leak_tf.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_tf.pt 2024-02-12 deterministic
+OK   etf leak_tf.pt 2024-02-12 future: unchanged
+OK   etf leak_tf.pt 2024-02-12 fill: unchanged
+OK   etf leak_tf.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_tf.pt 2024-06-03 deterministic
+OK   etf leak_tf.pt 2024-06-03 future: unchanged
+OK   etf leak_tf.pt 2024-06-03 fill: unchanged
+OK   etf leak_tf.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_tf.pt 2024-06-28 deterministic
+OK   etf leak_tf.pt 2024-06-28 future: unchanged
+OK   etf leak_tf.pt 2024-06-28 fill: unchanged
+OK   etf leak_tf.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_gru.pt 2023-03-06 deterministic
+OK   etf leak_gru.pt 2023-03-06 future: unchanged
+OK   etf leak_gru.pt 2023-03-06 fill: unchanged
+OK   etf leak_gru.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_gru.pt 2023-09-18 deterministic
+OK   etf leak_gru.pt 2023-09-18 future: unchanged
+OK   etf leak_gru.pt 2023-09-18 fill: unchanged
+OK   etf leak_gru.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_gru.pt 2024-02-12 deterministic
+OK   etf leak_gru.pt 2024-02-12 future: unchanged
+OK   etf leak_gru.pt 2024-02-12 fill: unchanged
+OK   etf leak_gru.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_gru.pt 2024-06-03 deterministic
+OK   etf leak_gru.pt 2024-06-03 future: unchanged
+OK   etf leak_gru.pt 2024-06-03 fill: unchanged
+OK   etf leak_gru.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_gru.pt 2024-06-28 deterministic
+OK   etf leak_gru.pt 2024-06-28 future: unchanged
+OK   etf leak_gru.pt 2024-06-28 fill: unchanged
+OK   etf leak_gru.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_lru.pt 2023-03-06 deterministic
+OK   etf leak_lru.pt 2023-03-06 future: unchanged
+OK   etf leak_lru.pt 2023-03-06 fill: unchanged
+OK   etf leak_lru.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_lru.pt 2023-09-18 deterministic
+OK   etf leak_lru.pt 2023-09-18 future: unchanged
+OK   etf leak_lru.pt 2023-09-18 fill: unchanged
+OK   etf leak_lru.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_lru.pt 2024-02-12 deterministic
+OK   etf leak_lru.pt 2024-02-12 future: unchanged
+OK   etf leak_lru.pt 2024-02-12 fill: unchanged
+OK   etf leak_lru.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_lru.pt 2024-06-03 deterministic
+OK   etf leak_lru.pt 2024-06-03 future: unchanged
+OK   etf leak_lru.pt 2024-06-03 fill: unchanged
+OK   etf leak_lru.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_lru.pt 2024-06-28 deterministic
+OK   etf leak_lru.pt 2024-06-28 future: unchanged
+OK   etf leak_lru.pt 2024-06-28 fill: unchanged
+OK   etf leak_lru.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_xattn.pt 2023-03-06 deterministic
+OK   etf leak_xattn.pt 2023-03-06 future: unchanged
+OK   etf leak_xattn.pt 2023-03-06 fill: unchanged
+OK   etf leak_xattn.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_xattn.pt 2023-09-18 deterministic
+OK   etf leak_xattn.pt 2023-09-18 future: unchanged
+OK   etf leak_xattn.pt 2023-09-18 fill: unchanged
+OK   etf leak_xattn.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_xattn.pt 2024-02-12 deterministic
+OK   etf leak_xattn.pt 2024-02-12 future: unchanged
+OK   etf leak_xattn.pt 2024-02-12 fill: unchanged
+OK   etf leak_xattn.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_xattn.pt 2024-06-03 deterministic
+OK   etf leak_xattn.pt 2024-06-03 future: unchanged
+OK   etf leak_xattn.pt 2024-06-03 fill: unchanged
+OK   etf leak_xattn.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_xattn.pt 2024-06-28 deterministic
+OK   etf leak_xattn.pt 2024-06-28 future: unchanged
+OK   etf leak_xattn.pt 2024-06-28 fill: unchanged
+OK   etf leak_xattn.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_wm_st.pt 2023-03-06 deterministic
+OK   etf leak_wm_st.pt 2023-03-06 future: unchanged
+OK   etf leak_wm_st.pt 2023-03-06 fill: unchanged
+OK   etf leak_wm_st.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_wm_st.pt 2023-09-18 deterministic
+OK   etf leak_wm_st.pt 2023-09-18 future: unchanged
+OK   etf leak_wm_st.pt 2023-09-18 fill: unchanged
+OK   etf leak_wm_st.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_wm_st.pt 2024-02-12 deterministic
+OK   etf leak_wm_st.pt 2024-02-12 future: unchanged
+OK   etf leak_wm_st.pt 2024-02-12 fill: unchanged
+OK   etf leak_wm_st.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_wm_st.pt 2024-06-03 deterministic
+OK   etf leak_wm_st.pt 2024-06-03 future: unchanged
+OK   etf leak_wm_st.pt 2024-06-03 fill: unchanged
+OK   etf leak_wm_st.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_wm_st.pt 2024-06-28 deterministic
+OK   etf leak_wm_st.pt 2024-06-28 future: unchanged
+OK   etf leak_wm_st.pt 2024-06-28 fill: unchanged
+OK   etf leak_wm_st.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf leak_hartf.pt 2023-03-06 deterministic
+OK   etf leak_hartf.pt 2023-03-06 future: unchanged
+OK   etf leak_hartf.pt 2023-03-06 fill: unchanged
+OK   etf leak_hartf.pt 2023-03-06 prev_day: changed (182 values)
+OK   etf leak_hartf.pt 2023-09-18 deterministic
+OK   etf leak_hartf.pt 2023-09-18 future: unchanged
+OK   etf leak_hartf.pt 2023-09-18 fill: unchanged
+OK   etf leak_hartf.pt 2023-09-18 prev_day: changed (182 values)
+OK   etf leak_hartf.pt 2024-02-12 deterministic
+OK   etf leak_hartf.pt 2024-02-12 future: unchanged
+OK   etf leak_hartf.pt 2024-02-12 fill: unchanged
+OK   etf leak_hartf.pt 2024-02-12 prev_day: changed (182 values)
+OK   etf leak_hartf.pt 2024-06-03 deterministic
+OK   etf leak_hartf.pt 2024-06-03 future: unchanged
+OK   etf leak_hartf.pt 2024-06-03 fill: unchanged
+OK   etf leak_hartf.pt 2024-06-03 prev_day: changed (182 values)
+OK   etf leak_hartf.pt 2024-06-28 deterministic
+OK   etf leak_hartf.pt 2024-06-28 future: unchanged
+OK   etf leak_hartf.pt 2024-06-28 fill: unchanged
+OK   etf leak_hartf.pt 2024-06-28 prev_day: changed (182 values)
+OK   etf wm_b_moe4_refit.pt:cl online: decisions for days <= 2024-02-21 bit-identical
+OK   etf wm_b_moe4_refit.pt:cl online: later decisions differ
+OK   etf wm_b_moe4_refit.pt:cl updates every day ([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+ALL OK

@@ -1,0 +1,175 @@
+[test/storage/thu] st_climatology: n=52 0.2s nonfinite=0
+[test/storage/fri] st_climatology: n=52 0.2s nonfinite=0
+[test/storage/thu] st_persistence: n=52 0.0s nonfinite=0
+[test/storage/fri] st_persistence: n=52 0.0s nonfinite=0
+[test/storage/thu] st_seasonal_naive: n=52 0.2s nonfinite=0
+[test/storage/fri] st_seasonal_naive: n=52 0.2s nonfinite=0
+[test/storage/thu] st_ols_wx: n=52 25.6s nonfinite=0
+[test/storage/fri] st_ols_wx: n=52 26.0s nonfinite=0
+[test/storage/thu] st_ols_wx_nolag: n=52 22.9s nonfinite=0
+[test/storage/fri] st_ols_wx_nolag: n=52 23.9s nonfinite=0
+[test/storage/thu] st_arima_dev: n=52 102.9s nonfinite=0
+[test/storage/fri] st_arima_dev: n=52 111.3s nonfinite=0
+W1031 23:59:59.183000 88252 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 3904.90it/s]
+[test/storage/thu] chronos2: n=52 36.3s nonfinite=0
+[test/storage/fri] chronos2: n=52 9.8s nonfinite=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 4272.85it/s]
+[test/storage/thu] chronos2_cov: n=52 132.3s nonfinite=0
+[test/storage/fri] chronos2_cov: n=52 66.0s nonfinite=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 4106.42it/s]
+[test/storage/thu] chronos_bolt_base: n=52 14.7s nonfinite=0
+[test/storage/fri] chronos_bolt_base: n=52 13.7s nonfinite=0
+[test/storage/thu] tirex: n=52 58.7s nonfinite=0
+[test/storage/fri] tirex: n=52 41.6s nonfinite=0
+[test/storage/thu] timestral_5m: n=52 0.7s nonfinite=0
+[test/storage/fri] timestral_5m: n=52 0.6s nonfinite=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/storage/thu] alma_s0: n=52 0.4s nonfinite=0
+[test/storage/fri] alma_s0: n=52 0.1s nonfinite=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/storage/thu] alma_direct_s0: n=52 0.2s nonfinite=0
+[test/storage/fri] alma_direct_s0: n=52 0.2s nonfinite=0
+[test/storage/thu] wm_gas: n=52 0.3s nonfinite=0
+[test/storage/fri] wm_gas: n=52 0.3s nonfinite=0
+[test/storage/thu] wm_gas_direct: n=52 0.1s nonfinite=0
+[test/storage/fri] wm_gas_direct: n=52 0.1s nonfinite=0
+[test/price] rw_gauss: 64/243 0s
+[test/price] rw_gauss: 128/243 0s
+[test/price] rw_gauss: 192/243 0s
+[test/price] rw_gauss: 243/243 0s
+[test/price] rw_gauss: n=243 0.0s nonfinite=0
+[test/price] auto_ets: 64/243 2s
+[test/price] auto_ets: 128/243 3s
+[test/price] auto_ets: 192/243 4s
+[test/price] auto_ets: 243/243 5s
+[test/price] auto_ets: n=243 4.8s nonfinite=0
+[test/price] auto_arima: 64/243 27s
+[test/price] auto_arima: 128/243 34s
+[test/price] auto_arima: 192/243 59s
+[test/price] auto_arima: 243/243 122s
+[test/price] auto_arima: n=243 122.2s nonfinite=0
+[test/price] px_fund_ols: 64/243 0s
+[test/price] px_fund_ols: 128/243 0s
+[test/price] px_fund_ols: 192/243 1s
+[test/price] px_fund_ols: 243/243 1s
+[test/price] px_fund_ols: n=243 0.7s nonfinite=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 3901.96it/s]
+[test/price] chronos2: 64/243 5s
+[test/price] chronos2: 128/243 8s
+[test/price] chronos2: 192/243 10s
+[test/price] chronos2: 243/243 12s
+[test/price] chronos2: n=243 12.2s nonfinite=0
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights:  30%|███       | 51/170 [00:00<00:00, 380.98it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 1121.21it/s]
+[test/price] chronos2_cov: 64/243 25s
+[test/price] chronos2_cov: 128/243 42s
+[test/price] chronos2_cov: 192/243 66s
+[test/price] chronos2_cov: 243/243 85s
+[test/price] chronos2_cov: n=243 85.3s nonfinite=0
+Loading weights:   0%|          | 0/269 [00:00<?, ?it/s]Loading weights: 100%|██████████| 269/269 [00:00<00:00, 3929.12it/s]
+[test/price] chronos_bolt_base: 64/243 11s
+[test/price] chronos_bolt_base: 128/243 13s
+[test/price] chronos_bolt_base: 192/243 16s
+[test/price] chronos_bolt_base: 243/243 17s
+[test/price] chronos_bolt_base: n=243 17.4s nonfinite=0
+[test/price] tirex: 64/243 17s
+[test/price] tirex: 128/243 32s
+[test/price] tirex: 192/243 44s
+[test/price] tirex: 243/243 56s
+[test/price] tirex: n=243 56.4s nonfinite=0
+[test/price] timestral_5m: 64/243 0s
+[test/price] timestral_5m: 128/243 1s
+[test/price] timestral_5m: 192/243 1s
+[test/price] timestral_5m: 243/243 1s
+[test/price] timestral_5m: n=243 0.9s nonfinite=0
+[test/price] kronos_small: 49/49 1155s
+[test/price] kronos_small: n=49 1154.9s nonfinite=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_none_s0.pt  sha256=3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=none
+wm: family=ssm abl=none width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 34.6 min trained, complete=True
+eval_only_ckpt_sha256: 3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422
+---
+wm_family:        ssm abl=none width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2076.9
+predict_seconds:  0.0
+total_seconds:    2076.9
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/price] alma_s0: 64/243 1s
+[test/price] alma_s0: 128/243 1s
+[test/price] alma_s0: 192/243 1s
+[test/price] alma_s0: 243/243 1s
+[test/price] alma_s0: n=243 1.1s nonfinite=0
+eval-only: /Users/srimanarayana/Timeseries/data/ckpt/wm_ssm_direct_s0.pt  sha256=be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+eval-only config: TSAR_AUG=0.5 TSAR_BENCH=1 TSAR_GIFT_CLEAN=1 TSAR_SYN3=1 TSAR_SYN5=1 TSAR_SYN_CURR=0.9 TSAR_SYN_FRAC=0.3 TSAR_WM=ssm TSAR_WM_ABL=direct
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+fev_full_alma: stored-config check vs data/ckpt/wm_ssm_none_s0.pt: ok (train_sha256=bc78d74b5a3f, 14 TRAIN datasets)
+eval-only: frozen weights at step 2500, 33.5 min trained, complete=True
+eval_only_ckpt_sha256: be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      nan
+val_mase_rel:     nan
+val_cov80_error:  nan
+training_seconds: 2007.6
+predict_seconds:  0.0
+total_seconds:    2007.6
+peak_mem_mb:      0.0
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   nan
+[test/price] alma_direct_s0: 64/243 0s
+[test/price] alma_direct_s0: 128/243 0s
+[test/price] alma_direct_s0: 192/243 0s
+[test/price] alma_direct_s0: 243/243 0s
+[test/price] alma_direct_s0: n=243 0.5s nonfinite=0
+metrics -> /Users/srimanarayana/Timeseries/runs/gas/test/metrics.json

@@ -1,0 +1,887 @@
+{
+ "protocol": "docs/fin_search.md section 0 + Am0, Am1, Am2 (+ correction); prereg docs/fin_prereg.md with lead amendments through A5 (0525126)",
+ "timestamps": "UTC. FROZEN.json written 2026-11-01 ~07:45 UTC; first freeze commit bcdbf2e at 07:46:11 UTC; this correction commit is the freeze of record (commit time authoritative)",
+ "recipes": {
+  "wm_fin": {
+   "arch": "RSSM (GRU h + Gaussian z), 4 six-hour prior sub-steps per day, weekday-of-D head input; day heads read latents rolled through day D",
+   "cfg": {
+    "d": 64,
+    "zd": 16,
+    "sub": 4,
+    "w": 14,
+    "mf": true,
+    "lr": 0.002,
+    "steps": 800,
+    "bs": 256,
+    "etfp": 0.3,
+    "w_q": 2.0,
+    "w_p": 0.5,
+    "w_blk": 0.5,
+    "w_kl": 0.1,
+    "w_rec": 1.0,
+    "dow": true
+   },
+   "loop_key": "50b221e074",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "fit_end": "2025-06-30",
+   "train_coins": 16
+  },
+  "wm_direct": {
+   "twin_of": "wm_fin",
+   "difference": "day heads read the filtered state at D-1 (no rollout); identical modules, params, losses, data, steps, seeds"
+  },
+  "wm_fin_cl": {
+   "base": "wm_fin weights",
+   "online_rule": {
+    "steps": 1,
+    "lr": 0.0001,
+    "l2_init": 1.0,
+    "replay_days": 60,
+    "params": "all",
+    "meta": "none",
+    "eta": 0.2
+   },
+   "twin": "wm_fin_cl:frozen (identical weights, observe disabled)",
+   "self_improving_meta_rule": "lr_adapt tested on E-folds (S_C -0.0003), not kept"
+  },
+  "wm_agent": {
+   "algo": "Dreamer-style actor-critic in imagination of frozen wm_fin (dynamics backprop of lambda-returns, EMA critic)",
+   "cfg": {
+    "lam": 0.25,
+    "hor": 10,
+    "gamma": 0.9,
+    "lr": 0.0001,
+    "steps": 500,
+    "cm": 1.0
+   },
+   "loop_key": "fa2ea8f71c",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "note": "one policy per wm_fin member; position = mean over members"
+  },
+  "ppo": {
+   "twin_of": "wm_agent",
+   "difference": "PPO on REAL DEV transitions (fill-to-fill returns, realised funding); same obs, nets, horizon, batch, steps, seeds, lam"
+  },
+  "dqn": {
+   "twin_of": "wm_agent",
+   "difference": "DQN, 5 sizes, all-action targets, REAL transitions; same obs, horizon, batch, steps, seeds; Q hidden 128 (params within 5%)"
+  },
+  "wm_voltgt": {
+   "rule": "sign(30d return) x min(1, sigma*/sigma_wm_fin); non-RL control"
+  },
+  "wm_b_moe4": {
+   "owner": "architect B",
+   "commit": "aec7e7e",
+   "status": "non-claim; the pooled P1 finalist is A's wm_fin by best F1 (0.7194 vs 0.7152)"
+  }
+ },
+ "twin_matching": {
+  "wm_fin_vs_wm_direct": "identical module list and params per member, same seeds/steps/data",
+  "agents": "dreamer actor+critic vs ppo actor+critic vs dqn Q(hidden 128): params within 5%"
+ },
+ "selection": {
+  "loop_folds": "E1 fit<=2022-12-31/test 2023H1; E2 fit<=2023-06-30/test 2023H2; E3 fit<=2023-12-31/test 2024H1",
+  "holdout": "F1 fit<=2024-06-30 / test 2024-07-01..2025-06-30 (one look per finalist)",
+  "wm_final": {
+   "key": "50b221e074",
+   "confirmed": true,
+   "best_holdout": [
+    "50b221e074",
+    0.7076738076738077,
+    0.7194063926940639,
+    0.15156087754142142
+   ],
+   "start_key": "b9d2692d92",
+   "holdout_rows": [
+    [
+     "50b221e074",
+     0.7076738076738077,
+     0.7194063926940639,
+     0.15156087754142142
+    ],
+    [
+     "0dbccd3e62",
+     0.7018364351697685,
+     0.7179223744292238,
+     0.1519536584447839
+    ],
+    [
+     "bb100ccd25",
+     0.6761793761793763,
+     0.6884703196347032,
+     0.16699176496844564
+    ]
+   ],
+   "note": "F1 numbers are post-selection (RT-11)"
+  },
+  "cl_final": {
+   "key": "241a43a188",
+   "confirmed": true,
+   "best_holdout": [
+    "241a43a188",
+    -0.0002713336046669494,
+    0.002054794520547909,
+    -0.0006802674209484827
+   ],
+   "start_key": "241a43a188",
+   "holdout_rows": [
+    [
+     "241a43a188",
+     -0.0002713336046669494,
+     0.002054794520547909,
+     -0.0006802674209484827
+    ]
+   ],
+   "note": "F1 numbers are post-selection (RT-11)"
+  },
+  "rl_final": {
+   "key": "fa2ea8f71c",
+   "confirmed": true,
+   "best_holdout": [
+    "fa2ea8f71c",
+    1.8503238270807614,
+    0.5934633506131104
+   ],
+   "start_key": "000c50cf46",
+   "holdout_rows": [
+    [
+     "voltgt_ref",
+     null,
+     0.0695506351520965
+    ],
+    [
+     "fa2ea8f71c",
+     1.8503238270807614,
+     0.5934633506131104
+    ],
+    [
+     "b98b5b6f72",
+     1.4028871641775733,
+     0.1968922260948818
+    ],
+    [
+     "000c50cf46",
+     1.007649811492835,
+     -0.5465544609925042
+    ]
+   ],
+   "note": "F1 numbers are post-selection (RT-11)"
+  },
+  "P1_gate": "beat max registered dow-aware baseline on E1-E3 (lgbm_dow EM 0.6930; per fold .666/.696/.717): wm_fin recipe EM 0.7077 (.691/.714/.718) passes; wm_b_moe4 EM 0.6934 passes by 0.0004 (tie). moe4's and lgbm_dow's EMs were known when the gate was committed (gate not independent of them).",
+  "F1_post_selection_note": "F1 numbers of chosen models are the max over <=6 F1 looks (winner's curse, RT-11); F1 pillar differences are descriptive only"
+ },
+ "dev_F1_3seed_pillar_comparisons_descriptive": {
+  "f1ens_wm_50b221e074_none vs f1ens_wm_50b221e074_direct [crypto]": {
+   "all": {
+    "P1_a": 0.7171232876712329,
+    "P1_b": 0.7158675799086758,
+    "dP1": 0.0012557077625570785,
+    "dP1_ci": [
+     -0.0037671232876712317,
+     0.006050228310502283
+    ],
+    "dP1_p_dm": 0.5969001503166731,
+    "QS_a": 0.15135601639191681,
+    "QS_b": 0.15245439892113116,
+    "dQS": -0.0010983825292143518,
+    "dQS_ci": [
+     -0.0021295653697271776,
+     -0.0001266889978510578
+    ],
+    "dQS_p_dm": 0.055349212369439106
+   },
+   "train": {
+    "P1_a": 0.7164383561643836,
+    "P1_b": 0.7138698630136986,
+    "dP1": 0.0025684931506849314,
+    "dP1_ci": [
+     -0.0030821917808219177,
+     0.007876712328767124
+    ],
+    "dP1_p_dm": 0.3179748058293706,
+    "QS_a": 0.15190198114759818,
+    "QS_b": 0.15311006858288292,
+    "dQS": -0.0012080874352847445,
+    "dQS_ci": [
+     -0.0021885349531713186,
+     -0.00023185132378797743
+    ],
+    "dQS_p_dm": 0.03313821835443617
+   },
+   "heldout": {
+    "P1_a": 0.7184931506849315,
+    "P1_b": 0.7198630136986301,
+    "dP1": -0.0013698630136986301,
+    "dP1_ci": [
+     -0.008561643835616438,
+     0.0058219178082191785
+    ],
+    "dP1_p_dm": 0.7108893236550043,
+    "QS_a": 0.15026408688055415,
+    "QS_b": 0.15114305959762772,
+    "dQS": -0.0008789727170735598,
+    "dQS_ci": [
+     -0.0020694391210839148,
+     0.00017696476757700691
+    ],
+    "dQS_p_dm": 0.15974218459178569
+   }
+  },
+  "f1ens_wm_50b221e074_none vs f1ens_wm_50b221e074_direct [etf]": {
+   "all": {
+    "P1_a": 0.5907692307692308,
+    "P1_b": 0.5843076923076923,
+    "dP1": 0.006461538461538464,
+    "dP1_ci": [
+     0.0003076923076923099,
+     0.012923076923076923
+    ],
+    "dP1_p_dm": 0.06643560107321084,
+    "QS_a": 0.22798599439194228,
+    "QS_b": 0.23229805028942946,
+    "dQS": -0.004312055897487171,
+    "dQS_ci": [
+     -0.006406354856746209,
+     -0.0023780957523972103
+    ],
+    "dQS_p_dm": 2.532920646054555e-05
+   }
+  },
+  "f1ens_cl_241a43a188 vs f1ens_wm_50b221e074_none [crypto]": {
+   "all": {
+    "P1_a": 0.7188356164383561,
+    "P1_b": 0.7171232876712329,
+    "dP1": 0.0017123287671232887,
+    "dP1_ci": [
+     -0.0007990867579908664,
+     0.004337899543378996
+    ],
+    "dP1_p_dm": 0.19711514404839459,
+    "QS_a": 0.15074885236861735,
+    "QS_b": 0.15135601639191681,
+    "dQS": -0.0006071640232995068,
+    "dQS_ci": [
+     -0.0012903038688663329,
+     7.821093623297066e-05
+    ],
+    "dQS_p_dm": 0.12072518000769589
+   },
+   "train": {
+    "P1_a": 0.7171232876712329,
+    "P1_b": 0.7164383561643836,
+    "dP1": 0.0006849315068493151,
+    "dP1_ci": [
+     -0.002054794520547945,
+     0.003424657534246575
+    ],
+    "dP1_p_dm": 0.6282781485502996,
+    "QS_a": 0.15127051050779042,
+    "QS_b": 0.15190198114759818,
+    "dQS": -0.0006314706398077618,
+    "dQS_ci": [
+     -0.0013222897081242872,
+     4.3958292885854514e-05
+    ],
+    "dQS_p_dm": 0.10230465429777864
+   },
+   "heldout": {
+    "P1_a": 0.7222602739726027,
+    "P1_b": 0.7184931506849315,
+    "dP1": 0.003767123287671233,
+    "dP1_ci": [
+     0.0,
+     0.007542808219178036
+    ],
+    "dP1_p_dm": 0.06289498705002329,
+    "QS_a": 0.14970553609027118,
+    "QS_b": 0.15026408688055415,
+    "dQS": -0.0005585507902830016,
+    "dQS_ci": [
+     -0.0012635004660107255,
+     0.00014237294509693806
+    ],
+    "dQS_p_dm": 0.17547469755424142
+   }
+  },
+  "f1ens_cl_241a43a188 vs f1ens_wm_50b221e074_none [etf]": {
+   "all": {
+    "P1_a": 0.5926153846153847,
+    "P1_b": 0.5907692307692308,
+    "dP1": 0.0018461538461538452,
+    "dP1_ci": [
+     -0.002769230769230771,
+     0.007076923076923077
+    ],
+    "dP1_p_dm": 0.3667612313794709,
+    "QS_a": 0.22614915091926255,
+    "QS_b": 0.22798599439194228,
+    "dQS": -0.0018368434726797438,
+    "dQS_ci": [
+     -0.0034649939034434893,
+     -8.904459184238804e-05
+    ],
+    "dQS_p_dm": 0.006119173724475042
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_ppo_fa2ea8f71c [crypto]": {
+   "heldout": {
+    "SR_a": 0.45762935134154703,
+    "SR_b": -0.16555021097419442,
+    "diff": 0.6231795623157415,
+    "ci": [
+     -0.21529130287387171,
+     1.4437194708494243
+    ],
+    "p": 0.154,
+    "turn_a": 0.02322331134166064,
+    "turn_b": 0.052368319894843716
+   },
+   "all": {
+    "SR_a": 0.16715865982516775,
+    "SR_b": -0.5259180863557275,
+    "diff": 0.6930767461808952,
+    "ci": [
+     -0.11073301346695275,
+     1.499601586482943
+    ],
+    "p": 0.098,
+    "turn_a": 0.02478137265073708,
+    "turn_b": 0.05532084121681227
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_ppo_fa2ea8f71c [etf]": {
+   "all": {
+    "SR_a": -0.39956654902288113,
+    "SR_b": 0.03191666440286801,
+    "diff": -0.43148321342574913,
+    "ci": [
+     -1.1892467643531848,
+     0.32581196426293646
+    ],
+    "p": 0.21,
+    "turn_a": 0.046095850931904256,
+    "turn_b": 0.10969211689897572
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_dqn_fa2ea8f71c [crypto]": {
+   "heldout": {
+    "SR_a": 0.45762935134154703,
+    "SR_b": 0.9694582123408716,
+    "diff": -0.5118288609993246,
+    "ci": [
+     -2.0821290932049195,
+     0.9326065575336843
+    ],
+    "p": 0.545,
+    "turn_a": 0.02322331134166064,
+    "turn_b": 0.027617199075213827
+   },
+   "all": {
+    "SR_a": 0.16715865982516775,
+    "SR_b": 0.8035141918584229,
+    "diff": -0.6363555320332551,
+    "ci": [
+     -2.1386980356193863,
+     0.7324431844268492
+    ],
+    "p": 0.406,
+    "turn_a": 0.02478137265073708,
+    "turn_b": 0.029430556353249832
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_dqn_fa2ea8f71c [etf]": {
+   "all": {
+    "SR_a": -0.39956654902288113,
+    "SR_b": -0.25176142980463123,
+    "diff": -0.1478051192182499,
+    "ci": [
+     -1.4003593456192664,
+     1.3298850683973018
+    ],
+    "p": 0.892,
+    "turn_a": 0.046095850931904256,
+    "turn_b": 0.0476891241638536
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_voltgt_fa2ea8f71c [crypto]": {
+   "heldout": {
+    "SR_a": 0.45762935134154703,
+    "SR_b": 0.057128246697265836,
+    "diff": 0.4005011046442812,
+    "ci": [
+     -1.8867526952984712,
+     2.887866664175684
+    ],
+    "p": 0.719,
+    "turn_a": 0.02322331134166064,
+    "turn_b": 0.15783670816075204
+   },
+   "all": {
+    "SR_a": 0.16715865982516775,
+    "SR_b": -0.09750229992164307,
+    "diff": 0.2646609597468108,
+    "ci": [
+     -2.10524394738162,
+     2.90559349693772
+    ],
+    "p": 0.82,
+    "turn_a": 0.02478137265073708,
+    "turn_b": 0.16101770450437483
+   }
+  },
+  "f1ens_dreamer_fa2ea8f71c vs f1ens_voltgt_fa2ea8f71c [etf]": {
+   "all": {
+    "SR_a": -0.39956654902288113,
+    "SR_b": -0.5731267548852844,
+    "diff": 0.17356020586240328,
+    "ci": [
+     -2.6105416821232224,
+     3.273974833748059
+    ],
+    "p": 0.852,
+    "turn_a": 0.046095850931904256,
+    "turn_b": 0.19730218022079113
+   }
+  }
+ },
+ "pillar_tests_preregistered": {
+  "rollout_vs_direct": "wm_fin vs wm_direct: P1 (DM daily) and P3 QS, all 24 coins, Holm over 2 endpoints",
+  "continual_vs_frozen": "wm_fin_cl vs wm_fin_cl:frozen: P1 and P3, all 24 coins",
+  "wm_vs_model_free": "wm_agent vs ppo, dqn: P2 net Sharpe, held-out (primary) and all 24; Holm over {held-out, all} x {ppo, dqn}",
+  "portability": "wm_fin (observe disabled) on held-out coins vs lgbm_asset and har_roll; ETFs descriptive",
+  "beats_baselines": "wm_fin on P1 vs every non-contaminated section-5 model incl. the A5 dow-aware baselines"
+ },
+ "val_go_no_go": "Written before VAL. VAL is run once, confirmation/debug only. NO-GO for TEST only if a frozen model crashes, returns non-finite outputs for >5% of scored coin-days, or the leak test fails; otherwise GO. No model, rule or threshold changes after VAL.",
+ "val_numbers_not_consulted": "Architects A and B did not read the lead's VAL numbers (docs/fin_results.md, runs/fin/val/) before this freeze.",
+ "leak_tests": {
+  "frozen": "runs/fin/search/test_leak.txt: every invariance check OK (future, fill-bar, determinism, continual walk); 2 sensitivity checks FAIL for dqn on prev_hour (discrete argmax unchanged by a one-hour perturbation; prev_day changes it). Not a leak.",
+  "families": "runs/fin/search/test_leak_{rssm,cl,meta,agents,rssm_dow}.txt",
+  "B": "runs/fin/search_b/test_leak_b_final.txt ALL OK"
+ },
+ "disclosures": [
+  "4 round-1 rows were scored on F1 before Am1 (counted in K)",
+  "DST: the WM loop's clock stop overran by 5 min; the aborted proposal is logged",
+  "dow knob added post hoc (Am2) after the red team found the weekday effect; extension rows in K",
+  "the cl loop ran on the pre-dow WM incumbent, the rl loop on the dow incumbent",
+  "RL loop stopped early: one-knob neighbourhood exhausted (13 proposals)",
+  "E-fold P1 includes held-out coins: DEV held-out numbers are not zero-shot-clean",
+  "RT-8: PPO/DQN rewards fill-to-fill with realised funding; Dreamer rewards are WM-imagined day returns",
+  "B: 6 NaN-diverged rows logged as P1 0 count as crashes; har_intra_dow specified after the red team saw F1; B saw A's round-1 F1 rows; cache label loop3 -> loop4",
+  "Continual: no gain on E-folds (all S_C <= 0.00001); frozen rule = starting rule; F1 S_C +0.0021 (one look)",
+  "Self-improving meta rule (online LR adaptation from past errors) tested, not selected"
+ ],
+ "models": [
+  "wm_fin",
+  "wm_direct",
+  "wm_fin_cl",
+  "wm_fin_cl:frozen",
+  "wm_agent",
+  "ppo",
+  "dqn",
+  "wm_voltgt",
+  "wm_b_moe4"
+ ],
+ "claim_models": [
+  "wm_fin",
+  "wm_fin_cl",
+  "wm_agent"
+ ],
+ "sha256": {
+  "runs/fin/search/ckpt/frozen_wm_fin.pt": "5b90558f4c271e4dc00f5ad8c5207b53d07c5676326b26c5c3d796dbd41b6b08",
+  "runs/fin/search/ckpt/frozen_wm_direct.pt": "38b39cf96bd921ccb8b08b87bdb2f00bf68e9d4875d29a8c2953c9ab33a708be",
+  "runs/fin/search/ckpt/frozen_wm_agent.pt": "acf5559970505e1aa31dd3e1ca1e596d716cfa548845e09adddb208e9bb01594",
+  "runs/fin/search/ckpt/frozen_ppo.pt": "798fb58e2502156a0ef06cbdcfab1a7920bf2c6172013de04346c5469bc216cf",
+  "runs/fin/search/ckpt/frozen_dqn.pt": "97a9da54fd7ace7d69a46eaf2722fd9f74d322ad0033cd6c64bae998c30597be",
+  "runs/fin/search_b/ckpt/wm_b_moe4_refit.pt": "b560e92e45a1bb74c582d2b542e41cc10e2966c8a84d36dfe55b3df1f049e613"
+ },
+ "K": 985,
+ "K_detail": {
+  "architect_A_rows_excl_refs": 109,
+  "architect_B_rows_excl_refs": 876,
+  "results_tsv_rows": 116,
+  "results_b_tsv_rows": 923
+ },
+ "var_sharpe_trials": 0.002180628405783579,
+ "var_sharpe_trials_n": 74,
+ "var_sharpe_trials_rows": [
+  [
+   "rl_000c50cf46",
+   "EM",
+   0.09428416731029189
+  ],
+  [
+   "rl_000c50cf46",
+   "EM",
+   0.0006781202936132874
+  ],
+  [
+   "rl_000c50cf46",
+   "EM",
+   0.06326611747475555
+  ],
+  [
+   "rl_b98b5b6f72",
+   "EM",
+   0.08332785834106904
+  ],
+  [
+   "rl_b98b5b6f72",
+   "EM",
+   0.022500468011113533
+  ],
+  [
+   "rl_b98b5b6f72",
+   "EM",
+   0.11446308437540338
+  ],
+  [
+   "rl_0a9787a008",
+   "E3",
+   0.08330694398672472
+  ],
+  [
+   "rl_fa2ea8f71c",
+   "EM",
+   0.10494306292122703
+  ],
+  [
+   "rl_fa2ea8f71c",
+   "EM",
+   0.06416922202586188
+  ],
+  [
+   "rl_fa2ea8f71c",
+   "EM",
+   0.12143884174273563
+  ],
+  [
+   "rl_4b13fb16bb",
+   "EM",
+   0.11185147043440462
+  ],
+  [
+   "rl_4b13fb16bb",
+   "EM",
+   0.06154883638678179
+  ],
+  [
+   "rl_4b13fb16bb",
+   "EM",
+   0.12563673937622888
+  ],
+  [
+   "rl_be5b0c2d53",
+   "E3",
+   0.08929725272676513
+  ],
+  [
+   "rl_51ae3b35b2",
+   "E3",
+   0.06678479090467322
+  ],
+  [
+   "rl_ce4e0c85f1",
+   "EM",
+   0.10826349150123825
+  ],
+  [
+   "rl_ce4e0c85f1",
+   "EM",
+   0.044056325279602876
+  ],
+  [
+   "rl_ce4e0c85f1",
+   "EM",
+   0.11171412387493077
+  ],
+  [
+   "rl_601bb516bb",
+   "EM",
+   0.0961943139906286
+  ],
+  [
+   "rl_601bb516bb",
+   "EM",
+   -0.00964063065016596
+  ],
+  [
+   "rl_601bb516bb",
+   "EM",
+   0.11445373291012415
+  ],
+  [
+   "rl_fd2f1adcd0",
+   "E3",
+   0.0376512979284776
+  ],
+  [
+   "rl_a758b0a3d8",
+   "EM",
+   0.09843365708092194
+  ],
+  [
+   "rl_a758b0a3d8",
+   "EM",
+   0.047769893278994516
+  ],
+  [
+   "rl_a758b0a3d8",
+   "EM",
+   0.11697032393671886
+  ],
+  [
+   "rl_284e996c60",
+   "EM",
+   0.09367243870750327
+  ],
+  [
+   "rl_284e996c60",
+   "EM",
+   0.05743044655554029
+  ],
+  [
+   "rl_284e996c60",
+   "EM",
+   0.1190590438505411
+  ],
+  [
+   "rl_061c6bd889",
+   "EM",
+   0.10073378657343697
+  ],
+  [
+   "rl_061c6bd889",
+   "EM",
+   0.06232920357687079
+  ],
+  [
+   "rl_061c6bd889",
+   "EM",
+   0.12144638359553739
+  ],
+  [
+   "rl_cdf78eb96b",
+   "EM",
+   0.10897421004840993
+  ],
+  [
+   "rl_cdf78eb96b",
+   "EM",
+   0.06575750673553232
+  ],
+  [
+   "rl_cdf78eb96b",
+   "EM",
+   0.12127278887629483
+  ],
+  [
+   "hold_voltgt_50b221e074",
+   "F1",
+   0.0036404133816149366
+  ],
+  [
+   "hold_rl_fa2ea8f71c",
+   "F1",
+   0.031063291489144555
+  ],
+  [
+   "hold_rl_b98b5b6f72",
+   "F1",
+   0.010305810131010227
+  ],
+  [
+   "hold_rl_000c50cf46",
+   "F1",
+   -0.02860796798818765
+  ],
+  [
+   "f1ens_voltgt_fa2ea8f71c",
+   "F1",
+   0.0029902290976984306
+  ],
+  [
+   "f1ens_dreamer_fa2ea8f71c",
+   "F1",
+   0.023953415017160765
+  ],
+  [
+   "f1ens_ppo_fa2ea8f71c",
+   "F1",
+   -0.008665294081375029
+  ],
+  [
+   "f1ens_dqn_fa2ea8f71c",
+   "F1",
+   0.05074376202907554
+  ],
+  [
+   "p_vt_k1_c1.0",
+   "E1",
+   0.09794151412331302
+  ],
+  [
+   "p_vt_k1_c1.0",
+   "E2",
+   0.08880619640234602
+  ],
+  [
+   "p_vt_k1_c1.0",
+   "E3",
+   0.062179098036259255
+  ],
+  [
+   "p_vt_k1_c2.0",
+   "E1",
+   0.10177716462805411
+  ],
+  [
+   "p_vt_k1_c2.0",
+   "E2",
+   0.12118258313416369
+  ],
+  [
+   "p_vt_k1_c2.0",
+   "E3",
+   0.06760386356998424
+  ],
+  [
+   "p_vt_k1_c4.0",
+   "E1",
+   0.10185620164036523
+  ],
+  [
+   "p_vt_k1_c4.0",
+   "E2",
+   0.13307425123149078
+  ],
+  [
+   "p_vt_k1_c4.0",
+   "E3",
+   0.08439163903922016
+  ],
+  [
+   "p_vt_k2_c2.0",
+   "E1",
+   -0.009058374404346238
+  ],
+  [
+   "p_vt_k2_c2.0",
+   "E2",
+   0.13703971086903421
+  ],
+  [
+   "p_vt_k2_c2.0",
+   "E3",
+   0.04238425213174256
+  ],
+  [
+   "p_vt_k3_c2.0",
+   "E1",
+   -0.013860788894111449
+  ],
+  [
+   "p_vt_k3_c2.0",
+   "E2",
+   0.14624464397170572
+  ],
+  [
+   "p_vt_k3_c2.0",
+   "E3",
+   0.025677083946585525
+  ],
+  [
+   "p_vt_k-1_c1.0",
+   "E1",
+   0.037949804659558266
+  ],
+  [
+   "p_vt_k-1_c1.0",
+   "E2",
+   0.13192428887356006
+  ],
+  [
+   "p_vt_k-1_c1.0",
+   "E3",
+   0.0029819460869964474
+  ],
+  [
+   "p_vt_k-1_c2.0",
+   "E1",
+   0.06732016780394033
+  ],
+  [
+   "p_vt_k-1_c2.0",
+   "E2",
+   0.13388189434404746
+  ],
+  [
+   "p_vt_k-1_c2.0",
+   "E3",
+   0.019672888130553186
+  ],
+  [
+   "p_vt_k-1_c4.0",
+   "E1",
+   0.07948768030847245
+  ],
+  [
+   "p_vt_k-1_c4.0",
+   "E2",
+   0.13129879728606475
+  ],
+  [
+   "p_vt_k-1_c4.0",
+   "E3",
+   0.04380691835334276
+  ],
+  [
+   "p_resid_k1_lam0.5_kap1.0",
+   "E1",
+   0.10665652243444007
+  ],
+  [
+   "p_resid_k1_lam0.5_kap1.0",
+   "E2",
+   0.13306849356834224
+  ],
+  [
+   "p_resid_k1_lam0.5_kap1.0",
+   "E3",
+   0.07959445878868085
+  ],
+  [
+   "p_resid_k-1_lam0.5_kap1.0",
+   "E1",
+   0.052866339605534184
+  ],
+  [
+   "p_resid_k-1_lam0.5_kap1.0",
+   "E2",
+   0.10080830694733962
+  ],
+  [
+   "p_resid_k-1_lam0.5_kap1.0",
+   "E3",
+   0.05617333194845915
+  ],
+  [
+   "p_vt_k1_c4.0",
+   "F1",
+   -0.01679667367591996
+  ],
+  [
+   "p_vt_k1_c2.0",
+   "F1",
+   -0.01948968975764661
+  ]
+ ],
+ "var_sharpe_trials_note": "variance of the per-period (daily) net Sharpe on held-out coins over every agent row (all folds, both logs); DSR uses per-period units"
+}

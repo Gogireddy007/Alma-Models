@@ -1,0 +1,52 @@
+OK   crypto fam_cl_sgd 2025-02-03 deterministic
+OK   crypto fam_cl_sgd 2025-02-03 future: unchanged
+OK   crypto fam_cl_sgd 2025-02-03 fill: unchanged
+OK   crypto fam_cl_sgd 2025-02-03 prev_day: changed (360 values)
+OK   crypto fam_cl_sgd 2025-02-03 prev_hour: changed (360 values)
+OK   crypto fam_cl_sgd 2025-03-17 deterministic
+OK   crypto fam_cl_sgd 2025-03-17 future: unchanged
+OK   crypto fam_cl_sgd 2025-03-17 fill: unchanged
+OK   crypto fam_cl_sgd 2025-03-17 prev_day: changed (360 values)
+OK   crypto fam_cl_sgd 2025-03-17 prev_hour: changed (358 values)
+OK   crypto fam_cl_sgd 2025-04-28 deterministic
+OK   crypto fam_cl_sgd 2025-04-28 future: unchanged
+OK   crypto fam_cl_sgd 2025-04-28 fill: unchanged
+OK   crypto fam_cl_sgd 2025-04-28 prev_day: changed (360 values)
+OK   crypto fam_cl_sgd 2025-04-28 prev_hour: changed (360 values)
+OK   crypto fam_cl_sgd 2025-06-09 deterministic
+OK   crypto fam_cl_sgd 2025-06-09 future: unchanged
+OK   crypto fam_cl_sgd 2025-06-09 fill: unchanged
+OK   crypto fam_cl_sgd 2025-06-09 prev_day: changed (360 values)
+OK   crypto fam_cl_sgd 2025-06-09 prev_hour: changed (360 values)
+OK   crypto fam_cl_sgd 2025-06-30 deterministic
+OK   crypto fam_cl_sgd 2025-06-30 future: unchanged
+OK   crypto fam_cl_sgd 2025-06-30 fill: unchanged
+OK   crypto fam_cl_sgd 2025-06-30 prev_day: changed (360 values)
+OK   crypto fam_cl_sgd 2025-06-30 prev_hour: changed (360 values)
+OK   crypto fam_cl_sgd online: decisions for days <= 2025-05-04 bit-identical (updates [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   crypto fam_cl_sgd online: later decisions differ (perturbed rows observed)
+OK   crypto fam_cl_sgd online: updates made every day
+OK   etf fam_cl_sgd 2025-02-03 deterministic
+OK   etf fam_cl_sgd 2025-02-03 future: unchanged
+OK   etf fam_cl_sgd 2025-02-03 fill: unchanged
+OK   etf fam_cl_sgd 2025-02-03 prev_day: changed (195 values)
+OK   etf fam_cl_sgd 2025-03-17 deterministic
+OK   etf fam_cl_sgd 2025-03-17 future: unchanged
+OK   etf fam_cl_sgd 2025-03-17 fill: unchanged
+OK   etf fam_cl_sgd 2025-03-17 prev_day: changed (195 values)
+OK   etf fam_cl_sgd 2025-04-28 deterministic
+OK   etf fam_cl_sgd 2025-04-28 future: unchanged
+OK   etf fam_cl_sgd 2025-04-28 fill: unchanged
+OK   etf fam_cl_sgd 2025-04-28 prev_day: changed (195 values)
+OK   etf fam_cl_sgd 2025-06-09 deterministic
+OK   etf fam_cl_sgd 2025-06-09 future: unchanged
+OK   etf fam_cl_sgd 2025-06-09 fill: unchanged
+OK   etf fam_cl_sgd 2025-06-09 prev_day: changed (195 values)
+OK   etf fam_cl_sgd 2025-06-30 deterministic
+OK   etf fam_cl_sgd 2025-06-30 future: unchanged
+OK   etf fam_cl_sgd 2025-06-30 fill: unchanged
+OK   etf fam_cl_sgd 2025-06-30 prev_day: changed (195 values)
+OK   etf fam_cl_sgd online: decisions for days <= 2025-05-06 bit-identical (updates [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+OK   etf fam_cl_sgd online: later decisions differ (perturbed rows observed)
+OK   etf fam_cl_sgd online: updates made every day
+ALL OK

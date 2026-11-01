@@ -1,0 +1,36 @@
+{"name": "c5_b2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_b2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_b2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_b2_hconv", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "enc_h": "conv"}, "seed": 0}
+{"name": "c5_b2_hconv", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "enc_h": "conv"}, "seed": 1}
+{"name": "c5_b2_hconv", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "enc_h": "conv"}, "seed": 2}
+{"name": "c5_b2_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "cross": "attn"}, "seed": 0}
+{"name": "c5_b2_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "cross": "attn"}, "seed": 1}
+{"name": "c5_b2_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "cross": "attn"}, "seed": 2}
+{"name": "c5_b2_s300", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_b2_s300", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_b2_s300", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_b2_drop2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "drop": 0.2}, "seed": 0}
+{"name": "c5_b2_drop2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "drop": 0.2}, "seed": 1}
+{"name": "c5_b2_drop2", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "drop": 0.2}, "seed": 2}
+{"name": "c5_b2_d64", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_b2_d64", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_b2_d64", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_harlin", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "none", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_harlin", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "none", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_harlin", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "none", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_b2_tf", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "tf", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_b2_tf", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "tf", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_b2_tf", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "tf", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_b2_gru", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "gru", "coin_drop": 0.5}, "seed": 0}
+{"name": "c5_b2_gru", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "gru", "coin_drop": 0.5}, "seed": 1}
+{"name": "c5_b2_gru", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "gru", "coin_drop": 0.5}, "seed": 2}
+{"name": "c5_b2_wm03", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "wm": 0.3}, "seed": 0}
+{"name": "c5_b2_wm03", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "wm": 0.3}, "seed": 1}
+{"name": "c5_b2_wm03", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "wm": 0.3}, "seed": 2}
+{"name": "c5_b2_st4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "stoch": 4}, "seed": 0}
+{"name": "c5_b2_st4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "stoch": 4}, "seed": 1}
+{"name": "c5_b2_st4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "stoch": 4}, "seed": 2}
+{"name": "c5_b2_moe4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "head": "moe", "K": 4}, "seed": 0}
+{"name": "c5_b2_moe4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "head": "moe", "K": 4}, "seed": 1}
+{"name": "c5_b2_moe4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 32, "enc_d": "mlp", "coin_drop": 0.5, "head": "moe", "K": 4}, "seed": 2}

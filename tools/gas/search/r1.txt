@@ -1,0 +1,8 @@
+r1_wm_a1_r0	0	{"arch":"wm","assim":1,"regime":0}
+r1_dir_a1_r0	0	{"arch":"direct","assim":1,"regime":0}
+r1_wm_a0_r0	0	{"arch":"wm","assim":0,"regime":0}
+r1_dir_a0_r0	0	{"arch":"direct","assim":0,"regime":0}
+r1_wm_a1_r1	0	{"arch":"wm","assim":1,"regime":1}
+r1_dir_a1_r1	0	{"arch":"direct","assim":1,"regime":1}
+r1_wm_a0_r1	0	{"arch":"wm","assim":0,"regime":1}
+r1_dir_a0_r1	0	{"arch":"direct","assim":0,"regime":1}

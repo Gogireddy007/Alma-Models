@@ -1,0 +1,2 @@
+--name r2_sv_L64_none --arch sv --abl none --L 64 --minutes 5 --threads 2
+--name r2_sv_L64_direct --arch sv --abl direct --L 64 --minutes 5 --threads 2

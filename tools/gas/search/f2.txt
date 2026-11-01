@@ -1,0 +1,3 @@
+f_reg2dir_s0	0	{"arch":"direct","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}
+f_reg2dir_s1	1	{"arch":"direct","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}
+f_reg2dir_s2	2	{"arch":"direct","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}

@@ -1,0 +1,8 @@
+{"at":"2026-11-01T12:56:11Z","committed":true,"head":"80ef5ab2d61ac46b0569b83406da38a2cbf0565442237a43da7c2db2a6cd046f","ledger":"runs/live/paper/shadow_buy_hold/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:13Z","committed":true,"head":"4ed396e58f120fe1fd46f053029556a983064e1fb5148e84672eefbb37ea01a8","ledger":"runs/live/paper/shadow_short_ung_carry/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:15Z","committed":true,"head":"7d9cbf46b5f517d0a56748be6820f1a24d8f8e3fa085574226acfde603491863","ledger":"runs/live/paper/shadow_tsmom_20/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:16Z","committed":true,"head":"41dcfb7d443e6b7ef8c1aea1ff9d222b67bb3e6ca18c586f6abc99798aeb295a","ledger":"runs/live/paper/shadow_seasonal/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:19Z","committed":true,"head":"091a7123e58c744a6094897829a1d24da42138517043ab3950049e8d4d742604","ledger":"runs/live/paper/shadow_weather_rev/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:20Z","committed":true,"head":"d953d1873a35ccfe384f0d385f1c707641f929b2659602774e8950c7d64239c7","ledger":"runs/live/paper/shadow_storage_surprise/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:22Z","committed":true,"head":"48fc5de6c26bac7aac28f4377ebe65322c4cfc63a8983f5f3c35552b378c81c5","ledger":"runs/live/paper/shadow_fc_ewma/ledger.jsonl","msg":"genesis","seq":0}
+{"at":"2026-11-01T12:56:24Z","committed":true,"head":"77f27b3104bcc859816bc8371c9eb423288435f4d4837f68c4c6184adcc4e4f3","ledger":"runs/live/paper/shadow_fc_hist/ledger.jsonl","msg":"genesis","seq":0}

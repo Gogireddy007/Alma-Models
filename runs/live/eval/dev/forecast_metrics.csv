@@ -1,0 +1,3 @@
+model,ret_n,ret_qs,ret_qs_lo,ret_qs_hi,ret_skill_vs_fc_hist,ret_dqs_p,ret_cov90,rv5_n,rv5_qs,rv5_qs_lo,rv5_qs_hi,rv5_skill_vs_fc_hist,rv5_dqs_p,rv5_cov90,stor_n,stor_qs,stor_qs_lo,stor_qs_hi,stor_skill_vs_fc_hist,stor_dqs_p,stor_cov90,stor_dir_acc,stor_dir_lo,stor_dir_hi
+fc_hist,1879,0.0074558,0.006969,0.0079801,0,,0.88398,1879,0.23036,0.21512,0.24622,0,,0.88345,390,10.082,8.3489,11.965,0,,0.87436,0.50904,0.45939,0.55852
+fc_ewma,1879,0.0072136,0.0067581,0.0077007,0.032481,0,0.89675,1879,0.18677,0.17418,0.2001,0.18921,0,0.89462,390,10.023,8.272,11.929,0.0058494,0.889,0.87692,0.62113,0.5719,0.66799

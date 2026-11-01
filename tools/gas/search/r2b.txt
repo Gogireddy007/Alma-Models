@@ -1,0 +1,4 @@
+r2b_dir_reg	0	{"arch":"direct","assim":1,"regime":1,"cal":1,"wd":0.01,"drop":0.2}
+r2b_wm_reg2	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.05,"drop":0.3}
+r2b_wm_reg_r0	0	{"arch":"wm","assim":1,"regime":0,"cal":1,"wd":0.01,"drop":0.2}
+r2b_wm_reg_d16	0	{"arch":"wm","assim":1,"regime":1,"cal":1,"wd":0.01,"drop":0.2,"d":16}

@@ -1,0 +1,6 @@
+--name r1_cycle_none --arch cycle --abl none
+--name r1_cycle_direct --arch cycle --abl direct
+--name r1_phys_none --arch phys --abl none
+--name r1_phys_direct --arch phys --abl direct
+--name r1_regime_none --arch regime --abl none
+--name r1_regime_direct --arch regime --abl direct

@@ -1,0 +1,2 @@
+--name r2_alma_ft_none --arch alma --abl none --minutes 5 --lr 1e-4 --batch 16 --threads 3 --note "n_orig=192 subsample"
+--name r2_alma_ft_direct --arch alma --abl direct --minutes 5 --lr 1e-4 --batch 16 --threads 3 --note "n_orig=192 subsample"

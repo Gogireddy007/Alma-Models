@@ -1,0 +1,181 @@
+OK   crypto fam_ag_dreamer 2025-02-03 deterministic
+OK   crypto fam_ag_dreamer 2025-02-03 future: unchanged
+OK   crypto fam_ag_dreamer 2025-02-03 fill: unchanged
+OK   crypto fam_ag_dreamer 2025-02-03 prev_day: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-02-03 prev_hour: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-03-17 deterministic
+OK   crypto fam_ag_dreamer 2025-03-17 future: unchanged
+OK   crypto fam_ag_dreamer 2025-03-17 fill: unchanged
+OK   crypto fam_ag_dreamer 2025-03-17 prev_day: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-03-17 prev_hour: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-04-28 deterministic
+OK   crypto fam_ag_dreamer 2025-04-28 future: unchanged
+OK   crypto fam_ag_dreamer 2025-04-28 fill: unchanged
+OK   crypto fam_ag_dreamer 2025-04-28 prev_day: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-04-28 prev_hour: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-06-09 deterministic
+OK   crypto fam_ag_dreamer 2025-06-09 future: unchanged
+OK   crypto fam_ag_dreamer 2025-06-09 fill: unchanged
+OK   crypto fam_ag_dreamer 2025-06-09 prev_day: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-06-09 prev_hour: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-06-30 deterministic
+OK   crypto fam_ag_dreamer 2025-06-30 future: unchanged
+OK   crypto fam_ag_dreamer 2025-06-30 fill: unchanged
+OK   crypto fam_ag_dreamer 2025-06-30 prev_day: changed (24 values)
+OK   crypto fam_ag_dreamer 2025-06-30 prev_hour: changed (24 values)
+OK   crypto fam_ag_ppo 2025-02-03 deterministic
+OK   crypto fam_ag_ppo 2025-02-03 future: unchanged
+OK   crypto fam_ag_ppo 2025-02-03 fill: unchanged
+OK   crypto fam_ag_ppo 2025-02-03 prev_day: changed (24 values)
+OK   crypto fam_ag_ppo 2025-02-03 prev_hour: changed (24 values)
+OK   crypto fam_ag_ppo 2025-03-17 deterministic
+OK   crypto fam_ag_ppo 2025-03-17 future: unchanged
+OK   crypto fam_ag_ppo 2025-03-17 fill: unchanged
+OK   crypto fam_ag_ppo 2025-03-17 prev_day: changed (24 values)
+OK   crypto fam_ag_ppo 2025-03-17 prev_hour: changed (24 values)
+OK   crypto fam_ag_ppo 2025-04-28 deterministic
+OK   crypto fam_ag_ppo 2025-04-28 future: unchanged
+OK   crypto fam_ag_ppo 2025-04-28 fill: unchanged
+OK   crypto fam_ag_ppo 2025-04-28 prev_day: changed (24 values)
+OK   crypto fam_ag_ppo 2025-04-28 prev_hour: changed (24 values)
+OK   crypto fam_ag_ppo 2025-06-09 deterministic
+OK   crypto fam_ag_ppo 2025-06-09 future: unchanged
+OK   crypto fam_ag_ppo 2025-06-09 fill: unchanged
+OK   crypto fam_ag_ppo 2025-06-09 prev_day: changed (24 values)
+OK   crypto fam_ag_ppo 2025-06-09 prev_hour: changed (24 values)
+OK   crypto fam_ag_ppo 2025-06-30 deterministic
+OK   crypto fam_ag_ppo 2025-06-30 future: unchanged
+OK   crypto fam_ag_ppo 2025-06-30 fill: unchanged
+OK   crypto fam_ag_ppo 2025-06-30 prev_day: changed (24 values)
+OK   crypto fam_ag_ppo 2025-06-30 prev_hour: changed (24 values)
+OK   crypto fam_ag_dqn 2025-02-03 deterministic
+OK   crypto fam_ag_dqn 2025-02-03 future: unchanged
+OK   crypto fam_ag_dqn 2025-02-03 fill: unchanged
+FAIL crypto fam_ag_dqn 2025-02-03 prev_day: changed (0 values)
+FAIL crypto fam_ag_dqn 2025-02-03 prev_hour: changed (0 values)
+OK   crypto fam_ag_dqn 2025-03-17 deterministic
+OK   crypto fam_ag_dqn 2025-03-17 future: unchanged
+OK   crypto fam_ag_dqn 2025-03-17 fill: unchanged
+OK   crypto fam_ag_dqn 2025-03-17 prev_day: changed (2 values)
+FAIL crypto fam_ag_dqn 2025-03-17 prev_hour: changed (0 values)
+OK   crypto fam_ag_dqn 2025-04-28 deterministic
+OK   crypto fam_ag_dqn 2025-04-28 future: unchanged
+OK   crypto fam_ag_dqn 2025-04-28 fill: unchanged
+OK   crypto fam_ag_dqn 2025-04-28 prev_day: changed (1 values)
+FAIL crypto fam_ag_dqn 2025-04-28 prev_hour: changed (0 values)
+OK   crypto fam_ag_dqn 2025-06-09 deterministic
+OK   crypto fam_ag_dqn 2025-06-09 future: unchanged
+OK   crypto fam_ag_dqn 2025-06-09 fill: unchanged
+OK   crypto fam_ag_dqn 2025-06-09 prev_day: changed (7 values)
+FAIL crypto fam_ag_dqn 2025-06-09 prev_hour: changed (0 values)
+OK   crypto fam_ag_dqn 2025-06-30 deterministic
+OK   crypto fam_ag_dqn 2025-06-30 future: unchanged
+OK   crypto fam_ag_dqn 2025-06-30 fill: unchanged
+FAIL crypto fam_ag_dqn 2025-06-30 prev_day: changed (0 values)
+FAIL crypto fam_ag_dqn 2025-06-30 prev_hour: changed (0 values)
+OK   crypto fam_ag_voltgt 2025-02-03 deterministic
+OK   crypto fam_ag_voltgt 2025-02-03 future: unchanged
+OK   crypto fam_ag_voltgt 2025-02-03 fill: unchanged
+OK   crypto fam_ag_voltgt 2025-02-03 prev_day: changed (24 values)
+OK   crypto fam_ag_voltgt 2025-02-03 prev_hour: changed (24 values)
+OK   crypto fam_ag_voltgt 2025-03-17 deterministic
+OK   crypto fam_ag_voltgt 2025-03-17 future: unchanged
+OK   crypto fam_ag_voltgt 2025-03-17 fill: unchanged
+OK   crypto fam_ag_voltgt 2025-03-17 prev_day: changed (24 values)
+OK   crypto fam_ag_voltgt 2025-03-17 prev_hour: changed (24 values)
+OK   crypto fam_ag_voltgt 2025-04-28 deterministic
+OK   crypto fam_ag_voltgt 2025-04-28 future: unchanged
+OK   crypto fam_ag_voltgt 2025-04-28 fill: unchanged
+OK   crypto fam_ag_voltgt 2025-04-28 prev_day: changed (22 values)
+OK   crypto fam_ag_voltgt 2025-04-28 prev_hour: changed (22 values)
+OK   crypto fam_ag_voltgt 2025-06-09 deterministic
+OK   crypto fam_ag_voltgt 2025-06-09 future: unchanged
+OK   crypto fam_ag_voltgt 2025-06-09 fill: unchanged
+OK   crypto fam_ag_voltgt 2025-06-09 prev_day: changed (22 values)
+OK   crypto fam_ag_voltgt 2025-06-09 prev_hour: changed (22 values)
+OK   crypto fam_ag_voltgt 2025-06-30 deterministic
+OK   crypto fam_ag_voltgt 2025-06-30 future: unchanged
+OK   crypto fam_ag_voltgt 2025-06-30 fill: unchanged
+OK   crypto fam_ag_voltgt 2025-06-30 prev_day: changed (23 values)
+OK   crypto fam_ag_voltgt 2025-06-30 prev_hour: changed (22 values)
+OK   etf fam_ag_dreamer 2025-02-03 deterministic
+OK   etf fam_ag_dreamer 2025-02-03 future: unchanged
+OK   etf fam_ag_dreamer 2025-02-03 fill: unchanged
+OK   etf fam_ag_dreamer 2025-02-03 prev_day: changed (13 values)
+OK   etf fam_ag_dreamer 2025-03-17 deterministic
+OK   etf fam_ag_dreamer 2025-03-17 future: unchanged
+OK   etf fam_ag_dreamer 2025-03-17 fill: unchanged
+OK   etf fam_ag_dreamer 2025-03-17 prev_day: changed (13 values)
+OK   etf fam_ag_dreamer 2025-04-28 deterministic
+OK   etf fam_ag_dreamer 2025-04-28 future: unchanged
+OK   etf fam_ag_dreamer 2025-04-28 fill: unchanged
+OK   etf fam_ag_dreamer 2025-04-28 prev_day: changed (13 values)
+OK   etf fam_ag_dreamer 2025-06-09 deterministic
+OK   etf fam_ag_dreamer 2025-06-09 future: unchanged
+OK   etf fam_ag_dreamer 2025-06-09 fill: unchanged
+OK   etf fam_ag_dreamer 2025-06-09 prev_day: changed (13 values)
+OK   etf fam_ag_dreamer 2025-06-30 deterministic
+OK   etf fam_ag_dreamer 2025-06-30 future: unchanged
+OK   etf fam_ag_dreamer 2025-06-30 fill: unchanged
+OK   etf fam_ag_dreamer 2025-06-30 prev_day: changed (13 values)
+OK   etf fam_ag_ppo 2025-02-03 deterministic
+OK   etf fam_ag_ppo 2025-02-03 future: unchanged
+OK   etf fam_ag_ppo 2025-02-03 fill: unchanged
+OK   etf fam_ag_ppo 2025-02-03 prev_day: changed (13 values)
+OK   etf fam_ag_ppo 2025-03-17 deterministic
+OK   etf fam_ag_ppo 2025-03-17 future: unchanged
+OK   etf fam_ag_ppo 2025-03-17 fill: unchanged
+OK   etf fam_ag_ppo 2025-03-17 prev_day: changed (13 values)
+OK   etf fam_ag_ppo 2025-04-28 deterministic
+OK   etf fam_ag_ppo 2025-04-28 future: unchanged
+OK   etf fam_ag_ppo 2025-04-28 fill: unchanged
+OK   etf fam_ag_ppo 2025-04-28 prev_day: changed (13 values)
+OK   etf fam_ag_ppo 2025-06-09 deterministic
+OK   etf fam_ag_ppo 2025-06-09 future: unchanged
+OK   etf fam_ag_ppo 2025-06-09 fill: unchanged
+OK   etf fam_ag_ppo 2025-06-09 prev_day: changed (13 values)
+OK   etf fam_ag_ppo 2025-06-30 deterministic
+OK   etf fam_ag_ppo 2025-06-30 future: unchanged
+OK   etf fam_ag_ppo 2025-06-30 fill: unchanged
+OK   etf fam_ag_ppo 2025-06-30 prev_day: changed (13 values)
+OK   etf fam_ag_dqn 2025-02-03 deterministic
+OK   etf fam_ag_dqn 2025-02-03 future: unchanged
+OK   etf fam_ag_dqn 2025-02-03 fill: unchanged
+OK   etf fam_ag_dqn 2025-02-03 prev_day: changed (2 values)
+OK   etf fam_ag_dqn 2025-03-17 deterministic
+OK   etf fam_ag_dqn 2025-03-17 future: unchanged
+OK   etf fam_ag_dqn 2025-03-17 fill: unchanged
+OK   etf fam_ag_dqn 2025-03-17 prev_day: changed (2 values)
+OK   etf fam_ag_dqn 2025-04-28 deterministic
+OK   etf fam_ag_dqn 2025-04-28 future: unchanged
+OK   etf fam_ag_dqn 2025-04-28 fill: unchanged
+OK   etf fam_ag_dqn 2025-04-28 prev_day: changed (7 values)
+OK   etf fam_ag_dqn 2025-06-09 deterministic
+OK   etf fam_ag_dqn 2025-06-09 future: unchanged
+OK   etf fam_ag_dqn 2025-06-09 fill: unchanged
+FAIL etf fam_ag_dqn 2025-06-09 prev_day: changed (0 values)
+OK   etf fam_ag_dqn 2025-06-30 deterministic
+OK   etf fam_ag_dqn 2025-06-30 future: unchanged
+OK   etf fam_ag_dqn 2025-06-30 fill: unchanged
+OK   etf fam_ag_dqn 2025-06-30 prev_day: changed (2 values)
+OK   etf fam_ag_voltgt 2025-02-03 deterministic
+OK   etf fam_ag_voltgt 2025-02-03 future: unchanged
+OK   etf fam_ag_voltgt 2025-02-03 fill: unchanged
+OK   etf fam_ag_voltgt 2025-02-03 prev_day: changed (11 values)
+OK   etf fam_ag_voltgt 2025-03-17 deterministic
+OK   etf fam_ag_voltgt 2025-03-17 future: unchanged
+OK   etf fam_ag_voltgt 2025-03-17 fill: unchanged
+OK   etf fam_ag_voltgt 2025-03-17 prev_day: changed (13 values)
+OK   etf fam_ag_voltgt 2025-04-28 deterministic
+OK   etf fam_ag_voltgt 2025-04-28 future: unchanged
+OK   etf fam_ag_voltgt 2025-04-28 fill: unchanged
+OK   etf fam_ag_voltgt 2025-04-28 prev_day: changed (13 values)
+OK   etf fam_ag_voltgt 2025-06-09 deterministic
+OK   etf fam_ag_voltgt 2025-06-09 future: unchanged
+OK   etf fam_ag_voltgt 2025-06-09 fill: unchanged
+OK   etf fam_ag_voltgt 2025-06-09 prev_day: changed (10 values)
+OK   etf fam_ag_voltgt 2025-06-30 deterministic
+OK   etf fam_ag_voltgt 2025-06-30 future: unchanged
+OK   etf fam_ag_voltgt 2025-06-30 fill: unchanged
+OK   etf fam_ag_voltgt 2025-06-30 prev_day: changed (10 values)
+FAILURES

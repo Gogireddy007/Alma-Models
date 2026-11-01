@@ -1,0 +1,82 @@
+{
+ "crypto/dev/all": {
+  "n_days": 1096,
+  "n_assets": 24,
+  "n_coin_days": 22265,
+  "n_pairs": 276,
+  "rho_labels": 0.5119686284910194,
+  "rho_logrv_minus_ref": 0.7134497819303216,
+  "n_eff_per_day": 1.878628327671056,
+  "base_rate": 0.4566808892881204
+ },
+ "crypto/dev/train": {
+  "n_days": 1096,
+  "n_assets": 16,
+  "n_coin_days": 14988,
+  "n_pairs": 120,
+  "rho_labels": 0.501340128788846,
+  "rho_logrv_minus_ref": 0.7065762968328652,
+  "n_eff_per_day": 1.8779118052826356,
+  "base_rate": 0.4591673338670937
+ },
+ "crypto/dev/heldout": {
+  "n_days": 1096,
+  "n_assets": 8,
+  "n_coin_days": 7277,
+  "n_pairs": 28,
+  "rho_labels": 0.5317160010624863,
+  "rho_logrv_minus_ref": 0.7297376199533109,
+  "n_eff_per_day": 1.6941930658794602,
+  "base_rate": 0.4515597086711557
+ },
+ "crypto/val/all": {
+  "n_days": 123,
+  "n_assets": 24,
+  "n_coin_days": 2952,
+  "n_pairs": 276,
+  "rho_labels": 0.5203014107435081,
+  "rho_logrv_minus_ref": 0.7936196148335334,
+  "n_eff_per_day": 1.8508618054354273,
+  "base_rate": 0.5037262872628726
+ },
+ "crypto/val/train": {
+  "n_days": 123,
+  "n_assets": 16,
+  "n_coin_days": 1968,
+  "n_pairs": 120,
+  "rho_labels": 0.5107850613104166,
+  "rho_logrv_minus_ref": 0.7771834959398044,
+  "n_eff_per_day": 1.847196250331419,
+  "base_rate": 0.5076219512195121
+ },
+ "crypto/val/heldout": {
+  "n_days": 123,
+  "n_assets": 8,
+  "n_coin_days": 984,
+  "n_pairs": 28,
+  "rho_labels": 0.5271792867746267,
+  "rho_logrv_minus_ref": 0.8244477246717274,
+  "n_eff_per_day": 1.7056641882669281,
+  "base_rate": 0.4959349593495935
+ },
+ "etf/dev/all": {
+  "n_days": 751,
+  "n_assets": 13,
+  "n_coin_days": 9763,
+  "n_pairs": 78,
+  "rho_labels": 0.32255894756982595,
+  "rho_logrv_minus_ref": 0.5089467310614522,
+  "n_eff_per_day": 2.6690168409283026,
+  "base_rate": 0.4883744750588958
+ },
+ "etf/val/all": {
+  "n_days": 87,
+  "n_assets": 13,
+  "n_coin_days": 1131,
+  "n_pairs": 78,
+  "rho_labels": 0.26557502762665497,
+  "rho_logrv_minus_ref": 0.3978910834442592,
+  "n_eff_per_day": 3.104922250509114,
+  "base_rate": 0.502210433244916
+ }
+}

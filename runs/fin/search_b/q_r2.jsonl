@@ -1,0 +1,14 @@
+{"name": "c3_har_lin", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "none"}}
+{"name": "c3_gru", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru"}}
+{"name": "c3_tf", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf"}}
+{"name": "c3_lru", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "lru"}}
+{"name": "c3_gru_xmean", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "cross": "mean"}}
+{"name": "c3_gru_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "cross": "attn"}}
+{"name": "c3_gru_moe4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "head": "moe", "K": 4}}
+{"name": "c3_gru_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "wm": 1.0}}
+{"name": "c3_gru_st4", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "stoch": 4}}
+{"name": "c3_tf_xattn", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf", "cross": "attn"}}
+{"name": "c3_tf_wm", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf", "wm": 1.0}}
+{"name": "c3_gru_petf0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "p_etf": 0.0}}
+{"name": "c3_gru_hconv_petf0", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "p_etf": 0.0}}
+{"name": "c3_mlp_d", "cfg": {"steps": 400, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "mlp"}}

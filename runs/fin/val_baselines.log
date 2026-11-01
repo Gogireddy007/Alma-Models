@@ -1,0 +1,132 @@
+[val/crypto] majority  1/123 2025-07-01 0s
+[val/crypto] majority  51/123 2025-08-20 0s
+[val/crypto] majority  101/123 2025-10-09 0s
+[val/crypto] majority  123/123 2025-10-31 0s
+[val/crypto] majority: done 0s, updates 0
+[val/crypto] rv_persist  1/123 2025-07-01 0s
+[val/crypto] rv_persist  51/123 2025-08-20 0s
+[val/crypto] rv_persist  101/123 2025-10-09 0s
+[val/crypto] rv_persist  123/123 2025-10-31 0s
+[val/crypto] rv_persist: done 0s, updates 0
+[val/crypto] har  1/123 2025-07-01 0s
+[val/crypto] har  51/123 2025-08-20 1s
+[val/crypto] har  101/123 2025-10-09 1s
+[val/crypto] har  123/123 2025-10-31 2s
+[val/crypto] har: done 2s, updates 0
+[val/crypto] harx  1/123 2025-07-01 0s
+[val/crypto] harx  51/123 2025-08-20 1s
+[val/crypto] harx  101/123 2025-10-09 1s
+[val/crypto] harx  123/123 2025-10-31 2s
+[val/crypto] harx: done 2s, updates 0
+[val/crypto] har_roll  1/123 2025-07-01 0s
+[val/crypto] har_roll  51/123 2025-08-20 1s
+[val/crypto] har_roll  101/123 2025-10-09 2s
+[val/crypto] har_roll  123/123 2025-10-31 2s
+[val/crypto] har_roll: done 2s, updates 0
+[val/crypto] garch  1/123 2025-07-01 2s
+[val/crypto] garch  51/123 2025-08-20 83s
+[val/crypto] garch  101/123 2025-10-09 143s
+[val/crypto] garch  123/123 2025-10-31 172s
+[val/crypto] garch: done 172s, updates 0
+[val/crypto] lgbm  1/123 2025-07-01 0s
+[val/crypto] lgbm  51/123 2025-08-20 0s
+[val/crypto] lgbm  101/123 2025-10-09 0s
+[val/crypto] lgbm  123/123 2025-10-31 0s
+[val/crypto] lgbm: done 0s, updates 0
+[val/crypto] lgbm_asset  1/123 2025-07-01 0s
+[val/crypto] lgbm_asset  51/123 2025-08-20 1s
+[val/crypto] lgbm_asset  101/123 2025-10-09 1s
+[val/crypto] lgbm_asset  123/123 2025-10-31 2s
+[val/crypto] lgbm_asset: done 2s, updates 0
+[val/crypto] buy_hold  1/123 2025-07-01 0s
+[val/crypto] buy_hold  51/123 2025-08-20 0s
+[val/crypto] buy_hold  101/123 2025-10-09 0s
+[val/crypto] buy_hold  123/123 2025-10-31 0s
+[val/crypto] buy_hold: done 0s, updates 0
+[val/crypto] tsmom_1  1/123 2025-07-01 0s
+[val/crypto] tsmom_1  51/123 2025-08-20 0s
+[val/crypto] tsmom_1  101/123 2025-10-09 0s
+[val/crypto] tsmom_1  123/123 2025-10-31 0s
+[val/crypto] tsmom_1: done 0s, updates 0
+[val/crypto] tsmom_7  1/123 2025-07-01 0s
+[val/crypto] tsmom_7  51/123 2025-08-20 0s
+[val/crypto] tsmom_7  101/123 2025-10-09 0s
+[val/crypto] tsmom_7  123/123 2025-10-31 0s
+[val/crypto] tsmom_7: done 0s, updates 0
+[val/crypto] tsmom_30  1/123 2025-07-01 0s
+[val/crypto] tsmom_30  51/123 2025-08-20 0s
+[val/crypto] tsmom_30  101/123 2025-10-09 0s
+[val/crypto] tsmom_30  123/123 2025-10-31 0s
+[val/crypto] tsmom_30: done 0s, updates 0
+[val/crypto] meanrev_1  1/123 2025-07-01 0s
+[val/crypto] meanrev_1  51/123 2025-08-20 0s
+[val/crypto] meanrev_1  101/123 2025-10-09 0s
+[val/crypto] meanrev_1  123/123 2025-10-31 0s
+[val/crypto] meanrev_1: done 0s, updates 0
+[val/crypto] voltgt_tsmom  1/123 2025-07-01 0s
+[val/crypto] voltgt_tsmom  51/123 2025-08-20 1s
+[val/crypto] voltgt_tsmom  101/123 2025-10-09 1s
+[val/crypto] voltgt_tsmom  123/123 2025-10-31 2s
+[val/crypto] voltgt_tsmom: done 2s, updates 0
+[val/crypto] lgbm_policy  1/123 2025-07-01 0s
+[val/crypto] lgbm_policy  51/123 2025-08-20 1s
+[val/crypto] lgbm_policy  101/123 2025-10-09 1s
+[val/crypto] lgbm_policy  123/123 2025-10-31 2s
+[val/crypto] lgbm_policy: done 2s, updates 0
+[val/etf] majority  1/87 2025-07-01 0s
+[val/etf] majority  51/87 2025-09-11 0s
+[val/etf] majority  87/87 2025-10-31 0s
+[val/etf] majority: done 0s, updates 0
+[val/etf] rv_persist  1/87 2025-07-01 0s
+[val/etf] rv_persist  51/87 2025-09-11 0s
+[val/etf] rv_persist  87/87 2025-10-31 0s
+[val/etf] rv_persist: done 0s, updates 0
+[val/etf] har  1/87 2025-07-01 0s
+[val/etf] har  51/87 2025-09-11 1s
+[val/etf] har  87/87 2025-10-31 1s
+[val/etf] har: done 1s, updates 0
+[val/etf] har_roll  1/87 2025-07-01 0s
+[val/etf] har_roll  51/87 2025-09-11 1s
+[val/etf] har_roll  87/87 2025-10-31 1s
+[val/etf] har_roll: done 1s, updates 0
+[val/etf] garch  1/87 2025-07-01 1s
+[val/etf] garch  51/87 2025-09-11 27s
+[val/etf] garch  87/87 2025-10-31 47s
+[val/etf] garch: done 47s, updates 0
+[val/etf] lgbm  1/87 2025-07-01 0s
+[val/etf] lgbm  51/87 2025-09-11 0s
+[val/etf] lgbm  87/87 2025-10-31 0s
+[val/etf] lgbm: done 0s, updates 0
+[val/etf] lgbm_asset  1/87 2025-07-01 0s
+[val/etf] lgbm_asset  51/87 2025-09-11 0s
+[val/etf] lgbm_asset  87/87 2025-10-31 1s
+[val/etf] lgbm_asset: done 1s, updates 0
+[val/etf] buy_hold  1/87 2025-07-01 0s
+[val/etf] buy_hold  51/87 2025-09-11 0s
+[val/etf] buy_hold  87/87 2025-10-31 0s
+[val/etf] buy_hold: done 0s, updates 0
+[val/etf] tsmom_1  1/87 2025-07-01 0s
+[val/etf] tsmom_1  51/87 2025-09-11 0s
+[val/etf] tsmom_1  87/87 2025-10-31 0s
+[val/etf] tsmom_1: done 0s, updates 0
+[val/etf] tsmom_7  1/87 2025-07-01 0s
+[val/etf] tsmom_7  51/87 2025-09-11 0s
+[val/etf] tsmom_7  87/87 2025-10-31 0s
+[val/etf] tsmom_7: done 0s, updates 0
+[val/etf] tsmom_30  1/87 2025-07-01 0s
+[val/etf] tsmom_30  51/87 2025-09-11 0s
+[val/etf] tsmom_30  87/87 2025-10-31 0s
+[val/etf] tsmom_30: done 0s, updates 0
+[val/etf] meanrev_1  1/87 2025-07-01 0s
+[val/etf] meanrev_1  51/87 2025-09-11 0s
+[val/etf] meanrev_1  87/87 2025-10-31 0s
+[val/etf] meanrev_1: done 0s, updates 0
+[val/etf] voltgt_tsmom  1/87 2025-07-01 0s
+[val/etf] voltgt_tsmom  51/87 2025-09-11 1s
+[val/etf] voltgt_tsmom  87/87 2025-10-31 1s
+[val/etf] voltgt_tsmom: done 1s, updates 0
+[val/etf] lgbm_policy  1/87 2025-07-01 0s
+[val/etf] lgbm_policy  51/87 2025-09-11 1s
+[val/etf] lgbm_policy  87/87 2025-10-31 1s
+[val/etf] lgbm_policy: done 1s, updates 0
+metrics -> /Users/srimanarayana/Timeseries/runs/fin/val/metrics.json

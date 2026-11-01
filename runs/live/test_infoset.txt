@@ -1,0 +1,73 @@
+Alma-Live Gas information-set tests, 2026-11-01T12:33:28Z; data manifest sha256 ebd957f6541b8e359ec5feed05ffa199c17a44088508f8a15ec7fddfa79b49c8
+PASS  storage first print >= red-team reference release time  878 weeks; early: []
+PASS  storage published >= week end + 4 days (earliest holiday alternates are Wednesdays)  
+PASS  revisions published after the first print  180 revised rows
+PASS  LRT-1: week 2026-04-10 first print 1970 before the resubmission, 1960 after  1970.0 -> 1960.0
+PASS  LRT-1: printed net change of week 2026-04-17 = 103 (not FP diff 93)  
+PASS  LRT-4: DST - 2024-03-14 release at 14:30Z (10:30 EDT) visible at 14:30Z  
+PASS  LRT-4: 2024-11-07 release (EST) not visible at 15:29Z  
+PASS  COT published >= Friday 15:30 ET after the Tuesday  
+PASS  px bar of session d published at d 18:00 ET (after the 16:00 close)  
+PASS  CPC forecast published after its 00Z issue time (+1 h)  4556 issues; min latency 13.50 h, median 15.01 h; rules {'last_modified': 61076, 'issue_plus_1d_1700Z': 2548}
+PASS  CPC obs published >= day + 1  
+PASS  published_at <= fetched_at for every record  
+PASS  roll rule: active contract last trade > d + ROLL_BDAYS business days  2975 days
+PASS  roll rule identical under future-price perturbation  NGV24.NYM
+PASS  NG=F close->close labels masked on intervals ending on a Yahoo switch session  39 switches
+PASS  diagnostic: median |NG=F return| on switch sessions vs others (roll gaps)  0.0750 vs 0.0284
+PASS  weather: forecasts published before their valid day ended, <= t  2016-11-25T20:30:00Z  
+PASS  weather: forecasts published before their valid day ended, <= t  2018-12-26T20:30:00Z  
+PASS  weather: forecasts published before their valid day ended, <= t  2019-03-08T20:30:00Z  
+PASS  weather: forecasts published before their valid day ended, <= t  2019-03-11T19:30:00Z  
+PASS  weather: forecasts published before their valid day ended, <= t  2020-02-06T20:30:00Z  
+PASS  weather: forecasts published before their valid day ended, <= t  2020-03-27T19:30:00Z  
+PASS  weather: realized obs never enter the forecast frame  
+PASS  weather: CPC forecast error grows with lead (genuine forecasts, not analyses)  MAE by lead 0:0.72, 1:0.80, 2:0.92, 3:1.04, 4:1.23, 5:1.54, 6:1.87; exact-match 0:42%, 1:39%, 2:33%, 3:30%, 4:27%, 5:21%, 6:18%
+PASS  ledger: hash chain verifies  ok (25 lines, head 5d2240da8191)
+PASS  ledger: edited line detected  hash mismatch at seq 3 (line edited)
+PASS  ledger: reordered lines detected  
+PASS  ledger: deleted line detected  
+PASS  ledger: live backfill refused  live decision for 2025-03-03 refused: wall clock 2026-11-01T12:33:04Z outside [2
+PASS  ledger: duplicate decision refused  
+PASS  guard: model opening data/live is blocked  
+PASS  risk: daily loss >= 2% forces the next decision flat  halt_day after 2024-01-03
+PASS  LRT-20: BOIL across the 2026-05-28 reverse split, flat market -> |gross P&L| ~ 0  pnl_gross 0.00, pos {'UNG': 0, 'BOIL': 12493}
+PASS  LRT-19c: ledger mode from genesis is immutable  
+PASS  LRT-19a: truncated tail breaks the anchored-prefix property  
+PASS  UNG split-adjusted (as of t) closes continuous across 4 ex-dates (max |log ret| < 0.3)  max 0.067
+PASS  BOIL split-adjusted (as of t) closes continuous across 7 ex-dates (max |log ret| < 0.3)  max 0.142
+PASS  perturb published_at>t  2016-11-25T20:30:00Z (dev)  records 57988
+PASS  perturb fetched_at>t live 2016-11-25T20:30:00Z  
+PASS  perturb published_at>t  2017-05-18T19:30:00Z (dev)  records 61275
+PASS  perturb fetched_at>t live 2017-05-18T19:30:00Z  
+PASS  perturb published_at>t  2018-12-26T20:30:00Z (dev)  records 72373
+PASS  perturb fetched_at>t live 2018-12-26T20:30:00Z  
+PASS  perturb published_at>t  2019-01-10T20:30:00Z (dev)  records 72657
+PASS  perturb fetched_at>t live 2019-01-10T20:30:00Z  
+PASS  perturb published_at>t  2019-03-08T20:30:00Z (dev)  records 73730
+PASS  perturb fetched_at>t live 2019-03-08T20:30:00Z  
+PASS  perturb published_at>t  2019-03-11T19:30:00Z (dev)  records 73755
+PASS  perturb fetched_at>t live 2019-03-11T19:30:00Z  
+PASS  perturb published_at>t  2019-07-25T19:30:00Z (dev)  records 76370
+PASS  perturb fetched_at>t live 2019-07-25T19:30:00Z  
+PASS  perturb published_at>t  2020-03-27T19:30:00Z (dev)  records 81040
+PASS  perturb fetched_at>t live 2020-03-27T19:30:00Z  
+PASS  perturb published_at>t  2021-01-04T20:30:00Z (dev)  records 86371
+PASS  perturb fetched_at>t live 2021-01-04T20:30:00Z  
+PASS  perturb published_at>t  2022-12-29T20:30:00Z (dev)  records 100142
+PASS  perturb fetched_at>t live 2022-12-29T20:30:00Z  
+PASS  perturb published_at>t  2024-03-11T19:30:00Z (dev)  records 108368
+PASS  perturb fetched_at>t live 2024-03-11T19:30:00Z  
+PASS  perturb published_at>t  2024-06-28T19:30:00Z (dev)  records 110462
+PASS  perturb fetched_at>t live 2024-06-28T19:30:00Z  
+PASS  perturb published_at>t  2024-07-24T19:30:00Z (val)  records 110923
+PASS  perturb fetched_at>t live 2024-07-24T19:30:00Z  
+PASS  perturb published_at>t  2024-11-04T20:30:00Z (val)  records 112901
+PASS  perturb fetched_at>t live 2024-11-04T20:30:00Z  
+PASS  perturb published_at>t  2025-10-31T19:30:00Z (val)  records 119753
+PASS  perturb fetched_at>t live 2025-10-31T19:30:00Z  
+PASS  perturb published_at>t  2025-11-03T20:30:00Z (exposed)  records 119778
+PASS  perturb fetched_at>t live 2025-11-03T20:30:00Z  
+PASS  positive control: perturb a record published <= t changes ctx  
+
+ALL PASSED (70 checks)

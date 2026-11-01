@@ -1,0 +1,137 @@
+{
+ "status": "complete",
+ "started": "2026-10-31T22:09:58-0400",
+ "commit": "60b70d71b9a3793a333b6368e52ddf5f66a20e74",
+ "tools_gas_dirty": "M docs/gas_prereg.md\n M tools/gas/search/feats.py\n M tools/gas/search/nets.py\n M tools/gas/search/run.py\n?? tools/gas/search/q.sh\n?? tools/gas/search/r1.txt\n?? tools/gas/search/test_leak.py\n?? tools/gas/wm_gas.py\n?? tools/gas/wm_scenario.py",
+ "frozen": {
+  "models": [],
+  "note": "rehearsal before freeze"
+ },
+ "frozen_sha256": null,
+ "data_pins": {
+  "data/gas/daily.csv": "569dd1e10464f3487816650f9c1197d43bd06692319ec618aeab769396d5265c",
+  "data/gas/weekly.csv": "929d210b01d15bb034e7b0fdcb06a7319ed755484d15391f97ad158176892309",
+  "data/gas/cpc_obs.csv": "083991d243534519dbdecc70ec3261e81abfab7003f831a0e191869b46c52fc9",
+  "data/gas/cpc_fcst.csv": "fd7352d1b5a833b302d4d8644a7e4a4f396e46ea7c4f2e45b2fb8e0ff3265a3e"
+ },
+ "alma_pins": {
+  "data/ckpt/wm_ssm_none_s0.pt": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+  "data/ckpt/wm_ssm_direct_s0.pt": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be"
+ },
+ "models": {
+  "storage": [
+   "st_climatology",
+   "st_persistence",
+   "st_seasonal_naive",
+   "st_ols_wx",
+   "st_ols_wx_nolag",
+   "st_arima_dev",
+   "chronos2",
+   "chronos2_cov",
+   "chronos_bolt_base",
+   "tirex",
+   "timestral_5m",
+   "alma_s0",
+   "alma_direct_s0"
+  ],
+  "price": [
+   "rw_gauss",
+   "auto_ets",
+   "auto_arima",
+   "px_fund_ols",
+   "chronos2",
+   "chronos2_cov",
+   "chronos_bolt_base",
+   "tirex",
+   "timestral_5m",
+   "kronos_small",
+   "alma_s0",
+   "alma_direct_s0"
+  ]
+ },
+ "model_meta": {
+  "alma_direct_s0": {
+   "ckpt": "data/ckpt/wm_ssm_direct_s0.pt",
+   "ckpt_sha256": "be2faf59694f334db56614ee767b9fbebdb26dde94800d0d7764a8d1316fc9be",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 (price, B) / 52 (storage, W)"
+  },
+  "alma_s0": {
+   "ckpt": "data/ckpt/wm_ssm_none_s0.pt",
+   "ckpt_sha256": "3c959a64099550fa729e19ae2645dff3e8eff695d6ca999e9eeaabf4217ec422",
+   "context": "256 (train_wm CONTEXT crop)",
+   "season": "5 (price, B) / 52 (storage, W)"
+  },
+  "auto_arima": {
+   "context": "512 daily"
+  },
+  "auto_ets": {
+   "context": "512 daily"
+  },
+  "chronos2": {
+   "hf": "amazon/chronos-2"
+  },
+  "chronos2_cov": {
+   "hf": "amazon/chronos-2",
+   "covariates": "storage: weekly HDD/CDD past + target-week future; price: stor_dev5, hdd7, cdd7 past only (NaN -> 0)"
+  },
+  "chronos_bolt_base": {
+   "hf": "amazon/chronos-bolt-base"
+  },
+  "kronos_small": {
+   "hf": "NeoQuasar/Kronos-small",
+   "tokenizer": "NeoQuasar/Kronos-Tokenizer-base",
+   "code": "/Users/srimanarayana/MIKO/kronos/repo @ 67b630e",
+   "samples": 10,
+   "context": 256,
+   "T": 1.0,
+   "top_p": 0.9,
+   "top_k": 0,
+   "seed": "0 per origin",
+   "ohlc": "open=high=low=close=price, volume=0"
+  },
+  "px_fund_ols": {
+   "fit": "DEV origins 2015-01-01.. with targets <= 2025-06-30"
+  },
+  "rw_gauss": {
+   "sigma_window": 250
+  },
+  "st_arima_dev": {
+   "model": "AutoARIMA on the deviation series, season 1, last 520 weeks"
+  },
+  "st_climatology": {
+   "rule": "same-week past deviations"
+  },
+  "st_ols_wx": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": true
+  },
+  "st_ols_wx_nolag": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": false
+  },
+  "st_persistence": {
+   "rule": "dev persistence"
+  },
+  "st_seasonal_naive": {
+   "rule": "last year's same-week dS"
+  },
+  "timestral_5m": {
+   "hf": "mistralai/Timestral-5M",
+   "contamination": "released 2026-10-15: may cover TEST"
+  },
+  "tirex": {
+   "hf": "NX-AI/TiRex"
+  }
+ },
+ "split": "val",
+ "rehearsal": true,
+ "argv": [
+  "tools/gas/run_eval.py",
+  "--split",
+  "val",
+  "--rehearse"
+ ],
+ "finished": "2026-10-31T22:15:39-0400",
+ "hashes_sha256": "9ae0b46c444c78ac1e5e5c668c7175eb88dd5464d354a1e252f7d3609c3b00c9"
+}

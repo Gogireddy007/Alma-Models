@@ -1,0 +1,26 @@
+1-2 perturbation/sensitivity: OK on 12 decision days (2022-08-12 .. 2025-10-31)
+1b ETF perturbation: OK on 6 sessions (context = sessions <= D-1)
+3 raw re-derivation of fill and RV: OK (8 coin-days)
+4 P&L timing: OK (uses fill(D), fill(D+1) only)
+5 train_view: OK (last day 2025-06-30, 16 training coins)
+6 data-access guard: OK (open() under data/fin/ and runs/fin/ refused during predict)
+7 model majority: future-invariant and deterministic on 4 days
+7 model rv_persist: future-invariant and deterministic on 4 days
+7 model har: future-invariant and deterministic on 4 days
+7 model harx: future-invariant and deterministic on 4 days
+7 model har_roll: future-invariant and deterministic on 4 days
+7 model garch: future-invariant and deterministic on 4 days
+7 model lgbm: future-invariant and deterministic on 4 days
+7 model lgbm_asset: future-invariant and deterministic on 4 days
+7 model har_dow: future-invariant and deterministic on 4 days
+7 model lgbm_dow: future-invariant and deterministic on 4 days
+7 model har_intra_dow: future-invariant and deterministic on 4 days
+7 model buy_hold: future-invariant and deterministic on 4 days
+7 model tsmom_1: future-invariant and deterministic on 4 days
+7 model tsmom_7: future-invariant and deterministic on 4 days
+7 model tsmom_30: future-invariant and deterministic on 4 days
+7 model meanrev_1: future-invariant and deterministic on 4 days
+7 model voltgt_tsmom: future-invariant and deterministic on 4 days
+7 model lgbm_policy: future-invariant and deterministic on 4 days
+7 online runner: OK (decisions <= cut bit-identical, 40 updates logged)
+ALL INFORMATION-SET TESTS PASSED

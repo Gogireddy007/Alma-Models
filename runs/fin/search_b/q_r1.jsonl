@@ -1,0 +1,17 @@
+{"name": "b_har_lin", "cfg": {"steps": 300, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "none", "har_skip": 1}}
+{"name": "b_har_mlp", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "none"}}
+{"name": "b_har_gru", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru"}}
+{"name": "b_har_gru_h", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv"}}
+{"name": "b_tf_d", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "tf"}}
+{"name": "b_lru_d", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "lru"}}
+{"name": "b_lru_dh", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "lru", "enc_h": "lru"}}
+{"name": "b_tf_dh", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "tf"}}
+{"name": "b_x_mean", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "cross": "mean"}}
+{"name": "b_x_attn", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "cross": "attn"}}
+{"name": "b_moe4", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "head": "moe", "K": 4}}
+{"name": "b_moe4_x", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "head": "moe", "K": 4, "cross": "attn"}}
+{"name": "b_wm", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "wm": 1.0}}
+{"name": "b_wm_x", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "wm": 1.0, "cross": "attn"}}
+{"name": "b_st4", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "stoch": 4}}
+{"name": "b_st4_x", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "stoch": 4, "cross": "attn", "wm": 1.0}}
+{"name": "b_ens3", "cfg": {"steps": 600, "bs": 32, "lr": 0.002, "d": 64, "enc_d": "gru", "enc_h": "conv", "ens": 3}}

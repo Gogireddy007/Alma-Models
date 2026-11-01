@@ -1,0 +1,11 @@
+OK   R0 control: har (fit <= 2025-06-30) CHANGES when rows > 2024-06-30 are randomised
+OK   R1 har_dow: fit unchanged when every row > 2025-06-30 is randomised
+OK   R2 har_dow: fold fit (TRAIN_END=2024-06-30) unchanged when rows > 2024-06-30 are randomised
+OK   R3 har_dow: pooled fit unchanged when the held-out coins' rows are randomised
+OK   R1 lgbm_dow: fit unchanged when every row > 2025-06-30 is randomised
+OK   R2 lgbm_dow: fold fit (TRAIN_END=2024-06-30) unchanged when rows > 2024-06-30 are randomised
+OK   R3 lgbm_dow: pooled fit unchanged when the held-out coins' rows are randomised
+OK   R1 har_intra_dow: fit unchanged when every row > 2025-06-30 is randomised
+OK   R2 har_intra_dow: fold fit (TRAIN_END=2024-06-30) unchanged when rows > 2024-06-30 are randomised
+OK   R3 har_intra_dow: pooled fit unchanged when the held-out coins' rows are randomised
+ALL OK
