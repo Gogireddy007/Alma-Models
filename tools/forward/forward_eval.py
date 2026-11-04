@@ -195,22 +195,24 @@ def score_fin():
     res = {"n_days": int(len(days))}
     if not len(days):
         return res
-    d = pd.concat([pd.read_parquet(os.path.join(ROOT, "data/fin/crypto_daily.parquet")),
-                   pd.read_parquet(os.path.join(ROOT, "data/fin/crypto_daily_SEALED.parquet"))])
-    d["day"] = pd.to_datetime(d.t).dt.tz_localize(None).dt.normalize()
-    lrv = np.log(d.pivot_table(index="day", columns="symbol", values="rv")
-                 .where(d.pivot_table(index="day", columns="symbol", values="n_lab") >= 274))
-    ref = lrv.shift(1).rolling(7).mean().where(lrv.shift(1).rolling(7).count() == 7)
-    dd = pd.to_datetime(P.days[days])
-    L, RF = lrv.reindex(index=dd, columns=P.symbols).to_numpy(), ref.reindex(index=dd, columns=P.symbols).to_numpy()
+    # Official pre-registered labels (harness.Panel.labels, as run_eval.py): the reference is the mean of the 7 previous
+    # *calendar* days on the complete UTC grid, NaN if any is missing (e.g. 2026-10-28, absent from the Binance archive).
+    # A row-based rolling(7) over the parquet's days would silently skip such gaps.
+    labs = [P.labels(int(i)) for i in days]
+    L = np.stack([l["logrv"] for l in labs])
+    RF = np.stack([l["ref"] for l in labs])
     per = {}
     for mn in MODELS["fin"]:
         r = H.run(P, M.get(mn), days)
         q = r["q"]
-        ok = np.isfinite(L) & np.isfinite(RF) & np.isfinite(q[..., 2:11]).all(-1)
+        okq = np.isfinite(L) & np.isfinite(q[..., 2:11]).all(-1)          # P3: no reference needed (run_eval.py)
+        ok1 = okq & np.isfinite(RF)                                        # P1: needs the official reference
         e = L[..., None] - q[..., 2:11]
-        per[mn] = {"hit": np.nanmean(np.where(ok, (q[..., 6] > RF) == (L > RF), np.nan), 1),
-                   "qs": np.nanmean(np.where(ok, np.maximum(LV9 * e, (LV9 - 1) * e).mean(-1), np.nan), 1)}
+        per[mn] = {"hit": np.nanmean(np.where(ok1, (q[..., 6] > RF) == (L > RF), np.nan), 1),
+                   "qs": np.nanmean(np.where(okq, np.maximum(LV9 * e, (LV9 - 1) * e).mean(-1), np.nan), 1)}
+    res["n_p1_labelled"] = int((np.isfinite(L) & np.isfinite(RF)).sum())
+    res["p1_unlabelled_days"] = [str(pd.Timestamp(t).date()) for t, rf in zip(P.days[days], RF)
+                                 if not np.isfinite(rf).any()]
     res["summary"] = summarize(per, MODELS["fin"][0], "qs", block=7)
     return res
 
