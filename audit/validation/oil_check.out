@@ -1,0 +1,18 @@
+ h        model   n      QS  skill_vs_rw
+ 1        wm_sv 246 0.01052      0.00454
+ 1 wm_sv_direct 246 0.01056      0.00079
+ 1        rw250 246 0.01056      0.00000
+ 1       ewma94 246 0.01054      0.00210
+ 5        wm_sv 242 0.02383     -0.00762
+ 5 wm_sv_direct 242 0.02378     -0.00530
+ 5        rw250 242 0.02365      0.00000
+ 5       ewma94 242 0.02345      0.00855
+20        wm_sv 227 0.04994     -0.00529
+20 wm_sv_direct 227 0.04959      0.00179
+20        rw250 227 0.04968      0.00000
+20       ewma94 227 0.05022     -0.01092
+leak test (future scrambled): 0 of 25 origins changed
+
+real	1m25.085s
+user	1m9.411s
+sys	0m3.670s

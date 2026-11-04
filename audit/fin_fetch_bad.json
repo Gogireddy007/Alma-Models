@@ -1,0 +1,15 @@
+{
+ "data/fin/raw/etf/QQQ.json": "SHA-DIFF",
+ "data/fin/raw/etf/SPY.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLB.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLC.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLE.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLF.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLI.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLK.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLP.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLRE.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLU.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLV.json": "SHA-DIFF",
+ "data/fin/raw/etf/XLY.json": "SHA-DIFF"
+}

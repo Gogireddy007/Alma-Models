@@ -1,0 +1,14 @@
+[test] wm_power_blend: 32/366 63s
+[test] wm_power_blend: 64/366 121s
+[test] wm_power_blend: 96/366 177s
+[test] wm_power_blend: 128/366 233s
+[test] wm_power_blend: 160/366 289s
+[test] wm_power_blend: 192/366 346s
+[test] wm_power_blend: 224/366 402s
+[test] wm_power_blend: 256/366 459s
+[test] wm_power_blend: 288/366 519s
+[test] wm_power_blend: 320/366 582s
+[test] wm_power_blend: 352/366 651s
+[test] wm_power_blend: 366/366 682s
+[test] wm_power_blend: n=366 681.5s nonfinite(0.1..0.9)=0
+wrapper == offline blend: True 0.0

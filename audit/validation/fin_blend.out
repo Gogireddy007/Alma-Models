@@ -1,0 +1,13 @@
+
+VAL wm_fin+har_intra_dow: w=0.0:acc0.7371/qs0.1543 w=0.1:acc0.7415/qs0.1537 w=0.2:acc0.7405/qs0.1534 w=0.3:acc0.7497/qs0.1535 w=0.4:acc0.7517/qs0.1540 w=0.5:acc0.7534/qs0.1549 w=0.6:acc0.7503/qs0.1562 w=0.7:acc0.7453/qs0.1578 w=0.8:acc0.7378/qs0.1598 w=0.9:acc0.7324/qs0.1621 w=1.0:acc0.7293/qs0.1647
+chosen on VAL: w=0.4
+TEST train    wm_fin acc 0.7248 qs 0.1459 | har_intra_dow acc 0.7310 qs 0.1526 | blend acc 0.7393 qs 0.1446
+TEST heldout  wm_fin acc 0.7220 qs 0.1496 | har_intra_dow acc 0.7310 qs 0.1569 | blend acc 0.7410 qs 0.1483
+TEST all      wm_fin acc 0.7239 qs 0.1471 | har_intra_dow acc 0.7310 qs 0.1541 | blend acc 0.7398 qs 0.1459
+
+VAL wm_fin+lgbm_dow: w=0.0:acc0.7371/qs0.1543 w=0.1:acc0.7429/qs0.1539 w=0.2:acc0.7442/qs0.1536 w=0.3:acc0.7459/qs0.1536 w=0.4:acc0.7432/qs0.1538 w=0.5:acc0.7463/qs0.1542 w=0.6:acc0.7480/qs0.1547 w=0.7:acc0.7470/qs0.1555 w=0.8:acc0.7480/qs0.1565 w=0.9:acc0.7436/qs0.1577 w=1.0:acc0.7412/qs0.1590
+chosen on VAL: w=0.3
+TEST train    wm_fin acc 0.7248 qs 0.1459 | lgbm_dow acc 0.7254 qs 0.1503 | blend acc 0.7288 qs 0.1447
+TEST heldout  wm_fin acc 0.7220 qs 0.1496 | lgbm_dow acc 0.7173 qs 0.1555 | blend acc 0.7338 qs 0.1488
+TEST all      wm_fin acc 0.7239 qs 0.1471 | lgbm_dow acc 0.7227 qs 0.1520 | blend acc 0.7304 qs 0.1461
+../repo/.venv/bin/python $s.py  0.50s user 0.21s system 46% cpu 1.547 total

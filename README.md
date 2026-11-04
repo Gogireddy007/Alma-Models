@@ -6,6 +6,7 @@ Everything here was evaluated **once** on a sealed, out-of-sample TEST year, the
 
 - **Best models with checkpoints and model cards:** [`winning_models/`](winning_models/)
 - **Full per-project write-ups:** [`docs/`](docs/)
+- **Project status report and architecture diagrams (PDF):** [`reports/`](reports/)
 
 ## Projects
 
@@ -27,7 +28,7 @@ Everything here was evaluated **once** on a sealed, out-of-sample TEST year, the
 | Alma-Fin | wm_fin significantly beats Chronos-2, TiRex, Chronos-Bolt and Kronos on quantile score (Holm 0.023 / 0.002 / 0.0002). On held-out coins it beats per-coin baselines without a weekday input (lgbm_asset, har_roll) by 8–9 pp, but **not** the weekday-aware HAR baseline (har_intra_dow 0.731 vs wm_fin 0.728 on the held-out coins), so there is no transfer advantage over a simple calendar model | Volatility direction 0.727 vs calendar regression 0.731 (tie); RL agent loses to DQN; no ETF transfer |
 | **World-model test** (rollout vs matched direct twin) | | **Not passed in any project yet**: the direct twin (no rollout) is equal or better on TEST in gas, fin, oil and power |
 
-An independent re-audit (2026-11-01, `audit/REPORT.md` outside this repo) rebuilt every dataset, re-ran every frozen checkpoint and reproduced the TEST numbers above; it found no leakage and no fabricated numbers, and corrected the oil and fin wording in this table.
+An independent re-audit (2026-11-01, [`audit/`](audit/), full report in [`reports/`](reports/)) rebuilt every dataset, re-ran every frozen checkpoint and reproduced the TEST numbers above; it found no leakage and no fabricated numbers, and corrected the oil and fin wording in this table.
 
 ## Integrity protocol
 

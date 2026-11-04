@@ -1,0 +1,4 @@
+blend vs wm_power  QS: diff -0.4262  95% CI [-0.6736, -0.1741]  (n days 365)
+blend vs wm_power  P2: diff +0.0082  95% CI [-0.0033, +0.0194]  (n days 365)
+blend vs lear      QS: diff -0.6185  95% CI [-0.9003, -0.3563]  (n days 365)
+blend vs lear      P2: diff +0.0250  95% CI [+0.0138, +0.0364]  (n days 365)

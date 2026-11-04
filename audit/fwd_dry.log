@@ -1,0 +1,244 @@
+{
+ "DRYRUN": true,
+ "project": "gas",
+ "scored_utc": "2026-11-01T17:15:46Z",
+ "forward_start": "2026-08-01",
+ "freeze": "DRYRUN (no freeze yet)",
+ "result": {
+  "n_weeks": 13,
+  "weeks": [
+   "2026-07-31",
+   "2026-08-07",
+   "2026-08-14",
+   "2026-08-21",
+   "2026-08-28",
+   "2026-09-04",
+   "2026-09-11",
+   "2026-09-18",
+   "2026-09-25",
+   "2026-10-02",
+   "2026-10-09",
+   "2026-10-16",
+   "2026-10-23"
+  ],
+  "kinds": {
+   "thu": {
+    "wm_gas_ens": {
+     "abs_err": 6.595378400767893,
+     "qs": 2.636252741731432,
+     "hit": 0.8461538461538461,
+     "cov80": 1.0
+    },
+    "wm_gas": {
+     "abs_err": 6.644683006482248,
+     "qs": 2.955589800044003,
+     "hit": 0.8461538461538461,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": -0.04930460571435556,
+     "ci95_abs_err": [
+      -1.1165344373849528,
+      1.1024914972681272
+     ],
+     "diff_hit": 0.0,
+     "ci95_hit": [
+      0.0,
+      0.0
+     ]
+    },
+    "wm_gas_direct": {
+     "abs_err": 7.866409057225938,
+     "qs": 3.321152373555719,
+     "hit": 1.0,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": -1.2710306564580451,
+     "ci95_abs_err": [
+      -2.6103805367345148,
+      0.29245953169018424
+     ],
+     "diff_hit": -0.15384615384615385,
+     "ci95_hit": [
+      -0.38461538461538464,
+      0.0
+     ]
+    },
+    "st_ols_wx": {
+     "abs_err": 6.24739996559687,
+     "qs": 3.708606696218795,
+     "hit": 0.9230769230769231,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": 0.34797843517102306,
+     "ci95_abs_err": [
+      -2.624995414040867,
+      3.173163946432707
+     ],
+     "diff_hit": -0.07692307692307693,
+     "ci95_hit": [
+      -0.23076923076923078,
+      0.0
+     ]
+    }
+   },
+   "fri": {
+    "wm_gas_ens": {
+     "abs_err": 6.537650719814546,
+     "qs": 2.6477390490321406,
+     "hit": 0.9230769230769231,
+     "cov80": 1.0
+    },
+    "wm_gas": {
+     "abs_err": 6.737596071683443,
+     "qs": 2.9687031763299583,
+     "hit": 0.8461538461538461,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": -0.19994535186889698,
+     "ci95_abs_err": [
+      -1.2749946465262096,
+      0.9416892733203128
+     ],
+     "diff_hit": 0.07692307692307693,
+     "ci95_hit": [
+      0.0,
+      0.23076923076923078
+     ]
+    },
+    "wm_gas_direct": {
+     "abs_err": 7.953891362899389,
+     "qs": 3.3206280020906718,
+     "hit": 1.0,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": -1.4162406430848429,
+     "ci95_abs_err": [
+      -2.7786032341711175,
+      0.15440174533191983
+     ],
+     "diff_hit": -0.07692307692307693,
+     "ci95_hit": [
+      -0.23076923076923078,
+      0.0
+     ]
+    },
+    "st_ols_wx": {
+     "abs_err": 6.721224534368801,
+     "qs": 3.7326517689862513,
+     "hit": 0.9230769230769231,
+     "cov80": 1.0,
+     "wm_gas_ens_minus_this_abs_err": -0.18357381455425453,
+     "ci95_abs_err": [
+      -3.080497970103892,
+      2.764237260639963
+     ],
+     "diff_hit": 0.0,
+     "ci95_hit": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  }
+ }
+}
+-> /Users/yugandharreddygogireddy/Documents/Alma Models /repo/runs/forward/DRYRUN_NOT_A_RESULT/forward_gas_20261101.json
+  per[mn] = {"hit": np.nanmean(np.where(ok, (q[..., 6] > RF) == (L > RF), np.nan), 1),
+  "qs": np.nanmean(np.where(ok, np.maximum(LV9 * e, (LV9 - 1) * e).mean(-1), np.nan), 1)}
+  per[mn] = {"hit": np.nanmean(np.where(ok, (q[..., 6] > RF) == (L > RF), np.nan), 1),
+  "qs": np.nanmean(np.where(ok, np.maximum(LV9 * e, (LV9 - 1) * e).mean(-1), np.nan), 1)}
+  per[mn] = {"hit": np.nanmean(np.where(ok, (q[..., 6] > RF) == (L > RF), np.nan), 1),
+  "qs": np.nanmean(np.where(ok, np.maximum(LV9 * e, (LV9 - 1) * e).mean(-1), np.nan), 1)}
+{
+ "DRYRUN": true,
+ "project": "fin",
+ "scored_utc": "2026-11-01T17:16:25Z",
+ "forward_start": "2026-08-01",
+ "freeze": "DRYRUN (no freeze yet)",
+ "result": {
+  "n_days": 91,
+  "summary": {
+   "wm_fin_blend": {
+    "hit": 0.7149621212121212,
+    "qs": 0.1585042804309581
+   },
+   "wm_fin": {
+    "hit": 0.726123595505618,
+    "qs": 0.1578150859444598,
+    "wm_fin_blend_minus_this_qs": 6.421602419197969e-05,
+    "ci95_qs": [
+     -0.004074027075830366,
+     0.0052175149358917655
+    ],
+    "diff_hit": -0.008049242424242422,
+    "ci95_hit": [
+     -0.028894412878787887,
+     0.011837121212121214
+    ]
+   },
+   "har_intra_dow": {
+    "hit": 0.7002840909090909,
+    "qs": 0.16906574959503623,
+    "wm_fin_blend_minus_this_qs": -0.010561469164078125,
+    "ci95_qs": [
+     -0.018648269559560737,
+     -0.004540303848686818
+    ],
+    "diff_hit": 0.014678030303030302,
+    "ci95_hit": [
+     -0.00994318181818181,
+     0.03835227272727273
+    ]
+   }
+  }
+ }
+}
+-> /Users/yugandharreddygogireddy/Documents/Alma Models /repo/runs/forward/DRYRUN_NOT_A_RESULT/forward_fin_20261101.json
+{
+ "DRYRUN": true,
+ "project": "power",
+ "scored_utc": "2026-11-01T17:16:34Z",
+ "forward_start": "2026-08-01",
+ "freeze": "DRYRUN (no freeze yet)",
+ "result": {
+  "n_days": 93,
+  "first": "2026-08-01",
+  "last": "2026-11-01",
+  "summary": {
+   "wm_power_blend": {
+    "qs": 11.746596306796487,
+    "abs_err": 29.274642971725488,
+    "hit": 0.7410394265232977,
+    "cov80": 0.7002688172043012
+   },
+   "wm_power": {
+    "qs": 12.016389984567478,
+    "abs_err": 29.92995383128664,
+    "hit": 0.7190860215053764,
+    "cov80": 0.681899641577061,
+    "wm_power_blend_minus_this_qs": -0.26979367777099195,
+    "ci95_qs": [
+     -0.9183345842285605,
+     0.470871044901153
+    ],
+    "diff_hit": 0.021953405017921146,
+    "ci95_hit": [
+     -0.0022401433691756215,
+     0.0474910394265233
+    ]
+   },
+   "lear": {
+    "qs": 13.184897885999176,
+    "abs_err": 32.35735100516523,
+    "hit": 0.7114695340501792,
+    "cov80": 0.6527777777777777,
+    "wm_power_blend_minus_this_qs": -1.4383015792026932,
+    "ci95_qs": [
+     -2.229038304580935,
+     -0.7528444787363224
+    ],
+    "diff_hit": 0.02956989247311828,
+    "ci95_hit": [
+     0.0035842293906809992,
+     0.05555555555555555
+    ]
+   }
+  }
+ }
+}
+-> /Users/yugandharreddygogireddy/Documents/Alma Models /repo/runs/forward/DRYRUN_NOT_A_RESULT/forward_power_20261101.json

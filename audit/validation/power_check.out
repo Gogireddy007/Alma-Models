@@ -1,0 +1,12 @@
+TEST days 366: 2025-11-01 .. 2026-11-01
+leak test: 0 of 25 days changed after scrambling day D and later
+           model   n    P1    P2    P3    MAE    QS  cov80
+        wm_power 364 0.731 0.746 0.728 22.437 9.024  0.751
+ wm_power_direct 364 0.731 0.737 0.728 22.684 9.089  0.739
+naive_d (P[D-1]) 364 0.541 0.503 0.525 31.161   NaN    NaN
+naive_w (P[D-7]) 364 0.607 0.631 0.651 40.564   NaN    NaN
+   own_ridge_arx 364 0.648 0.660 0.662 28.530   NaN    NaN
+
+real	0m45.892s
+user	0m40.227s
+sys	0m1.021s

@@ -1,0 +1,14 @@
+/Users/yugandharreddygogireddy/Documents/Alma Models /audit/ssm_analysis.py:61: Pandas4Warning: Starting with pandas version 4.0 all arguments of mean will be keyword-only.
+  D = pd.concat(diffs, axis=1).mean(1)
+/Users/yugandharreddygogireddy/Documents/Alma Models /audit/ssm_analysis.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of mean will be keyword-only.
+  Df = pd.concat(fresh, axis=1).mean(1)
+ seed   none  claimed_none  direct  direct_minus_none  tasks_rollout_better
+    0 0.6706        0.6707  0.6926             0.0220                    24
+    1 0.6947        0.6936  0.6789            -0.0158                    17
+    2 0.6804        0.6804  0.6746            -0.0059                    16
+    3 0.6808        0.6808  0.6951             0.0143                    16
+    4 0.6765        0.6765  0.6861             0.0096                    17
+
+seeds used: 5; mean per-task log(direct/rollout) +0.0071 (family-cluster 95% CI [-0.0003, +0.0130]); seeds with rollout better: 3/5
+excluding the selection seed 0: mean +0.0008 over 4 seeds
+../repo/.venv/bin/python $s.py  8.12s user 0.22s system 78% cpu 10.597 total

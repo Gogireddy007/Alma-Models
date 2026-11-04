@@ -1,0 +1,9 @@
+0|{"arch": "direct", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|repro_reg2dir_s0
+3|{"arch": "wm", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2_s3
+3|{"arch": "direct", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2dir_s3
+4|{"arch": "wm", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2_s4
+4|{"arch": "direct", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2dir_s4
+5|{"arch": "wm", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2_s5
+5|{"arch": "direct", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2dir_s5
+6|{"arch": "wm", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2_s6
+6|{"arch": "direct", "assim": 1, "aux": 0.3, "bs": 64, "cal": 1, "d": 32, "drop": 0.3, "drop_hh": 0, "lr": 0.003, "mc": 0, "regime": 1, "steps": 1200, "wd": 0.05, "wl48": 3.0}|x_reg2dir_s6

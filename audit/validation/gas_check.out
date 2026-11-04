@@ -1,0 +1,17 @@
+test: 52 weeks 2025-10-31 .. 2026-10-23
+kind          model  n   acc    mae     qs  cov80
+ thu         wm_gas 52 0.788 11.527  4.585  0.865
+ thu  wm_gas_direct 52 0.865 11.396  4.572  0.865
+ thu      st_ols_wx 52 0.808 14.353  6.137  0.827
+ thu st_persistence 52 0.673 38.912 16.976  0.750
+ thu st_climatology 52 0.519 31.009 11.596  0.846
+ fri         wm_gas 52 0.808 11.564  4.558  0.885
+ fri  wm_gas_direct 52 0.808 11.083  4.473  0.885
+ fri      st_ols_wx 52 0.808 14.460  6.085  0.846
+ fri st_persistence 52 0.673 38.912 16.976  0.750
+ fri st_climatology 52 0.519 31.009 11.596  0.846
+leak test: 0 of 26 (week, origin) forecasts changed after scrambling the future
+
+real	0m50.243s
+user	0m43.238s
+sys	0m1.095s

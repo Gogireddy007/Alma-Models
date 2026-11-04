@@ -1,0 +1,11 @@
+/Users/yugandharreddygogireddy/Documents/Alma Models /audit/fin_boot.py:16: RuntimeWarning: Mean of empty slice
+  da = np.nanmean(S[a][j], 1) - np.nanmean(S[b][j], 1)          # per-day difference (24 coins pooled)
+blend0.3             vs wm_fin         acc +1.58pp CI[+0.60,+2.61] p1s=0.001 | QS -0.0016 CI[-0.0031,-0.0000] p1s=0.023
+blend0.3             vs har_intra_dow  acc +0.80pp CI[-0.90,+2.50] p1s=0.173 | QS -0.0084 CI[-0.0118,-0.0052] p1s=0.000
+blend0.4             vs wm_fin         acc +1.67pp CI[+0.45,+2.92] p1s=0.002 | QS -0.0014 CI[-0.0034,+0.0007] p1s=0.089
+blend0.4             vs har_intra_dow  acc +0.89pp CI[-0.55,+2.34] p1s=0.109 | QS -0.0082 CI[-0.0111,-0.0055] p1s=0.000
+blend0.5             vs wm_fin         acc +1.86pp CI[+0.46,+3.31] p1s=0.004 | QS -0.0008 CI[-0.0033,+0.0017] p1s=0.270
+blend0.5             vs har_intra_dow  acc +1.07pp CI[-0.14,+2.34] p1s=0.039 | QS -0.0076 CI[-0.0100,-0.0054] p1s=0.000
+blend3(wm,dir,har)   vs wm_fin         acc +1.60pp CI[+0.41,+2.80] p1s=0.003 | QS -0.0017 CI[-0.0036,+0.0002] p1s=0.034
+blend3(wm,dir,har)   vs har_intra_dow  acc +0.82pp CI[-0.65,+2.31] p1s=0.135 | QS -0.0086 CI[-0.0117,-0.0056] p1s=0.000
+../repo/.venv/bin/python $s.py  1.40s user 0.13s system 72% cpu 2.094 total

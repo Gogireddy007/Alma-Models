@@ -1,0 +1,80 @@
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+step     0  loss 0.9091  lr 3.00e-05      0s
+step   100  loss 0.5543  lr 2.99e-03     97s
+step   200  loss 0.4379  lr 2.96e-03    211s
+wm: family=ssm abl=direct width=1.0 d_model=96 n_layers=2 params=365937 trainable=365937 ssm_shared_enc_and_rollout=335712 macs_per_forecast=13765632 aux_weights={}
+wm_causal: ok (max change 0.0e+00 at 40 early origins)
+step     0  loss 0.9091  lr 3.00e-05      0s
+step   100  loss 0.5543  lr 2.99e-03     47s
+step   200  loss 0.4379  lr 2.96e-03    102s
+step   300  loss 0.4072  lr 2.90e-03    157s
+step   400  loss 0.3970  lr 2.82e-03    213s
+step   500  loss 0.3912  lr 2.73e-03    265s
+step   600  loss 0.3820  lr 2.61e-03    315s
+step   700  loss 0.3781  lr 2.48e-03    364s
+step   800  loss 0.3736  lr 2.34e-03    411s
+step   900  loss 0.3624  lr 2.18e-03    458s
+step  1000  loss 0.3577  lr 2.02e-03    509s
+step  1100  loss 0.3548  lr 1.84e-03    560s
+step  1200  loss 0.3550  lr 1.66e-03    617s
+step  1300  loss 0.3422  lr 1.49e-03    663s
+step  1400  loss 0.3355  lr 1.31e-03    709s
+step  1500  loss 0.3331  lr 1.13e-03    754s
+step  1600  loss 0.3279  lr 9.68e-04    797s
+step  1700  loss 0.3283  lr 8.11e-04    841s
+step  1800  loss 0.3258  lr 6.67e-04    885s
+step  1900  loss 0.3257  lr 5.36e-04    927s
+step  2000  loss 0.3262  lr 4.22e-04    970s
+step  2100  loss 0.3247  lr 3.26e-04   1014s
+step  2200  loss 0.3257  lr 2.50e-04   1056s
+step  2300  loss 0.3239  lr 1.95e-04   1096s
+step  2400  loss 0.3202  lr 1.61e-04   1137s
+                      dataset             family  n_forecasts  n_series  horizon  freq   wql   mase  wql_rel  mase_rel  cov80  n_nonfinite  predict_seconds
+                      ETT_15T                ETT          280        14       96 15min 0.102  0.991    0.760     0.962  0.698            0            0.705
+                       ETT_1D                ETT          280        14       28     D 0.186  1.364    0.745     0.915  0.720            0            0.051
+                       ETT_1H                ETT          280        14      168     H 0.194  1.245    0.821     0.944  0.517            0            0.120
+                       ETT_1W                ETT           70        14       13     W 0.225  2.616    0.790     0.998  0.760            0            0.040
+              LOOP_SEATTLE_1D       LOOP_SEATTLE         1000       100       28     D 0.033  1.095    0.760     0.935  0.756            0            0.157
+              LOOP_SEATTLE_1H       LOOP_SEATTLE         1000       100      168     H 0.108  1.396    0.934     1.122  0.661            0            0.449
+                   M_DENSE_1D            M_DENSE          300        30       28     D 0.109  1.293    0.795     0.957  0.699            0            0.057
+                   M_DENSE_1H            M_DENSE          300        30      168     H 0.209  1.165    0.812     0.965  0.713            0            0.142
+                  SZ_TAXI_15T            SZ_TAXI         1000       100       96 15min 0.219  0.596    0.627     0.786  0.691            0            0.306
+                   SZ_TAXI_1H            SZ_TAXI          312       156      168     H 0.147  0.525    0.691     0.835  0.581            0            0.174
+              bizitobs_l2c_1H       bizitobs_l2c          140         7       24     H 0.420  0.797    0.647     0.759  0.600            0            0.028
+              bizitobs_l2c_5T       bizitobs_l2c          140         7      288  5min 0.448  0.779    0.687     0.736  0.220            0            0.115
+           favorita_stores_1D    favorita_stores         1000       100       28     D 0.170  1.656    0.663     0.800  0.769            0            0.137
+           favorita_stores_1M    favorita_stores         1000       500       12     M 0.118  2.057    0.673     0.958  0.762            0            0.149
+           favorita_stores_1W    favorita_stores         1000       100       13     W 0.119  2.060    0.763     0.941  0.763            0            0.097
+        hierarchical_sales_1D hierarchical_sales         1000       100       28     D 0.631  0.745    0.609     0.748  0.790            0            0.109
+        hierarchical_sales_1W hierarchical_sales         1000       100       13     W 0.406  0.841    0.556     0.717  0.730            0            0.159
+             jena_weather_10T       jena_weather          420        21      144 10min 0.061  1.011    0.870     0.844  0.510            0            0.228
+              jena_weather_1D       jena_weather          231        21       28     D 0.082  1.464    0.631     0.862  0.780            0            0.050
+              jena_weather_1H       jena_weather          420        21       24     H 0.045  0.674    0.675     0.713  0.692            0            0.063
+              kdd_cup_2022_1D       kdd_cup_2022         1000       100       14     D 0.548  0.909    0.692     0.878  0.768            0            0.149
+                   restaurant         restaurant          999       125       28     D 0.296  0.950    0.644     0.832  0.737            0            0.162
+                     solar_1D              solar         1000       100       28     D 0.186  0.787    0.659     0.814  0.802            0            0.145
+                     solar_1W              solar          137       137       13     W 0.217  1.635    0.664     0.852  0.500            0            0.044
+uk_covid_nation_1D/cumulative    uk_covid_nation          240        12       28     D 0.026 12.690    0.349     0.499  0.736            0            0.064
+       uk_covid_nation_1D/new    uk_covid_nation          240        12       28     D 0.386  2.701    0.798     0.932  0.664            0            0.032
+uk_covid_nation_1W/cumulative    uk_covid_nation           48        12        8     W 0.043  3.718    0.274     0.424  0.750            0            0.027
+       uk_covid_nation_1W/new    uk_covid_nation           48        12        8     W 0.552  5.491    0.673     0.946  0.651            0            0.019
+         uk_covid_utla_1D/new      uk_covid_utla         1000       100       28     D 0.413  5.055    0.805     0.971  0.627            0            0.122
+  uk_covid_utla_1W/cumulative      uk_covid_utla         1000       200       13     W 0.172 21.314    0.666     0.821  0.381            0            0.152
+val: wql_rel=0.6746 mase_rel=0.8350 cov80_error=0.1326 family-gmean wql_rel=0.6822 (30 tasks, 13 families)
+---
+wm_family:        ssm abl=direct width=1.0 d_model=96
+val_wql_rel:      0.674598
+val_mase_rel:     0.834966
+val_cov80_error:  0.132565
+training_seconds: 1180.3
+predict_seconds:  4.2
+total_seconds:    1186.7
+peak_mem_mb:      4276.1
+num_params_M:     0.366
+macs_per_forecast: 13765632
+num_steps:        2500
+family_wql_rel:   0.682238
+real 1192.35
+user 188.90
+sys 27.03

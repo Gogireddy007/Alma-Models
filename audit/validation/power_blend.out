@@ -1,0 +1,20 @@
+[val] wm_power: cached
+[val] lear: cached
+[test] wm_power: cached
+[test] lear: cached
+VAL w=0.0 P1 0.740 P2 0.732 QS 7.32 MAE 18.03
+VAL w=0.1 P1 0.756 P2 0.739 QS 7.18 MAE 17.70
+VAL w=0.2 P1 0.772 P2 0.741 QS 7.06 MAE 17.42
+VAL w=0.3 P1 0.780 P2 0.748 QS 6.96 MAE 17.19
+VAL w=0.4 P1 0.780 P2 0.752 QS 6.89 MAE 17.01
+VAL w=0.5 P1 0.780 P2 0.756 QS 6.84 MAE 16.89
+VAL w=0.6 P1 0.789 P2 0.753 QS 6.81 MAE 16.83
+VAL w=0.7 P1 0.780 P2 0.755 QS 6.81 MAE 16.83
+VAL w=0.8 P1 0.780 P2 0.751 QS 6.84 MAE 16.91
+VAL w=0.9 P1 0.780 P2 0.751 QS 6.89 MAE 17.05
+VAL w=1.0 P1 0.789 P2 0.748 QS 6.97 MAE 17.24
+chosen 0.5
+TEST wm_power       P1 0.732 P2 0.746 QS 9.03 MAE 22.44
+TEST lear           P1 0.737 P2 0.730 QS 9.22 MAE 22.89
+TEST blend w=0.5    P1 0.751 P2 0.755 QS 8.60 MAE 21.47
+../repo/.venv/bin/python $s.py  2.66s user 0.44s system 73% cpu 4.211 total

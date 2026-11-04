@@ -1,0 +1,14 @@
+{
+ "data/ckpt/wm_ssm_none_s0.pt": {
+  "wql_rel": 0.6706480737064702,
+  "mase_rel": 0.8323977367284318,
+  "cov80_error": 0.12499565116820735,
+  "wql_rel_family": 0.6786405301344334
+ },
+ "data/ckpt/wm_ssm_direct_s0.pt": {
+  "wql_rel": 0.6926160537794459,
+  "mase_rel": 0.8525306151809351,
+  "cov80_error": 0.13191351864747564,
+  "wql_rel_family": 0.6959428626385109
+ }
+}

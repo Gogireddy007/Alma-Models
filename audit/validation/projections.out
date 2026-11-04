@@ -1,0 +1,24 @@
+comparison                                n     diff    CI lo    CI hi signif  n* units ~years
+gas thu MAE vs wm_gas (frozen)           52  -0.9000  -2.5400  +0.6500     no       333    6.4  (weeks)
+gas thu MAE vs st_ols_wx                 52  -3.7200  -6.9900  -0.6000    yes        78    1.5  (weeks)
+gas fri MAE vs wm_gas (frozen)           52  -1.1100  -2.7200  +0.4100     no       211    4.1  (weeks)
+gas fri MAE vs st_ols_wx                 52  -4.0000  -7.2900  -0.9600    yes        66    1.3  (weeks)
+power QS vs wm_power                    365  -0.4262  -0.6736  -0.1741    yes       256    0.7  (days)
+power P2 vs wm_power                    365  +0.0082  -0.0033  +0.0194     no      1427    3.9  (days)
+power QS vs lear                        365  -0.6185  -0.9003  -0.3563    yes       144    0.4  (days)
+power P2 vs lear                        365  +0.0250  +0.0138  +0.0364    yes       152    0.4  (days)
+crypto P1 (pp) vs wm_fin                364  +1.6700  +0.4500  +2.9200    yes       406    1.1  (days)
+crypto QS vs wm_fin                     364  -0.0014  -0.0034  +0.0007     no      1593    4.4  (days)
+crypto P1 (pp) vs har_intra_dow         364  +0.8900  -0.5500  +2.3400     no      1958    5.4  (days)
+crypto QS vs har_intra_dow              364  -0.0082  -0.0111  -0.0055    yes        87    0.2  (days)
+
+forward calendar (EIA weekly storage report, normally Thursdays; holiday weeks can shift by a day):
+  gas release # 1: 2026-11-05
+  gas release # 4: 2026-11-26
+  gas release #13: 2027-01-28
+  gas release #20: 2027-03-18
+  gas release #52: 2027-10-28
+  power/crypto day  30: 2026-12-01
+  power/crypto day  60: 2026-12-31
+  power/crypto day 180: 2027-04-30
+  power/crypto day 365: 2027-11-01

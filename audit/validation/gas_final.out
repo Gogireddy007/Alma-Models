@@ -1,0 +1,20 @@
+kind                  model    mae    qs   acc  cov80
+ thu        wm_gas (frozen) 11.527 4.585 0.788  0.865
+ thu wm_gas_direct (frozen) 11.396 4.572 0.865  0.865
+ thu              st_ols_wx 14.353 6.137 0.808  0.827
+ thu                NN pool 11.477 4.498 0.788  0.885
+ thu     NN pool + 0.20 OLS 10.629 4.300 0.808  0.942
+ fri        wm_gas (frozen) 11.564 4.558 0.808  0.885
+ fri wm_gas_direct (frozen) 11.083 4.473 0.808  0.885
+ fri              st_ols_wx 14.460 6.085 0.808  0.846
+ fri                NN pool 11.274 4.410 0.769  0.904
+ fri     NN pool + 0.20 OLS 10.457 4.229 0.788  0.942
+thu NN pool + 0.20 OLS - wm_gas (frozen): dMAE -0.90 CI[-2.54,+0.65] p1s=0.131
+thu NN pool + 0.20 OLS - wm_gas (frozen): dQS -0.29 CI[-0.87,+0.20] p1s=0.140
+thu NN pool + 0.20 OLS - st_ols_wx: dMAE -3.72 CI[-6.99,-0.60] p1s=0.010
+thu NN pool + 0.20 OLS - st_ols_wx: dQS -1.84 CI[-2.89,-0.87] p1s=0.000
+fri NN pool + 0.20 OLS - wm_gas (frozen): dMAE -1.11 CI[-2.72,+0.41] p1s=0.081
+fri NN pool + 0.20 OLS - wm_gas (frozen): dQS -0.33 CI[-0.90,+0.14] p1s=0.093
+fri NN pool + 0.20 OLS - st_ols_wx: dMAE -4.00 CI[-7.29,-0.96] p1s=0.007
+fri NN pool + 0.20 OLS - st_ols_wx: dQS -1.86 CI[-2.94,-0.89] p1s=0.000
+../repo/.venv/bin/python gas_final.py --ckpts  --w-ols 0.2  42.71s user 1.33s system 90% cpu 48.905 total

@@ -1,0 +1,24 @@
+0 data/fin/raw/etf/QQQ.json SHA-DIFF
+500 data/fin/raw/um/fundingRate/BNBUSDT/BNBUSDT-fundingRate-2024-10.zip ok
+1000 data/fin/raw/um/fundingRate/LTCUSDT/LTCUSDT-fundingRate-2021-08.zip ok
+1500 data/fin/raw/um/fundingRate/ZECUSDT/ZECUSDT-fundingRate-2025-11.zip ok
+2000 data/fin/raw/um/klines_1d/KASUSDT/KASUSDT-1d-2025-10.zip ok
+2500 data/fin/raw/um/klines_1d/ZECUSDT/ZECUSDT-1d-2025-10.zip ok
+3000 data/fin/raw/um/klines_5m/AVAXUSDT/AVAXUSDT-5m-2025-08.zip ok
+3500 data/fin/raw/um/klines_5m/DOGEUSDT/DOGEUSDT-5m-2025-11.zip ok
+4000 data/fin/raw/um/klines_5m/LTCUSDT/LTCUSDT-5m-2026-07.zip ok
+4500 data/fin/raw/um/klines_5m/XRPUSDT/XRPUSDT-5m-2020-07.zip ok
+done 4713 files, 13 not matching
+SHA-DIFF data/fin/raw/etf/QQQ.json
+SHA-DIFF data/fin/raw/etf/SPY.json
+SHA-DIFF data/fin/raw/etf/XLB.json
+SHA-DIFF data/fin/raw/etf/XLC.json
+SHA-DIFF data/fin/raw/etf/XLE.json
+SHA-DIFF data/fin/raw/etf/XLF.json
+SHA-DIFF data/fin/raw/etf/XLI.json
+SHA-DIFF data/fin/raw/etf/XLK.json
+SHA-DIFF data/fin/raw/etf/XLP.json
+SHA-DIFF data/fin/raw/etf/XLRE.json
+SHA-DIFF data/fin/raw/etf/XLU.json
+SHA-DIFF data/fin/raw/etf/XLV.json
+SHA-DIFF data/fin/raw/etf/XLY.json
