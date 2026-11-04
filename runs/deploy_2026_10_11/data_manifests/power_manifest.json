@@ -1,0 +1,517 @@
+{
+ "files": {
+  "data/power/raw/fc_load/2015.json": {
+   "bytes": 665794,
+   "downloaded_utc": "2026-11-01T00:19:10Z",
+   "n_points": 35036,
+   "sha256": "d8b75cc4b7f770b65a0c50bf6a145caed9f83a1532c3721c5ee10ced13b8b81a",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/fc_load/2016.json": {
+   "bytes": 667694,
+   "downloaded_utc": "2026-11-01T00:19:27Z",
+   "n_points": 35136,
+   "sha256": "1449386efaf340ed708d54973209e1458140921d1af74b8c5af3392642044fc5",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/fc_load/2017.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:19:43Z",
+   "n_points": 35040,
+   "sha256": "3ed57a0eeb616143eaec501fd0c0d8f0b6c7cec7a52caf11059813c5edaa705c",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/fc_load/2018.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:20:00Z",
+   "n_points": 35040,
+   "sha256": "610dc7bfe4228b4509aac652fade7360f5959c7eb459bff397de703e1fc38417",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2018-01-01&end=2018-12-31"
+  },
+  "data/power/raw/fc_load/2019.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:20:17Z",
+   "n_points": 35040,
+   "sha256": "2eb54d5b5c15ec3111956dff109e855d620a4209a3138bda6714ce54d1ec23cc",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/fc_load/2020.json": {
+   "bytes": 667694,
+   "downloaded_utc": "2026-11-01T00:20:33Z",
+   "n_points": 35136,
+   "sha256": "6a551e44cde0b52e9eefa8cfa8a8e19dc7ef6d29e5862883454a0e7b2cb2b498",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/fc_load/2021.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:20:50Z",
+   "n_points": 35040,
+   "sha256": "d9a57b8eb480e6fe6741a4b3e56d64adce867fd5acd8414e7f21823c7ab27a77",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/fc_load/2022.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:21:06Z",
+   "n_points": 35040,
+   "sha256": "f6e17f0ff98215f5a6a29c01fa3753087b9097f17b8c0f121dd5f13181b1dce2",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/fc_load/2023.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:21:23Z",
+   "n_points": 35040,
+   "sha256": "db79356bdd16ddc66faf587e64895a6d0d38efae8b13d525dd5252381c63dfae",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/fc_load/2024.json": {
+   "bytes": 667694,
+   "downloaded_utc": "2026-11-01T00:21:40Z",
+   "n_points": 35136,
+   "sha256": "8552f81587a0ca8dedb5697b7160a8d8f26f185ea755dfaffcfcd3ac4484d388",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/fc_load/2025.json": {
+   "bytes": 665870,
+   "downloaded_utc": "2026-11-01T00:21:56Z",
+   "n_points": 35040,
+   "sha256": "8ab533f3939c434122f13e59c5a83a1519caf721e0d613450d5e4a6bf8147ab9",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/fc_load/2026.json": {
+   "bytes": 554606,
+   "downloaded_utc": "2026-11-01T00:22:13Z",
+   "n_points": 29184,
+   "sha256": "95a1276da815b89ebe4524a73ef4e34f61c5a9ee90300d57151aef3ce8974086",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=load&forecast_type=day-ahead&start=2026-01-01&end=2026-10-31"
+  },
+  "data/power/raw/fc_solar/2015.json": {
+   "bytes": 583546,
+   "downloaded_utc": "2026-11-01T00:29:11Z",
+   "n_points": 35036,
+   "sha256": "c0d2819b0bafb405a52c3abdbcdf0b56ab7d1d23b1532c995a6f7867b690ad15",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/fc_solar/2016.json": {
+   "bytes": 584936,
+   "downloaded_utc": "2026-11-01T00:29:28Z",
+   "n_points": 35136,
+   "sha256": "91c192dc33e4d62200606dbce29b54acee6698ab722e75bf130c95f53f948163",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/fc_solar/2017.json": {
+   "bytes": 582989,
+   "downloaded_utc": "2026-11-01T00:29:44Z",
+   "n_points": 35040,
+   "sha256": "260aaf8f8f59583bf5a77aa6289b5f22fcf4499e632740eba1f8eab9d0f83326",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/fc_solar/2018.json": {
+   "bytes": 584397,
+   "downloaded_utc": "2026-11-01T00:30:01Z",
+   "n_points": 35040,
+   "sha256": "e7be97b27893e5cefa7c1874df7407681b573aaa835a4dda6d1abde911b1607d",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2018-01-01&end=2018-12-31"
+  },
+  "data/power/raw/fc_solar/2019.json": {
+   "bytes": 584124,
+   "downloaded_utc": "2026-11-01T00:30:18Z",
+   "n_points": 35040,
+   "sha256": "f2321c56c87f792c4f6ce61556251b1ecc8ad4678dc139ac562af82ba47d44c3",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/fc_solar/2020.json": {
+   "bytes": 586911,
+   "downloaded_utc": "2026-11-01T00:30:38Z",
+   "n_points": 35136,
+   "sha256": "111295e15615ffe940b184fc4be147f5ac57ec1b7a9dccf191483aed6d248904",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/fc_solar/2021.json": {
+   "bytes": 585534,
+   "downloaded_utc": "2026-11-01T00:30:55Z",
+   "n_points": 35040,
+   "sha256": "566a1fc1a0586c3ac357d2dd24d53908cfacf32c93a3d93d9e58d1dd729461cd",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/fc_solar/2022.json": {
+   "bytes": 586934,
+   "downloaded_utc": "2026-11-01T00:31:12Z",
+   "n_points": 35040,
+   "sha256": "6a2415cca65706d06fa7d5d6addc02406ac35c05124a9c2f19e7e7475349dfcf",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/fc_solar/2023.json": {
+   "bytes": 586834,
+   "downloaded_utc": "2026-11-01T00:31:29Z",
+   "n_points": 35040,
+   "sha256": "0d0544806706d6839b01b77c6b63b4b800994f5170adbe01675cdc9c066bbf4b",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/fc_solar/2024.json": {
+   "bytes": 589603,
+   "downloaded_utc": "2026-11-01T00:31:47Z",
+   "n_points": 35136,
+   "sha256": "9051b7fa118b51a4096a46b3f539a9fa250ceca56f8cfd1b3265592a4983d68f",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/fc_solar/2025.json": {
+   "bytes": 589745,
+   "downloaded_utc": "2026-11-01T00:32:03Z",
+   "n_points": 35040,
+   "sha256": "3795f7d787169d435d157385660497c4b6c97dee270308249147399bf2b31345",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/fc_solar/2026.json": {
+   "bytes": 495297,
+   "downloaded_utc": "2026-11-01T00:32:20Z",
+   "n_points": 29184,
+   "sha256": "f9f0748d4599a5f11dfd10787e81bb4d900b9220256f6839e56b004cc9c7d251",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=solar&forecast_type=day-ahead&start=2026-01-01&end=2026-10-31"
+  },
+  "data/power/raw/fc_wind_offshore/2015.json": {
+   "bytes": 597092,
+   "downloaded_utc": "2026-11-01T00:25:50Z",
+   "n_points": 35036,
+   "sha256": "f0f18540b4941f4db1122ef6d1bf2d9fa906b9206d789d8fb6502edeaea055ad",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2016.json": {
+   "bytes": 615767,
+   "downloaded_utc": "2026-11-01T00:26:07Z",
+   "n_points": 35136,
+   "sha256": "87b6bf11332aef6ab1befd3c4fa615449eeb0df2e98e394451c7eb64c730a2e4",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2017.json": {
+   "bytes": 618294,
+   "downloaded_utc": "2026-11-01T00:26:24Z",
+   "n_points": 35040,
+   "sha256": "b5373c8766075e0f6e517fd108133e8c50c2fcdeff4a1d6e6bb3fa1ea133f174",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2018.json": {
+   "bytes": 620223,
+   "downloaded_utc": "2026-11-01T00:26:40Z",
+   "n_points": 35040,
+   "sha256": "a16e82671b8bc568fe5abe0df7496c76b03d5ebf17aab7e09e4f64938ff22149",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2018-01-01&end=2018-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2019.json": {
+   "bytes": 624199,
+   "downloaded_utc": "2026-11-01T00:26:57Z",
+   "n_points": 35040,
+   "sha256": "88c99786e5f17af0a699bd40896517baf375c4d68d7979652a654824eb6b6cae",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2020.json": {
+   "bytes": 624909,
+   "downloaded_utc": "2026-11-01T00:27:14Z",
+   "n_points": 35136,
+   "sha256": "1910350e4553b0459b641472670a4b8d38f7be2c976bb50bf13d05452644ae20",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2021.json": {
+   "bytes": 620801,
+   "downloaded_utc": "2026-11-01T00:27:31Z",
+   "n_points": 35040,
+   "sha256": "5bf8c502c7a22375547db50ce3ee483d14b21ea25809e165ce74ebb934f19393",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2022.json": {
+   "bytes": 621587,
+   "downloaded_utc": "2026-11-01T00:27:48Z",
+   "n_points": 35040,
+   "sha256": "d4a1b5212275c8a176b5f3860c923a482bddd312599ab15e72777f26eeb1aa6c",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2023.json": {
+   "bytes": 621686,
+   "downloaded_utc": "2026-11-01T00:28:05Z",
+   "n_points": 35040,
+   "sha256": "79c978a65e8e6d8d4718d8d6f38934b76a3d1d63f830dafd92f3553ebdf4a1e6",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2024.json": {
+   "bytes": 625419,
+   "downloaded_utc": "2026-11-01T00:28:21Z",
+   "n_points": 35136,
+   "sha256": "78486f46544da02e5a094c34eb8758b885e1ea8054574540ce2c005012a29139",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2025.json": {
+   "bytes": 623165,
+   "downloaded_utc": "2026-11-01T00:28:38Z",
+   "n_points": 35040,
+   "sha256": "1524dbfead33650321e5796070f8a009bf20a50f77a0ef4e1f4bb1a516e70e2c",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/fc_wind_offshore/2026.json": {
+   "bytes": 518544,
+   "downloaded_utc": "2026-11-01T00:28:54Z",
+   "n_points": 29184,
+   "sha256": "16c8fb38af0c0051095214f8d11c0cabd1c4764a3bbd19140c51551eb157b6ad",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_offshore&forecast_type=day-ahead&start=2026-01-01&end=2026-10-31"
+  },
+  "data/power/raw/fc_wind_onshore/2015.json": {
+   "bytes": 639034,
+   "downloaded_utc": "2026-11-01T00:22:30Z",
+   "n_points": 35036,
+   "sha256": "872d1002576ae002df58e83878d664e10cdff74f8cb9a4ccc37479bb787dfa00",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2016.json": {
+   "bytes": 639349,
+   "downloaded_utc": "2026-11-01T00:22:46Z",
+   "n_points": 35136,
+   "sha256": "ba3a9cb9ce9073b209112f56e191277a83611e3f144d827549dd2332e677b763",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2017.json": {
+   "bytes": 642965,
+   "downloaded_utc": "2026-11-01T00:23:03Z",
+   "n_points": 35040,
+   "sha256": "3d8000cec4867b01b430dabf4b894c319701489c88b6c1d297e54fbf0ab34e2e",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2018.json": {
+   "bytes": 643636,
+   "downloaded_utc": "2026-11-01T00:23:20Z",
+   "n_points": 35040,
+   "sha256": "fe3800262caaf92cdd6d2bd114af92305fa1954a5e6f1bc6ec83e44bceab3eae",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2018-01-01&end=2018-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2019.json": {
+   "bytes": 645859,
+   "downloaded_utc": "2026-11-01T00:23:37Z",
+   "n_points": 35040,
+   "sha256": "d9e7b1c483f9a66bd282231374eca6900d5dc4e59fb0d2eaa6a8698220df1e52",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2020.json": {
+   "bytes": 648037,
+   "downloaded_utc": "2026-11-01T00:23:53Z",
+   "n_points": 35136,
+   "sha256": "3d82c13d832275ea8d2ba53940d65dab6e1f3c7c0d1e7026d978b7130bf563a5",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2021.json": {
+   "bytes": 643067,
+   "downloaded_utc": "2026-11-01T00:24:10Z",
+   "n_points": 35040,
+   "sha256": "460d3bad5a5890fe2457b6be9c6c838b61bb7aa22ffca8b1a29b255aa1eca9f0",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2022.json": {
+   "bytes": 644780,
+   "downloaded_utc": "2026-11-01T00:24:27Z",
+   "n_points": 35040,
+   "sha256": "8feb201fbf3e9f219688a4221aa9fe9b72ce2a540250943d4eca8a59793294be",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2023.json": {
+   "bytes": 648542,
+   "downloaded_utc": "2026-11-01T00:24:43Z",
+   "n_points": 35040,
+   "sha256": "f4084efd27e2ee331dacd283932a2a10db7c14457514d4f45805611ff3420977",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2024.json": {
+   "bytes": 649044,
+   "downloaded_utc": "2026-11-01T00:25:00Z",
+   "n_points": 35136,
+   "sha256": "9b4be5ced3b65eb65baed160e10e590a210895a237504f69c050e8fb011f4e01",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2025.json": {
+   "bytes": 647417,
+   "downloaded_utc": "2026-11-01T00:25:16Z",
+   "n_points": 35040,
+   "sha256": "d679144ecff933166c958389784f84d3ef7343b817bff027525b512206e45645",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/fc_wind_onshore/2026.json": {
+   "bytes": 539165,
+   "downloaded_utc": "2026-11-01T00:25:33Z",
+   "n_points": 29184,
+   "sha256": "b9c8fc88ad9171003bef22478eed0f80cfefae65b71c5ae664959bd11de41a98",
+   "url": "https://api.energy-charts.info/public_power_forecast?country=de&production_type=wind_onshore&forecast_type=day-ahead&start=2026-01-01&end=2026-10-31"
+  },
+  "data/power/raw/price_de_at_lu/2015.json": {
+   "bytes": 147943,
+   "downloaded_utc": "2026-11-04T23:04:02Z",
+   "n_points": 8759,
+   "sha256": "42dcb2787c0f3827b48a5538d7d1ee8e3817edd554293f7061027d5e977a87c8",
+   "url": "https://api.energy-charts.info/price?bzn=DE-AT-LU&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/price_de_at_lu/2016.json": {
+   "bytes": 148222,
+   "downloaded_utc": "2026-11-04T23:04:19Z",
+   "n_points": 8784,
+   "sha256": "97cb82ee703639aeb72d8268b9280a378f70408bddadbab7b808879cbce422e9",
+   "url": "https://api.energy-charts.info/price?bzn=DE-AT-LU&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/price_de_at_lu/2017.json": {
+   "bytes": 147683,
+   "downloaded_utc": "2026-11-04T23:04:36Z",
+   "n_points": 8760,
+   "sha256": "ac3b43fb4b5898bdb4d0bb5ac69e5de6b0c090801b5b6faf3949a9978d919670",
+   "url": "https://api.energy-charts.info/price?bzn=DE-AT-LU&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/price_de_at_lu/2018.json": {
+   "bytes": 110586,
+   "downloaded_utc": "2026-11-04T23:04:53Z",
+   "n_points": 6551,
+   "sha256": "1edbd8e9c16f11e372cffcd835e2594b1e631799def4ecc8e8ec70c1c64e57d2",
+   "url": "https://api.energy-charts.info/price?bzn=DE-AT-LU&start=2018-01-01&end=2018-09-30"
+  },
+  "data/power/raw/price_de_lu/2018.json": {
+   "bytes": 37413,
+   "downloaded_utc": "2026-11-04T23:05:10Z",
+   "n_points": 2209,
+   "sha256": "4e0e4b94b119cb6865ba47dd45cf69034c045abb9a905b6b4377d6ebcd1292bb",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2018-10-01&end=2018-12-31"
+  },
+  "data/power/raw/price_de_lu/2019.json": {
+   "bytes": 147671,
+   "downloaded_utc": "2026-11-04T23:05:26Z",
+   "n_points": 8760,
+   "sha256": "e20e3a8079b25e942040d7e387696fcfda4a0fcd05d523fcae58b8fcb5bd8f6f",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/price_de_lu/2020.json": {
+   "bytes": 147642,
+   "downloaded_utc": "2026-11-04T23:05:43Z",
+   "n_points": 8784,
+   "sha256": "7c04edadff402e1963b73c1a17e181b929be4714ad2747024c500a4580aa58ef",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/price_de_lu/2021.json": {
+   "bytes": 150122,
+   "downloaded_utc": "2026-11-04T23:05:59Z",
+   "n_points": 8760,
+   "sha256": "0c787301f45f146874a25eba5e6755522cce6e239777ebc68f9bf39e2dca9800",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/price_de_lu/2022.json": {
+   "bytes": 154853,
+   "downloaded_utc": "2026-11-04T23:06:16Z",
+   "n_points": 8760,
+   "sha256": "98a75a415e1e885bc815568bfaf441e74121072fd3ef423f8c14e7b994252a25",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/price_de_lu/2023.json": {
+   "bytes": 151456,
+   "downloaded_utc": "2026-11-04T23:06:32Z",
+   "n_points": 8760,
+   "sha256": "3f8b1d9620a02a83ed86a1d37f5b8dccc2999f3b4a88f4d67b2e5d876201840b",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/price_de_lu/2024.json": {
+   "bytes": 150150,
+   "downloaded_utc": "2026-11-04T23:06:48Z",
+   "n_points": 8784,
+   "sha256": "50e26375364124d9e863beea8f459966806d7a5ac33e5282680c02cf7f92e863",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/price_de_lu/2025.json": {
+   "bytes": 264545,
+   "downloaded_utc": "2026-11-04T23:07:04Z",
+   "n_points": 15387,
+   "sha256": "6027e994c2e73fc1aec3b9a226a027676349e0d5c47957995b63a1ff35a7404a",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/price_de_lu/2026.json": {
+   "bytes": 517911,
+   "downloaded_utc": "2026-11-04T23:07:21Z",
+   "n_points": 29664,
+   "sha256": "91fae7f5eff586edc7199d9b851c20743fea1c2d4760cb06eda00814e616a9df",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2026-01-01&end=2026-11-05"
+  },
+  "data/power/raw/public_power/2015.json": {
+   "bytes": 5446308,
+   "downloaded_utc": "2026-11-04T23:07:39Z",
+   "n_points": 35036,
+   "sha256": "82df146b341a39b6426b1129b41f5d4f502abc6b01fab552f3d448fd015b7e4c",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2015-01-01&end=2015-12-31"
+  },
+  "data/power/raw/public_power/2016.json": {
+   "bytes": 5504867,
+   "downloaded_utc": "2026-11-04T23:07:57Z",
+   "n_points": 35136,
+   "sha256": "f104acb6e9f3f2d3141ebaf393e6928ba661ea03811d1008a196e34a00c9d52e",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2016-01-01&end=2016-12-31"
+  },
+  "data/power/raw/public_power/2017.json": {
+   "bytes": 5486006,
+   "downloaded_utc": "2026-11-04T23:08:14Z",
+   "n_points": 35040,
+   "sha256": "cf960f44f37519016ad9a1188f166229aa8cec0bdd380e4b4a5c2fb52c27b00b",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2017-01-01&end=2017-12-31"
+  },
+  "data/power/raw/public_power/2018.json": {
+   "bytes": 5467543,
+   "downloaded_utc": "2026-11-04T23:08:33Z",
+   "n_points": 35040,
+   "sha256": "76afe0c3372072d1f3cc59ca6de4b3b20283ad348a6a3d55bf8b02c771e3f06b",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2018-01-01&end=2018-12-31"
+  },
+  "data/power/raw/public_power/2019.json": {
+   "bytes": 5449874,
+   "downloaded_utc": "2026-11-04T23:08:51Z",
+   "n_points": 35040,
+   "sha256": "8ded22989e75c25c2640adce2353cbbf8711a17af0a7d7a8ebf60c5e206d3efd",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2019-01-01&end=2019-12-31"
+  },
+  "data/power/raw/public_power/2020.json": {
+   "bytes": 5289169,
+   "downloaded_utc": "2026-11-04T23:09:09Z",
+   "n_points": 35136,
+   "sha256": "4a0bb3e7283b3c8bf4489e6ce8ab66039bdb808dfa576b59a25a635c62552f86",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2020-01-01&end=2020-12-31"
+  },
+  "data/power/raw/public_power/2021.json": {
+   "bytes": 5250156,
+   "downloaded_utc": "2026-11-04T23:09:27Z",
+   "n_points": 35040,
+   "sha256": "678e23c710dd52958cd70f4e8e8f40b3d6dfd5efa4d6b0816cea0a55ee1d91eb",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2021-01-01&end=2021-12-31"
+  },
+  "data/power/raw/public_power/2022.json": {
+   "bytes": 5257249,
+   "downloaded_utc": "2026-11-04T23:09:45Z",
+   "n_points": 35040,
+   "sha256": "320be916f9fd21d8bc517be625a33bbd35886f581e864cf6c5d172f6dd0e6f1a",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2022-01-01&end=2022-12-31"
+  },
+  "data/power/raw/public_power/2023.json": {
+   "bytes": 5386481,
+   "downloaded_utc": "2026-11-04T23:10:03Z",
+   "n_points": 35040,
+   "sha256": "d137d55084d079be3a7bf14e29661af0a79e02feb328387b82271ce70ce28cb4",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2023-01-01&end=2023-12-31"
+  },
+  "data/power/raw/public_power/2024.json": {
+   "bytes": 5191401,
+   "downloaded_utc": "2026-11-04T23:10:20Z",
+   "n_points": 35136,
+   "sha256": "54d5e2e74bf980c4b4334aef3aeeb4dd2d39c7747795444b18bdd58c7e2385cd",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2024-01-01&end=2024-12-31"
+  },
+  "data/power/raw/public_power/2025.json": {
+   "bytes": 5159770,
+   "downloaded_utc": "2026-11-04T23:10:38Z",
+   "n_points": 35040,
+   "sha256": "6a6b8365901d2842ef3e2bf36db1061eb9c4b59950f7ceb15af4fe7c152f2bcb",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2025-01-01&end=2025-12-31"
+  },
+  "data/power/raw/public_power/2026.json": {
+   "bytes": 4372154,
+   "downloaded_utc": "2026-11-04T23:10:55Z",
+   "n_points": 29561,
+   "sha256": "92a8c2cc34c59a3a718674458d0eeb7c363ed86bfdaa1cd53c97c90f1bde4779",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2026-01-01&end=2026-11-05"
+  }
+ },
+ "license": "Energy-Charts (Fraunhofer ISE); price data CC BY 4.0 from Bundesnetzagentur | SMARD.de; see license_info in each price file",
+ "source": "https://api.energy-charts.info"
+}

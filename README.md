@@ -30,6 +30,18 @@ Everything here was evaluated **once** on a sealed, out-of-sample TEST year, the
 
 An independent re-audit (2026-11-01, [`audit/`](audit/), full report in [`reports/`](reports/)) rebuilt every dataset, re-ran every frozen checkpoint and reproduced the TEST numbers above; it found no leakage and no fabricated numbers, and corrected the oil and fin wording in this table.
 
+## Deployment on October and November 2026 (no retraining)
+
+The frozen checkpoints were run as-is on the two months after the training period: October 2026, and November 2026
+up to the 4 November data cutoff. They were scored against every pre-registered competitor, including Chronos-2,
+Chronos-Bolt and TiRex. An independent audit harness (47/47 checks) covers pins, no parameter change, labels
+re-derived from raw files, every metric recomputed and future-scramble leak tests.
+- Write-up: [`docs/deploy_2026_10_11.md`](docs/deploy_2026_10_11.md)
+- Tables: [`runs/deploy_2026_10_11/RESULTS.md`](runs/deploy_2026_10_11/RESULTS.md)
+- Audit: [`runs/deploy_2026_10_11/AUDIT.md`](runs/deploy_2026_10_11/AUDIT.md)
+
+One month is too short for any significance claim; the forward test continues.
+
 ## Integrity protocol
 
 - **Pre-registration before any score:** each project's pre-registration (`docs/*_prereg.md`) and its amendments are dated and committed.

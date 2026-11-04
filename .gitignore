@@ -11,3 +11,17 @@ baselines/*.log
 # raw market data is not redistributed; rebuild with the fetch scripts (sha256 pins in data/**/manifest*.json)
 data/**/*.csv
 data/**/*.parquet
+
+# deployment rebuild (2026-11): raw downloads and derived files stay local
+data/**/raw/
+data/fin/build_report.json
+data/fin/listing_um.json
+data/fin/universe.json
+data/fin/universe_candidates.txt
+data/gas/DAILY_CSV_HAS_NO_WEATHER.txt
+data/gas/build_report_storage.json
+data/power/gaps.json
+runs/*/search/ckpt/
+
+# realised market values used by the deployment audit (not redistributed)
+runs/deploy_2026_10_11/**/*_LABELS_local*.npz

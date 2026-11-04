@@ -1,0 +1,397 @@
+{
+ "outliers_5m": {
+  "ETHUSDT": [
+   "2021-05-19 13:05:00",
+   "2021-05-19 13:10:00"
+  ],
+  "BTCUSDT": [],
+  "BNBUSDT": [],
+  "DOGEUSDT": [
+   "2021-05-19 12:50:00",
+   "2021-05-19 12:55:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "ZECUSDT": [
+   "2021-05-19 13:05:00"
+  ],
+  "SUIUSDT": [
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00",
+   "2025-10-10 21:25:00"
+  ],
+  "LINKUSDT": [
+   "2020-03-13 02:35:00",
+   "2025-10-10 21:15:00"
+  ],
+  "ENAUSDT": [
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "ADAUSDT": [
+   "2025-10-10 21:15:00"
+  ],
+  "LTCUSDT": [
+   "2025-10-10 21:15:00"
+  ],
+  "WLDUSDT": [
+   "2024-01-03 12:05:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "AAVEUSDT": [
+   "2021-05-19 12:50:00",
+   "2021-05-19 12:55:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "WIFUSDT": [
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:25:00"
+  ],
+  "NEARUSDT": [
+   "2021-12-15 04:00:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "CAKEUSDT": [
+   "2025-10-10 21:15:00"
+  ],
+  "APTUSDT": [
+   "2025-10-10 21:15:00"
+  ],
+  "SOLUSDT": [],
+  "XRPUSDT": [
+   "2023-08-17 21:40:00",
+   "2025-10-10 21:15:00"
+  ],
+  "1000PEPEUSDT": [
+   "2024-01-03 12:05:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "AVAXUSDT": [
+   "2021-04-18 03:30:00",
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "TAOUSDT": [
+   "2025-10-10 21:15:00",
+   "2025-10-10 21:20:00"
+  ],
+  "DOTUSDT": [
+   "2021-05-19 12:50:00",
+   "2021-05-19 12:55:00",
+   "2021-05-19 13:40:00",
+   "2025-10-10 21:15:00"
+  ],
+  "BCHUSDT": [
+   "2021-05-19 12:50:00",
+   "2021-05-19 13:45:00"
+  ],
+  "1000BONKUSDT": [
+   "2025-10-10 21:15:00"
+  ]
+ },
+ "gaps": {
+  "ETHUSDT": {
+   "days": 2498,
+   "first_day": "2020-01-01",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [],
+   "n_days_rv_nan": 0,
+   "n_missing_5m_bars": 0,
+   "days_without_fill_bar": 0,
+   "funding_events": 7488
+  },
+  "BTCUSDT": {
+   "days": 2498,
+   "first_day": "2020-01-01",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [],
+   "n_days_rv_nan": 0,
+   "n_missing_5m_bars": 0,
+   "days_without_fill_bar": 0,
+   "funding_events": 7488
+  },
+  "BNBUSDT": {
+   "days": 2458,
+   "first_day": "2020-02-10",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-02-10"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 96,
+   "days_without_fill_bar": 1,
+   "funding_events": 7367
+  },
+  "DOGEUSDT": {
+   "days": 2307,
+   "first_day": "2020-07-10",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-07-10"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 108,
+   "days_without_fill_bar": 1,
+   "funding_events": 6914
+  },
+  "ZECUSDT": {
+   "days": 2458,
+   "first_day": "2020-02-05",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-02-05"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 96,
+   "days_without_fill_bar": 1,
+   "funding_events": 7385
+  },
+  "SUIUSDT": {
+   "days": 1280,
+   "first_day": "2023-05-03",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2023-05-03"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 192,
+   "days_without_fill_bar": 1,
+   "funding_events": 3832
+  },
+  "LINKUSDT": {
+   "days": 2482,
+   "first_day": "2020-01-17",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-01-17"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 96,
+   "days_without_fill_bar": 1,
+   "funding_events": 7439
+  },
+  "ENAUSDT": {
+   "days": 945,
+   "first_day": "2024-04-02",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2024-04-02"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 150,
+   "days_without_fill_bar": 1,
+   "funding_events": 5653
+  },
+  "ADAUSDT": {
+   "days": 2468,
+   "first_day": "2020-01-31",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-01-31"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 96,
+   "days_without_fill_bar": 1,
+   "funding_events": 7432
+  },
+  "LTCUSDT": {
+   "days": 2485,
+   "first_day": "2020-01-09",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-01-09"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 97,
+   "days_without_fill_bar": 1,
+   "funding_events": 7463
+  },
+  "WLDUSDT": {
+   "days": 1198,
+   "first_day": "2023-07-24",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2023-07-24"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 144,
+   "days_without_fill_bar": 1,
+   "funding_events": 3586
+  },
+  "AAVEUSDT": {
+   "days": 2209,
+   "first_day": "2020-10-16",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-10-16"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 84,
+   "days_without_fill_bar": 1,
+   "funding_events": 6620
+  },
+  "WIFUSDT": {
+   "days": 1020,
+   "first_day": "2024-01-18",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2024-01-18"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 171,
+   "days_without_fill_bar": 1,
+   "funding_events": 6103
+  },
+  "NEARUSDT": {
+   "days": 2205,
+   "first_day": "2020-10-15",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-10-15"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 96,
+   "days_without_fill_bar": 1,
+   "funding_events": 6625
+  },
+  "CAKEUSDT": {
+   "days": 1097,
+   "first_day": "2023-11-02",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2023-11-02"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 153,
+   "days_without_fill_bar": 1,
+   "funding_events": 6565
+  },
+  "APTUSDT": {
+   "days": 1476,
+   "first_day": "2022-10-19",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2022-10-19"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 24,
+   "days_without_fill_bar": 1,
+   "funding_events": 4423
+  },
+  "SOLUSDT": {
+   "days": 2236,
+   "first_day": "2020-09-14",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-09-14"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 84,
+   "days_without_fill_bar": 1,
+   "funding_events": 6793
+  },
+  "XRPUSDT": {
+   "days": 2488,
+   "first_day": "2020-01-06",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-01-06"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 100,
+   "days_without_fill_bar": 1,
+   "funding_events": 7472
+  },
+  "1000PEPEUSDT": {
+   "days": 1278,
+   "first_day": "2023-05-05",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2023-05-05"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 198,
+   "days_without_fill_bar": 1,
+   "funding_events": 3826
+  },
+  "AVAXUSDT": {
+   "days": 2232,
+   "first_day": "2020-09-23",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-09-23"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 84,
+   "days_without_fill_bar": 1,
+   "funding_events": 6691
+  },
+  "TAOUSDT": {
+   "days": 936,
+   "first_day": "2024-04-11",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2024-04-11"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 174,
+   "days_without_fill_bar": 1,
+   "funding_events": 5599
+  },
+  "DOTUSDT": {
+   "days": 2264,
+   "first_day": "2020-08-22",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2020-08-22"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 84,
+   "days_without_fill_bar": 1,
+   "funding_events": 6791
+  },
+  "BCHUSDT": {
+   "days": 2498,
+   "first_day": "2020-01-01",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [],
+   "n_days_rv_nan": 0,
+   "n_missing_5m_bars": 0,
+   "days_without_fill_bar": 0,
+   "funding_events": 7488
+  },
+  "1000BONKUSDT": {
+   "days": 1077,
+   "first_day": "2023-11-22",
+   "last_day": "2026-11-03",
+   "days_rv_nan": [
+    "2023-11-22"
+   ],
+   "n_days_rv_nan": 1,
+   "n_missing_5m_bars": 168,
+   "days_without_fill_bar": 1,
+   "funding_events": 6445
+  }
+ },
+ "min_bars": 274,
+ "outlier_threshold": 0.25,
+ "rows": {
+  "crypto_hourly": 894635,
+  "crypto_daily": 37285
+ },
+ "rows_sealed": {
+  "crypto_hourly": 211392,
+  "crypto_daily": 8808
+ },
+ "sha256": {
+  "data/fin/crypto_hourly.parquet": "0b9587bf53abda69e2e73219dbecc50d46258e398d055592fffc14defe8f250d",
+  "data/fin/crypto_daily.parquet": "eff0c667f901d0e73622196be75bdd0b9ea5c3e75a88ebe5ef586a100213860a",
+  "data/fin/crypto_hourly_SEALED.parquet": "d1da8a67eafb6ff6541608fef19549d0b6293b36101601f02084c4a6377fbb1e",
+  "data/fin/crypto_daily_SEALED.parquet": "3237a8c4be0905a2ae7688b272b70182177c89dbc9bb0985beede186c90a0f29"
+ },
+ "cross_check": "TEST rows are counted only; no TEST value is printed or summarised."
+}
