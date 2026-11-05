@@ -46,7 +46,11 @@ def pin(y, q, lv):
 
 
 def calib(name, y, q, lv):
-    """y [n], q [n, L] -> reliability per level and 80% coverage."""
+    """y [n], q [n, L] -> reliability per level and 80% coverage. 13-level forecasts are reduced to the 9 levels
+    0.1..0.9 that every model provides (TiRex and Chronos-Bolt have no 2.5/5/95/97.5% levels), so all models are
+    compared on the same levels."""
+    if q.shape[-1] == 13:
+        q, lv = q[..., 2:11], LV9
     ok = np.isfinite(y) & np.isfinite(q).all(-1)
     y, q = y[ok], q[ok]
     below = (y[:, None] <= q).mean(0)

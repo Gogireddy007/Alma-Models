@@ -389,8 +389,19 @@ def build():
         tr = twin_row(proj)
         if tr:
             rows.append(tr)
+    if POST["power"]:                     # the pre-registered power twin test was on P2 (hourly direction)
+        hb = POST["power"]["windows"]["ALL_POST_TRAINING"]["by_candidate"]["wm_power"]["p2_hit"]
+        a, b = hb["wm_power"]["p2_hit"], hb["wm_power_direct"]["p2_hit"]
+        rows.append(["power (P2 hourly direction, higher = better)", f(a, 4), f(b, 4),
+                     f(hb["wm_power_direct"].get("wm_power_minus_this_p2_hit"), 4), f(hb["wm_power_direct"].get("ci95_p2_hit"), 4),
+                     {"cand_better": "rollout better", "cand_worse": "twin better", "not_significant": "tie"}.get(
+                         hb["wm_power_direct"].get("verdict_p2_hit"), "–")])
     s.append(KeepTogether([P("B6. The world-model test over 16 months: rollout vs matched direct twin", H2),
-                           tbl(rows, [20 * mm, 30 * mm, 30 * mm, 26 * mm, 44 * mm, 26 * mm])]))
+                           tbl(rows, [40 * mm, 24 * mm, 24 * mm, 22 * mm, 40 * mm, 26 * mm]),
+                           P("Quantile score rows: lower is better. Across the four projects the carried state is a tie "
+                             "in three and slightly worse in crypto; on the power project's pre-registered twin metric "
+                             "(hourly direction) the rollout is significantly better over the 16 months. Several metrics "
+                             "are shown, so the single positive result should be read with that multiplicity in mind.", SM)]))
     s.append(PageBreak())
     # ================= Part C
     s.append(P("Part C — Are the forecasts sensible and honest about uncertainty?", H1))
@@ -408,9 +419,24 @@ def build():
             for k, c in V5["calibration"].items():
                 rows.append([k, f"{c['n']:,}", f(c["max_abs_dev"], 3), f(c["cov80"], 3)])
             s.append(tbl(rows, [60 * mm, 30 * mm, 44 * mm, 42 * mm]))
+        cal = V5["calibration"]
+        lines = []
+        for proj in ("gas", "power", "crypto", "oil"):
+            ks = {k.split("/")[1]: v for k, v in cal.items() if k.startswith(proj + "/") and v["n"]}
+            if not ks:
+                continue
+            best = min(ks, key=lambda m: ks[m]["max_abs_dev"])
+            c = ks.get(CAND[proj])
+            lines.append(f"{proj}: best calibrated {best} (max deviation {ks[best]['max_abs_dev']:.3f}); "
+                         f"{CAND[proj]} max deviation {c['max_abs_dev']:.3f}, 80% coverage {c['cov80']:.3f}" if c else "")
+        s.append(P("All models are compared on the nine shared levels 0.1–0.9. " + "; ".join(l for l in lines if l) +
+                   ". Coverage below 0.80 means intervals that are too narrow (over-confident); above 0.80, too wide.", SM))
         s.append(P("C3. Placebo: the true outcomes vs outcomes shuffled across dates (500 shuffles)", H2))
         s.append(P("If a forecast carried no information about the specific date, shuffling which date each outcome "
-                   "belongs to would not hurt its score. All improvements below are on the true pairing.", B))
+                   "belongs to would not hurt its score. <b>This is a sanity floor, not a ranking:</b> every model passes "
+                   "it, including the plain random walk, because shuffling destroys the level/season match. It shows "
+                   "that the scoring is date-specific and that no model's score is an artefact of the pairing. p = 0.0020 "
+                   "is the smallest value 500 shuffles can give (no shuffle scored as well as the truth).", B))
         rows = [["Model", "n", "QS true", "QS shuffled", "improvement", "p"]]
         for k, c in V5["placebo"].items():
             rows.append([k, f"{c['n']:,}", f"{c['qs_true']:.4g}", f"{c['qs_shuffled_mean']:.4g}",
