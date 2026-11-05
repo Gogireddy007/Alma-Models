@@ -24,4 +24,9 @@ data/power/gaps.json
 runs/*/search/ckpt/
 
 # realised market values used by the deployment audit (not redistributed)
-runs/deploy_2026_10_11/**/*_LABELS_local*.npz
+runs/**/*_LABELS_local*.npz
+
+# daily runs: full forecast arrays stay local (sha256 recorded in the committed results.json); files that carry
+# sealed ex-ante forecasts (gas_preds, wti_preds, exante_*) are committed as proof
+runs/deploy_daily/*/fin/preds/fin_preds_*.npz
+runs/deploy_daily/*/power/preds/power_preds.npz

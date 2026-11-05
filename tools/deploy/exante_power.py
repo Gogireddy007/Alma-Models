@@ -34,6 +34,11 @@ def main():
     last = int(np.where(np.isfinite(P).sum(1) >= 23)[0][-1])
     assert last == len(dates) - 1, "the panel already holds days after the last complete price day"
     target = dates[last] + np.timedelta64(1, "D")
+    # the protocol gives the model complete fundamentals of D-2 (= dates[last - 1]); never forecast on a partial day
+    n_cov = int(np.isfinite(Cv[last - 1]).all(1).sum())
+    if n_cov < 23:
+        print(f"skip: fundamentals of {dates[last - 1]} incomplete ({n_cov}/24 h); run again after that day ends")
+        return
     # one empty row for the target day: no price and no fundamental of it (or of D-1) is ever read
     dates2 = np.append(dates, target)
     P2 = np.vstack([P, np.full((1, 24), np.nan)])

@@ -24,7 +24,7 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
-OUT = os.path.join(ROOT, "runs", "deploy_2026_10_11")
+OUT = os.environ.get("ALMA_DEPLOY_OUT") or os.path.join(ROOT, "runs", "deploy_2026_10_11")   # daily runs: runs/deploy_daily/<date>
 WINDOWS = {"oct_2026": (pd.Timestamp("2026-10-01"), pd.Timestamp("2026-10-31")),
            "nov_2026": (pd.Timestamp("2026-11-01"), pd.Timestamp("2026-11-30"))}
 LV9 = np.round(np.arange(0.1, 0.91, 0.1), 2)
@@ -196,7 +196,7 @@ def save_preds(project, name, **arrays):
     d = os.path.join(OUT, project, "preds")
     os.makedirs(d, exist_ok=True)
     p = os.path.join(d, f"{name}.npz")
-    np.savez(p, **arrays)
+    np.savez_compressed(p, **arrays)
     return os.path.relpath(p, ROOT), sha_file(p)
 
 

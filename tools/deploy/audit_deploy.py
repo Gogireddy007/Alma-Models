@@ -33,7 +33,9 @@ import numpy as np
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-RUN = os.path.join(ROOT, "runs", "deploy_2026_10_11")
+RUN = os.environ.get("ALMA_DEPLOY_OUT") or os.path.join(ROOT, "runs", "deploy_2026_10_11")   # daily runs: runs/deploy_daily/<date>
+DAILY = os.path.basename(os.path.dirname(os.path.abspath(RUN))) == "deploy_daily"   # daily runs score 'corrected' fin only
+FIN_VARIANTS = ("corrected",) if DAILY else ("pinned", "corrected")
 LV = np.round(np.arange(0.1, 0.91, 0.1), 2)
 CHECKS = []
 
@@ -103,7 +105,7 @@ def audit_nofit():
                 bad.append((os.path.basename(f), pat))
     check("B", "deploy scripts contain no optimizer/backward/train() call", not bad, f"{bad}")
     for proj, files in (("oil", ["results.json"]), ("power", ["results.json"]), ("gas", ["results.json"]),
-                        ("fin", ["results_pinned.json", "results_corrected.json"])):
+                        ("fin", [f"results_{v}.json" for v in FIN_VARIANTS])):
         for fn in files:
             r = load(proj, fn)
             if r is None:
@@ -273,22 +275,24 @@ def audit_gas():
     t["week"] = pd.to_datetime(t.week).dt.strftime("%Y-%m-%d")
     s = t.set_index("week")["l48"].astype(float)
     ds = s.diff()
-    w = r["windows"]["oct_2026"]
-    got = [float(ds.loc[k]) for k in w["weeks"]]
-    check("C", "gas: October storage changes re-derived from raw EIA ngshistory.xls", np.allclose(got, w["actual_bcf"]),
-          f"{got} vs {w['actual_bcf']}")
     nb, nt = 0, 0
-    y = np.array(w["actual_bcf"])
-    for kind, kk in w["kinds"].items():
-        for c, blk in kk["by_candidate"].items():
-            for mn, sc in blk["qs"].items():
-                q = z[f"oct_2026__{kind}__{mn}"]
-                nt += 2
-                nb += not close(pinball(y, q[:, 2:11]).mean(), sc["qs"])
-                nb += not close(np.abs(q[:, 6] - y).mean(), blk["abs_err"][mn]["abs_err"])
+    for wn, w in r["windows"].items():
+        if not w.get("n_weeks"):
+            check("G", f"gas {wn}: no EIA release yet -> scored n = 0, ex-ante forecast sealed", "ex_ante" in r,
+                  r["ex_ante"]["scheduled_release"])
+            continue
+        got = [float(ds.loc[k]) for k in w["weeks"]]
+        check("C", f"gas {wn}: storage changes re-derived from raw EIA ngshistory.xls",
+              np.allclose(got, w["actual_bcf"]), f"{got} vs {w['actual_bcf']}")
+        y = np.array(w["actual_bcf"])
+        for kind, kk in w["kinds"].items():
+            for c, blk in kk["by_candidate"].items():
+                for mn, sc in blk["qs"].items():
+                    q = z[f"{wn}__{kind}__{mn}"]
+                    nt += 2
+                    nb += not close(pinball(y, q[:, 2:11]).mean(), sc["qs"])
+                    nb += not close(np.abs(q[:, 6] - y).mean(), blk["abs_err"][mn]["abs_err"])
     check("D", "gas: every MAE and QS recomputed from saved forecasts", nb == 0, f"{nt - nb}/{nt} match")
-    check("G", "gas: November has no release yet -> scored n = 0, ex-ante forecast sealed",
-          r["windows"]["nov_2026"]["n_weeks"] == 0 and "ex_ante" in r, r["ex_ante"]["scheduled_release"])
     audit_sizes("gas", r)
     # leak test: scramble storage of week k and later, observed weather from the origin day on, and every CPC
     # forecast issued after the origin, in the global store; forecasts must not change
@@ -345,7 +349,7 @@ def logrv_from_raw(sym, day):
 
 
 def audit_fin():
-    for variant in ("pinned", "corrected"):
+    for variant in FIN_VARIANTS:
         r = load("fin", f"results_{variant}.json")
         if r is None:
             check("C", f"fin {variant} results exist", False)

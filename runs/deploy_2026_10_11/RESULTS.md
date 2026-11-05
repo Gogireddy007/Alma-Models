@@ -186,7 +186,7 @@ Reproduction check: the 52 TEST weeks re-forecast with the rebuilt data match th
 | st_persistence | 12.88 | 6.26 | 0.60 | 1.00 | 63.6 / 69.4 / 89.0 / 54.8 / 84.2 | n too small |
 | st_climatology | 14.80 | 5.87 | 0.60 | 1.00 | 83.4 / 90.3 / 94.3 / 84.0 / 95.0 | n too small |
 
-**nov_2026** — no EIA release yet (first one is 2026-11-05); nothing to score.
+**nov_2026** — no EIA release in this window yet (next: 2026-11-05); nothing to score.
 
 **Ex-ante (sealed) — week ending 2026-10-30, EIA release 2026-11-05; 5-year average 36.4 Bcf**
 

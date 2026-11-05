@@ -6,7 +6,7 @@ import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-RUN = os.path.join(ROOT, "runs", "deploy_2026_10_11")
+RUN = os.environ.get("ALMA_DEPLOY_OUT") or os.path.join(ROOT, "runs", "deploy_2026_10_11")   # daily runs: runs/deploy_daily/<date>
 
 
 def j(p):
@@ -80,19 +80,21 @@ def gas(L):
     rep = r["reproduction_vs_audit"]
     L.append(f"Reproduction check: the 52 TEST weeks re-forecast with the rebuilt data match the audit's cached "
              f"forecasts to a max of {max(v['max_abs_diff_bcf'] for v in rep.values()):.1e} Bcf ({len(rep)} series).\n")
-    w = r["windows"]["oct_2026"]
-    L.append(f"**oct_2026** — {w['n_weeks']} releases {', '.join(w['releases'])}; actual Δstorage "
-             f"{', '.join(f(x, 0) for x in w['actual_bcf'])} Bcf\n")
-    for kind, kk in w["kinds"].items():
-        a, q = kk["by_candidate"]["wm_gas_ens"]["abs_err"], kk["by_candidate"]["wm_gas_ens"]["qs"]
-        ms = sorted(a, key=lambda m: a[m]["abs_err"])
-        L.append(f"*{kind} origin*\n")
-        L.append(table([(m, f(a[m]["abs_err"], 2), f(q[m]["qs"], 2), f(a[m]["hit"], 2), f(a[m]["cov80"], 2),
-                         " / ".join(f(v, 1) for v in kk["median_forecast_bcf"][m]), verdict(a[m], "abs_err"))
-                        for m in ms],
-                       ["model", "MAE (Bcf)", "QS", "dir. vs 5-yr avg", "cov80", "weekly medians", "verdict"]) + "\n")
-    L.append("**nov_2026** — no EIA release yet (first one is "
-             f"{r['ex_ante']['scheduled_release']}); nothing to score.\n")
+    for wn, w in r["windows"].items():
+        if not w.get("n_weeks"):
+            L.append(f"**{wn}** — no EIA release in this window yet (next: {r['ex_ante']['scheduled_release']}); "
+                     "nothing to score.\n")
+            continue
+        L.append(f"**{wn}** — {w['n_weeks']} releases {', '.join(w['releases'])}; actual Δstorage "
+                 f"{', '.join(f(x, 0) for x in w['actual_bcf'])} Bcf\n")
+        for kind, kk in w["kinds"].items():
+            a, q = kk["by_candidate"]["wm_gas_ens"]["abs_err"], kk["by_candidate"]["wm_gas_ens"]["qs"]
+            ms = sorted(a, key=lambda m: a[m]["abs_err"])
+            L.append(f"*{kind} origin*\n")
+            L.append(table([(m, f(a[m]["abs_err"], 2), f(q[m]["qs"], 2), f(a[m]["hit"], 2), f(a[m]["cov80"], 2),
+                             " / ".join(f(v, 1) for v in kk["median_forecast_bcf"][m]), verdict(a[m], "abs_err"))
+                            for m in ms],
+                           ["model", "MAE (Bcf)", "QS", "dir. vs 5-yr avg", "cov80", "weekly medians", "verdict"]) + "\n")
     ex = r["ex_ante"]
     L.append(f"**Ex-ante (sealed) — week ending {ex['target_week_ending']}, EIA release {ex['scheduled_release']}; "
              f"5-year average {f(ex['avg5_l48_bcf'], 1)} Bcf**\n")
