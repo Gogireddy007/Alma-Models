@@ -59,7 +59,7 @@ def main():
 
     d, v = load_wti()
     cutoff = pd.Timestamp(d[-1])
-    first = np.datetime64(C.WINDOWS["oct_2026"][0])
+    first = np.datetime64(C.FIRST)
     # every origin whose h=1..20 targets can touch the windows, plus one ex-ante origin (index len(v))
     oi = np.arange(np.searchsorted(d, first) - H, len(v) + 1)
     ctxs = [v[max(0, i - CTX):i] for i in oi]

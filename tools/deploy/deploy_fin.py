@@ -48,7 +48,7 @@ def main():
     import models as M
 
     P = H.Panel("crypto", allow_test=True)
-    lo = np.datetime64(C.WINDOWS["oct_2026"][0].date(), "ns")
+    lo = np.datetime64(C.FIRST.date(), "ns")
     days = np.nonzero(P.days >= lo)[0]
     # labels exactly as the official scorer (tools/fin/run_eval.py -> harness.Panel.labels): calendar grid, so a day
     # missing from Binance's archive (2026-10-28) leaves the 7-day reference of D = 10-29 .. 11-04 undefined (NaN).

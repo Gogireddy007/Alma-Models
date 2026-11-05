@@ -40,7 +40,7 @@ def main():
     import models as M
 
     dates, P, Cv, flags = D.panel()
-    lo = np.datetime64(C.WINDOWS["oct_2026"][0].date(), "D")
+    lo = np.datetime64(C.FIRST.date(), "D")
     idx = np.array([i for i, d in enumerate(dates) if d >= lo and np.isfinite(P[i]).sum() >= 23])
     ctxs = [D.build_context(int(i), CTX_DAYS, dates, P, Cv, flags) for i in idx]
     cur, prev = P[idx], P[idx - 1]

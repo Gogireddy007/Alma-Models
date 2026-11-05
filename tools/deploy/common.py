@@ -27,6 +27,15 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 OUT = os.environ.get("ALMA_DEPLOY_OUT") or os.path.join(ROOT, "runs", "deploy_2026_10_11")   # daily runs: runs/deploy_daily/<date>
 WINDOWS = {"oct_2026": (pd.Timestamp("2026-10-01"), pd.Timestamp("2026-10-31")),
            "nov_2026": (pd.Timestamp("2026-11-01"), pd.Timestamp("2026-11-30"))}
+if os.environ.get("ALMA_WINDOWS") == "posttrain":
+    # validation mode (tools/validate/): the whole period after training, month by month plus pooled splits.
+    # VAL (2025-07..10) and TEST (2025-11..2026-10) were already scored by the original project: this is a re-look.
+    WINDOWS = {f"m_{m:%Y_%m}": (m, m + pd.offsets.MonthEnd(0)) for m in pd.date_range("2025-07-01", "2026-11-01", freq="MS")}
+    WINDOWS.update({"VAL_2025_07_10": (pd.Timestamp("2025-07-01"), pd.Timestamp("2025-10-31")),
+                    "TEST_2025_11_2026_10": (pd.Timestamp("2025-11-01"), pd.Timestamp("2026-10-31")),
+                    "FORWARD_2026_11": (pd.Timestamp("2026-11-01"), pd.Timestamp("2026-11-30")),
+                    "ALL_POST_TRAINING": (pd.Timestamp("2025-07-01"), pd.Timestamp("2026-11-30"))})
+FIRST = min(lo for lo, _ in WINDOWS.values())
 LV9 = np.round(np.arange(0.1, 0.91, 0.1), 2)
 QS13 = [0.025, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.975]
 I9 = [QS13.index(q) for q in LV9]

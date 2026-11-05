@@ -37,7 +37,18 @@ RUN = os.environ.get("ALMA_DEPLOY_OUT") or os.path.join(ROOT, "runs", "deploy_20
 DAILY = os.path.basename(os.path.dirname(os.path.abspath(RUN))) == "deploy_daily"   # daily runs score 'corrected' fin only
 FIN_VARIANTS = ("corrected",) if DAILY else ("pinned", "corrected")
 LV = np.round(np.arange(0.1, 0.91, 0.1), 2)
+QS13 = [0.025, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.975]
 CHECKS = []
+
+
+def rerun_check(project, model, saved, fresh, detail=""):
+    """R: a saved forecast must be exactly what the frozen model produces when re-run on the same inputs (so a
+    fabricated forecast file with consistent metrics is still caught)."""
+    saved, fresh = np.asarray(saved, float), np.asarray(fresh, float)
+    ok = saved.shape == fresh.shape and np.allclose(saved, fresh, rtol=1e-5, atol=1e-6, equal_nan=True)
+    diff = float(np.nanmax(np.abs(saved - fresh))) if saved.shape == fresh.shape else float("inf")
+    check("R", f"{project}: saved {model} forecasts = fresh re-run of the frozen model", ok,
+          f"{detail}max |diff| {diff:.1e}")
 
 
 def check(section, name, ok, detail=""):
@@ -186,6 +197,10 @@ def audit_oil():
             changed += not np.allclose(a, b, equal_nan=True)
             n += 1
     check("E", "oil: future-scramble leak test (wm_sv, wm_sv_direct)", changed == 0, f"{changed}/{n} forecasts changed")
+    js = list(range(0, len(oi), 5)) + [len(oi) - 1]                      # every 5th origin + the sealed ex-ante one
+    for mn in ("wm_sv", "wm_sv_direct"):
+        fresh = np.stack([mods[mn].batch([v[max(0, oi[j] - 1024):oi[j]]], 20, QS13)[0] for j in js])
+        rerun_check("oil", mn, z[f"q_{mn}"][js], fresh, f"{len(js)} origins, ")
 
 
 def berlin_hourly_from_raw():
@@ -256,6 +271,13 @@ def audit_power():
             n += 1
     check("E", "power: future-scramble leak test (prices >= D, fundamentals >= D-1)", changed == 0,
           f"{changed}/{n} forecasts changed")
+    ks = list(range(0, len(days), 4))
+    for mn in ("wm_power", "wm_power_direct"):
+        p = M.get(mn)
+        cs = [D.build_context(int(np.searchsorted(dates, np.datetime64(days[k]))), 736, dates, P, C, flags) for k in ks]
+        fresh = p.batch([c["prices"] for c in cs], [c["covs"] for c in cs], 24, list(LV),
+                        dates=[{"ctx_dates": c["ctx_dates"], "target_day": c["target_day"]} for c in cs])
+        rerun_check("power", mn, z[f"q_{mn}"][ks], fresh, f"{len(ks)} delivery days, ")
 
 
 def audit_gas():
@@ -321,6 +343,15 @@ def audit_gas():
                 b = np.asarray(p.storage([c1], [0.1, 0.5, 0.9], "l48"), float)
                 changed += not np.allclose(a, b, equal_nan=True)
                 n += 1
+    for wn, w in r["windows"].items():
+        if not w.get("n_weeks"):
+            continue
+        kk = [int(np.where(W0.week.dt.strftime("%Y-%m-%d") == wk)[0][0]) for wk in w["weeks"]]
+        for kind in S.ORIGINS:
+            ctxs = [S.build_context(k, kind, W0, O0, F0) for k in kk]
+            for mn in ("wm_gas", "wm_gas_ens"):
+                fresh = np.asarray(mods[mn].storage(ctxs, QS13, "l48"), float)
+                rerun_check("gas", f"{mn} ({wn}, {kind})", z[f"{wn}__{kind}__{mn}"], fresh, f"{len(kk)} weeks, ")
     check("E", "gas: future-scramble leak test (storage >= target week, weather after origin)", changed == 0,
           f"{changed}/{n} forecasts changed")
 
@@ -437,6 +468,14 @@ def audit_fin():
             b = H.run(P1, p, [i])["q"]
             changed += not np.allclose(a, b, equal_nan=True)
             n += 1
+    rc = load("fin", "results_corrected.json")
+    if rc is not None:
+        zc = np.load(os.path.join(ROOT, rc["preds_file"]))
+        sel = list(range(0, len(zc["days"]), 6))
+        di = [int(np.searchsorted(P0.days, np.datetime64(str(zc["days"][k]), "ns"))) for k in sel]
+        for mn in ("wm_fin", "wm_direct"):
+            fresh = H.run(P0, mods[mn], di)["q"]
+            rerun_check("fin", mn, zc[f"q_{mn}"][sel], fresh, f"{len(sel)} days x 24 coins, ")
     check("E", "fin: future-scramble leak test (daily rows >= D, hourly rows >= D 00:00)", changed == 0,
           f"{changed}/{n} forecasts changed")
 
