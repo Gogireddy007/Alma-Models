@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # Daily inference-only deployment + independent audit of the frozen Alma models (the "constantly checking" loop).
 #   tools/deploy/daily.sh            # -> runs/deploy_daily/<UTC date>/, LEDGER.md, EXANTE_LEDGER.md, a commit
-# Works from a cold container: it builds the venv and re-downloads (and sha256-checks) all pinned data if missing.
+# Each run writes runs/deploy_daily/<date>_<HHMM>/. Works from a cold container: it builds the venv and re-downloads (and sha256-checks) all pinned data if missing.
 # The audit's exit code decides the commit message: a failed check is committed as FAILED, never hidden.
 set -uo pipefail
 cd "$(dirname "$0")/../.."
 TODAY=$(date -u +%F)
-export ALMA_DEPLOY_OUT="runs/deploy_daily/$TODAY"
+RUNID="${TODAY}_$(date -u +%H%M)"                      # one folder per run: sealed files are never overwritten
+export ALMA_DEPLOY_OUT="runs/deploy_daily/$RUNID"
+[ -e "$ALMA_DEPLOY_OUT" ] && { echo "refused: $ALMA_DEPLOY_OUT exists"; exit 1; }
 mkdir -p "$ALMA_DEPLOY_OUT"
 LOG="$ALMA_DEPLOY_OUT/daily.log"
 exec > >(tee -a "$LOG") 2>&1
@@ -43,7 +45,7 @@ $PY tools/deploy/daily_ledger.py
 STATUS=$([ "$AUDIT" -eq 0 ] && echo "audit passed" || echo "AUDIT FAILED")
 git add "$ALMA_DEPLOY_OUT" runs/deploy_daily/LEDGER.md runs/deploy_daily/LEDGER.json \
   runs/deploy_daily/EXANTE_LEDGER.md runs/deploy_daily/EXANTE_LEDGER.json runs/deploy_daily/manifests/"$TODAY"
-git commit -q -m "Daily deployment $TODAY: $STATUS" -m "Inference only, frozen checkpoints; see runs/deploy_daily/LEDGER.md." \
+git commit -q -m "Daily deployment $RUNID: $STATUS" -m "Inference only, frozen checkpoints; see runs/deploy_daily/LEDGER.md." \
   -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" || echo "nothing to commit"
 echo "=== done: $STATUS"
 exit "$AUDIT"
