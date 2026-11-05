@@ -40,6 +40,14 @@
    "defect": "The frozen gas wrappers memoise storage() by (target_week, origin) only: wm_gas keeps _cache, wm_gas_ens keeps _cache and a persistent _raw. The deployment audit's gas leak test (section E) and the first V3 gas run queried the same week twice on one model instance (clean, then corrupted), so the second answer came from the memo: '0 forecasts changed' was guaranteed and proved nothing. The positive control (a deliberately leaky context) also showed 0 changes, which exposed it. The 1 Nov audit's own gas leak test (audit/gas_ens_leak.py) builds a fresh model per call and is not affected. In normal use the memo is harmless (one week and origin always means one context).",
    "fix": "Every test now clears the memo before each call (gas_nocache in tools/deploy/audit_deploy.py and tools/validate/*.py). tools/gas/wm_gas.py is sha256-frozen for the forward test and was not changed.",
    "verified_by": "V3 re-run with every memo cleared: the positive controls fire 5/5 for wm_gas, wm_gas_direct and wm_gas_ens, and corrupting the future still changes 0 of 240 gas forecasts."
+  },
+  {
+   "id": "F-D1-1",
+   "found_by": "first scheduled daily run, 2026-11-05 09:14 UTC (audit FAILED 38/40)",
+   "severity": "high (regression introduced by the F-V2-1 fix)",
+   "defect": "The strengthened no_training() replaced several torch functions (autograd.grad, backward, optimizer steps) with ONE shared function object. torch._dynamo indexes torch callables by identity and raised 'Duplicate torch object ... with different rules' when Chronos was imported, so Chronos-2 / Chronos-Bolt were skipped in oil, power and crypto and the gas deployment crashed (Chronos is imported lazily inside its forecast loop). No forecast was wrong; competitors were missing and the audit failed, as it should. The deploy scripts had not been re-run after the F-V2-1 change.",
+   "fix": "no_training() now installs a distinct blocking function per patched target. New audit check (section B): a run fails if any registered competitor was skipped, so a silently missing competitor can no longer pass.",
+   "verified_by": "Chronos-2 and TiRex load and run under the lock; optimizer construction, step, backward and autograd.grad still refused; the new check fails on the 09:14 run (oil, power, crypto skipped; gas missing); the re-run of the daily routine passes."
   }
  ]
 }

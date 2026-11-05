@@ -61,8 +61,13 @@ def no_training():
     Tensor.backward, torch.autograd.backward and torch.autograd.grad; and disables autograd globally."""
     import torch
 
-    def _blocked(*a, **k):
-        raise TrainingAttempted("training is disabled in deployment (tools/deploy/common.no_training)")
+    def _blocker(what):
+        # one distinct function per patched target: torch._dynamo indexes torch callables by identity and refuses
+        # one object registered under two roles (a shared function broke Chronos imports on 5 Nov; see FINDINGS)
+        def _blocked(*a, **k):
+            raise TrainingAttempted(f"training is disabled in deployment ({what}; tools/deploy/common.no_training)")
+        _blocked.__name__ = f"blocked_{what.replace('.', '_')}"
+        return _blocked
 
     def _all_subclasses(c):
         out = set()
@@ -70,11 +75,11 @@ def no_training():
             out |= {sc} | _all_subclasses(sc)
         return out
     for cls in {torch.optim.Optimizer} | _all_subclasses(torch.optim.Optimizer):
-        cls.step = _blocked
-    torch.optim.Optimizer.__init__ = _blocked
-    torch.Tensor.backward = _blocked
-    torch.autograd.backward = _blocked
-    torch.autograd.grad = _blocked
+        cls.step = _blocker(f"{cls.__name__}.step")
+    torch.optim.Optimizer.__init__ = _blocker("Optimizer.__init__")
+    torch.Tensor.backward = _blocker("Tensor.backward")
+    torch.autograd.backward = _blocker("autograd.backward")
+    torch.autograd.grad = _blocker("autograd.grad")
     torch.set_grad_enabled(False)
     return True
 

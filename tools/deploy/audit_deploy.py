@@ -133,6 +133,9 @@ def audit_nofit():
             if r is None:
                 check("B", f"{proj}/{fn} exists", False)
                 continue
+            skipped = {m: v["skipped"][:80] for m, v in r.get("models", {}).items() if isinstance(v, dict) and v.get("skipped")}
+            check("B", f"{proj}/{fn}: every registered model ran (no competitor silently skipped)", not skipped,
+                  f"{len(r.get('models', {}))} models; skipped: {skipped}")
             pw = r.get("param_watch", [])
             check("B", f"{proj}/{fn}: torch parameters unchanged after deployment",
                   len(pw) > 0 and all(x["unchanged"] for x in pw), f"{len(pw)} modules hashed")
