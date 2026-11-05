@@ -5,5 +5,6 @@ Frozen models, no retraining; November 2026 to date; quantile score (lower is be
 | run | audit | gas (Thu origin) | power | crypto | oil (1-day) |
 |---|---|---|---|---|---|
 | 2026-11-05 | 40/40 | n = 0 | n=5: **wm_power** QS 9.418, rank 6/13 (best chronos2 5.592) | n=3: **wm_fin** QS 0.1104, rank 1/13 | n=2: **wm_sv** QS 0.01766, rank 6/9 (best chronos2 0.0156) |
+| 2026-11-05_0914 | 38/40 | n = 0 | n=5: **wm_power** QS 9.418, rank 3/10 (best naive_d 6.492) | n=4: **wm_fin** QS 0.1769, rank 4/11 (best lgbm_dow 0.1556) | n=2: **wm_sv** QS 0.01766, rank 5/7 (best rw_gauss 0.01679) |
 
 Sealed ex-ante forecasts and their grades: [EXANTE_LEDGER.md](EXANTE_LEDGER.md)
