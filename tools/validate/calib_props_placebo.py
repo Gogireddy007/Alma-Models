@@ -241,7 +241,18 @@ def prop_fin():
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for fn in (prop_power, prop_gas, prop_oil, prop_fin, from_v4):
+    parts = sys.argv[1:] or ["power", "gas", "oil", "fin", "v4"]       # one project per process (module names clash)
+    PROPS = {"power": prop_power, "gas": prop_gas, "oil": prop_oil, "fin": prop_fin}
+    names = {"power": "power", "gas": "gas", "oil": "oil", "fin": "crypto"}
+    prev = os.path.join(OUT, "RESULTS.json")
+    if os.path.exists(prev):                                  # keep what is not re-run this time
+        old = json.load(open(prev))
+        R["properties"] = [p for p in old.get("properties", [])
+                           if p["project"] not in {names[x] for x in parts if x in names} | {f"prop_{x}" for x in parts}]
+        if "v4" not in parts:
+            R["calibration"], R["placebo"] = old.get("calibration", {}), old.get("placebo", {})
+    fns = [PROPS[x] for x in parts if x in PROPS] + ([from_v4] if "v4" in parts else [])
+    for fn in fns:
         try:
             fn()
         except Exception as e:  # noqa: BLE001  (reported as a failed test, never hidden)

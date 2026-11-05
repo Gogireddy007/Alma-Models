@@ -1,0 +1,38 @@
+{
+ "calibration": {},
+ "properties": [
+  {
+   "project": "power",
+   "test": "less wind never lowers any price quantile (merit order)",
+   "n_cases": 48360,
+   "violations": 0,
+   "ok": true,
+   "detail": "mean median price by wind change {\"-0.5\": 185.16, \"-0.3\": 181.32, \"-0.1\": 177.13, \"0.0\": 174.96, \"0.1\": 172.78, \"0.3\": 168.51}"
+  },
+  {
+   "project": "gas",
+   "test": "colder forecast (+HDD) never raises predicted injection",
+   "n_cases": 30,
+   "violations": 0,
+   "ok": true,
+   "detail": "mean change in the weekly median for +20 HDD/day on forecast days: -34.2 Bcf"
+  },
+  {
+   "project": "oil",
+   "test": "twice-as-volatile recent returns widen the 80% interval",
+   "n_cases": 125,
+   "violations": 0,
+   "ok": true,
+   "detail": "mean width ratio 1.50x"
+  },
+  {
+   "project": "crypto",
+   "test": "higher recent realised vol raises the predicted median vol",
+   "n_cases": 192,
+   "violations": 0,
+   "ok": true,
+   "detail": "mean rise in median log-RV for +1 log-RV over 3 days: 0.443"
+  }
+ ],
+ "placebo": {}
+}
