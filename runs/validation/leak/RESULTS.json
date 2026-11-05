@@ -1,0 +1,227 @@
+[
+ {
+  "project": "oil",
+  "model": "wm_sv",
+  "corruption": "noise",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv",
+  "corruption": "nan",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv",
+  "corruption": "extreme",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv",
+  "corruption": "shift",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv",
+  "corruption": "off-by-one",
+  "n_forecasts": 23,
+  "changed": 23,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv_direct",
+  "corruption": "noise",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv_direct",
+  "corruption": "nan",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv_direct",
+  "corruption": "extreme",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv_direct",
+  "corruption": "shift",
+  "n_forecasts": 24,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "oil",
+  "model": "wm_sv_direct",
+  "corruption": "off-by-one",
+  "n_forecasts": 23,
+  "changed": 23,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas",
+  "corruption": "noise",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas",
+  "corruption": "nan",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas",
+  "corruption": "extreme",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas",
+  "corruption": "shift",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas",
+  "corruption": "observed-wx",
+  "n_forecasts": 5,
+  "changed": 5,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_direct",
+  "corruption": "noise",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_direct",
+  "corruption": "nan",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_direct",
+  "corruption": "extreme",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_direct",
+  "corruption": "shift",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_direct",
+  "corruption": "observed-wx",
+  "n_forecasts": 5,
+  "changed": 5,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_ens",
+  "corruption": "noise",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_ens",
+  "corruption": "nan",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_ens",
+  "corruption": "extreme",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_ens",
+  "corruption": "shift",
+  "n_forecasts": 10,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "gas",
+  "model": "wm_gas_ens",
+  "corruption": "observed-wx",
+  "n_forecasts": 5,
+  "changed": 5,
+  "positive_control": true,
+  "ok": true
+ }
+]

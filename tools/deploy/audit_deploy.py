@@ -41,6 +41,17 @@ QS13 = [0.025, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.975]
 CHECKS = []
 
 
+def gas_nocache(p):
+    """The frozen gas wrappers memoise storage() by (target_week, origin) only, not by content. A test that re-queries
+    the same week with altered inputs must clear every cache first, or it silently gets the old answer
+    (found by the V3 positive control; tools/gas/wm_gas.py itself is frozen and is not changed)."""
+    for o in [p] + list(getattr(p, "ens", [])):
+        for attr in ("_cache", "_raw"):           # wm_gas: _cache; wm_gas_ens: _cache and the persistent _raw
+            if hasattr(o, attr):
+                setattr(o, attr, {})
+    return p
+
+
 def rerun_check(project, model, saved, fresh, detail=""):
     """R: a saved forecast must be exactly what the frozen model produces when re-run on the same inputs (so a
     fabricated forecast file with consistent metrics is still caught)."""
@@ -339,8 +350,8 @@ def audit_gas():
             F1.loc[late, ["hdd", "cdd"]] = rng.uniform(0, 60, (late.sum(), 2))
             c1 = S.build_context(int(k), kind, W1, O1, F1)
             for mn, p in mods.items():
-                a = np.asarray(p.storage([c0], [0.1, 0.5, 0.9], "l48"), float)
-                b = np.asarray(p.storage([c1], [0.1, 0.5, 0.9], "l48"), float)
+                a = np.asarray(gas_nocache(p).storage([c0], [0.1, 0.5, 0.9], "l48"), float)
+                b = np.asarray(gas_nocache(p).storage([c1], [0.1, 0.5, 0.9], "l48"), float)
                 changed += not np.allclose(a, b, equal_nan=True)
                 n += 1
     for wn, w in r["windows"].items():
@@ -350,7 +361,7 @@ def audit_gas():
         for kind in S.ORIGINS:
             ctxs = [S.build_context(k, kind, W0, O0, F0) for k in kk]
             for mn in ("wm_gas", "wm_gas_ens"):
-                fresh = np.asarray(mods[mn].storage(ctxs, QS13, "l48"), float)
+                fresh = np.asarray(gas_nocache(mods[mn]).storage(ctxs, QS13, "l48"), float)
                 rerun_check("gas", f"{mn} ({wn}, {kind})", z[f"{wn}__{kind}__{mn}"], fresh, f"{len(kk)} weeks, ")
     check("E", "gas: future-scramble leak test (storage >= target week, weather after origin)", changed == 0,
           f"{changed}/{n} forecasts changed")

@@ -29,6 +29,17 @@ LV9 = np.round(np.arange(0.1, 0.91, 0.1), 2)
 R = {"calibration": {}, "properties": [], "placebo": {}}
 
 
+def gas_nocache(p):
+    """The frozen gas wrappers memoise storage() by (target_week, origin) only, not by content. A test that re-queries
+    the same week with altered inputs must clear every cache first, or it silently gets the old answer
+    (found by the V3 positive control; tools/gas/wm_gas.py itself is frozen and is not changed)."""
+    for o in [p] + list(getattr(p, "ens", [])):
+        for attr in ("_cache", "_raw"):           # wm_gas: _cache; wm_gas_ens: _cache and the persistent _raw
+            if hasattr(o, attr):
+                setattr(o, attr, {})
+    return p
+
+
 def pin(y, q, lv):
     e = y[..., None] - q
     return np.where(e >= 0, lv * e, (lv - 1) * e).mean(-1)
@@ -167,7 +178,7 @@ def prop_gas():
             for dh in (0, 5, 10, 20):
                 cc = dict(c, wx=np.array(c["wx"], float))
                 cc["wx"][fut, 0] += dh
-                meds.append(float(np.asarray(p.storage([cc], [0.5], "l48"), float)[0, 0]))
+                meds.append(float(np.asarray(gas_nocache(p).storage([cc], [0.5], "l48"), float)[0, 0]))
             viol += int(np.sum(np.diff(meds) > 1e-6))
             n += len(meds) - 1
             eff.append(meds[-1] - meds[0])

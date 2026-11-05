@@ -25,6 +25,9 @@ if [ ! -x .venv/bin/python ]; then
 fi
 PY=.venv/bin/python
 
+# ---- do not rebuild data under a running validation job (runs/validation/.running holds its start time)
+for i in $(seq 1 72); do [ -e runs/validation/.running ] || break; echo "validation running; waiting ($i/72)"; sleep 300; done
+
 # ---- data (pinned history verified, then new days)
 $PY tools/deploy/refresh_data.py --today "$TODAY" || echo "!! some data sources failed (see above); continuing"
 

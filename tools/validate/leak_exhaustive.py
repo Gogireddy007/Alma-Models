@@ -29,6 +29,17 @@ KINDS = ("noise", "nan", "extreme", "shift")
 RES = []
 
 
+def gas_nocache(p):
+    """The frozen gas wrappers memoise storage() by (target_week, origin) only, not by content. A test that re-queries
+    the same week with altered inputs must clear every cache first, or it silently gets the old answer
+    (found by the V3 positive control; tools/gas/wm_gas.py itself is frozen and is not changed)."""
+    for o in [p] + list(getattr(p, "ens", [])):
+        for attr in ("_cache", "_raw"):           # wm_gas: _cache; wm_gas_ens: _cache and the persistent _raw
+            if hasattr(o, attr):
+                setattr(o, attr, {})
+    return p
+
+
 def corrupt(a, start, kind, rng, past=None):
     """Return a copy of array a with a[start:] corrupted (axis 0 = time)."""
     b = np.array(a, dtype=float, copy=True)
@@ -135,7 +146,7 @@ def gas():
                 for orig in S.ORIGINS:
                     odt = S.origin_dt(W0, k, orig)
                     od = pd.Timestamp(odt.date())
-                    a = p.storage([S.build_context(int(k), orig, W0, O0, F0)], [0.1, 0.5, 0.9], "l48")
+                    a = gas_nocache(p).storage([S.build_context(int(k), orig, W0, O0, F0)], [0.1, 0.5, 0.9], "l48")
                     W1, O1, F1 = W0.copy(), O0.copy(), F0.copy()
                     W1[stor_cols] = corrupt(W0[stor_cols].to_numpy(), int(k), kind, rng)
                     io = int(np.searchsorted(O0.index, od))
@@ -144,7 +155,7 @@ def gas():
                     fv = F0[["hdd", "cdd"]].to_numpy(float).copy()
                     fv[late] = corrupt(fv[late], 0, "noise" if kind == "shift" else kind, rng)
                     F1[["hdd", "cdd"]] = fv
-                    b = p.storage([S.build_context(int(k), orig, W1, O1, F1)], [0.1, 0.5, 0.9], "l48")
+                    b = gas_nocache(p).storage([S.build_context(int(k), orig, W1, O1, F1)], [0.1, 0.5, 0.9], "l48")
                     ch += not same(a, b)
                     n += 1
             record("gas", mn, kind, n, ch)
@@ -156,7 +167,7 @@ def gas():
             O1 = O0.copy()
             O1.loc[O1.index >= days[0], ["hdd", "cdd"]] += rng.normal(0, 8, ((O1.index >= days[0]).sum(), 2))
             leak2 = dict(c, wx=O1.reindex(days)[["hdd", "cdd"]].to_numpy(float))
-            ch += not same(p.storage([leak], [0.1, 0.5, 0.9], "l48"), p.storage([leak2], [0.1, 0.5, 0.9], "l48"))
+            ch += not same(gas_nocache(p).storage([leak], [0.1, 0.5, 0.9], "l48"), gas_nocache(p).storage([leak2], [0.1, 0.5, 0.9], "l48"))
             n += 1
         record("gas", mn, "observed-wx", n, ch, control=True)
 

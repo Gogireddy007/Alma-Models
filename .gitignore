@@ -31,3 +31,6 @@ runs/**/*_LABELS_local*.npz
 runs/deploy_daily/*/fin/preds/fin_preds_*.npz
 runs/deploy_daily/*/power/preds/power_preds.npz
 runs/deploy_daily/*/daily.log
+runs/validation/.running
+runs/validation/mutation/work/
+runs/validation/tamper/tree/
