@@ -75,7 +75,42 @@ def oil():
     return out
 
 
+def power():
+    """Every sealed exante_<D>.json: realised hourly prices from the raw Energy-Charts JSON (Berlin local hours)."""
+    import glob
+    out = {}
+    for jf in sorted(glob.glob(os.path.join(RUN, "power", "exante_*.json"))):
+        r = json.load(open(jf))
+        p = os.path.join(ROOT, r["preds_file"])
+        got = hashlib.sha256(open(p, "rb").read()).hexdigest()
+        if got != r["preds_sha256"]:
+            raise SystemExit(f"refused: {p} changed since it was sealed")
+        z = np.load(p)
+        day = r["delivery_day"]
+        raw = json.load(open(os.path.join(ROOT, f"data/power/raw/price_de_lu/{day[:4]}.json")))
+        df = pd.DataFrame({"ts": raw["unix_seconds"], "p": raw["price"]}).drop_duplicates("ts")
+        t = pd.to_datetime(df.ts, unit="s", utc=True).dt.tz_convert("Europe/Berlin")
+        hr = df[t.dt.strftime("%Y-%m-%d") == day].groupby(t.dt.hour)["p"].mean()
+        if len(hr) < 23:
+            out[day] = "not published yet"
+            continue
+        y = hr.reindex(range(24)).to_numpy(float)
+        prev = r["prev_day_base_price"]
+        res = {"actual_base": float(np.nanmean(y)), "models": {}}
+        for k in z.files:
+            if k.startswith("q_"):
+                q = z[k]                                                   # [9, 24]
+                d = y[None, :] - q
+                res["models"][k[2:]] = {
+                    "qs": float(np.nanmean(np.where(d >= 0, LV[:, None] * d, (LV[:, None] - 1) * d))),
+                    "mae": float(np.nanmean(np.abs(q[4] - y))),
+                    "base_dir_hit": bool((np.mean(q[4]) > prev) == (np.nanmean(y) > prev)),
+                    "cov80": float(np.nanmean((y >= q[0]) & (y <= q[-1])))}
+        out[day] = res
+    return out
+
+
 if __name__ == "__main__":
-    res = {"gas": gas(), "oil": oil()}
+    res = {"gas": gas(), "oil": oil(), "power": power()}
     json.dump(res, open(os.path.join(RUN, "EXANTE_SCORES.json"), "w"), indent=1, default=float)
     print(json.dumps(res, indent=1, default=float)[:3000])
