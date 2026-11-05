@@ -14,3 +14,4 @@ $PY tools/deploy/funding_effect.py || echo "funding_effect needs both fin varian
 $PY tools/deploy/audit_deploy.py
 $PY tools/deploy/make_report.py
 $PY tools/deploy/check_doc_numbers.py
+$PY tools/deploy/make_pdf_report.py
