@@ -1,0 +1,306 @@
+{
+ "rule": "Fix the Alma-Fin universe ONCE, using only data dated <= 2025-10-31 (docs/fin_research.md section 1, docs/fin_prereg.md\nsection 1). Inputs: data/fin/listing_um.json (S3 listing incl. delisted symbols) and the 1d USD-M klines of 2024-10,\n2024-11 and 2025-10 (data/fin/raw/um/klines_1d). Output: data/fin/universe.json.\n\nRule (pre-registered):\n  candidates = USDT-margined perpetuals (no '_' delivery suffix) with a 1d file for 2025-10, whose FIRST daily bar\n               (open_time) is <= 2024-11-01 00:00 UTC; excluded: index products and stablecoins (EXCLUDE below).\n  rank       = sum of quote_volume of the 30 daily bars 2025-10-02 .. 2025-10-31 (UTC), descending.\n  universe   = top 24. Held-out coins = ranks 3, 6, 9, ..., 24 (every third); training coins = the other 16.\nNo later information (no TEST bar) is read: rows with open_time >= 2025-11-01 are asserted absent.",
+ "as_of": "2025-10-31",
+ "n_candidates": 343,
+ "n_eligible": 319,
+ "universe": [
+  {
+   "symbol": "ETHUSDT",
+   "quote_volume_30d": 605239890976.1803,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 1,
+   "role": "train"
+  },
+  {
+   "symbol": "BTCUSDT",
+   "quote_volume_30d": 552550846800.7479,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 2,
+   "role": "train"
+  },
+  {
+   "symbol": "SOLUSDT",
+   "quote_volume_30d": 172658939734.67114,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 3,
+   "role": "heldout"
+  },
+  {
+   "symbol": "BNBUSDT",
+   "quote_volume_30d": 74439734246.48561,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 4,
+   "role": "train"
+  },
+  {
+   "symbol": "DOGEUSDT",
+   "quote_volume_30d": 64539326684.376236,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 5,
+   "role": "train"
+  },
+  {
+   "symbol": "XRPUSDT",
+   "quote_volume_30d": 58842458725.79305,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 6,
+   "role": "heldout"
+  },
+  {
+   "symbol": "ZECUSDT",
+   "quote_volume_30d": 26105782907.751442,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 7,
+   "role": "train"
+  },
+  {
+   "symbol": "SUIUSDT",
+   "quote_volume_30d": 19036403299.199688,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 8,
+   "role": "train"
+  },
+  {
+   "symbol": "1000PEPEUSDT",
+   "quote_volume_30d": 16766307096.239855,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 9,
+   "role": "heldout"
+  },
+  {
+   "symbol": "LINKUSDT",
+   "quote_volume_30d": 15041056634.064732,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 10,
+   "role": "train"
+  },
+  {
+   "symbol": "ENAUSDT",
+   "quote_volume_30d": 14822599313.7215,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 11,
+   "role": "train"
+  },
+  {
+   "symbol": "AVAXUSDT",
+   "quote_volume_30d": 14532260962.672998,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 12,
+   "role": "heldout"
+  },
+  {
+   "symbol": "ADAUSDT",
+   "quote_volume_30d": 14529415560.9073,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 13,
+   "role": "train"
+  },
+  {
+   "symbol": "LTCUSDT",
+   "quote_volume_30d": 11382703090.549612,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 14,
+   "role": "train"
+  },
+  {
+   "symbol": "TAOUSDT",
+   "quote_volume_30d": 9426361359.01541,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 15,
+   "role": "heldout"
+  },
+  {
+   "symbol": "WLDUSDT",
+   "quote_volume_30d": 6566044088.638101,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 16,
+   "role": "train"
+  },
+  {
+   "symbol": "AAVEUSDT",
+   "quote_volume_30d": 5886571472.7039995,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 17,
+   "role": "train"
+  },
+  {
+   "symbol": "DOTUSDT",
+   "quote_volume_30d": 5840915572.947299,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 18,
+   "role": "heldout"
+  },
+  {
+   "symbol": "WIFUSDT",
+   "quote_volume_30d": 5832546827.112169,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 19,
+   "role": "train"
+  },
+  {
+   "symbol": "NEARUSDT",
+   "quote_volume_30d": 5676526419.332001,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 20,
+   "role": "train"
+  },
+  {
+   "symbol": "BCHUSDT",
+   "quote_volume_30d": 5562577693.18663,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 21,
+   "role": "heldout"
+  },
+  {
+   "symbol": "CAKEUSDT",
+   "quote_volume_30d": 5229561591.613599,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 22,
+   "role": "train"
+  },
+  {
+   "symbol": "APTUSDT",
+   "quote_volume_30d": 5147480292.3892,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 23,
+   "role": "train"
+  },
+  {
+   "symbol": "1000BONKUSDT",
+   "quote_volume_30d": 4743538461.298254,
+   "n_days": 30,
+   "first_bar_in_2024_10_11": "2024-10-01 00:00:00+00:00",
+   "rank": 24,
+   "role": "heldout"
+  }
+ ],
+ "train": [
+  "ETHUSDT",
+  "BTCUSDT",
+  "BNBUSDT",
+  "DOGEUSDT",
+  "ZECUSDT",
+  "SUIUSDT",
+  "LINKUSDT",
+  "ENAUSDT",
+  "ADAUSDT",
+  "LTCUSDT",
+  "WLDUSDT",
+  "AAVEUSDT",
+  "WIFUSDT",
+  "NEARUSDT",
+  "CAKEUSDT",
+  "APTUSDT"
+ ],
+ "heldout": [
+  "SOLUSDT",
+  "XRPUSDT",
+  "1000PEPEUSDT",
+  "AVAXUSDT",
+  "TAOUSDT",
+  "DOTUSDT",
+  "BCHUSDT",
+  "1000BONKUSDT"
+ ],
+ "next_10": [
+  {
+   "symbol": "FILUSDT",
+   "rank": 25,
+   "quote_volume_30d": 4591828366.748399
+  },
+  {
+   "symbol": "ARBUSDT",
+   "rank": 26,
+   "quote_volume_30d": 4417238507.74591
+  },
+  {
+   "symbol": "UNIUSDT",
+   "rank": 27,
+   "quote_volume_30d": 4211477399.7790008
+  },
+  {
+   "symbol": "HBARUSDT",
+   "rank": 28,
+   "quote_volume_30d": 4109416534.2579007
+  },
+  {
+   "symbol": "SNXUSDT",
+   "rank": 29,
+   "quote_volume_30d": 3972164298.1468997
+  },
+  {
+   "symbol": "CRVUSDT",
+   "rank": 30,
+   "quote_volume_30d": 3741851568.4156003
+  },
+  {
+   "symbol": "ZENUSDT",
+   "rank": 31,
+   "quote_volume_30d": 3707118241.0379
+  },
+  {
+   "symbol": "EIGENUSDT",
+   "rank": 32,
+   "quote_volume_30d": 3695793882.88079
+  },
+  {
+   "symbol": "1000SHIBUSDT",
+   "rank": 33,
+   "quote_volume_30d": 3674043351.6793036
+  },
+  {
+   "symbol": "TRXUSDT",
+   "rank": 34,
+   "quote_volume_30d": 3647836833.67792
+  }
+ ],
+ "notes": {
+  "1000000MOGUSDT": "first bar 2024-11-07 00:00:00+00:00 > 2024-11-01",
+  "1000CHEEMSUSDT": "first bar 2024-11-25 00:00:00+00:00 > 2024-11-01",
+  "1000WHYUSDT": "first bar 2024-11-25 00:00:00+00:00 > 2024-11-01",
+  "1000XUSDT": "first bar 2024-11-13 00:00:00+00:00 > 2024-11-01",
+  "ACTUSDT": "first bar 2024-11-11 00:00:00+00:00 > 2024-11-01",
+  "AKTUSDT": "first bar 2024-11-18 00:00:00+00:00 > 2024-11-01",
+  "BANUSDT": "first bar 2024-11-18 00:00:00+00:00 > 2024-11-01",
+  "BTCDOMUSDT": "excluded (index/stablecoin/commodity)",
+  "CETUSUSDT": "first bar 2024-11-06 00:00:00+00:00 > 2024-11-01",
+  "CHILLGUYUSDT": "first bar 2024-11-27 00:00:00+00:00 > 2024-11-01",
+  "COWUSDT": "first bar 2024-11-06 00:00:00+00:00 > 2024-11-01",
+  "DEFIUSDT": "excluded (index/stablecoin/commodity)",
+  "DEGENUSDT": "first bar 2024-11-15 00:00:00+00:00 > 2024-11-01",
+  "DRIFTUSDT": "first bar 2024-11-08 00:00:00+00:00 > 2024-11-01",
+  "GRASSUSDT": "first bar 2024-11-08 00:00:00+00:00 > 2024-11-01",
+  "HIPPOUSDT": "first bar 2024-11-13 00:00:00+00:00 > 2024-11-01",
+  "MORPHOUSDT": "first bar 2024-11-27 00:00:00+00:00 > 2024-11-01",
+  "PNUTUSDT": "first bar 2024-11-11 00:00:00+00:00 > 2024-11-01",
+  "PONKEUSDT": "first bar 2024-11-04 00:00:00+00:00 > 2024-11-01",
+  "SCRTUSDT": "first bar 2024-11-21 00:00:00+00:00 > 2024-11-01",
+  "SLERFUSDT": "first bar 2024-11-21 00:00:00+00:00 > 2024-11-01",
+  "SWELLUSDT": "first bar 2024-11-08 00:00:00+00:00 > 2024-11-01",
+  "THEUSDT": "first bar 2024-11-27 00:00:00+00:00 > 2024-11-01",
+  "USDCUSDT": "excluded (index/stablecoin/commodity)"
+ }
+}

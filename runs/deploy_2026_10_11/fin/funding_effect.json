@@ -1,0 +1,51 @@
+{
+ "days": [
+  "2026-10-01",
+  "2026-10-30",
+  30
+ ],
+ "models": {
+  "wm_fin": {
+   "qs_funding_zero": 0.142975600462156,
+   "qs_real_funding": 0.1431350927302283,
+   "n_coin_days": 672,
+   "max_abs_forecast_change": 0.049002885818481445
+  },
+  "wm_direct": {
+   "qs_funding_zero": 0.14303857533023545,
+   "qs_real_funding": 0.14304070594316817,
+   "n_coin_days": 672,
+   "max_abs_forecast_change": 0.06435418128967285
+  },
+  "wm_fin_blend": {
+   "qs_funding_zero": 0.14332293172839314,
+   "qs_real_funding": 0.1435121728599423,
+   "n_coin_days": 648,
+   "max_abs_forecast_change": 0.029401731491088157
+  },
+  "har_intra_dow": {
+   "qs_funding_zero": 0.15217610929213174,
+   "qs_real_funding": 0.15217610929213174,
+   "n_coin_days": 648,
+   "max_abs_forecast_change": 0.0
+  },
+  "har_dow": {
+   "qs_funding_zero": 0.1473702794520008,
+   "qs_real_funding": 0.1473702794520008,
+   "n_coin_days": 672,
+   "max_abs_forecast_change": 0.0
+  },
+  "lgbm_dow": {
+   "qs_funding_zero": 0.15377039522094504,
+   "qs_real_funding": 0.15436462731035414,
+   "n_coin_days": 696,
+   "max_abs_forecast_change": 0.1448863204258366
+  },
+  "chronos2": {
+   "qs_funding_zero": 0.156751348262354,
+   "qs_real_funding": 0.156751348262354,
+   "n_coin_days": 696,
+   "max_abs_forecast_change": 0.0
+  }
+ }
+}
