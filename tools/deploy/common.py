@@ -54,14 +54,27 @@ class TrainingAttempted(RuntimeError):
 
 
 def no_training():
-    """Make any gradient-based training impossible in this process (deployment is inference only)."""
+    """Make any gradient-based training impossible in this process (deployment is inference only).
+
+    Blocks: constructing any torch optimizer, the step() of every optimizer class (torch's concrete optimizers
+    override Optimizer.step, so patching the base class alone is not enough — found by tools/validate V2),
+    Tensor.backward, torch.autograd.backward and torch.autograd.grad; and disables autograd globally."""
     import torch
 
     def _blocked(*a, **k):
         raise TrainingAttempted("training is disabled in deployment (tools/deploy/common.no_training)")
-    torch.optim.Optimizer.step = _blocked
+
+    def _all_subclasses(c):
+        out = set()
+        for sc in c.__subclasses__():
+            out |= {sc} | _all_subclasses(sc)
+        return out
+    for cls in {torch.optim.Optimizer} | _all_subclasses(torch.optim.Optimizer):
+        cls.step = _blocked
+    torch.optim.Optimizer.__init__ = _blocked
     torch.Tensor.backward = _blocked
     torch.autograd.backward = _blocked
+    torch.autograd.grad = _blocked
     torch.set_grad_enabled(False)
     return True
 
@@ -124,6 +137,23 @@ def verify_checkpoints(project):
                  "forward_freeze_ok": (freeze[rel] == got) if rel in freeze else None}
             if not r["sha256sums_ok"] or r["forward_freeze_ok"] is False:
                 raise SystemExit(f"refused: checkpoint pin mismatch {r}")
+            rows.append(r)
+    # the wrappers load their own copies (runs/<project>/search/ckpt/); those must match the same pins
+    loaded_dir = {"oil": "commodity", "power": "power", "gas": "gas", "fin": "fin"}[project]
+    pins_all = {}
+    for d in CKPT_DIRS[project]:
+        for line in open(os.path.join(ROOT, "winning_models", d, "checkpoints", "SHA256SUMS")):
+            if line.strip():
+                h, fn = line.split()
+                pins_all[os.path.basename(fn.lstrip("*"))] = h
+    ld = os.path.join(ROOT, "runs", loaded_dir, "search", "ckpt")
+    for fn, h in sorted(pins_all.items()):
+        lp = os.path.join(ld, fn)
+        if os.path.exists(lp):
+            got = sha_file(lp)
+            r = {"file": os.path.relpath(lp, ROOT), "sha256": got, "loaded_copy_ok": got == h}
+            if got != h:
+                raise SystemExit(f"refused: loaded checkpoint copy differs from its pin {r}")
             rows.append(r)
     for rel, s in freeze.items():                     # frozen wrapper code must be unchanged too
         if rel.endswith(".py") and rel.split("/")[1] == {"oil": "commodity"}.get(project, project):

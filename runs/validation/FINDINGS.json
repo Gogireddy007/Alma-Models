@@ -1,0 +1,21 @@
+{
+ "note": "Defects found by the overnight validation itself, with what was changed. First-run outputs are quoted from the run logs.",
+ "findings": [
+  {"id": "F-V1-1", "found_by": "V1 design (mutation tests)", "severity": "high (integrity gap)",
+   "defect": "The audit recomputed every metric from the saved forecasts but did not re-run the frozen model for oil and power, so a fabricated forecast file with consistent metrics would have passed.",
+   "fix": "New audit section R (tools/deploy/audit_deploy.py): each frozen world model is re-run on sampled saved origins in every project and must match exactly.",
+   "verified_by": "V1 mutants oil_fabricated_consistent and gas_fabricated_consistent are caught only by R."},
+  {"id": "F-V2-1", "found_by": "V2 test T5 (first run: 23/27 as expected)", "severity": "medium (guard weaker than documented)",
+   "defect": "no_training() patched torch.optim.Optimizer.step only; concrete optimizers (SGD, Adam, ...) override step, so an optimizer step was not blocked (backward() was blocked, so no gradient could reach the weights, and parameter hashes were unchanged in every run).",
+   "fix": "no_training() now blocks optimizer construction, step() on every Optimizer subclass, Tensor.backward, torch.autograd.backward and torch.autograd.grad.",
+   "verified_by": "V2 re-run: T5 optimizer step refused (27/27)."},
+  {"id": "F-V2-2", "found_by": "V2 test T2 (first run)", "severity": "medium (check covered the wrong copy)",
+   "defect": "verify_checkpoints() checked the copies in winning_models/, but the oil, power, gas (wm_gas) and fin wrappers load their own copies under runs/<project>/search/ckpt/. A tampered loaded copy was still refused by the wrapper's own sha256 assert (T1), but not by the deployment-level check.",
+   "fix": "verify_checkpoints() also verifies every loaded copy under runs/<project>/search/ckpt/ against the same pins (oil 6, power 6, gas 2, fin 2 files). The loaded copies were byte-identical to the pins throughout, so no deployed result was affected.",
+   "verified_by": "V2 re-run: T2 refused for oil, power, gas and fin."},
+  {"id": "F-V2-3", "found_by": "V2 test T1c (first run)", "severity": "test defect (not a harness defect)",
+   "defect": "The V2 test tree did not contain runs/fin/search/ckpt, so the fin tamper test was refused for the wrong reason (file not found).",
+   "fix": "The test tree now contains the files the fin wrapper loads, and the flip targets runs/fin/search/ckpt/frozen_wm_fin.pt.",
+   "verified_by": "V2 re-run: T1c fin loads, T1 fin refused with a sha256 mismatch."}
+ ]
+}

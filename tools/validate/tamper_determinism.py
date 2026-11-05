@@ -40,6 +40,9 @@ def make_tree():
         shutil.copytree(os.path.join(ROOT, d), os.path.join(TREE, d), ignore=shutil.ignore_patterns("__pycache__"))
     for proj in ("gas", "power", "commodity"):
         shutil.copytree(os.path.join(ROOT, "runs", proj, "search", "ckpt"), os.path.join(TREE, "runs", proj, "search", "ckpt"))
+    os.makedirs(os.path.join(TREE, "runs", "fin", "search", "ckpt"))
+    for fn in ("frozen_wm_fin.pt", "frozen_wm_direct.pt"):                 # the files the fin wrapper loads
+        shutil.copy(os.path.join(ROOT, "runs", "fin", "search", "ckpt", fn), os.path.join(TREE, "runs", "fin", "search", "ckpt", fn))
     for d in ("data", "wm"):
         os.symlink(os.path.join(ROOT, d), os.path.join(TREE, d))
     subprocess.run(["git", "init", "-q"], cwd=TREE)
@@ -60,7 +63,7 @@ LOADERS = {   # project -> (checkpoint path in the tree, code that loads it thro
               "p.batch([c['prices']],[c['covs']],24,[0.5],dates=[{'ctx_dates':c['ctx_dates'],'target_day':c['target_day']}]); print('LOADED')"),
     "gas": ("winning_models/gas_wm_gas_ens/checkpoints/x_wm_s3456.pt",
             "import sys; sys.path.insert(0,'tools/gas'); import models as M; M.get('wm_gas_ens'); print('LOADED')"),
-    "fin": ("winning_models/fin_wm_fin/checkpoints/frozen_wm_fin.pt",
+    "fin": ("runs/fin/search/ckpt/frozen_wm_fin.pt",
             "import sys; sys.path.insert(0,'tools/fin'); import models as M; M.get('wm_fin'); print('LOADED')"),
 }
 
@@ -75,8 +78,6 @@ def tamper_tests():
     make_tree()
     for proj, (rel, code) in LOADERS.items():
         p = os.path.join(TREE, rel)
-        if proj == "gas":                    # the gas wrapper reads runs/gas/search/ckpt for wm_gas; ens reads winning_models
-            pass
         rc, out = run_py(code)
         rec("T1c", proj, "loads", rc == 0 and "LOADED" in out, "control (untouched copy): " + out.splitlines()[-1] if out else "")
         orig = open(p, "rb").read()
