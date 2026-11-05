@@ -34,8 +34,11 @@ An independent re-audit (2026-11-01, [`audit/`](audit/), full report in [`report
 
 The frozen checkpoints were run as-is on the two months after the training period: October 2026, and November 2026
 up to the 4 November data cutoff. They were scored against every pre-registered competitor, including Chronos-2,
-Chronos-Bolt and TiRex. An independent audit harness (47/47 checks) covers pins, no parameter change, labels
-re-derived from raw files, every metric recomputed and future-scramble leak tests.
+Chronos-Bolt and TiRex. An independent audit harness (57/57 checks) covers pins, no parameter change, labels
+re-derived from raw files, every metric recomputed, each saved forecast re-run, and future-scramble leak tests.
+An overnight validation suite then tested the harness itself (planted fakes, tampering, exhaustive leak tests
+with positive controls) and the models over all 16 post-training months:
+[`reports/Alma_Models_Validation_Report_2026-11-05.pdf`](reports/Alma_Models_Validation_Report_2026-11-05.pdf).
 - Write-up: [`docs/deploy_2026_10_11.md`](docs/deploy_2026_10_11.md)
 - Tables: [`runs/deploy_2026_10_11/RESULTS.md`](runs/deploy_2026_10_11/RESULTS.md)
 - Audit: [`runs/deploy_2026_10_11/AUDIT.md`](runs/deploy_2026_10_11/AUDIT.md)

@@ -274,4 +274,4 @@ Share of coin-days with a non-zero funding input: oct_2026 0.99, nov_2026 0.00. 
 | wm_fin_blend | – | – | – | – | nan | [nan, nan] | n too small |
 | har_intra_dow | – | – | – | – | nan | [nan, nan] | n too small |
 
-## Audit: 47/47 checks passed (see AUDIT.md)
+## Audit: 57/57 checks passed (see AUDIT.md)

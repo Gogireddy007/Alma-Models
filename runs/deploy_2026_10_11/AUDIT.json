@@ -7,7 +7,7 @@
   "gas",
   "fin"
  ],
- "n_checks": 47,
+ "n_checks": 57,
  "n_fail": 0,
  "checks": [
   {
@@ -149,6 +149,18 @@
    "detail": "0/30 forecasts changed"
   },
   {
+   "section": "R",
+   "check": "oil: saved wm_sv forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "10 origins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "oil: saved wm_sv_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "10 origins, max |diff| 0.0e+00"
+  },
+  {
    "section": "G",
    "check": "power preds sha256 matches results",
    "status": "PASS",
@@ -191,6 +203,18 @@
    "detail": "0/12 forecasts changed"
   },
   {
+   "section": "R",
+   "check": "power: saved wm_power forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "9 delivery days, max |diff| 6.1e-05"
+  },
+  {
+   "section": "R",
+   "check": "power: saved wm_power_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "9 delivery days, max |diff| 3.1e-05"
+  },
+  {
    "section": "G",
    "check": "gas preds sha256 matches results",
    "status": "PASS",
@@ -204,9 +228,15 @@
   },
   {
    "section": "C",
-   "check": "gas: October storage changes re-derived from raw EIA ngshistory.xls",
+   "check": "gas oct_2026: storage changes re-derived from raw EIA ngshistory.xls",
    "status": "PASS",
    "detail": "[64.0, 85.0, 67.0, 77.0, 80.0] vs [64.0, 85.0, 67.0, 77.0, 80.0]"
+  },
+  {
+   "section": "G",
+   "check": "gas nov_2026: no EIA release yet -> scored n = 0, ex-ante forecast sealed",
+   "status": "PASS",
+   "detail": "2026-11-05"
   },
   {
    "section": "D",
@@ -215,16 +245,34 @@
    "detail": "104/104 match"
   },
   {
-   "section": "G",
-   "check": "gas: November has no release yet -> scored n = 0, ex-ante forecast sealed",
-   "status": "PASS",
-   "detail": "2026-11-05"
-  },
-  {
    "section": "F",
    "check": "gas: every significance verdict rests on >= 10 independent units",
    "status": "PASS",
    "detail": "96 verdicts, 0 significant, bad=[]"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (oct_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (oct_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (oct_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (oct_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
   },
   {
    "section": "E",
@@ -287,11 +335,23 @@
    "detail": "30 days x 24 coins, max diff 4.8e-07"
   },
   {
+   "section": "R",
+   "check": "fin: saved wm_fin forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "6 days x 24 coins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "fin: saved wm_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "6 days x 24 coins, max |diff| 0.0e+00"
+  },
+  {
    "section": "E",
    "check": "fin: future-scramble leak test (daily rows >= D, hourly rows >= D 00:00)",
    "status": "PASS",
    "detail": "0/6 forecasts changed"
   }
  ],
- "git_head": "46936050fe9f70e89a2c557f8a53a866f5e6e90d"
+ "git_head": "645d8a9037302911a819a1e9c9662c46ba659c83"
 }

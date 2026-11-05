@@ -573,7 +573,7 @@ def build():
                "scripts, reads the saved forecasts and the RAW downloads, and fails loudly on any mismatch.", B))
     names = OrderedDict([("A", "Pins and frozen code"), ("B", "No retraining"), ("C", "Truth from raw files and reproduction"),
                          ("D", "Every metric recomputed"), ("E", "Leak tests (future scrambled)"),
-                         ("F", "Sample-size rule"), ("G", "Sealing")])
+                         ("F", "Sample-size rule"), ("G", "Sealing"), ("R", "Saved forecast = fresh model re-run")])
     rows = [["", "Check group", "Passed", "Examples"]]
     for k, nm in names.items():
         cs = [c for c in audit["checks"] if c["section"] == k]
