@@ -30,3 +30,4 @@ runs/**/*_LABELS_local*.npz
 # sealed ex-ante forecasts (gas_preds, wti_preds, exante_*) are committed as proof
 runs/deploy_daily/*/fin/preds/fin_preds_*.npz
 runs/deploy_daily/*/power/preds/power_preds.npz
+runs/deploy_daily/*/daily.log

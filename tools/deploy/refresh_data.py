@@ -12,7 +12,6 @@ import argparse
 import datetime as dt
 import json
 import os
-import shutil
 import subprocess
 import sys
 import urllib.request
@@ -102,10 +101,16 @@ def main():
                 print(f"!! {p} refresh failed: {type(e).__name__}: {e}", flush=True)
                 failed.append(p)
     finally:
-        for m in MANIFESTS:
+        for m in MANIFESTS:                     # keep only entries that are new or differ from the committed pins
             src = os.path.join(ROOT, m)
-            if os.path.exists(src):
-                shutil.copy(src, os.path.join(keep, m.replace("/", "_")))
+            if not os.path.exists(src):
+                continue
+            cur = json.load(open(src)).get("files", {})
+            pinned = subprocess.run(["git", "show", f"HEAD:{m}"], cwd=ROOT, capture_output=True, text=True).stdout
+            pin = json.loads(pinned).get("files", {}) if pinned else {}
+            delta = {k: v for k, v in cur.items() if pin.get(k, {}).get("sha256") != v.get("sha256")}
+            json.dump({"note": f"entries new or changed vs the committed {m}", "files": delta},
+                      open(os.path.join(keep, m.replace("/", "_")), "w"), indent=1, sort_keys=True)
         subprocess.run(["git", "checkout", "--", *MANIFESTS], cwd=ROOT, check=False)
     print(f"refresh done; failed: {failed or 'none'}")
     sys.exit(1 if failed else 0)
