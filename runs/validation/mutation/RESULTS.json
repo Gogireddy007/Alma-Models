@@ -1,0 +1,252 @@
+[
+ {
+  "mutant": "control_unmutated",
+  "what": "no change",
+  "sections": [
+   "nofit",
+   "oil",
+   "gas"
+  ],
+  "expected_fail_kinds": [],
+  "failed_kinds": [],
+  "n_checks": 32,
+  "n_fail": 0,
+  "failed_checks": [],
+  "ok": true,
+  "verdict": "PASS (no false alarm)"
+ },
+ {
+  "mutant": "oil_bluff_metric",
+  "what": "Report a better score than the model achieved (wm_sv October 1-day QS improved by 5%).",
+  "sections": [
+   "oil"
+  ],
+  "expected_fail_kinds": [
+   "D"
+  ],
+  "failed_kinds": [
+   "D"
+  ],
+  "n_checks": 13,
+  "n_fail": 1,
+  "failed_checks": [
+   "D oil: every QS recomputed from saved forecasts"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "oil_edit_sealed_forecast",
+  "what": "Edit a sealed forecast after the fact without updating its seal.",
+  "sections": [
+   "oil"
+  ],
+  "expected_fail_kinds": [
+   "G"
+  ],
+  "failed_kinds": [
+   "D",
+   "G",
+   "R"
+  ],
+  "n_checks": 13,
+  "n_fail": 3,
+  "failed_checks": [
+   "G oil preds sha256 matches results",
+   "D oil: every QS recomputed from saved forecasts",
+   "R oil: saved wm_sv forecasts = fresh re-run of the frozen model"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "oil_fabricated_consistent",
+  "what": "Sophisticated fake: change the forecasts, re-seal them AND recompute every reported QS consistently.",
+  "sections": [
+   "oil"
+  ],
+  "expected_fail_kinds": [
+   "R"
+  ],
+  "failed_kinds": [
+   "R"
+  ],
+  "n_checks": 13,
+  "n_fail": 1,
+  "failed_checks": [
+   "R oil: saved wm_sv forecasts = fresh re-run of the frozen model"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "gas_truth_tamper",
+  "what": "Change a realised value (the EIA storage change of the first October week) to flatter the model.",
+  "sections": [
+   "gas"
+  ],
+  "expected_fail_kinds": [
+   "C"
+  ],
+  "failed_kinds": [
+   "C",
+   "D"
+  ],
+  "n_checks": 11,
+  "n_fail": 2,
+  "failed_checks": [
+   "C gas oct_2026: storage changes re-derived from raw EIA ngshistory.xls",
+   "D gas: every MAE and QS recomputed from saved forecasts"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "gas_overclaim_significance",
+  "what": "Claim significance on 5 weeks of data.",
+  "sections": [
+   "gas"
+  ],
+  "expected_fail_kinds": [
+   "F"
+  ],
+  "failed_kinds": [
+   "F"
+  ],
+  "n_checks": 11,
+  "n_fail": 1,
+  "failed_checks": [
+   "F gas: every significance verdict rests on >= 10 independent units"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "gas_fabricated_consistent",
+  "what": "Replace the sealed wm_gas_ens October forecasts with better ones (closer to the truth), re-seal, and\n    recompute MAE and QS consistently.",
+  "sections": [
+   "gas"
+  ],
+  "expected_fail_kinds": [
+   "R"
+  ],
+  "failed_kinds": [
+   "R"
+  ],
+  "n_checks": 11,
+  "n_fail": 2,
+  "failed_checks": [
+   "R gas: saved wm_gas_ens (oct_2026, thu) forecasts = fresh re-run of the frozen model",
+   "R gas: saved wm_gas_ens (oct_2026, fri) forecasts = fresh re-run of the frozen model"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "power_label_tamper",
+  "what": "Change realised prices (the labels) for one delivery day.",
+  "sections": [
+   "power"
+  ],
+  "expected_fail_kinds": [
+   "C"
+  ],
+  "failed_kinds": [
+   "C",
+   "D"
+  ],
+  "n_checks": 9,
+  "n_fail": 2,
+  "failed_checks": [
+   "C power: realised hourly prices re-derived from raw Energy-Charts JSON",
+   "D power: every QS recomputed from saved forecasts"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "power_weights_changed",
+  "what": "Report that a network's parameters changed during deployment (i.e. it was trained).",
+  "sections": [
+   "nofit"
+  ],
+  "expected_fail_kinds": [
+   "B"
+  ],
+  "failed_kinds": [
+   "B"
+  ],
+  "n_checks": 8,
+  "n_fail": 1,
+  "failed_checks": [
+   "B power/results.json: torch parameters unchanged after deployment"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "fin_label_tamper",
+  "what": "Shift realised log-RV labels of three days.",
+  "sections": [
+   "fin"
+  ],
+  "expected_fail_kinds": [
+   "C"
+  ],
+  "failed_kinds": [
+   "C",
+   "D"
+  ],
+  "n_checks": 12,
+  "n_fail": 2,
+  "failed_checks": [
+   "C fin corrected: log-RV labels re-derived from raw Binance zips (60 random coin-days)",
+   "D fin corrected: every QS and direction accuracy recomputed"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "fin_fabricated_resealed",
+  "what": "Edit the wm_fin forecasts and re-seal them, but leave the metrics.",
+  "sections": [
+   "fin"
+  ],
+  "expected_fail_kinds": [
+   "D",
+   "R"
+  ],
+  "failed_kinds": [
+   "D",
+   "R"
+  ],
+  "n_checks": 12,
+  "n_fail": 2,
+  "failed_checks": [
+   "D fin corrected: every QS and direction accuracy recomputed",
+   "R fin: saved wm_fin forecasts = fresh re-run of the frozen model"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ },
+ {
+  "mutant": "fin_online_update",
+  "what": "Report a continual-learning update during deployment.",
+  "sections": [
+   "nofit"
+  ],
+  "expected_fail_kinds": [
+   "B"
+  ],
+  "failed_kinds": [
+   "B"
+  ],
+  "n_checks": 8,
+  "n_fail": 1,
+  "failed_checks": [
+   "B fin/results_corrected.json: zero online updates"
+  ],
+  "ok": true,
+  "verdict": "CAUGHT"
+ }
+]
