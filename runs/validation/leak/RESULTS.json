@@ -223,5 +223,185 @@
   "changed": 5,
   "positive_control": true,
   "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power",
+  "corruption": "noise",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power",
+  "corruption": "nan",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power",
+  "corruption": "extreme",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power",
+  "corruption": "shift",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power",
+  "corruption": "includes-D",
+  "n_forecasts": 35,
+  "changed": 35,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power_direct",
+  "corruption": "noise",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power_direct",
+  "corruption": "nan",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power_direct",
+  "corruption": "extreme",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power_direct",
+  "corruption": "shift",
+  "n_forecasts": 36,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "power",
+  "model": "wm_power_direct",
+  "corruption": "includes-D",
+  "n_forecasts": 35,
+  "changed": 35,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_fin",
+  "corruption": "noise",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_direct",
+  "corruption": "noise",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_fin",
+  "corruption": "nan",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_direct",
+  "corruption": "nan",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_fin",
+  "corruption": "extreme",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_direct",
+  "corruption": "extreme",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_fin",
+  "corruption": "shift",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_direct",
+  "corruption": "shift",
+  "n_forecasts": 34,
+  "changed": 0,
+  "positive_control": false,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_fin",
+  "corruption": "includes-D",
+  "n_forecasts": 11,
+  "changed": 10,
+  "positive_control": true,
+  "ok": true
+ },
+ {
+  "project": "fin",
+  "model": "wm_direct",
+  "corruption": "includes-D",
+  "n_forecasts": 11,
+  "changed": 10,
+  "positive_control": true,
+  "ok": true
  }
 ]

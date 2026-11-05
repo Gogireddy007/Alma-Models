@@ -29,5 +29,25 @@ TEST rows: future corrupted, forecast must NOT change (changed = 0). CONTROL row
 | gas | wm_gas_ens | extreme | 10 | 0 | leak test | **as expected** |
 | gas | wm_gas_ens | shift | 10 | 0 | leak test | **as expected** |
 | gas | wm_gas_ens | observed-wx | 5 | 5 | positive control | **as expected** |
+| power | wm_power | noise | 36 | 0 | leak test | **as expected** |
+| power | wm_power | nan | 36 | 0 | leak test | **as expected** |
+| power | wm_power | extreme | 36 | 0 | leak test | **as expected** |
+| power | wm_power | shift | 36 | 0 | leak test | **as expected** |
+| power | wm_power | includes-D | 35 | 35 | positive control | **as expected** |
+| power | wm_power_direct | noise | 36 | 0 | leak test | **as expected** |
+| power | wm_power_direct | nan | 36 | 0 | leak test | **as expected** |
+| power | wm_power_direct | extreme | 36 | 0 | leak test | **as expected** |
+| power | wm_power_direct | shift | 36 | 0 | leak test | **as expected** |
+| power | wm_power_direct | includes-D | 35 | 35 | positive control | **as expected** |
+| fin | wm_fin | noise | 34 | 0 | leak test | **as expected** |
+| fin | wm_direct | noise | 34 | 0 | leak test | **as expected** |
+| fin | wm_fin | nan | 34 | 0 | leak test | **as expected** |
+| fin | wm_direct | nan | 34 | 0 | leak test | **as expected** |
+| fin | wm_fin | extreme | 34 | 0 | leak test | **as expected** |
+| fin | wm_direct | extreme | 34 | 0 | leak test | **as expected** |
+| fin | wm_fin | shift | 34 | 0 | leak test | **as expected** |
+| fin | wm_direct | shift | 34 | 0 | leak test | **as expected** |
+| fin | wm_fin | includes-D | 11 | 10 | positive control | **as expected** |
+| fin | wm_direct | includes-D | 11 | 10 | positive control | **as expected** |
 
-**25/25 rows as expected; 312 corrupted-future forecasts checked.**
+**45/45 rows as expected; 872 corrupted-future forecasts checked.**
