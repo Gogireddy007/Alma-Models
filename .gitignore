@@ -34,3 +34,5 @@ runs/deploy_daily/*/daily.log
 runs/validation/.running
 runs/validation/mutation/work/
 runs/validation/tamper/tree/
+# validation V4: full forecast arrays stay local (sha256 in the committed results*.json; regenerate with the V4 command)
+runs/validation/posttrain/*/preds/*.npz

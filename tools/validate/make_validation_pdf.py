@@ -25,7 +25,16 @@ FIG = os.path.join(VAL, "figures")
 OUT = os.path.join(ROOT, "reports", "Alma_Models_Validation_Report_2026-11-05.pdf")
 os.makedirs(FIG, exist_ok=True)
 P, tbl, box, B, SM, H1, H2 = R.P, R.tbl, R.box, R.B, R.SM, R.H1, R.H2
-f = R.f
+
+
+def f(x, nd):
+    if x is None:
+        return "–"
+    if isinstance(x, (list, tuple)):
+        return "[" + ", ".join(f(v, nd) for v in x) + "]"
+    if isinstance(x, float) and not np.isfinite(x):
+        return "–"
+    return f"{x:.{nd}f}"
 
 
 def J(p):
@@ -34,13 +43,15 @@ def J(p):
 
 
 MUT, TAMP, LEAK, V5 = J("mutation/RESULTS.json"), J("tamper/RESULTS.json"), J("leak/RESULTS.json"), J("v5/RESULTS.json")
+FINDINGS = (J("FINDINGS.json") or {}).get("findings", [])
+SNAP_AUDIT = json.load(open(os.path.join(ROOT, "runs", "deploy_2026_10_11", "AUDIT.json")))
 POST = {"oil": J("posttrain/oil/results.json"), "power": J("posttrain/power/results.json"),
         "gas": J("posttrain/gas/results.json"), "crypto": J("posttrain/fin/results_corrected.json")}
 CAND = {"oil": "wm_sv", "power": "wm_power", "gas": "wm_gas_ens", "crypto": "wm_fin"}
 TWIN = {"oil": ("wm_sv", "wm_sv_direct"), "power": ("wm_power", "wm_power_direct"), "gas": ("wm_gas", "wm_gas_direct"),
         "crypto": ("wm_fin", "wm_direct")}
 ALMA = R.ALMA
-MONTHS = [k for k in (POST["power"] or {}).get("windows", {}) if k.startswith("m_")]
+MONTHS = next(([k for k in r["windows"] if k.startswith("m_")] for r in POST.values() if r), [])
 
 
 def qs_block(proj, win, cand=None):
@@ -61,6 +72,8 @@ def qs_block(proj, win, cand=None):
 
 
 def n_of(proj, win):
+    if POST[proj] is None:
+        return 0
     w = POST[proj]["windows"].get(win, {})
     return {"oil": w.get("h1", {}).get("n", 0), "power": w.get("n", 0), "gas": w.get("n_weeks", 0),
             "crypto": w.get("n_days", 0)}[proj]
@@ -95,8 +108,8 @@ def fig_monthly_rank():
         ax.xaxis.grid(False)
         ax.set_title(f"{proj}: rank of {CAND[proj]} (1 = best of {max(nmods) if nmods else '?'})", fontsize=8,
                      loc="left", color=R.INK, fontweight="bold")
-        ax.set_xticks(range(0, len(MONTHS), 2))
-        ax.set_xticklabels([MONTHS[i][2:].replace("_", "-") for i in range(0, len(MONTHS), 2)], fontsize=6.5, rotation=0)
+        ax.set_xticks(range(0, len(MONTHS), 3))
+        ax.set_xticklabels([MONTHS[i][4:].replace("_", "-") for i in range(0, len(MONTHS), 3)], fontsize=6.5, rotation=0)
     fig.tight_layout()
     p = os.path.join(FIG, "v4_monthly_rank.png")
     fig.savefig(p, dpi=200, facecolor=R.SURF)
@@ -194,6 +207,60 @@ def pooled_table(proj):
     return [t]
 
 
+def scorecard():
+    """One row per project: the integrity evidence and the performance evidence side by side."""
+    leakp = {"oil": "oil", "power": "power", "gas": "gas", "crypto": "fin"}
+    propn = {"oil": "oil", "power": "power", "gas": "gas", "crypto": "crypto"}
+    rerun = [c for c in SNAP_AUDIT["checks"] if c["section"] == "R"]
+    rows = [["Project", "Leak tests (changed / forecasts)", "Positive controls fired", "Re-run = saved",
+             "Physics test", "Pooled 16 months vs best external competitor", "World model vs twin"]]
+    for proj in ("gas", "power", "crypto", "oil"):
+        lr = [r for r in (LEAK or []) if r["project"] == leakp[proj]]
+        lt = [r for r in lr if not r["positive_control"]]
+        lc = [r for r in lr if r["positive_control"]]
+        rr = [c for c in rerun if c["check"].startswith(leakp[proj] + ":")]
+        pp = [p for p in (V5 or {}).get("properties", []) if p["project"] == propn[proj]]
+        blk = qs_block(proj, "ALL_POST_TRAINING")
+        if blk:
+            c = CAND[proj]
+            comp = sorted([m for m in blk if m not in ALMA and blk[m].get("qs") is not None], key=lambda m: blk[m]["qs"])
+            b = blk[comp[0]]
+            v = {"cand_better": "better than", "cand_worse": "worse than", "not_significant": "tie with"}.get(b.get("verdict_qs"), "vs")
+            perf = f"{c} {v} {comp[0]} (QS {f(blk[c]['qs'], 4 if proj != 'oil' else 5)} vs {f(b['qs'], 4 if proj != 'oil' else 5)})"
+        else:
+            perf = "pending"
+        tw = twin_row(proj)
+        rows.append([proj, f"{sum(r['changed'] for r in lt)} / {sum(r['n_forecasts'] for r in lt)}",
+                     f"{sum(r['changed'] > 0 for r in lc)} / {len(lc)}",
+                     f"{sum(c['status'] == 'PASS' for c in rr)} / {len(rr)}",
+                     ("held" if pp and all(p["ok"] for p in pp) else "violated") if pp else "–", perf,
+                     tw[-1] if tw else "pending"])
+    return tbl(rows, [15 * mm, 23 * mm, 19 * mm, 16 * mm, 17 * mm, 58 * mm, 28 * mm])
+
+
+def twin_row(proj):
+    wm, tw = TWIN[proj]
+    r = POST[proj]
+    if r is None:
+        return None
+    w = r["windows"]["ALL_POST_TRAINING"]
+    if proj == "oil":
+        blk = w["h1"]["models"]
+        a, b = blk[wm]["qs"], blk[tw]["qs"]
+        d, ci, v = blk[tw].get("wm_sv_minus_this_qs"), blk[tw].get("ci95_qs"), blk[tw].get("verdict_qs")
+    elif proj == "gas":
+        blk = w["kinds"]["thu"]["by_candidate"].get("wm_gas", {}).get("qs") or {}
+        a, b = blk.get(wm, {}).get("qs"), blk.get(tw, {}).get("qs")
+        d, ci, v = blk.get(tw, {}).get("wm_gas_minus_this_qs"), blk.get(tw, {}).get("ci95_qs"), blk.get(tw, {}).get("verdict_qs")
+    else:
+        blk = qs_block(proj, "ALL_POST_TRAINING")
+        a, b = blk[wm]["qs"], blk[tw]["qs"]
+        d, ci, v = blk[tw].get(f"{wm}_minus_this_qs"), blk[tw].get("ci95_qs"), blk[tw].get("verdict_qs")
+    nd = 5 if proj == "oil" else 4
+    return [proj, f(a, nd), f(b, nd), f(d, nd), f(ci, nd) if ci else "–",
+            {"cand_better": "rollout better", "cand_worse": "twin better", "not_significant": "tie"}.get(v, v or "–")]
+
+
 def build():
     git = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     s = [P("Alma Models — Overnight validation report", R.TITLE),
@@ -225,6 +292,13 @@ def build():
         "Most of this period (VAL, TEST) had been scored before, so it is a re-look, not a fresh test; the fresh, "
         "sealed forward evidence is still accumulating (Part D).")]))
     s.append(Spacer(1, 6))
+    s.append(P("Scorecard", R.H2))
+    s.append(scorecard())
+    s.append(P("Leak tests: every Oct-Nov 2026 origin, four kinds of corrupted future (V3). Positive controls: a "
+               "deliberately leaky context must be flagged. Re-run: saved forecasts equal a fresh run of the frozen model "
+               "(deployment audit, section R). Property: the physics/economics check of V5. Pooled: Jul 2025 - Nov 2026, "
+               "95% block bootstrap on the quantile score.", SM))
+    s.append(Spacer(1, 4))
     s.append(P("How to read this report", R.H2))
     s.append(tbl([["Part", "Question", "Tests"],
                   ["A", "Can the audit be fooled? Would it notice a leak, a fake number, a tampered model?",
@@ -239,13 +313,13 @@ def build():
     s.append(PageBreak())
     # ================= Part A
     s.append(P("Part A — Can the integrity harness be fooled?", H1))
-    s.append(P("A1. A gap found and closed: the re-run check (R)", H2))
-    s.append(P("While designing the mutation tests, a real gap was found: the audit recomputed every metric from the "
-               "saved forecasts, but for oil and power it never re-ran the model to confirm those saved forecasts are "
-               "what the frozen model actually produces. A fabricated forecast file with consistent metrics would have "
-               "passed. A new check (section R of tools/deploy/audit_deploy.py) now re-runs each frozen world model on "
-               "a sample of the saved origins in every project and requires an exact match. The mutation tests below "
-               "include two such 'perfect fakes' to prove the check works.", B))
+    s.append(P("A1. Defects the validation found in our own harness — all fixed and re-verified", H2))
+    s.append(P("The point of testing the tester: these were found by tonight's tests, not assumed away. None changed a "
+               "reported forecast or score; the snapshot was re-audited afterwards (57/57).", B))
+    rows = [["ID", "Severity", "Defect", "Fix", "Verified by"]]
+    for x in FINDINGS:
+        rows.append([x["id"], x["severity"], x["defect"], x["fix"], x["verified_by"]])
+    s.append(tbl(rows, [13 * mm, 22 * mm, 61 * mm, 46 * mm, 34 * mm]))
     if MUT:
         s.append(P("A2. Mutation tests (V1): plant one fake, the audit must fail", H2))
         rows = [["Planted fake", "Must trip", "Tripped", "Result"]]
@@ -311,26 +385,10 @@ def build():
                          f"{comp[0]} {f(sc[comp[0]], nd)}" if comp else "–", f"{order.index(c) + 1}/{len(order)}"])
     s.append(KeepTogether([P("B5. By split", H2), tbl(rows, [20 * mm, 24 * mm, 14 * mm, 26 * mm, 62 * mm, 30 * mm])]))
     rows = [["Project", "World model QS", "Direct twin QS", "WM − twin", "95% CI", "verdict"]]
-    for proj, (wm, tw) in TWIN.items():
-        r = POST[proj]
-        if r is None:
-            continue
-        w = r["windows"]["ALL_POST_TRAINING"]
-        if proj == "oil":
-            blk = w["h1"]["models"]
-            a, b = blk[wm]["qs"], blk[tw]["qs"]
-            d, ci, v = blk[tw].get("wm_sv_minus_this_qs"), blk[tw].get("ci95_qs"), blk[tw].get("verdict_qs")
-        elif proj == "gas":
-            blk = w["kinds"]["thu"]["by_candidate"].get("wm_gas", {}).get("qs") or {}
-            a, b = blk.get(wm, {}).get("qs"), blk.get(tw, {}).get("qs")
-            d, ci, v = blk.get(tw, {}).get("wm_gas_minus_this_qs"), blk.get(tw, {}).get("ci95_qs"), blk.get(tw, {}).get("verdict_qs")
-        else:
-            blk = qs_block(proj, "ALL_POST_TRAINING")
-            a, b = blk[wm]["qs"], blk[tw]["qs"]
-            d, ci, v = blk[tw].get(f"{wm}_minus_this_qs"), blk[tw].get("ci95_qs"), blk[tw].get("verdict_qs")
-        nd = 5 if proj == "oil" else 4
-        rows.append([proj, f(a, nd), f(b, nd), f(d, nd), f(ci, nd) if ci else "–",
-                     {"cand_better": "rollout better", "cand_worse": "twin better", "not_significant": "tie"}.get(v, v or "–")])
+    for proj in TWIN:
+        tr = twin_row(proj)
+        if tr:
+            rows.append(tr)
     s.append(KeepTogether([P("B6. The world-model test over 16 months: rollout vs matched direct twin", H2),
                            tbl(rows, [20 * mm, 30 * mm, 30 * mm, 26 * mm, 44 * mm, 26 * mm])]))
     s.append(PageBreak())
