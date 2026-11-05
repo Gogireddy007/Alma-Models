@@ -172,14 +172,193 @@ def box(paras, fill="#eef4fb", line=BLUE):
     return t
 
 
-def footer(c, d):
+def footer(c, d, offset=0):
     c.saveState()
     c.setFont("DV", 7)
     c.setFillColor(colors.HexColor(MUTED))
     c.drawString(17 * mm, 10 * mm, "Alma Models · Deployment report, Oct/Nov 2026 · every number is read from "
                  "runs/deploy_2026_10_11/*.json")
-    c.drawRightString(193 * mm, 10 * mm, f"{d.page}")
+    c.drawRightString(193 * mm, 10 * mm, f"{d.page + offset}")
     c.restoreState()
+
+
+# =========================================================================== architecture section
+def pipeline_drawing():
+    """Figure 2.1: the deployment + audit layer added on 4-5 Nov 2026, on top of the original project pipeline."""
+    from reportlab.graphics.shapes import Drawing, Line, Polygon, Rect, String
+    W, H = 176 * mm, 74 * mm
+    d = Drawing(W, H)
+    fills = {"data": "#e8f1fb", "model": "#e6f4ee", "eval": "#fff4e0", "audit": "#f1ecfb", "out": "#f3f3f1"}
+    edges = {"data": BLUE, "model": "#0a6b3f", "eval": "#8a6200", "audit": "#6250d6", "out": INK2}
+
+    def boxx(x, y, w, h, kind, title, lines):
+        d.add(Rect(x, y, w, h, rx=3, ry=3, fillColor=colors.HexColor(fills[kind]),
+                   strokeColor=colors.HexColor(edges[kind]), strokeWidth=0.8))
+        d.add(String(x + 4, y + h - 10, title, fontName="DVB", fontSize=7.2, fillColor=colors.HexColor(INK)))
+        for i, ln in enumerate(lines):
+            d.add(String(x + 4, y + h - 20 - 8.6 * i, ln, fontName="DV", fontSize=6.2, fillColor=colors.HexColor(INK2)))
+
+    def arrow(x1, y1, x2, y2):
+        d.add(Line(x1, y1, x2, y2, strokeColor=colors.HexColor(INK2), strokeWidth=0.8))
+        import math
+        a = math.atan2(y2 - y1, x2 - x1)
+        p1 = (x2 - 5 * math.cos(a - 0.4), y2 - 5 * math.sin(a - 0.4))
+        p2 = (x2 - 5 * math.cos(a + 0.4), y2 - 5 * math.sin(a + 0.4))
+        d.add(Polygon([x2, y2, p1[0], p1[1], p2[0], p2[1]], fillColor=colors.HexColor(INK2), strokeWidth=0))
+
+    bw, bh, gap = 96, 70, 13
+    top, bot = H - bh - 4, 6
+    xs = [2 + i * (bw + gap) for i in range(5)]
+    boxx(xs[0], top, bw, bh, "data", "1 Public sources", ["FRED, EIA, NOAA CPC,", "Energy-Charts,", "Binance archive", "(free, no key)"])
+    boxx(xs[1], top, bw, bh, "data", "2 Rebuild + pin check", ["fetch scripts", "sha256 vs committed", "pins; byte-identical", "history, then new days"])
+    boxx(xs[2], top, bw, bh, "model", "3 Frozen Alma models", ["wm_gas(_ens), wm_power", "(_blend), wm_fin(_blend),", "wm_sv + direct twins", "no-training lock"])
+    boxx(xs[3], top, bw, bh, "model", "4 Competitors", ["OLS, LEAR, ARX, HAR,", "LightGBM, GARCH, RW,", "Chronos-2, Chronos-Bolt,", "TiRex (as pre-registered)"])
+    boxx(xs[4], top, bw, bh, "eval", "5 Same harness", ["build_context(origin):", "only data released", "before the forecast", "time (asserted)"])
+    boxx(xs[4], bot, bw, bh, "eval", "6 Sealed forecasts", ["quantiles saved +", "sha256; ex-ante ones", "pushed before the", "outcome exists"])
+    boxx(xs[3], bot, bw, bh, "eval", "7 Scoring", ["QS, MAE, direction,", "coverage; block", "bootstrap; no verdict", "if < 10 indep. units"])
+    boxx(xs[2], bot, bw, bh, "audit", "8 Independent audit", [f"{audit['n_checks']} checks A-G: pins,", "no-fit, raw truth,", "recompute, leak tests", "(future scrambled)"])
+    boxx(xs[1], bot, bw, bh, "audit", "9 Number check", ["every number in the", "write-up traced to", "the outputs; a planted", "fake is caught"])
+    boxx(xs[0], bot, bw, bh, "out", "10 Outputs", ["RESULTS.md, AUDIT.md,", "this PDF, PR #2;", "score_exante.py grades", "sealed forecasts later"])
+    for i in range(4):
+        arrow(xs[i] + bw, top + bh / 2, xs[i + 1], top + bh / 2)
+    arrow(xs[4] + bw / 2, top, xs[4] + bw / 2, bot + bh)
+    for i in range(4, 0, -1):
+        arrow(xs[i], bot + bh / 2, xs[i - 1] + bw, bot + bh / 2)
+    return d
+
+
+def card(name, rows, fig):
+    head = Table([[Paragraph(f"<b>{name}</b>", ParagraphStyle("ch", parent=B, fontSize=10, textColor=colors.white)),
+                   Paragraph(f"diagram: <b>{fig}</b>", ParagraphStyle("cf", parent=SM, textColor=colors.white,
+                                                                      alignment=2))]],
+                 colWidths=[120 * mm, 56 * mm])
+    head.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), colors.HexColor(BLUE)),
+                              ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                              ("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
+    body = tbl([[Paragraph(f"<b>{k}</b>", CELL), Paragraph(v, CELL)] for k, v in rows], [34 * mm, 142 * mm],
+               head=False)
+    return KeepTogether([head, body, Spacer(1, 7)])
+
+
+def architecture_section():
+    gq = gas["windows"]["oct_2026"]["kinds"]["fri"]["by_candidate"]["wm_gas_ens"]
+    pq = power["windows"]["oct_2026"]["by_candidate"]["wm_power"]
+    cq = finc["windows"]["oct_2026"]["by_candidate"]["wm_fin"]
+    oq = oil["windows"]["oct_2026"]["h1"]["models"]
+    s = [PageBreak(), P("2. Our architecture and our models, explained", H1)]
+    s.append(P("2.1 The big picture", H2))
+    s.append(P("Alma is a family of small, specialised <b>world models</b>: one per market. Each one learns a compact "
+               "internal state of the market and how that state evolves, then simulates the near future and reads a "
+               "full forecast distribution (quantiles) off the simulation. Everything around the models — data "
+               "pinning, a strict information-set harness, pre-registered competitors, single-look testing and "
+               "independent audits — exists to make the comparison honest. Figure A1 (after this section) shows the "
+               "original pipeline; Figure 2.1 shows the deployment and audit layer added in this work.", B))
+    s.append(Spacer(1, 4))
+    s.append(pipeline_drawing())
+    s.append(P("Figure 2.1. The deployment + audit layer (tools/deploy/). Blue = data, green = models, amber = "
+               "evaluation, violet = audit. Steps 1–5 run every model through the same harness; 6–10 seal, score, "
+               "audit and publish.", SM))
+    s.append(P("2.2 The shared design of every Alma model", H2))
+    s.append(tbl([["Part", "What it does, in plain words"],
+                  ["1. Encoder", "Reads the recent history (only data published before the forecast time) and "
+                   "compresses it into a short vector — the model's <b>state</b>: its summary of “where the market "
+                   "is now”."],
+                  ["2. Transition (the WM part)", "A small learned recurrent cell (GRU, RSSM or state-space) that "
+                   "<b>moves the state forward one real time step</b> (a day, an hour, six hours), taking in what is "
+                   "known about that step (weather forecast, calendar, …). The state is <b>carried</b> from step to "
+                   "step: z<sub>t+1</sub> = f(z<sub>t</sub>, u<sub>t</sub>). This is the “imagination” of the model."],
+                  ["3. Readout", "Turns each simulated state into numbers, usually through <b>physics or economics "
+                   "built into the layer</b> (mass balance, merit-order curve, stochastic volatility), so outputs "
+                   "cannot violate basic laws of the market."],
+                  ["4. Uncertainty", "Every model outputs quantiles (a full range, e.g. 10%–90%), not one number; "
+                   "scored with the pinball/quantile score (QS)."],
+                  ["5. Ensemble", "Three independently trained seeds, averaged quantile-by-quantile; the audit "
+                   "follow-ups also blend with the best simple baseline (weights chosen on validation data only)."],
+                  ["6. Direct twin", "A control model with identical parts and size but <b>no carried state</b>; "
+                   "it tells us whether the world-model dynamics add anything (section 2.5, Figure A2)."]],
+                 [38 * mm, 138 * mm]))
+    size = [P("2.3 Size and training of the frozen models (read from the checkpoint files)", H2)]
+    size.append(tbl([["Model", "Market / target", "Params per member", "Members", "Trained on data up to", "Training"],
+                  ["wm_gas", "US gas storage, weekly", "23,534", "3 seeds", "2025-06-30", "1,200 steps, lr 3e-3, d=32"],
+                  ["wm_gas_ens", "same", "23,534", "14 + OLS", "2025-06-30", "pooled seeds 0–6 (rollout + direct)"],
+                  ["wm_power", "DE-LU power, hourly", "91,845", "3 seeds", "2025-06-30", "1,500 steps, lr 1e-3, d=64"],
+                  ["wm_fin", "crypto vol, daily", "64,301", "3 seeds", "2025-06-30", "800 steps, lr 2e-3, d=64, z=16"],
+                  ["wm_sv", "WTI oil, daily", "25,191", "3 seeds", "2022-12-31", "600 steps, lr 2e-3, 128-day input"]],
+                 [22 * mm, 34 * mm, 24 * mm, 20 * mm, 30 * mm, 46 * mm]))
+    size.append(P("These are tiny by modern standards (23K–92K parameters; Chronos-2 and TiRex have tens to hundreds of "
+                  "millions) and run on a laptop CPU in seconds.", SM))
+    s.append(KeepTogether(size))
+    s.append(P("2.4 Each model, explained", H2))
+    s.append(card("wm_gas — US natural-gas storage world model (and wm_gas_ens)", [
+        ("Predicts", "The weekly change in US natural-gas storage (Lower 48 and 5 regions, in Bcf) that the EIA "
+                     "publishes every Thursday; 13 quantiles; forecasts made on Thursday and Friday before release."),
+        ("Sees", "Storage history released so far, the 5-year average for the week, observed daily heating/cooling "
+                 "degree days (NOAA CPC) up to the forecast day, the CPC 7-day weather forecast for the rest of the "
+                 "target week, normals, calendar and Henry Hub price history."),
+        ("How the state works", "An encoder makes the starting state. A GRU cell then steps it <b>one day at a "
+                 "time</b>: first through last week (with observed weather) — the model's own estimate of last "
+                 "week's storage change is compared with what EIA actually released, and the error is written back "
+                 "into the state (<b>data assimilation</b>, like a Kalman filter). Then it steps through the 7 days "
+                 "of the target week (“imagination”)."),
+        ("Built-in physics", "Each day, each region's net injection = the 5-year-average flow + a learned base − "
+                 "demand terms that are <b>forced to rise with heating and cooling degree days</b>; 3 learned regimes; "
+                 "weekly change = sum of days; Lower 48 = sum of the 5 regions (<b>mass balance</b>)."),
+        ("Output", "Median from the physics readout; intervals from held-out residual quantiles; 3 seeds averaged."),
+        ("wm_gas_ens (audit)", "14 members (rollout and direct, seeds 0–6) averaged, blended 0.8 / 0.2 with the "
+                 "OLS-with-weather baseline, and intervals scaled by the model's accuracy over the last 8 weeks; "
+                 "every choice fixed on development data before the test look."),
+        ("October 2026", f"wm_gas_ens best quantile score of 13 models from both origins (Friday QS "
+                 f"{f(gq['qs']['wm_gas_ens']['qs'], 2)} vs OLS {f(gq['qs']['st_ols_wx']['qs'], 2)}, Chronos-2 "
+                 f"{f(gq['qs']['chronos2']['qs'], 2)})."),
+    ], "A3, A4"))
+    s.append(card("wm_power — German day-ahead electricity world model (and wm_power_blend)", [
+        ("Predicts", "All 24 hourly prices (EUR/MWh) of tomorrow's German-Luxembourg day-ahead auction, 9 quantiles "
+                     "each, issued before the noon auction."),
+        ("Sees", "14 days of hourly prices up to yesterday, and grid fundamentals (load, wind, solar) only up to "
+                 "the day before yesterday (a deliberately conservative rule, because they are published late)."),
+        ("How the state works", "Each hour of the 14-day history is embedded and read by a GRU into a state at the "
+                 "end of D−2; a GRU cell then steps it <b>hour by hour for 48 hours</b> (through D−1 into the "
+                 "delivery day), carrying the state."),
+        ("Built-in physics", "A <b>residual-load head</b> (demand minus wind and solar) and a <b>monotone "
+                 "merit-order curve</b>: the price can only rise as residual load rises, the way power plants are "
+                 "dispatched cheapest-first; plus 3 regime offsets."),
+        ("Output", "13 monotone quantiles per hour; 3 seeds averaged. wm_power_blend = 50/50 quantile blend with "
+                 "LEAR (the standard electricity-price benchmark), weight chosen on validation data."),
+        ("October 2026", f"Lowest MAE (wm_power {f(pq['qs']['wm_power']['abs_err'], 2)}, blend "
+                 f"{f(pq['qs']['wm_power_blend']['abs_err'], 2)} EUR/MWh); 4th on QS "
+                 f"({f(pq['qs']['wm_power']['qs'], 2)}) behind Chronos-2 and Chronos-Bolt; far ahead of LEAR "
+                 f"({f(pq['qs']['lear']['qs'], 2)}) and the naive baselines."),
+    ], "A5"))
+    s.append(card("wm_fin — crypto volatility world model (and wm_fin_blend)", [
+        ("Predicts", "Tomorrow's realised volatility (from 5-minute returns) of 24 Binance perpetual futures, as 13 "
+                     "quantiles of log volatility, and whether it will be above its 7-day average."),
+        ("Sees", "14 days of daily features (volatility, returns, volume, buy/sell pressure, funding rate) and hourly "
+                 "features up to the 00:00 UTC decision time, plus the weekday."),
+        ("How the state works", "An <b>RSSM</b> (the design behind the Dreamer agents): a deterministic GRU memory "
+                 "plus a 16-dimensional random latent. It filters the 14 days (each day's data corrects the state), "
+                 "then <b>imagines tomorrow in four 6-hour steps</b> without seeing any data."),
+        ("Output", "Heads read the imagined state into 13 quantiles; 3 seeds averaged. Trained on 16 coins only — "
+                 "the other 8 coins were never seen in training, to test transfer. wm_fin_blend = 0.6 wm_fin + "
+                 "0.4 har_intra_dow (a strong calendar-aware regression), weight chosen on validation data."),
+        ("October 2026", f"The world-model family leads on quantile score (blend "
+                 f"{f(cq['qs']['wm_fin_blend']['qs'], 4)}, wm_fin {f(cq['qs']['wm_fin']['qs'], 4)} vs "
+                 f"har_intra_dow {f(cq['qs']['har_intra_dow']['qs'], 4)}, Chronos-2 "
+                 f"{f(cq['qs']['chronos2']['qs'], 4)}); on direction lgbm_dow is ahead."),
+    ], "A6"))
+    s.append(card("wm_sv — crude oil stochastic-volatility world model", [
+        ("Predicts", "The WTI spot price 1, 5 and 20 trading days ahead, as 13 quantiles."),
+        ("Sees", "Only the last 128 days of WTI prices."),
+        ("How the state works", "An observer GRU reads the history into a state holding a latent price level and a "
+                 "latent log-volatility. Each simulated day, a <b>return step</b> draws a fat-tailed (Student-t) "
+                 "return and a <b>volatility step</b> updates the log-volatility; the sampled return is fed back in "
+                 "(closed loop). Many sample paths are simulated."),
+        ("Built-in finance", "A stochastic-volatility model: calm and turbulent periods are represented "
+                 "explicitly, and the forecast range widens when volatility is high."),
+        ("Output", "Quantiles of the simulated paths; 3 seeds averaged in log space."),
+        ("October 2026", f"1-day QS {f(oq['wm_sv']['qs'], 5)} vs random walk {f(oq['rw_gauss']['qs'], 5)}: a tie, "
+                 "as on the test year. Oil prices are close to a random walk at short horizons."),
+    ], "A7"))
+    return s
 
 
 def build():
@@ -263,7 +442,7 @@ def build():
     s.append(P("Nothing in the frozen model code, the checkpoints, the forward freeze or the committed data pins was "
                "modified (the audit checks this with git). Only new files were added, plus two small edits:", B))
     s.append(tbl([["Path", "Change"],
-                  ["tools/deploy/ (11 files)", "New: deploy scripts, guards, independent audit, report builders, "
+                  [f"tools/deploy/ ({len([x for x in os.listdir(os.path.join(ROOT, 'tools/deploy')) if not x.startswith('__')])} files)", "New: deploy scripts, guards, independent audit, report builders, sealed ex-ante power forecast, "
                    "ex-ante scorer, run_all.sh"],
                   ["runs/deploy_2026_10_11/", "New: results JSON, sealed forecasts (quantiles only), RESULTS.md, "
                    "AUDIT.md/.json, fetch manifests of the rebuild, figures"],
@@ -272,32 +451,16 @@ def build():
                   ["README.md", "Edit: a section pointing to the deployment"],
                   [".gitignore", "Edit: raw downloads and realised market values stay local (licences)"]],
                  [70 * mm, 106 * mm]))
-    # ------------------------------------------------------------------ section 2: WM component
-    s.append(P("2. What the WM (world-model) component is", H1))
-    s.append(P("Every Alma model has three parts. The <b>encoder</b> compresses the observed history into a latent "
-               "state z. The <b>transition</b> — the WM component proper — is a learned recurrent cell (GRUCell, "
-               "RSSM or state-space model) that advances the state one physical time step at a time, "
-               "z<sub>t+1</sub> = f(z<sub>t</sub>, u<sub>t</sub>), carrying it from step to step. The <b>readout</b> "
-               "turns each simulated state into a forecast distribution, often with physics built in.", B))
-    s.append(Spacer(1, 4))
-    s.append(tbl([["Project", "Model", "State is stepped by", "Physics in the readout", "Direct twin (WM removed)"],
-                  ["Gas storage", "wm_gas", "1 day; assimilates last week's released change first (Kalman-style)",
-                   "injection monotone in heating/cooling degree days; L48 = sum of 5 regions", "wm_gas_direct"],
-                  ["Power", "wm_power", "1 hour × 48 h from end of D-2", "monotone merit-order price curve, 3 regimes",
-                   "wm_power_direct"],
-                  ["Crypto vol", "wm_fin", "RSSM, four 6-hour sub-steps per day", "quantiles of next-day log RV",
-                   "wm_direct"],
-                  ["Oil", "wm_sv", "1 trading day; level and log-volatility sampled forward",
-                   "stochastic-volatility paths", "wm_sv_direct"]],
-                 [20 * mm, 18 * mm, 46 * mm, 56 * mm, 36 * mm]))
-    s.append(Spacer(1, 4))
+    # ------------------------------------------------------------------ section 2: architecture
+    s += architecture_section()
     o1 = oil["windows"]["oct_2026"]["h1"]["models"]
     pq = power["windows"]["oct_2026"]["by_candidate"]["wm_power"]["qs"]
     ga = {k: gas["windows"]["oct_2026"]["kinds"][k]["by_candidate"]["wm_gas_ens"]["abs_err"] for k in ("thu", "fri")}
     cq = finc["windows"]["oct_2026"]["by_candidate"]["wm_fin"]["qs"]
-    twin = []
-    twin.append(P("The test that matters is the <b>direct twin</b>: same modules, parameter count, data, steps and seeds, "
-               "but no carried state. Any gap between the two is the value of the dynamics alone. October 2026:", B))
+    twin = [P("2.5 Does the world-model part earn its place? (the direct-twin test)", H2)]
+    twin.append(P("Each world model has a <b>direct twin</b>: same modules, parameter count, data, training steps and "
+                  "seeds, but the state is <i>not carried</i> from step to step — every step is one move from the "
+                  "starting state. Any gap between the two measures the value of the dynamics alone. October 2026:", B))
     twin.append(tbl([["Metric (lower is better)", "World model", "Direct twin", "Reading"],
                   ["Gas MAE thu / fri (Bcf)", f"{f(ga['thu']['wm_gas']['abs_err'], 2)} / {f(ga['fri']['wm_gas']['abs_err'], 2)}",
                    f"{f(ga['thu']['wm_gas_direct']['abs_err'], 2)} / {f(ga['fri']['wm_gas_direct']['abs_err'], 2)}",
@@ -307,8 +470,13 @@ def build():
                   ["Oil 1-day QS (log price)", f(o1["wm_sv"]["qs"], 5), f(o1["wm_sv_direct"]["qs"], 5), "tie"]],
                  [56 * mm, 34 * mm, 34 * mm, 52 * mm]))
     twin.append(P("All four gaps are inside noise. The world-model test (rollout beats its twin) is still <b>not "
-               "passed</b>, consistent with the audited TEST year.", SM))
+               "passed</b>, consistent with the audited TEST year. What clearly <i>does</i> help is the rest of the "
+               "design: the physics-shaped readouts, ensembling, and blending with a strong simple baseline.", SM))
     s.append(KeepTogether(twin))
+    s.append(P("<b>The next 8 pages (Figures A1–A8)</b> are the detailed architecture diagrams, drawn from the model "
+               "source code (reports/Alma_Models_Architecture.pdf, commit 43b463b — the deployed checkpoints are the "
+               "same frozen files, verified by sha256).", SM))
+    s.append("__ARCH__")
     # ------------------------------------------------------------------ section 3: deployment setup
     s.append(P("3. Deployment setup", H1))
     s.append(tbl([["", "Dates"],
@@ -459,11 +627,47 @@ def build():
         "interval is informative.",
         "Fix the forward-test label reference (finding 2) before November crypto days are scored.",
         "Review and merge PR #2."])
-    doc = SimpleDocTemplate(OUT, pagesize=A4, leftMargin=17 * mm, rightMargin=17 * mm, topMargin=15 * mm,
-                            bottomMargin=17 * mm, title="Alma Models — Deployment report (Oct/Nov 2026)",
-                            author="Alma Models", subject="Inference-only deployment, benchmark and integrity audit")
-    doc.build(s, onFirstPage=footer, onLaterPages=footer)
-    print("->", OUT)
+    # part A (up to the architecture section) + the 8 vector diagram pages + part B, with continuous page numbers
+    from pypdf import PdfReader, PdfWriter
+    k = s.index("__ARCH__")
+    arch = PdfReader(os.path.join(ROOT, "reports", "Alma_Models_Architecture.pdf"))
+    tmp_a, tmp_b = OUT + ".a.pdf", OUT + ".b.pdf"
+    meta = dict(pagesize=A4, leftMargin=17 * mm, rightMargin=17 * mm, topMargin=15 * mm, bottomMargin=17 * mm,
+                title="Alma Models — Deployment report (Oct/Nov 2026)", author="Alma Models",
+                subject="Inference-only deployment, architecture, benchmark and integrity audit")
+    SimpleDocTemplate(tmp_a, **meta).build(s[:k], onFirstPage=footer, onLaterPages=footer)
+    n_a = len(PdfReader(tmp_a).pages)
+    off = n_a + len(arch.pages)
+    fo = lambda c, d: footer(c, d, off)                                    # noqa: E731
+    SimpleDocTemplate(tmp_b, **meta).build(s[k + 1:], onFirstPage=fo, onLaterPages=fo)
+    w = PdfWriter()
+    for pg in PdfReader(tmp_a).pages:
+        w.add_page(pg)
+    from reportlab.pdfgen import canvas as rl_canvas
+    import io
+    for i, pg in enumerate(arch.pages):
+        pw, ph = float(pg.mediabox.width), float(pg.mediabox.height)
+        buf = io.BytesIO()
+        c = rl_canvas.Canvas(buf, pagesize=(pw, ph))
+        c.setFillColor(colors.white)
+        c.rect(pw / 2 - 60, 0, 120, 50, stroke=0, fill=1)                 # hide the source page number
+        c.setFillColor(colors.HexColor(MUTED))
+        c.setFont("DV", 7)
+        c.drawCentredString(pw / 2, 28, f"Figure A{i + 1} · page {n_a + i + 1}")
+        c.save()
+        buf.seek(0)
+        pg.merge_page(PdfReader(buf).pages[0])
+        w.add_page(pg)
+    for pg in PdfReader(tmp_b).pages:
+        w.add_page(pg)
+    w.add_metadata({"/Title": meta["title"], "/Author": meta["author"], "/Subject": meta["subject"]})
+    for i in range(len(arch.pages)):
+        w.add_outline_item(f"Figure A{i + 1}", n_a + i)
+    with open(OUT, "wb") as fh:
+        w.write(fh)
+    os.remove(tmp_a)
+    os.remove(tmp_b)
+    print("->", OUT, f"({n_a} + {len(arch.pages)} diagram + {len(w.pages) - off} pages)")
 
 
 def ex_date(g):
