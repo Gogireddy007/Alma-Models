@@ -76,6 +76,8 @@ def main():
     # ---- 1. reproduction of the audited TEST forecasts
     aud = np.load(os.path.join(ROOT, "audit", "gas_preds_test.npy"), allow_pickle=True).item()
     ks_test = S.target_weeks("test", w)
+    ks_test = ks_test[(w.avail.iloc[ks_test] <= pd.Timestamp("2026-10-31")).to_numpy()]   # the sealed TEST year only:
+    # the audit cache holds those 52 weeks; later releases (the forward period) are scored in the windows below
     rep = {}
     for kind in S.ORIGINS:
         ctxs = [S.build_context(int(k), kind, w, o, f) for k in ks_test]
@@ -83,6 +85,7 @@ def main():
             if mn in models and f"{kind}|{mn}" in aud:
                 q = np.asarray(models[mn].storage(ctxs, C.QS13, "l48"), float)
                 ref = np.asarray(aud[f"{kind}|{mn}"], float)
+                assert q.shape == ref.shape, f"reproduction: {q.shape} forecasts vs {ref.shape} in the audit cache"
                 rep[f"{kind}|{mn}"] = {"n": int(len(ks_test)), "max_abs_diff_bcf": float(np.nanmax(np.abs(q - ref)))}
     res["reproduction_vs_audit"] = rep
     print("reproduction:", rep, flush=True)
