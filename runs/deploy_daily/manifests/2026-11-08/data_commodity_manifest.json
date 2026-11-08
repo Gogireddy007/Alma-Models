@@ -13,7 +13,7 @@
    "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
   },
   "data/commodity/raw/WCESTUS1_leaf.html": {
-   "sha256": "7b52b0c3859ae83212b07c594acf36572b44ef6d92d76713be6c2645611970ec",
+   "sha256": "a431081c991dae5c815607ddc4ca85ec7fec7db725da2ccd0aaa7de913f467e2",
    "source": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCESTUS1&f=W"
   }
  },

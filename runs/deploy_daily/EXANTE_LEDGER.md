@@ -40,6 +40,10 @@ Each forecast was written and sha256-sealed before its target was published; tru
 | st_persistence | 39.20 | 37.80 | 14.0311 | yes |
 | st_seasonal_naive | 32.00 | 45.00 | 15.4933 | yes |
 
+- **week 2026-11-06 (thu origin)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0930`)
+
+- **week 2026-11-06 (fri origin)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0930`)
+
 ## power
 
 **delivery 2026-11-06 (24 h)** — actual 275.64 (sealed in `runs/deploy_2026_10_11`)
