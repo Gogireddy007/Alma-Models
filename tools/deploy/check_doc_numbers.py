@@ -34,7 +34,8 @@ def walk(x, out):
 
 
 vals, text = [], ""
-for p in glob.glob(os.path.join(RUN, "**", "*.json"), recursive=True):
+for p in glob.glob(os.path.join(RUN, "**", "*.json"), recursive=True) + [
+        os.path.join(ROOT, "runs", "deploy_daily", "EXANTE_LEDGER.json")]:
     walk(json.load(open(p)), vals)
 for p in ("RESULTS.md", "AUDIT.md"):
     t = open(os.path.join(RUN, p)).read()

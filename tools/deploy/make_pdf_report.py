@@ -607,6 +607,29 @@ def build():
                    "Documented; the HH-price task was not deployed"]],
                  [7 * mm, 74 * mm, 55 * mm, 40 * mm]))
     # ------------------------------------------------------------------ section 8: progress + next
+    led = os.path.join(ROOT, "runs", "deploy_daily", "EXANTE_LEDGER.json")
+    ex = json.load(open(led)) if os.path.exists(led) else []
+    graded = [r for r in ex if r["published"]]
+    if graded:
+        s.append(P("7b. Sealed forecasts graded so far", H1))
+        s.append(P("Written and sha256-sealed before the outcome existed; truth re-derived from the raw EIA / Energy-Charts "
+                   "files. Each row is one week or one day (n = 1): an illustration, not evidence.", SM))
+        cand = {"gas": "wm_gas_ens", "power": "wm_power", "oil": "wm_sv"}
+        rows = [["Target", "Actual", "Alma model: sealed median", "Alma rank (QS)", "Best model (QS)"]]
+        for tgt in dict.fromkeys(r["target"] for r in graded):
+            tr = [r for r in graded if r["target"] == tgt]
+            first = sorted({r["run"] for r in tr})[0]
+            tr = sorted([r for r in tr if r["run"] == first], key=lambda r: r["qs"])
+            c = next((r for r in tr if r["model"] == cand[tr[0]["project"]]), None)
+            if c is None:
+                continue
+            rows.append([f"{tr[0]['project']}: {tgt}", f"{tr[0]['actual']:.2f}", f"{c['model']} {c['median']:.2f}",
+                         f"{[r['model'] for r in tr].index(c['model']) + 1} of {len(tr)}",
+                         f"{tr[0]['model']} ({tr[0]['qs']:.3f})"])
+        s.append(tbl(rows, [56 * mm, 22 * mm, 38 * mm, 24 * mm, 36 * mm]))
+        n_un = len({r["target"] for r in ex if not r["published"]})
+        s.append(P(f"{len(graded)} model-forecasts graded across {len(rows) - 1} targets; {n_un} sealed targets still "
+                   "await publication. Full table: runs/deploy_daily/EXANTE_LEDGER.md.", SM))
     s.append(P("8. Progress accomplished", H1))
     s += bullets([
         "The frozen models are now shown to <b>run unchanged on data 15–16 months after their training ended</b> "
