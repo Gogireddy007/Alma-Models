@@ -1,0 +1,173 @@
+{
+ "files": {
+  "data/gas/raw/cpc/fcst/2026/10/28/Population.Cooling.txt": {
+   "bytes": 408,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Wed, 28 Oct 2026 15:00:16 GMT",
+   "sha256": "286648d848911b3e82842ffb83a3d554f0af1717e94552accad360c3d7faf7d5",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/28/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/28/UtilityGas.Heating.txt": {
+   "bytes": 439,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Wed, 28 Oct 2026 15:00:16 GMT",
+   "sha256": "af9898eb287671164c244875a73cbc48ac17e2359484ed5dc4e0667679caee35",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/28/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/29/Population.Cooling.txt": {
+   "bytes": 408,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Thu, 29 Oct 2026 15:00:12 GMT",
+   "sha256": "2792787a6bbcc0b797d1fc5d0cc7e9fd3c3a8d3575d58caae98f40074f9b4880",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/29/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/29/UtilityGas.Heating.txt": {
+   "bytes": 441,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Thu, 29 Oct 2026 15:00:12 GMT",
+   "sha256": "c218224253ffbbb6421ce086dcd87d2563244e6bdf7181b7d5169639c70dec00",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/29/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/30/Population.Cooling.txt": {
+   "bytes": 408,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Fri, 30 Oct 2026 15:00:12 GMT",
+   "sha256": "c7449db7445ec713d837b147c8b142918d2975116320a1476c750f9191cf9b58",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/30/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/30/UtilityGas.Heating.txt": {
+   "bytes": 442,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Fri, 30 Oct 2026 15:00:12 GMT",
+   "sha256": "6c3d3df8c300fa463c7fc68e9073f5a0adf8f1dd2e7074cdf0a384b56d43285a",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/30/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/31/Population.Cooling.txt": {
+   "bytes": 408,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sat, 31 Oct 2026 15:00:14 GMT",
+   "sha256": "3f08a88ddd399d279ef0644899c03f2124824d6718d11640505efb82d670fefa",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/31/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/10/31/UtilityGas.Heating.txt": {
+   "bytes": 443,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sat, 31 Oct 2026 15:00:14 GMT",
+   "sha256": "8c2049522d434b24c9e43b8d7e64d8014ebcd58d4e8cc466258b6c966afc0105",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/10/31/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/01/Population.Cooling.txt": {
+   "bytes": 408,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sun, 01 Nov 2026 15:00:15 GMT",
+   "sha256": "49b8964d50a1b9df64641616608cb50bc6612b55280ae1b25b33730f3323bdfb",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/01/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/01/UtilityGas.Heating.txt": {
+   "bytes": 440,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sun, 01 Nov 2026 15:00:15 GMT",
+   "sha256": "3e8d1d68d9128c95b81d4b6ecb05fbb549c0ebd105a0d0769de0cdbd1c364ea4",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/01/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/02/Population.Cooling.txt": {
+   "bytes": 407,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Mon, 02 Nov 2026 15:00:15 GMT",
+   "sha256": "b082da2e1c54fb155f368f1c04e25950851cc89ede1dfcab43d7dbd0fd121cf4",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/02/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/02/UtilityGas.Heating.txt": {
+   "bytes": 444,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Mon, 02 Nov 2026 15:00:15 GMT",
+   "sha256": "275417336a15d8fac1f74fb36b45f2ccd03aa35ce14710f3240b9c63bfbb60e2",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/02/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/03/Population.Cooling.txt": {
+   "bytes": 406,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Tue, 03 Nov 2026 15:00:13 GMT",
+   "sha256": "6156089e448e823d95084c2d0b3213a7d9ad5606dbe368f2dfd3412bb7a920b1",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/03/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/03/UtilityGas.Heating.txt": {
+   "bytes": 451,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Tue, 03 Nov 2026 15:00:13 GMT",
+   "sha256": "a74b22159acc46490b48e15955a14b7b1e1746d20a2e128d3499a772c2dc9b0d",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/03/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/04/Population.Cooling.txt": {
+   "bytes": 406,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Wed, 04 Nov 2026 15:00:14 GMT",
+   "sha256": "2f1c279366f3cbfe10cd2c1cae5254875bd5c59aca16876acbd21ef2c24b4b33",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/04/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/04/UtilityGas.Heating.txt": {
+   "bytes": 457,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Wed, 04 Nov 2026 15:00:14 GMT",
+   "sha256": "415c3ca955d7b012d14d5469761ee795c89223cf7d3faa6a0cbde3809cbce70a",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/04/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/05/Population.Cooling.txt": {
+   "bytes": 406,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Thu, 05 Nov 2026 15:00:13 GMT",
+   "sha256": "a5ddbb60c16bdd95fac12ed15829ba5a3c4f2ab2257fd9b9852b79be76081fdf",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/05/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/05/UtilityGas.Heating.txt": {
+   "bytes": 465,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Thu, 05 Nov 2026 15:00:13 GMT",
+   "sha256": "a54e93cc252825b0619c49f57210dbb8d57e2076aa170ffaa8f8e7efd5499a06",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/05/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/06/Population.Cooling.txt": {
+   "bytes": 406,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Fri, 06 Nov 2026 15:00:14 GMT",
+   "sha256": "7f35095667c1c6eb990bfaad9ed63b2351a6c20e70cddcb19ca6bb2651ceaa7e",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/06/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/06/UtilityGas.Heating.txt": {
+   "bytes": 469,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Fri, 06 Nov 2026 15:00:14 GMT",
+   "sha256": "ef7d429be6f8e53734f7811e82654cd04b66b14a10f6176b98da835b74e092eb",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/06/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/07/Population.Cooling.txt": {
+   "bytes": 406,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Sat, 07 Nov 2026 15:00:13 GMT",
+   "sha256": "86ff6f208f639b4f06c9477098770c166cc92336f188e3b92bcdfd8b2fe2120e",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/07/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/fcst/2026/11/07/UtilityGas.Heating.txt": {
+   "bytes": 474,
+   "downloaded_utc": "2026-11-08T09:15:41Z",
+   "last_modified": "Sat, 07 Nov 2026 15:00:13 GMT",
+   "sha256": "f680cb902f7c1b2e2baf247fe88a2f277d73626bdafea3f0316f940620634edc",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/2026/11/07/UtilityGas.Heating.txt"
+  },
+  "data/gas/raw/cpc/obs/2026/Population.Cooling.txt": {
+   "bytes": 9779,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sun, 08 Nov 2026 08:07:11 GMT",
+   "sha256": "75a875f6d8065b4e7199b47e53ddb35c8de03fc9f58cb722acc6fb21bea36a93",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_data/2026/Population.Cooling.txt"
+  },
+  "data/gas/raw/cpc/obs/2026/UtilityGas.Heating.txt": {
+   "bytes": 10215,
+   "downloaded_utc": "2026-11-08T09:15:40Z",
+   "last_modified": "Sun, 08 Nov 2026 08:07:11 GMT",
+   "sha256": "ad16f6ba36f93f92563e85d2e4b21e9016c8cc51d04d866d701aa14009c6d37c",
+   "url": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_data/2026/UtilityGas.Heating.txt"
+  }
+ },
+ "note": "entries new or changed vs the committed data/gas/manifest_cpc.json"
+}

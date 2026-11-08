@@ -4,13 +4,60 @@ Each forecast was written and sha256-sealed before its target was published; tru
 
 ## gas
 
-- **week 2026-10-30 (thu origin)**: not published yet (sealed in `runs/deploy_2026_10_11`)
+**week 2026-10-30 (thu origin)** — actual 77.00 (sealed in `runs/deploy_2026_10_11`)
 
-- **week 2026-10-30 (fri origin)**: not published yet (sealed in `runs/deploy_2026_10_11`)
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| wm_gas_ens ★ | 74.21 | 2.79 | 1.8418 | yes |
+| wm_gas | 74.88 | 2.12 | 2.3545 | yes |
+| wm_gas_direct | 73.59 | 3.41 | 2.6131 | yes |
+| st_ols_wx | 75.57 | 1.43 | 3.0192 | yes |
+| st_ols_wx_nolag | 76.86 | 0.14 | 3.1912 | yes |
+| tirex | 57.61 | 19.39 | 6.5395 | yes |
+| chronos_bolt_base | 55.47 | 21.53 | 7.5026 | yes |
+| chronos2_cov | 53.05 | 23.95 | 8.2821 | yes |
+| chronos2 | 53.00 | 24.00 | 8.3205 | yes |
+| st_climatology | 50.90 | 26.10 | 8.9829 | yes |
+| st_arima_dev | 36.34 | 40.66 | 13.3186 | yes |
+| st_persistence | 39.20 | 37.80 | 14.0311 | yes |
+| st_seasonal_naive | 32.00 | 45.00 | 15.4933 | yes |
+
+**week 2026-10-30 (fri origin)** — actual 77.00 (sealed in `runs/deploy_2026_10_11`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| wm_gas_ens ★ | 74.88 | 2.12 | 1.7498 | yes |
+| wm_gas | 75.81 | 1.19 | 2.2778 | yes |
+| wm_gas_direct | 74.65 | 2.35 | 2.4782 | yes |
+| st_ols_wx | 75.46 | 1.54 | 2.9989 | yes |
+| st_ols_wx_nolag | 76.65 | 0.35 | 3.2037 | yes |
+| tirex | 57.61 | 19.39 | 6.5395 | yes |
+| chronos_bolt_base | 55.47 | 21.53 | 7.5026 | yes |
+| chronos2 | 53.00 | 24.00 | 8.3205 | yes |
+| chronos2_cov | 51.53 | 25.47 | 8.9721 | no |
+| st_climatology | 50.90 | 26.10 | 8.9829 | yes |
+| st_arima_dev | 36.34 | 40.66 | 13.3186 | yes |
+| st_persistence | 39.20 | 37.80 | 14.0311 | yes |
+| st_seasonal_naive | 32.00 | 45.00 | 15.4933 | yes |
 
 ## power
 
-- **delivery 2026-11-06 (24 h)**: not published yet (sealed in `runs/deploy_2026_10_11`)
+**delivery 2026-11-06 (24 h)** — actual 275.64 (sealed in `runs/deploy_2026_10_11`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| chronos2_cov | 272.29 | 9.13 | 4.2835 | 1.00 of hours |
+| chronos_bolt_base | 275.49 | 11.48 | 4.7794 | 0.96 of hours |
+| chronos2 | 273.21 | 12.36 | 5.1254 | 1.00 of hours |
+| wm_power_direct | 268.47 | 15.88 | 5.5440 | 1.00 of hours |
+| wm_power ★ | 265.65 | 17.58 | 6.2240 | 1.00 of hours |
+| tirex | 257.26 | 18.77 | 6.9492 | 1.00 of hours |
+| naive_epf | 257.38 | 18.49 | 7.5843 | 0.92 of hours |
+| wm_power_blend | 255.47 | 22.79 | 8.8340 | 1.00 of hours |
+| lear | 245.30 | 35.81 | 13.3301 | 0.96 of hours |
+| arx | 246.56 | 41.36 | 15.4538 | 1.00 of hours |
+
+- **delivery 2026-11-09 (24 h)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0914`)
 
 ## oil
 
