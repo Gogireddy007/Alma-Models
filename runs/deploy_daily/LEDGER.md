@@ -9,5 +9,6 @@ Frozen models, no retraining; November 2026 to date; quantile score (lower is be
 | 2026-11-05_0938 | 54/54 | n = 0 | n=5: **wm_power** QS 9.418, rank 6/13 (best chronos2 5.592) | n=4: **wm_fin** QS 0.1769, rank 6/13 (best lgbm_dow 0.1556) | n=2: **wm_sv** QS 0.01766, rank 6/9 (best chronos2 0.0156) |
 | 2026-11-08_0914 | 41/43 | n = 0 | n=8: **wm_power** QS 8.108, rank 7/13 (best chronos_bolt_base 5.189) | n=7: **wm_fin** QS 0.1827, rank 7/15 (best chronos2 0.1611) | n=2: **wm_sv** QS 0.01766, rank 6/9 (best chronos2 0.0156) |
 | 2026-11-08_0930 | 58/58 | n=1: **wm_gas_ens** QS 1.842, rank 1/13 | n=8: **wm_power** QS 8.108, rank 7/13 (best chronos_bolt_base 5.189) | n=7: **wm_fin** QS 0.1827, rank 7/15 (best chronos2 0.1611) | n=2: **wm_sv** QS 0.01766, rank 6/9 (best chronos2 0.0156) |
+| 2026-11-09_0914 | 58/58 | n=1: **wm_gas_ens** QS 1.842, rank 1/13 | n=9: **wm_power** QS 11.22, rank 6/13 (best chronos_bolt_base 9.081) | n=8: **wm_fin** QS 0.1941, rank 7/15 (best tirex 0.1756) | n=2: **wm_sv** QS 0.01766, rank 6/9 (best chronos2 0.0156) |
 
 Sealed ex-ante forecasts and their grades: [EXANTE_LEDGER.md](EXANTE_LEDGER.md)

@@ -61,7 +61,22 @@ Each forecast was written and sha256-sealed before its target was published; tru
 | lear | 245.30 | 35.81 | 13.3301 | 0.96 of hours |
 | arx | 246.56 | 41.36 | 15.4538 | 1.00 of hours |
 
-- **delivery 2026-11-09 (24 h)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0914`)
+**delivery 2026-11-09 (24 h)** — actual 345.64 (sealed in `runs/deploy_daily/2026-11-08_0914`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| arx | 272.90 | 80.55 | 28.3116 | 0.88 of hours |
+| wm_power ★ | 260.05 | 85.77 | 36.1145 | 0.33 of hours |
+| wm_power_direct | 261.27 | 84.49 | 36.2832 | 0.29 of hours |
+| wm_power_blend | 251.00 | 94.64 | 36.7446 | 0.29 of hours |
+| naive_epf | 259.31 | 92.17 | 38.3407 | 0.38 of hours |
+| lear | 241.95 | 103.68 | 39.1317 | 0.29 of hours |
+| tirex | 258.10 | 87.54 | 39.5073 | 0.21 of hours |
+| chronos_bolt_base | 256.45 | 89.19 | 40.2168 | 0.17 of hours |
+| chronos2 | 255.16 | 90.47 | 40.9540 | 0.25 of hours |
+| chronos2_cov | 253.06 | 92.58 | 42.1591 | 0.29 of hours |
+
+- **delivery 2026-11-10 (24 h)**: not published yet (sealed in `runs/deploy_daily/2026-11-09_0914`)
 
 ## oil
 

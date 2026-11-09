@@ -1,0 +1,573 @@
+{
+ "project": "power",
+ "kind": "ex-ante (sealed before the auction)",
+ "delivery_day": "2026-11-10",
+ "auction_clears_utc": "2026-11-09 11:00:00+00:00",
+ "forecast_made_utc": "2026-11-09T09:29:51Z",
+ "last_price_day": "2026-11-09",
+ "last_fundamentals_day": "2026-11-08",
+ "prev_day_base_price": 345.63625,
+ "checkpoints": [
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s0.pt",
+   "sha256": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s1.pt",
+   "sha256": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s2.pt",
+   "sha256": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s0.pt",
+   "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s1.pt",
+   "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s2.pt",
+   "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s0.pt",
+   "sha256": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s1.pt",
+   "sha256": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s2.pt",
+   "sha256": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s0.pt",
+   "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s1.pt",
+   "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s2.pt",
+   "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "tools/power/wm_power.py",
+   "sha256": "c94372dab0cd3e405ea09949bcba1f9e7b8d2573949fa695aae76f240cfd776a",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_power_blend.py",
+   "sha256": "773b02ac6bc4fd21bc5cdbc91ddd7b9a8add52110033817650e97d4d596c64bd",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_data.py",
+   "sha256": "3e10d796909dac6eacb016a2f9fd247cde84694fb3b1ddd1ed732508e0008f31",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_models.py",
+   "sha256": "5c10714929b694c0a24e1ef04516764b898b75cf9c007fe3bd7ae70afe241c6f",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/models.py",
+   "sha256": "387ca2e5047fe4b329ff5f78eaa5f900b97153239b8b42f562049ab8edb5246d",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/data.py",
+   "sha256": "fa7770e777a8f5cfdd219801357606ad17f55ca478a988e64603369f89e184df",
+   "forward_freeze_ok": true
+  }
+ ],
+ "models": {
+  "wm_power": {
+   "base_median": 334.8493398030599,
+   "hourly_median": [
+    275.04,
+    269.23,
+    266.69,
+    265.11,
+    268.08,
+    278.12,
+    317.68,
+    375.92,
+    388.9,
+    361.57,
+    332.32,
+    313.76,
+    305.43,
+    308.14,
+    322.97,
+    361.24,
+    435.3,
+    493.39,
+    454.55,
+    406.31,
+    347.42,
+    311.34,
+    299.73,
+    278.13
+   ],
+   "peak_median_08_20": 373.6579360961914
+  },
+  "wm_power_direct": {
+   "base_median": 341.9307454427083,
+   "hourly_median": [
+    271.2,
+    266.59,
+    265.76,
+    265.35,
+    268.91,
+    279.32,
+    318.33,
+    377.85,
+    392.88,
+    367.29,
+    339.73,
+    322.77,
+    314.82,
+    316.94,
+    330.8,
+    369.98,
+    451.16,
+    517.24,
+    475.67,
+    422.9,
+    360.75,
+    321.96,
+    306.79,
+    281.37
+   ],
+   "peak_median_08_20": 385.17964426676434
+  },
+  "wm_power_blend": {
+   "base_median": 313.75006452063735,
+   "hourly_median": [
+    260.12,
+    250.5,
+    245.56,
+    242.35,
+    242.83,
+    254.16,
+    305.95,
+    413.66,
+    406.71,
+    376.0,
+    323.13,
+    282.94,
+    265.46,
+    266.18,
+    280.0,
+    326.62,
+    399.45,
+    473.65,
+    435.05,
+    377.99,
+    312.0,
+    278.49,
+    267.8,
+    243.4
+   ],
+   "peak_median_08_20": 351.09762736357146
+  },
+  "lear": {
+   "base_median": 292.6507892382148,
+   "hourly_median": [
+    245.2,
+    231.76,
+    224.44,
+    219.59,
+    217.58,
+    230.21,
+    294.23,
+    451.4,
+    424.53,
+    390.43,
+    313.93,
+    252.12,
+    225.48,
+    224.22,
+    237.03,
+    291.99,
+    363.6,
+    453.91,
+    415.55,
+    349.67,
+    276.57,
+    245.64,
+    235.87,
+    208.68
+   ],
+   "peak_median_08_20": 328.5373186309514
+  },
+  "arx": {
+   "base_median": 291.60293932059875,
+   "hourly_median": [
+    243.67,
+    228.48,
+    215.54,
+    208.77,
+    206.6,
+    218.34,
+    285.19,
+    411.13,
+    469.22,
+    404.46,
+    314.95,
+    253.07,
+    227.32,
+    230.16,
+    246.26,
+    298.73,
+    408.68,
+    477.77,
+    397.85,
+    332.64,
+    268.21,
+    233.64,
+    221.95,
+    195.86
+   ],
+   "peak_median_08_20": 338.4261879372838
+  },
+  "naive_epf": {
+   "base_median": 345.63625,
+   "hourly_median": [
+    229.75,
+    226.56,
+    225.49,
+    223.27,
+    223.57,
+    231.49,
+    283.23,
+    373.93,
+    400.92,
+    373.52,
+    346.35,
+    323.11,
+    315.09,
+    320.98,
+    339.13,
+    392.37,
+    526.12,
+    644.18,
+    566.58,
+    476.28,
+    374.88,
+    323.03,
+    301.25,
+    254.21
+   ],
+   "peak_median_08_20": 418.7177083333333
+  },
+  "chronos2": {
+   "base_median": 306.4037329355876,
+   "hourly_median": [
+    242.9,
+    238.94,
+    236.4,
+    233.93,
+    236.2,
+    250.94,
+    313.07,
+    371.55,
+    374.03,
+    332.19,
+    287.78,
+    260.37,
+    252.71,
+    260.1,
+    284.27,
+    333.29,
+    422.37,
+    472.44,
+    436.08,
+    383.44,
+    326.47,
+    291.97,
+    270.59,
+    241.67
+   ],
+   "peak_median_08_20": 341.5884297688802
+  },
+  "chronos2_cov": {
+   "base_median": 305.68740399678546,
+   "hourly_median": [
+    247.09,
+    244.23,
+    243.22,
+    239.91,
+    241.76,
+    255.35,
+    314.71,
+    370.22,
+    368.48,
+    325.42,
+    281.61,
+    256.07,
+    250.84,
+    259.99,
+    286.67,
+    338.27,
+    411.66,
+    444.72,
+    421.54,
+    379.95,
+    331.02,
+    294.73,
+    274.98,
+    254.07
+   ],
+   "peak_median_08_20": 335.4342727661133
+  },
+  "chronos_bolt_base": {
+   "base_median": 326.4711920420329,
+   "hourly_median": [
+    243.85,
+    241.29,
+    239.23,
+    240.77,
+    241.14,
+    255.03,
+    319.33,
+    413.42,
+    415.29,
+    349.96,
+    298.59,
+    276.43,
+    271.64,
+    277.7,
+    291.44,
+    349.8,
+    453.64,
+    531.47,
+    495.7,
+    427.28,
+    366.87,
+    317.05,
+    276.88,
+    241.51
+   ],
+   "peak_median_08_20": 369.9122670491536
+  },
+  "tirex": {
+   "base_median": 319.3283093770345,
+   "hourly_median": [
+    244.35,
+    239.11,
+    235.1,
+    233.94,
+    235.65,
+    246.86,
+    304.68,
+    386.78,
+    412.1,
+    365.74,
+    314.09,
+    293.86,
+    288.54,
+    291.04,
+    306.22,
+    355.26,
+    436.13,
+    481.01,
+    450.46,
+    396.96,
+    337.66,
+    297.23,
+    269.08,
+    242.01
+   ],
+   "peak_median_08_20": 365.95043182373047
+  }
+ },
+ "preds_file": "runs/deploy_daily/2026-11-09_0914/power/preds/exante_2026-11-10.npz",
+ "preds_sha256": "6e58cfe61fc81ade6fb4f8c5d5306383e9107361fd7682c138bd10436b851252",
+ "data_hourly_csv_sha256": "e10e8814542529b4738de3f543df1693803a131b7dd61fe348c6a17dcce6b981",
+ "param_watch": [
+  {
+   "module": "PhysWM#0",
+   "sha_load": "015745b497f42f035f563cd22c608060268e5d3fd49787eeac439c3a41ca83a5",
+   "sha_end": "015745b497f42f035f563cd22c608060268e5d3fd49787eeac439c3a41ca83a5",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#1",
+   "sha_load": "1532776700502218af870b9cc039eef66ed848c59386af87c5164923b7676744",
+   "sha_end": "1532776700502218af870b9cc039eef66ed848c59386af87c5164923b7676744",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#2",
+   "sha_load": "6222dcb253d8f3b9112ca43e9d7e667ca747f8fdd34f6d9fedf2aa156472a492",
+   "sha_end": "6222dcb253d8f3b9112ca43e9d7e667ca747f8fdd34f6d9fedf2aa156472a492",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#3",
+   "sha_load": "1247930a6b9cfa2fb1e9160e17df2ccb407b30cd76d6119a12f7200f33a4e34c",
+   "sha_end": "1247930a6b9cfa2fb1e9160e17df2ccb407b30cd76d6119a12f7200f33a4e34c",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#4",
+   "sha_load": "8627cf4be766cfb25f04e2836fba7301f00c4ce9dc9412c27f0d22478700d81f",
+   "sha_end": "8627cf4be766cfb25f04e2836fba7301f00c4ce9dc9412c27f0d22478700d81f",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#5",
+   "sha_load": "b230efaed31608dad1d0992b526b317a4367a134a6ab55faac4e24d468f2846a",
+   "sha_end": "b230efaed31608dad1d0992b526b317a4367a134a6ab55faac4e24d468f2846a",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#6",
+   "sha_load": "015745b497f42f035f563cd22c608060268e5d3fd49787eeac439c3a41ca83a5",
+   "sha_end": "015745b497f42f035f563cd22c608060268e5d3fd49787eeac439c3a41ca83a5",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#7",
+   "sha_load": "1532776700502218af870b9cc039eef66ed848c59386af87c5164923b7676744",
+   "sha_end": "1532776700502218af870b9cc039eef66ed848c59386af87c5164923b7676744",
+   "unchanged": true
+  },
+  {
+   "module": "PhysWM#8",
+   "sha_load": "6222dcb253d8f3b9112ca43e9d7e667ca747f8fdd34f6d9fedf2aa156472a492",
+   "sha_end": "6222dcb253d8f3b9112ca43e9d7e667ca747f8fdd34f6d9fedf2aa156472a492",
+   "unchanged": true
+  },
+  {
+   "module": "TiRexZero#9",
+   "sha_load": "f5b5b32092ec6a50fcefc8f76d871a27b6538a4c6f34b65de6dd57c07c4bd85d",
+   "sha_end": "f5b5b32092ec6a50fcefc8f76d871a27b6538a4c6f34b65de6dd57c07c4bd85d",
+   "unchanged": true
+  }
+ ],
+ "checkpoints_after": [
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s0.pt",
+   "sha256": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s1.pt",
+   "sha256": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_direct_s2.pt",
+   "sha256": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s0.pt",
+   "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s1.pt",
+   "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/power_wm_power/checkpoints/frz_phys_none_s2.pt",
+   "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s0.pt",
+   "sha256": "abc82742ae94b02f1fbc65312c19ec469acb51f0065b7d1d02402e6c12da8264",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s1.pt",
+   "sha256": "f96cf84f210184ddaa440535484df18c623df2088e8b2089f6b04cbffc7d27fd",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_direct_s2.pt",
+   "sha256": "f0b86f8ca693845fb485845405907493746af9a9d9e6b2077d731725eef15838",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s0.pt",
+   "sha256": "be295a716ed3204584077167fae530bf6e950a84022dc7457ac3509c0a4c8a4b",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s1.pt",
+   "sha256": "12bdf26936bb8483c58cb89f772fa212e52e0a4bf8e0d247ac445db31e26feec",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/power/search/ckpt/frz_phys_none_s2.pt",
+   "sha256": "3b751c979d2715df18da2663b7530d7acfe0c9ce002e83ca3d95a9e7158c6629",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "tools/power/wm_power.py",
+   "sha256": "c94372dab0cd3e405ea09949bcba1f9e7b8d2573949fa695aae76f240cfd776a",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_power_blend.py",
+   "sha256": "773b02ac6bc4fd21bc5cdbc91ddd7b9a8add52110033817650e97d4d596c64bd",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_data.py",
+   "sha256": "3e10d796909dac6eacb016a2f9fd247cde84694fb3b1ddd1ed732508e0008f31",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/wm_models.py",
+   "sha256": "5c10714929b694c0a24e1ef04516764b898b75cf9c007fe3bd7ae70afe241c6f",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/models.py",
+   "sha256": "387ca2e5047fe4b329ff5f78eaa5f900b97153239b8b42f562049ab8edb5246d",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/power/data.py",
+   "sha256": "fa7770e777a8f5cfdd219801357606ad17f55ca478a988e64603369f89e184df",
+   "forward_freeze_ok": true
+  }
+ ]
+}
