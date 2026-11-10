@@ -1,0 +1,3779 @@
+{
+ "project": "gas",
+ "target": "EIA weekly storage change, Lower 48 (Bcf)",
+ "scored_utc": "2026-11-10T09:26:52Z",
+ "git": {
+  "head": "e4aa94b7c726f7f12b3aba196b2623f6c2d474e6",
+  "dirty_files": [
+   "?? runs/deploy_daily/2026-11-10_0914/",
+   "?? runs/deploy_daily/manifests/2026-11-10/"
+  ]
+ },
+ "checkpoints": [
+  {
+   "file": "winning_models/gas_wm_gas/checkpoints/wm_gas.pt",
+   "sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas/checkpoints/wm_gas_direct.pt",
+   "sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas_ens/checkpoints/x_dir_s3456.pt",
+   "sha256": "d6e47f2aa5a32e7f354b6cc77f6378297c8fbc3cb48b46e56dbb0f3a9adeb3bb",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas_ens/checkpoints/x_wm_s3456.pt",
+   "sha256": "1958ad360f7480c4a7d94e9aca5bf098d4153e87ae2ec1b1a73d494af2bbf1eb",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "runs/gas/search/ckpt/wm_gas.pt",
+   "sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/gas/search/ckpt/wm_gas_direct.pt",
+   "sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "tools/gas/wm_gas.py",
+   "sha256": "de3b1bb74bfcbd17ad383e567eb1510ec6fe05244cbb560f3b189a68667e4c2f",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/wm_gas_ens.py",
+   "sha256": "75207bb55c4844a2f9b68e273b7dbe079d55224b328b8520bfa6f9963f99ed81",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/search/feats.py",
+   "sha256": "9e69063d94ddd784d0c7c3f36d53649792b179c91e8df3982d09ecd2fdd6c572",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/search/nets.py",
+   "sha256": "8da05ed553a8056318f321e6e665d2eda5a5c31d3cadce9d7ae3c35a56203e13",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/storage.py",
+   "sha256": "2e01820d344b6e1444a600da1b5d6364c4fc7f507d255f3470e5734f621c4979",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/models.py",
+   "sha256": "b866f9c9bc50fd1ce7086c6ffff38258549261e8b0d2fcbf6c29a38756e05813",
+   "forward_freeze_ok": true
+  }
+ ],
+ "candidates": [
+  "wm_gas",
+  "wm_gas_ens"
+ ],
+ "last_released_week": "2026-10-30",
+ "last_release": "2026-11-05",
+ "models": {
+  "wm_gas_ens": {
+   "members": [
+    {
+     "ckpt": "winning_models/gas_wm_gas/checkpoints/wm_gas.pt",
+     "ckpt_sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a"
+    },
+    {
+     "ckpt": "winning_models/gas_wm_gas/checkpoints/wm_gas_direct.pt",
+     "ckpt_sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457"
+    },
+    {
+     "ckpt": "winning_models/gas_wm_gas_ens/checkpoints/x_wm_s3456.pt",
+     "ckpt_sha256": "1958ad360f7480c4a7d94e9aca5bf098d4153e87ae2ec1b1a73d494af2bbf1eb"
+    },
+    {
+     "ckpt": "winning_models/gas_wm_gas_ens/checkpoints/x_dir_s3456.pt",
+     "ckpt_sha256": "d6e47f2aa5a32e7f354b6cc77f6378297c8fbc3cb48b46e56dbb0f3a9adeb3bb"
+    }
+   ],
+   "n_members": 14,
+   "w_ols": 0.2,
+   "interval_rule": "adaptive, window 8, exponent 0.5, ref {'thu': 15.39, 'fri': 15.27}"
+  },
+  "wm_gas": {
+   "ckpt": "runs/gas/search/ckpt/wm_gas.pt",
+   "ckpt_sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "recipe": {
+    "arch": "wm",
+    "d": 32,
+    "assim": 1,
+    "regime": 1,
+    "steps": 1200,
+    "lr": 0.003,
+    "bs": 64,
+    "wd": 0.05,
+    "aux": 0.3,
+    "wl48": 3.0,
+    "mc": 0,
+    "drop_hh": 0,
+    "drop": 0.3,
+    "cal": 1
+   },
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "train_end": "2025-06-30",
+   "n_train_weeks": 547,
+   "n_params_per_member": 23534,
+   "rollout": true
+  },
+  "wm_gas_direct": {
+   "ckpt": "runs/gas/search/ckpt/wm_gas_direct.pt",
+   "ckpt_sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "recipe": {
+    "arch": "direct",
+    "d": 32,
+    "assim": 1,
+    "regime": 1,
+    "steps": 1200,
+    "lr": 0.003,
+    "bs": 64,
+    "wd": 0.05,
+    "aux": 0.3,
+    "wl48": 3.0,
+    "mc": 0,
+    "drop_hh": 0,
+    "drop": 0.3,
+    "cal": 1
+   },
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "train_end": "2025-06-30",
+   "n_train_weeks": 547,
+   "n_params_per_member": 23534,
+   "rollout": false
+  },
+  "st_ols_wx": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": true
+  },
+  "st_ols_wx_nolag": {
+   "fit": "DEV weeks released 2014-01-15..2025-06-30",
+   "lag": false
+  },
+  "st_arima_dev": {
+   "model": "AutoARIMA on the deviation series, season 1, last 520 weeks"
+  },
+  "st_climatology": {
+   "rule": "same-week past deviations"
+  },
+  "st_persistence": {
+   "rule": "dev persistence"
+  },
+  "st_seasonal_naive": {
+   "rule": "last year's same-week dS"
+  },
+  "chronos2": {
+   "hf": "amazon/chronos-2"
+  },
+  "chronos2_cov": {
+   "hf": "amazon/chronos-2",
+   "covariates": "storage: weekly HDD/CDD past + target-week future; price: stor_dev5, hdd7, cdd7 past only (NaN -> 0)"
+  },
+  "chronos_bolt_base": {
+   "hf": "amazon/chronos-bolt-base"
+  },
+  "tirex": {
+   "hf": "NX-AI/TiRex"
+  }
+ },
+ "windows": {
+  "oct_2026": {
+   "n_weeks": 5,
+   "weeks": [
+    "2026-09-25",
+    "2026-10-02",
+    "2026-10-09",
+    "2026-10-16",
+    "2026-10-23"
+   ],
+   "releases": [
+    "2026-10-01",
+    "2026-10-08",
+    "2026-10-15",
+    "2026-10-22",
+    "2026-10-29"
+   ],
+   "actual_bcf": [
+    64.0,
+    85.0,
+    67.0,
+    77.0,
+    80.0
+   ],
+   "kinds": {
+    "thu": {
+     "median_forecast_bcf": {
+      "wm_gas_ens": [
+       72.9711285073363,
+       79.5469279721327,
+       77.81273573919603,
+       75.94059758292705,
+       68.99820700216716
+      ],
+      "wm_gas": [
+       74.1501235961914,
+       79.14316050211589,
+       73.35767110188802,
+       71.60431416829427,
+       66.8289566040039
+      ],
+      "wm_gas_direct": [
+       72.78796768188477,
+       77.93184026082356,
+       76.58690007527669,
+       78.9408810933431,
+       64.25349680582683
+      ],
+      "st_ols_wx": [
+       70.43312012805985,
+       85.69298554634989,
+       86.88992686492541,
+       83.20212034348566,
+       77.94799650637154
+      ],
+      "st_ols_wx_nolag": [
+       73.74911516134011,
+       89.08807687512272,
+       87.41680357764567,
+       87.213561501865,
+       77.38975838051171
+      ],
+      "st_arima_dev": [
+       80.38759902262902,
+       83.54053924078588,
+       89.6691851767733,
+       69.13773281391153,
+       80.48349730134655
+      ],
+      "st_climatology": [
+       83.4,
+       90.30000000000001,
+       94.30000000000001,
+       84.0,
+       95.0
+      ],
+      "st_persistence": [
+       63.60000000000001,
+       69.4,
+       89.0,
+       54.8,
+       84.2
+      ],
+      "st_seasonal_naive": [
+       52.5,
+       79.5,
+       79.5,
+       86.0,
+       73.0
+      ],
+      "chronos2": [
+       77.18639373779297,
+       81.64035034179688,
+       85.94364166259766,
+       76.53931427001953,
+       67.0282211303711
+      ],
+      "chronos2_cov": [
+       66.85369110107422,
+       79.33472442626953,
+       83.39752197265625,
+       82.92670440673828,
+       51.04800033569336
+      ],
+      "chronos_bolt_base": [
+       76.68037414550781,
+       80.22489166259766,
+       81.86935424804688,
+       68.72423553466797,
+       67.83434295654297
+      ],
+      "tirex": [
+       66.15693664550781,
+       71.86521911621094,
+       77.61417388916016,
+       67.76604461669922,
+       64.33121490478516
+      ]
+     },
+     "by_candidate": {
+      "wm_gas": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 7.459626337861081,
+         "qs": 2.7641386684310434,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": 0.7266463468719906,
+         "ci95_abs_err": [
+          -2.158435208748793,
+          3.0360636047510696
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 8.186272684733073,
+         "qs": 3.1518315919240316,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.626082356770832,
+         "qs": 3.476000301573012,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -0.43980967203775945,
+         "ci95_abs_err": [
+          -2.564139556884766,
+          1.6994682312011775
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.054031275289856,
+         "qs": 3.852007974173715,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": 1.1322414094432163,
+         "ci95_abs_err": [
+          -6.632552070569818,
+          7.545928331867586
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 9.41555974709236,
+         "qs": 4.314230501064596,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.2292870623592875,
+         "ci95_abs_err": [
+          -8.514378392398621,
+          5.726658456425104
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.58612920447722,
+         "ci95_abs_err": [
+          -10.26709088581668,
+          7.244508319236203
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -6.613727315266933,
+         "ci95_abs_err": [
+          -14.304004720052097,
+          -0.7847811889648483
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -4.693727315266926,
+         "ci95_abs_err": [
+          -14.694892272949222,
+          5.539834696451825
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -0.9137273152669281,
+         "ci95_abs_err": [
+          -4.334892272949221,
+          3.053131103515625
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.5981572469075531,
+         "ci95_abs_err": [
+          -7.471876525878909,
+          3.0127288818359377
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.959038543701173,
+         "qs": 4.710169571770562,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -3.7727658589681,
+         "ci95_abs_err": [
+          -11.172297331492107,
+          2.888994852701822
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -2.366978963216147,
+         "ci95_abs_err": [
+          -5.481948343912762,
+          0.3139096577962209
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.9754536946614594,
+         "ci95_abs_err": [
+          -5.633967081705731,
+          3.445063273111978
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 7.459626337861081,
+         "qs": 2.7641386684310434,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": 0.38769292349298834,
+         "ci95_qs": [
+          -0.1595580621675654,
+          0.7476843215474114
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 8.186272684733073,
+         "qs": 3.1518315919240316,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.626082356770832,
+         "qs": 3.476000301573012,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.32416870964898026,
+         "ci95_qs": [
+          -0.7217270434344254,
+          0.05568664197568509
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.054031275289856,
+         "qs": 3.852007974173715,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.7001763822496834,
+         "ci95_qs": [
+          -2.3684953308532863,
+          0.5843746194506293
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 9.41555974709236,
+         "qs": 4.314230501064596,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.1623989091405644,
+         "ci95_qs": [
+          -2.6127004288213356,
+          0.1260404363662521
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -3.198526925569122,
+         "ci95_qs": [
+          -4.36125536973696,
+          -2.0502872322182566
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -2.718212852520413,
+         "ci95_qs": [
+          -5.25185140478346,
+          -0.5330469286459463
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -3.110035074742635,
+         "ci95_qs": [
+          -4.86076480330008,
+          -1.357349085532294
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -2.5008350747426347,
+         "ci95_qs": [
+          -3.1092291825612377,
+          -1.6938523705800368
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.6893272198571105,
+         "ci95_qs": [
+          -2.1703761704762785,
+          0.3749670964700198
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.959038543701173,
+         "qs": 4.710169571770562,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.5583379798465304,
+         "ci95_qs": [
+          -4.335184353369255,
+          0.6665200039192486
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.0234966966840957,
+         "ci95_qs": [
+          -1.6697780181743487,
+          -0.4759848562876384
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.7533802212609186,
+         "ci95_qs": [
+          -1.4350466152473735,
+          0.24406443705381622
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      },
+      "wm_gas_ens": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 7.459626337861081,
+         "qs": 2.7641386684310434,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas": {
+         "abs_err": 8.186272684733073,
+         "qs": 3.1518315919240316,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -0.7266463468719906,
+         "ci95_abs_err": [
+          -3.0360636047510696,
+          2.158435208748793
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.626082356770832,
+         "qs": 3.476000301573012,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -1.16645601890975,
+         "ci95_abs_err": [
+          -3.133211494975723,
+          0.4491160211800832
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.054031275289856,
+         "qs": 3.852007974173715,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": 0.40559506257122563,
+         "ci95_abs_err": [
+          -5.522840964416693,
+          6.131288018080957
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 9.41555974709236,
+         "qs": 4.314230501064596,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -1.9559334092312781,
+         "ci95_abs_err": [
+          -7.65888810009744,
+          4.17561764298456
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.3127755513492105,
+         "ci95_abs_err": [
+          -9.0697409349511,
+          5.626405568563865
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -7.340373662138925,
+         "ci95_abs_err": [
+          -12.777774255448563,
+          -2.7261735063053636
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -5.420373662138917,
+         "ci95_abs_err": [
+          -14.960530331918951,
+          4.26558285180756
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -1.6403736621389187,
+         "ci95_abs_err": [
+          -5.111196996343568,
+          1.7261700943781135
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.3248035937795435,
+         "ci95_abs_err": [
+          -5.6018532627138145,
+          0.682858448343444
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.959038543701173,
+         "qs": 4.710169571770562,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -4.49941220584009,
+         "ci95_abs_err": [
+          -11.786025106989985,
+          1.5800447991321391
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -3.0936253100881372,
+         "ci95_abs_err": [
+          -5.320515924614142,
+          -0.936209269698
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.7021000415334497,
+         "ci95_abs_err": [
+          -7.275903148336243,
+          2.84481385475292
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 7.459626337861081,
+         "qs": 2.7641386684310434,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas": {
+         "abs_err": 8.186272684733073,
+         "qs": 3.1518315919240316,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -0.38769292349298834,
+         "ci95_qs": [
+          -0.7476843215474114,
+          0.1595580621675654
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.626082356770832,
+         "qs": 3.476000301573012,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -0.7118616331419686,
+         "ci95_qs": [
+          -1.2488333729595753,
+          -0.14187493866661294
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.054031275289856,
+         "qs": 3.852007974173715,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.087869305742672,
+         "ci95_qs": [
+          -2.213263218786821,
+          -0.05845272995590793
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 9.41555974709236,
+         "qs": 4.314230501064596,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.5500918326335529,
+         "ci95_qs": [
+          -2.633238292707248,
+          -0.5502999023903942
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.58621984906211,
+         "ci95_qs": [
+          -4.284253807283768,
+          -2.6829040030542974
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.105905776013401,
+         "ci95_qs": [
+          -5.0797588106775855,
+          -1.1669432659259105
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.497727998235623,
+         "ci95_qs": [
+          -5.175408761622626,
+          -1.8200472348486205
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -2.888527998235623,
+         "ci95_qs": [
+          -3.4691804869061107,
+          -2.225348465469061
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.0770201433500988,
+         "ci95_qs": [
+          -2.0372153669090833,
+          -0.3012388669582366
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.959038543701173,
+         "qs": 4.710169571770562,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.9460309033395191,
+         "ci95_qs": [
+          -4.681531505769584,
+          0.05905644182313252
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.411189620177084,
+         "ci95_qs": [
+          -1.8031790260457037,
+          -1.0418795298029717
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.1410731447539069,
+         "ci95_qs": [
+          -2.0558939377929257,
+          -0.05840680954940316
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      }
+     }
+    },
+    "fri": {
+     "median_forecast_bcf": {
+      "wm_gas_ens": [
+       74.3177736951843,
+       80.51850209316162,
+       77.20127438004226,
+       76.5050002683407,
+       69.30640226644317
+      ],
+      "wm_gas": [
+       75.61681874593098,
+       80.18190002441406,
+       73.09645334879558,
+       72.09054056803386,
+       67.02661641438802
+      ],
+      "wm_gas_direct": [
+       73.81034851074219,
+       78.98515319824219,
+       76.52686055501302,
+       79.8150126139323,
+       64.56992975870769
+      ],
+      "st_ols_wx": [
+       73.33389574555737,
+       86.9453149222464,
+       85.07566369621442,
+       84.40359751131143,
+       77.98779626612348
+      ],
+      "st_ols_wx_nolag": [
+       76.7127552625409,
+       90.35385137368984,
+       85.48272781485478,
+       88.4803484077627,
+       77.35569356483802
+      ],
+      "st_arima_dev": [
+       80.38759902262902,
+       83.54053924078588,
+       89.6691851767733,
+       69.13773281391153,
+       80.48349730134655
+      ],
+      "st_climatology": [
+       83.4,
+       90.30000000000001,
+       94.30000000000001,
+       84.0,
+       95.0
+      ],
+      "st_persistence": [
+       63.60000000000001,
+       69.4,
+       89.0,
+       54.8,
+       84.2
+      ],
+      "st_seasonal_naive": [
+       52.5,
+       79.5,
+       79.5,
+       86.0,
+       73.0
+      ],
+      "chronos2": [
+       77.18639373779297,
+       81.64035034179688,
+       85.94364166259766,
+       76.53931427001953,
+       67.0282211303711
+      ],
+      "chronos2_cov": [
+       66.9535140991211,
+       78.7335433959961,
+       82.5036849975586,
+       82.94251251220703,
+       51.04800033569336
+      ],
+      "chronos_bolt_base": [
+       76.68037414550781,
+       80.22489166259766,
+       81.86935424804688,
+       68.72423553466797,
+       67.83434295654297
+      ],
+      "tirex": [
+       66.15693664550781,
+       71.86521911621094,
+       77.61417388916016,
+       67.76604461669922,
+       64.33121490478516
+      ]
+     },
+     "by_candidate": {
+      "wm_gas": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 7.237828689456217,
+         "qs": 2.747812677975682,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": 0.8450143281219085,
+         "ci95_abs_err": [
+          -1.93961503458747,
+          3.133655391355828
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 8.082843017578124,
+         "qs": 3.1639627152902112,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.719427744547525,
+         "qs": 3.4361073656435366,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -0.6365847269694,
+         "ci95_abs_err": [
+          -2.594186909993482,
+          1.2634221394856724
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.7541351218412276,
+         "qs": 3.865745660307444,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": 0.3287078957368976,
+         "ci95_abs_err": [
+          -6.288166986574711,
+          6.652437305840129
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 10.13479785880204,
+         "qs": 4.339773796061197,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -2.051954841223915,
+         "ci95_abs_err": [
+          -8.853092754415616,
+          4.776118215489911
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.6895588716321668,
+         "ci95_abs_err": [
+          -10.226067308851876,
+          7.011138043529263
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -6.717156982421881,
+         "ci95_abs_err": [
+          -14.375144246419278,
+          -1.4215146891276078
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -4.797156982421873,
+         "ci95_abs_err": [
+          -15.156616109212237,
+          5.839700927734379
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.017156982421875,
+         "ci95_abs_err": [
+          -4.636872355143228,
+          2.7892857869466154
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -1.7015869140625,
+         "ci95_abs_err": [
+          -7.707671101888016,
+          2.3632105509440096
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.923633575439453,
+         "qs": 4.6628255928887254,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -3.840790557861328,
+         "ci95_abs_err": [
+          -11.065856800079342,
+          2.8454900105794225
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -2.470408630371094,
+         "ci95_abs_err": [
+          -5.775456237792966,
+          0.12757619222005304
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_abs_err": -2.0788833618164064,
+         "ci95_abs_err": [
+          -6.393988037109375,
+          4.233304850260415
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 7.237828689456217,
+         "qs": 2.747812677975682,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": 0.41615003731452865,
+         "ci95_qs": [
+          -0.07919538142441515,
+          0.7490194235379348
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 8.082843017578124,
+         "qs": 3.1639627152902112,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.719427744547525,
+         "qs": 3.4361073656435366,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.2721446503533255,
+         "ci95_qs": [
+          -0.7566328959994839,
+          0.18877279988041548
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.7541351218412276,
+         "qs": 3.865745660307444,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.7017829450172326,
+         "ci95_qs": [
+          -2.120366513227793,
+          0.5091231539474699
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 10.13479785880204,
+         "qs": 4.339773796061197,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.175811080770985,
+         "ci95_qs": [
+          -2.4044130191653244,
+          0.04047165140956484
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -3.1863958022029424,
+         "ci95_qs": [
+          -4.3848238738352965,
+          -2.0201968544935793
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -2.7060817291542336,
+         "ci95_qs": [
+          -5.239871725605152,
+          -0.5911940726103595
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -3.097903951376455,
+         "ci95_qs": [
+          -4.938996476717348,
+          -1.2568114260355625
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -2.488703951376455,
+         "ci95_qs": [
+          -3.1360186989395693,
+          -1.7146414542021575
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.6771960964909309,
+         "ci95_qs": [
+          -2.1583964912979696,
+          0.2968868672406237
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.923633575439453,
+         "qs": 4.6628255928887254,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.4988628775985149,
+         "ci95_qs": [
+          -4.213352052900526,
+          0.7060295267458316
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -1.011365573317916,
+         "ci95_qs": [
+          -1.7366028898733628,
+          -0.4722285722803183
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_minus_this_qs": -0.741249097894739,
+         "ci95_qs": [
+          -1.5400702321087862,
+          0.4450070371980967
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      },
+      "wm_gas_ens": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 7.237828689456217,
+         "qs": 2.747812677975682,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas": {
+         "abs_err": 8.082843017578124,
+         "qs": 3.1639627152902112,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -0.8450143281219085,
+         "ci95_abs_err": [
+          -3.133655391355828,
+          1.93961503458747
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.719427744547525,
+         "qs": 3.4361073656435366,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -1.4815990550913085,
+         "ci95_abs_err": [
+          -3.2044010442074664,
+          0.16606582480465876
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.7541351218412276,
+         "qs": 3.865745660307444,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -0.5163064323850108,
+         "ci95_abs_err": [
+          -5.716419248404327,
+          4.994267390627317
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 10.13479785880204,
+         "qs": 4.339773796061197,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.896969169345823,
+         "ci95_abs_err": [
+          -8.185717157837686,
+          2.9988133987041152
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.5345731997540755,
+         "ci95_abs_err": [
+          -9.148036365953024,
+          5.257014197965188
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -7.562171310543789,
+         "ci95_abs_err": [
+          -12.861235479310926,
+          -3.1688269701487513
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -5.642171310543782,
+         "ci95_abs_err": [
+          -15.625190773951696,
+          4.8896386398304035
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -1.8621713105437834,
+         "ci95_abs_err": [
+          -5.5431458405998795,
+          1.5527130975102268
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.5466012421844084,
+         "ci95_abs_err": [
+          -5.812281577719202,
+          0.006828672911223066
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.923633575439453,
+         "qs": 4.6628255928887254,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -4.685804885983236,
+         "ci95_abs_err": [
+          -12.372515021386258,
+          2.2404483853837114
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -3.315422958493002,
+         "ci95_abs_err": [
+          -5.660796899917349,
+          -1.1787879862503672
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_abs_err": -2.9238976899383147,
+         "ci95_abs_err": [
+          -7.951932923768465,
+          3.083265732592179
+         ],
+         "n_eff": 5.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 7.237828689456217,
+         "qs": 2.747812677975682,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5
+        },
+        "wm_gas": {
+         "abs_err": 8.082843017578124,
+         "qs": 3.1639627152902112,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -0.41615003731452865,
+         "ci95_qs": [
+          -0.7490194235379348,
+          0.07919538142441515
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 8.719427744547525,
+         "qs": 3.4361073656435366,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -0.6882946876678542,
+         "ci95_qs": [
+          -1.2613448871309099,
+          -0.1152444882047984
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 7.7541351218412276,
+         "qs": 3.865745660307444,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.1179329823317612,
+         "ci95_qs": [
+          -2.0890417475958882,
+          -0.11827786619741136
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 10.13479785880204,
+         "qs": 4.339773796061197,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.5919611180855138,
+         "ci95_qs": [
+          -2.4898377585790863,
+          -0.6417115370712664
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 9.772401889210292,
+         "qs": 6.350358517493153,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.6025458395174708,
+         "ci95_qs": [
+          -4.379996472584927,
+          -2.715346380096536
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 14.800000000000006,
+         "qs": 5.870044444444444,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.1222317664687615,
+         "ci95_qs": [
+          -5.153084128292109,
+          -1.271206468664836
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 12.879999999999999,
+         "qs": 6.261866666666667,
+         "hit": 0.6,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -3.5140539886909834,
+         "ci95_qs": [
+          -5.294994063662811,
+          -1.7247632628849634
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 9.1,
+         "qs": 5.652666666666667,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -2.9048539886909834,
+         "ci95_qs": [
+          -3.459965170503731,
+          -2.2335108381374518
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 9.784429931640625,
+         "qs": 3.841158811781142,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.0933461338054595,
+         "ci95_qs": [
+          -2.1296645324654273,
+          -0.33472543434146307
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 11.923633575439453,
+         "qs": 4.6628255928887254,
+         "hit": 1.0,
+         "cov80": 0.8,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.9150129149130435,
+         "ci95_qs": [
+          -4.762432802054915,
+          0.16408872844121875
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 10.553251647949219,
+         "qs": 4.175328288608126,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.427515610632445,
+         "ci95_qs": [
+          -1.842509893187375,
+          -1.0332414182035463
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 10.161726379394532,
+         "qs": 3.9052118131849505,
+         "hit": 0.8,
+         "cov80": 1.0,
+         "n": 5,
+         "wm_gas_ens_minus_this_qs": -1.1573991352092676,
+         "ci95_qs": [
+          -2.1513720976796376,
+          0.11868906898734596
+         ],
+         "n_eff": 5.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "nov_2026": {
+   "n_weeks": 1,
+   "weeks": [
+    "2026-10-30"
+   ],
+   "releases": [
+    "2026-11-05"
+   ],
+   "actual_bcf": [
+    77.0
+   ],
+   "kinds": {
+    "thu": {
+     "median_forecast_bcf": {
+      "wm_gas_ens": [
+       74.20657622243291
+      ],
+      "wm_gas": [
+       74.87897237141927
+      ],
+      "wm_gas_direct": [
+       73.5908597310384
+      ],
+      "st_ols_wx": [
+       75.56730494028955
+      ],
+      "st_ols_wx_nolag": [
+       76.8598563468962
+      ],
+      "st_arima_dev": [
+       36.343461937311446
+      ],
+      "st_climatology": [
+       50.9
+      ],
+      "st_persistence": [
+       39.199999999999996
+      ],
+      "st_seasonal_naive": [
+       32.0
+      ],
+      "chronos2": [
+       53.0024528503418
+      ],
+      "chronos2_cov": [
+       53.05392074584961
+      ],
+      "chronos_bolt_base": [
+       55.4713249206543
+      ],
+      "tirex": [
+       57.61440658569336
+      ]
+     },
+     "by_candidate": {
+      "wm_gas": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 2.793423777567085,
+         "qs": 1.8418250567686627,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -0.6723961489863512,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 2.121027628580734,
+         "qs": 2.354516666200426,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas_direct": {
+         "abs_err": 3.4091402689615933,
+         "qs": 2.6130638606460015,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -1.2881126403808594,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.4326950597104542,
+         "qs": 3.0191512823171482,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": 0.6883325688702797,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.14014365310380583,
+         "qs": 3.191211280116864,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": 1.980883975476928,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -38.53551043410782,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -23.978972371419268,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -35.67897237141927,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -42.878972371419266,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -21.87651952107747,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 23.94607925415039,
+         "qs": 8.282068485683865,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -21.825051625569657,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -19.40764745076497,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -17.264565785725907,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 2.793423777567085,
+         "qs": 1.8418250567686627,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": 0.5126916094317635,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 2.121027628580734,
+         "qs": 2.354516666200426,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas_direct": {
+         "abs_err": 3.4091402689615933,
+         "qs": 2.6130638606460015,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.2585471944455753,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.4326950597104542,
+         "qs": 3.0191512823171482,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.664634616116722,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.14014365310380583,
+         "qs": 3.191211280116864,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.8366946139164377,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -10.964055524804861,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -6.628372222688464,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -11.676594444910686,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -13.138816667132904,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -5.965963235431245,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 23.94607925415039,
+         "qs": 8.282068485683865,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -5.927551819483439,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -5.148047647476197,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -4.185010124842327,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      },
+      "wm_gas_ens": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 2.793423777567085,
+         "qs": 1.8418250567686627,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas": {
+         "abs_err": 2.121027628580734,
+         "qs": 2.354516666200426,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 0.6723961489863512,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 3.4091402689615933,
+         "qs": 2.6130638606460015,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -0.6157164913945081,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.4326950597104542,
+         "qs": 3.0191512823171482,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 1.360728717856631,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.14014365310380583,
+         "qs": 3.191211280116864,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 2.6532801244632793,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -37.86311428512147,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -23.306576222432916,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -35.00657622243292,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -42.206576222432915,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -21.204123372091118,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 23.94607925415039,
+         "qs": 8.282068485683865,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -21.152655476583305,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -18.735251301778618,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -16.592169636739555,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 2.793423777567085,
+         "qs": 1.8418250567686627,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas": {
+         "abs_err": 2.121027628580734,
+         "qs": 2.354516666200426,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -0.5126916094317635,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 3.4091402689615933,
+         "qs": 2.6130638606460015,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -0.7712388038773388,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.4326950597104542,
+         "qs": 3.0191512823171482,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -1.1773262255484855,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.14014365310380583,
+         "qs": 3.191211280116864,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -1.3493862233482012,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -11.476747134236625,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -7.141063832120228,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -12.18928605434245,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -13.651508276564668,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -6.478654844863009,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 23.94607925415039,
+         "qs": 8.282068485683865,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -6.440243428915203,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -5.66073925690796,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -4.69770173427409,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      }
+     }
+    },
+    "fri": {
+     "median_forecast_bcf": {
+      "wm_gas_ens": [
+       74.87636034580603
+      ],
+      "wm_gas": [
+       75.81260935465495
+      ],
+      "wm_gas_direct": [
+       74.64610036214192
+      ],
+      "st_ols_wx": [
+       75.4588144722989
+      ],
+      "st_ols_wx_nolag": [
+       76.65036014102598
+      ],
+      "st_arima_dev": [
+       36.343461937311446
+      ],
+      "st_climatology": [
+       50.9
+      ],
+      "st_persistence": [
+       39.199999999999996
+      ],
+      "st_seasonal_naive": [
+       32.0
+      ],
+      "chronos2": [
+       53.0024528503418
+      ],
+      "chronos2_cov": [
+       51.53220748901367
+      ],
+      "chronos_bolt_base": [
+       55.4713249206543
+      ],
+      "tirex": [
+       57.61440658569336
+      ]
+     },
+     "by_candidate": {
+      "wm_gas": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 2.1236396541939655,
+         "qs": 1.7498020816951831,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -0.9362490088489182,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 1.1873906453450473,
+         "qs": 2.2777774662441677,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas_direct": {
+         "abs_err": 2.3538996378580777,
+         "qs": 2.4782366858588323,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -1.1665089925130303,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.5411855277011028,
+         "qs": 2.9988788461438163,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -0.3537948823560555,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.3496398589740153,
+         "qs": 3.2037315250215532,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": 0.8377507863710321,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -39.46914741734351,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -24.912609354654954,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -36.61260935465496,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -43.81260935465495,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -22.810156504313156,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 25.467792510986328,
+         "qs": 8.97214421166314,
+         "hit": 1.0,
+         "cov80": 0.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -24.28040186564128,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -20.341284434000656,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_abs_err": -18.198202768961593,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 2.1236396541939655,
+         "qs": 1.7498020816951831,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": 0.5279753845489845,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas": {
+         "abs_err": 1.1873906453450473,
+         "qs": 2.2777774662441677,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas_direct": {
+         "abs_err": 2.3538996378580777,
+         "qs": 2.4782366858588323,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.20045921961466462,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.5411855277011028,
+         "qs": 2.9988788461438163,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.7211013798996486,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.3496398589740153,
+         "qs": 3.2037315250215532,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -0.9259540587773856,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -11.04079472476112,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -6.705111422644723,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -11.753333644866945,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -13.215555867089163,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -6.042702435387504,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 25.467792510986328,
+         "qs": 8.97214421166314,
+         "hit": 1.0,
+         "cov80": 0.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -6.694366745418973,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -5.224786847432455,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_minus_this_qs": -4.2617493247985845,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      },
+      "wm_gas_ens": {
+       "abs_err": {
+        "wm_gas_ens": {
+         "abs_err": 2.1236396541939655,
+         "qs": 1.7498020816951831,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas": {
+         "abs_err": 1.1873906453450473,
+         "qs": 2.2777774662441677,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 0.9362490088489182,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 2.3538996378580777,
+         "qs": 2.4782366858588323,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -0.23025998366411216,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.5411855277011028,
+         "qs": 2.9988788461438163,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 0.5824541264928627,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.3496398589740153,
+         "qs": 3.2037315250215532,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": 1.7739997952199502,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -38.53289840849459,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -23.976360345806036,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -35.67636034580604,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -42.876360345806035,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -21.873907495464238,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 25.467792510986328,
+         "qs": 8.97214421166314,
+         "hit": 1.0,
+         "cov80": 0.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -23.344152856792363,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -19.405035425151738,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_abs_err": -17.261953760112675,
+         "ci95_abs_err": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_abs_err": "insufficient_data"
+        }
+       },
+       "qs": {
+        "wm_gas_ens": {
+         "abs_err": 2.1236396541939655,
+         "qs": 1.7498020816951831,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1
+        },
+        "wm_gas": {
+         "abs_err": 1.1873906453450473,
+         "qs": 2.2777774662441677,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -0.5279753845489845,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "wm_gas_direct": {
+         "abs_err": 2.3538996378580777,
+         "qs": 2.4782366858588323,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -0.7284346041636491,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx": {
+         "abs_err": 1.5411855277011028,
+         "qs": 2.9988788461438163,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -1.2490767644486331,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_ols_wx_nolag": {
+         "abs_err": 0.3496398589740153,
+         "qs": 3.2037315250215532,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -1.45392944332637,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_arima_dev": {
+         "abs_err": 40.656538062688554,
+         "qs": 13.318572191005288,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -11.568770109310105,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_climatology": {
+         "abs_err": 26.1,
+         "qs": 8.98288888888889,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -7.233086807193708,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_persistence": {
+         "abs_err": 37.800000000000004,
+         "qs": 14.031111111111112,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -12.28130902941593,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "st_seasonal_naive": {
+         "abs_err": 45.0,
+         "qs": 15.49333333333333,
+         "hit": 0.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -13.743531251638148,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2": {
+         "abs_err": 23.997547149658203,
+         "qs": 8.320479901631671,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -6.570677819936488,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos2_cov": {
+         "abs_err": 25.467792510986328,
+         "qs": 8.97214421166314,
+         "hit": 1.0,
+         "cov80": 0.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -7.2223421299679575,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "chronos_bolt_base": {
+         "abs_err": 21.528675079345703,
+         "qs": 7.502564313676623,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -5.75276223198144,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        },
+        "tirex": {
+         "abs_err": 19.38559341430664,
+         "qs": 6.539526791042753,
+         "hit": 1.0,
+         "cov80": 1.0,
+         "n": 1,
+         "wm_gas_ens_minus_this_qs": -4.78972470934757,
+         "ci95_qs": [
+          NaN,
+          NaN
+         ],
+         "n_eff": 1.0,
+         "verdict_qs": "insufficient_data"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "reproduction_vs_audit": {
+  "thu|wm_gas": {
+   "n": 52,
+   "max_abs_diff_bcf": 5.0862630246228946e-05
+  },
+  "thu|wm_gas_direct": {
+   "n": 52,
+   "max_abs_diff_bcf": 1.0172526060614473e-05
+  },
+  "thu|st_ols_wx": {
+   "n": 52,
+   "max_abs_diff_bcf": 1.2789769243681803e-13
+  },
+  "thu|st_persistence": {
+   "n": 52,
+   "max_abs_diff_bcf": 2.842170943040401e-14
+  },
+  "thu|st_climatology": {
+   "n": 52,
+   "max_abs_diff_bcf": 2.842170943040401e-14
+  },
+  "fri|wm_gas": {
+   "n": 52,
+   "max_abs_diff_bcf": 1.52587890625e-05
+  },
+  "fri|wm_gas_direct": {
+   "n": 52,
+   "max_abs_diff_bcf": 1.52587890625e-05
+  },
+  "fri|st_ols_wx": {
+   "n": 52,
+   "max_abs_diff_bcf": 1.7053025658242404e-13
+  },
+  "fri|st_persistence": {
+   "n": 52,
+   "max_abs_diff_bcf": 2.842170943040401e-14
+  },
+  "fri|st_climatology": {
+   "n": 52,
+   "max_abs_diff_bcf": 2.842170943040401e-14
+  }
+ },
+ "ex_ante": {
+  "target_week_ending": "2026-11-06",
+  "scheduled_release": "2026-11-13",
+  "avg5_l48_bcf": 47.4,
+  "forecasts": {
+   "thu": {
+    "origin": "2026-11-05 17:00:00-05:00",
+    "wx_issue": "2026-11-05",
+    "wx_src": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     2
+    ],
+    "models": {
+     "wm_gas_ens": {
+      "median": 71.1666363954441,
+      "q10": 55.08254509296209,
+      "q90": 87.25673040800082
+     },
+     "wm_gas": {
+      "median": 63.2953847249349,
+      "q10": 40.688355636596675,
+      "q90": 85.87989889780681
+     },
+     "wm_gas_direct": {
+      "median": 66.11567306518555,
+      "q10": 41.07327887217204,
+      "q90": 90.62839975357058
+     },
+     "st_ols_wx": {
+      "median": 98.1519108328985,
+      "q10": 68.5516864662299,
+      "q90": 129.91175528768957
+     },
+     "st_ols_wx_nolag": {
+      "median": 93.60882744443887,
+      "q10": 63.252860010702406,
+      "q90": 127.94889911511747
+     },
+     "st_arima_dev": {
+      "median": 58.834851612406446,
+      "q10": 2.359589860167759,
+      "q90": 115.31011336464513
+     },
+     "st_climatology": {
+      "median": 48.4,
+      "q10": 14.119999999999997,
+      "q90": 123.91999999999999
+     },
+     "st_persistence": {
+      "median": 91.0,
+      "q10": 30.4,
+      "q90": 147.88000000000005
+     },
+     "st_seasonal_naive": {
+      "median": 44.0,
+      "q10": -8.499999999999986,
+      "q90": 111.59999999999997
+     },
+     "chronos2": {
+      "median": 44.03950119018555,
+      "q10": 9.422015190124512,
+      "q90": 72.31986236572266
+     },
+     "chronos2_cov": {
+      "median": 54.04723358154297,
+      "q10": 31.689844131469727,
+      "q90": 77.51221466064453
+     },
+     "chronos_bolt_base": {
+      "median": 36.61595153808594,
+      "q10": -15.480908393859863,
+      "q90": 70.81578826904297
+     },
+     "tirex": {
+      "median": 46.976806640625,
+      "q10": 4.710855484008789,
+      "q90": 78.65733337402344
+     }
+    }
+   },
+   "fri": {
+    "origin": "2026-11-06 17:00:00-05:00",
+    "wx_issue": "2026-11-06",
+    "wx_src": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "models": {
+     "wm_gas_ens": {
+      "median": 54.22896059088096,
+      "q10": 38.495933546114806,
+      "q90": 70.01969354917189
+     },
+     "wm_gas": {
+      "median": 47.30875015258789,
+      "q10": 24.6463633219401,
+      "q90": 69.6201546351115
+     },
+     "wm_gas_direct": {
+      "median": 51.875204722086586,
+      "q10": 25.452813275655114,
+      "q90": 76.35366217295329
+     },
+     "st_ols_wx": {
+      "median": 74.41129607051111,
+      "q10": 44.34466699357933,
+      "q90": 106.02712843292916
+     },
+     "st_ols_wx_nolag": {
+      "median": 68.77725321468587,
+      "q10": 38.55392475903314,
+      "q90": 103.7043269202189
+     },
+     "st_arima_dev": {
+      "median": 58.834851612406446,
+      "q10": 2.359589860167759,
+      "q90": 115.31011336464513
+     },
+     "st_climatology": {
+      "median": 48.4,
+      "q10": 14.119999999999997,
+      "q90": 123.91999999999999
+     },
+     "st_persistence": {
+      "median": 91.0,
+      "q10": 30.4,
+      "q90": 147.88000000000005
+     },
+     "st_seasonal_naive": {
+      "median": 44.0,
+      "q10": -8.499999999999986,
+      "q90": 111.59999999999997
+     },
+     "chronos2": {
+      "median": 44.03950119018555,
+      "q10": 9.422015190124512,
+      "q90": 72.31986236572266
+     },
+     "chronos2_cov": {
+      "median": 42.69670867919922,
+      "q10": 20.38555335998535,
+      "q90": 66.3603744506836
+     },
+     "chronos_bolt_base": {
+      "median": 36.61595153808594,
+      "q10": -15.480908393859863,
+      "q90": 70.81578826904297
+     },
+     "tirex": {
+      "median": 46.976806640625,
+      "q10": 4.710855484008789,
+      "q90": 78.65733337402344
+     }
+    }
+   }
+  }
+ },
+ "preds_file": "runs/deploy_daily/2026-11-10_0914/gas/preds/gas_preds.npz",
+ "preds_sha256": "1d31704a73d1d47dcc09cc1f9a9a532f03c6d8e2872f2b365a5ad609f7d3c3b7",
+ "param_watch": [
+  {
+   "module": "GasNet#0",
+   "sha_load": "a5829751143d6aec1012fbf6c7b088db674d022fc96922db4c1bac1f464ea469",
+   "sha_end": "a5829751143d6aec1012fbf6c7b088db674d022fc96922db4c1bac1f464ea469",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#1",
+   "sha_load": "d1b4533f5b3ff7e296df975223930e3e166c357658a0fe79577cbb5d92e51b64",
+   "sha_end": "d1b4533f5b3ff7e296df975223930e3e166c357658a0fe79577cbb5d92e51b64",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#2",
+   "sha_load": "0e125c1d0c052e2d131acb6910f86c45485bba205370a46ba7534ff2322f3434",
+   "sha_end": "0e125c1d0c052e2d131acb6910f86c45485bba205370a46ba7534ff2322f3434",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#3",
+   "sha_load": "7fd29488544b3c903124ad9fe8c1f21767c02b9dc143f6b4d36c1c0473b476db",
+   "sha_end": "7fd29488544b3c903124ad9fe8c1f21767c02b9dc143f6b4d36c1c0473b476db",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#4",
+   "sha_load": "b0cbcc9ecfbbca6bc0baffde929b5fd35b53ba7039bb0ef21ac69d578f8c921f",
+   "sha_end": "b0cbcc9ecfbbca6bc0baffde929b5fd35b53ba7039bb0ef21ac69d578f8c921f",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#5",
+   "sha_load": "b122125bedf8138dde372af1c313ccdf114843cd089d4dddd72491853718d6a8",
+   "sha_end": "b122125bedf8138dde372af1c313ccdf114843cd089d4dddd72491853718d6a8",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#6",
+   "sha_load": "5b4858f0a54ba6c1a3a1823c298b5bdfd00870f64e9d856233b972beec502a73",
+   "sha_end": "5b4858f0a54ba6c1a3a1823c298b5bdfd00870f64e9d856233b972beec502a73",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#7",
+   "sha_load": "793282349b6a5dbaec1f4bd08e7e5bc51854abb2ecd55263a9862f5aacb4c23f",
+   "sha_end": "793282349b6a5dbaec1f4bd08e7e5bc51854abb2ecd55263a9862f5aacb4c23f",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#8",
+   "sha_load": "3312a4560c3dc88dabcd039b40c69a6c07806038fdda4c69b996f039bd67a6de",
+   "sha_end": "3312a4560c3dc88dabcd039b40c69a6c07806038fdda4c69b996f039bd67a6de",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#9",
+   "sha_load": "f6129729ae0b0020377bc402f7b514f7e0f1fee0c42471818ca165dc99ac439f",
+   "sha_end": "f6129729ae0b0020377bc402f7b514f7e0f1fee0c42471818ca165dc99ac439f",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#10",
+   "sha_load": "45373b86bba7309946fbd72e869b3bfeecf72150e1283feae9a17a71a3af980f",
+   "sha_end": "45373b86bba7309946fbd72e869b3bfeecf72150e1283feae9a17a71a3af980f",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#11",
+   "sha_load": "71941d4751fe8fb62b871ef8047bbc315a3f79b7c30969a8cc7d9ed662ff2286",
+   "sha_end": "71941d4751fe8fb62b871ef8047bbc315a3f79b7c30969a8cc7d9ed662ff2286",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#12",
+   "sha_load": "a5a628313b6e18ae350308f6de7be97498ed1e640f76ee9f69bddf8843497a87",
+   "sha_end": "a5a628313b6e18ae350308f6de7be97498ed1e640f76ee9f69bddf8843497a87",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#13",
+   "sha_load": "b15a40a8cbd3a9861beb3d52443cfbff42c77f5ade471b0697fbe72816662553",
+   "sha_end": "b15a40a8cbd3a9861beb3d52443cfbff42c77f5ade471b0697fbe72816662553",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#14",
+   "sha_load": "a5829751143d6aec1012fbf6c7b088db674d022fc96922db4c1bac1f464ea469",
+   "sha_end": "a5829751143d6aec1012fbf6c7b088db674d022fc96922db4c1bac1f464ea469",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#15",
+   "sha_load": "d1b4533f5b3ff7e296df975223930e3e166c357658a0fe79577cbb5d92e51b64",
+   "sha_end": "d1b4533f5b3ff7e296df975223930e3e166c357658a0fe79577cbb5d92e51b64",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#16",
+   "sha_load": "0e125c1d0c052e2d131acb6910f86c45485bba205370a46ba7534ff2322f3434",
+   "sha_end": "0e125c1d0c052e2d131acb6910f86c45485bba205370a46ba7534ff2322f3434",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#17",
+   "sha_load": "7fd29488544b3c903124ad9fe8c1f21767c02b9dc143f6b4d36c1c0473b476db",
+   "sha_end": "7fd29488544b3c903124ad9fe8c1f21767c02b9dc143f6b4d36c1c0473b476db",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#18",
+   "sha_load": "b0cbcc9ecfbbca6bc0baffde929b5fd35b53ba7039bb0ef21ac69d578f8c921f",
+   "sha_end": "b0cbcc9ecfbbca6bc0baffde929b5fd35b53ba7039bb0ef21ac69d578f8c921f",
+   "unchanged": true
+  },
+  {
+   "module": "GasNet#19",
+   "sha_load": "b122125bedf8138dde372af1c313ccdf114843cd089d4dddd72491853718d6a8",
+   "sha_end": "b122125bedf8138dde372af1c313ccdf114843cd089d4dddd72491853718d6a8",
+   "unchanged": true
+  },
+  {
+   "module": "TiRexZero#20",
+   "sha_load": "f5b5b32092ec6a50fcefc8f76d871a27b6538a4c6f34b65de6dd57c07c4bd85d",
+   "sha_end": "f5b5b32092ec6a50fcefc8f76d871a27b6538a4c6f34b65de6dd57c07c4bd85d",
+   "unchanged": true
+  }
+ ],
+ "checkpoints_after": [
+  {
+   "file": "winning_models/gas_wm_gas/checkpoints/wm_gas.pt",
+   "sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas/checkpoints/wm_gas_direct.pt",
+   "sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas_ens/checkpoints/x_dir_s3456.pt",
+   "sha256": "d6e47f2aa5a32e7f354b6cc77f6378297c8fbc3cb48b46e56dbb0f3a9adeb3bb",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "winning_models/gas_wm_gas_ens/checkpoints/x_wm_s3456.pt",
+   "sha256": "1958ad360f7480c4a7d94e9aca5bf098d4153e87ae2ec1b1a73d494af2bbf1eb",
+   "sha256sums_ok": true,
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "runs/gas/search/ckpt/wm_gas.pt",
+   "sha256": "52e26f50f3576ffa928828b9c72b954b96ea9d2086cfc689c308b7a3a44d9e8a",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "runs/gas/search/ckpt/wm_gas_direct.pt",
+   "sha256": "7ebc0fbf1f79bc9ab5377283a3ceec17e66c8c6b62905668d74fa7fcc1a57457",
+   "loaded_copy_ok": true
+  },
+  {
+   "file": "tools/gas/wm_gas.py",
+   "sha256": "de3b1bb74bfcbd17ad383e567eb1510ec6fe05244cbb560f3b189a68667e4c2f",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/wm_gas_ens.py",
+   "sha256": "75207bb55c4844a2f9b68e273b7dbe079d55224b328b8520bfa6f9963f99ed81",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/search/feats.py",
+   "sha256": "9e69063d94ddd784d0c7c3f36d53649792b179c91e8df3982d09ecd2fdd6c572",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/search/nets.py",
+   "sha256": "8da05ed553a8056318f321e6e665d2eda5a5c31d3cadce9d7ae3c35a56203e13",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/storage.py",
+   "sha256": "2e01820d344b6e1444a600da1b5d6364c4fc7f507d255f3470e5734f621c4979",
+   "forward_freeze_ok": true
+  },
+  {
+   "file": "tools/gas/models.py",
+   "sha256": "b866f9c9bc50fd1ce7086c6ffff38258549261e8b0d2fcbf6c29a38756e05813",
+   "forward_freeze_ok": true
+  }
+ ]
+}

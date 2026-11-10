@@ -208,5 +208,45 @@
    "best": "tirex",
    "best_qs": 0.1755668684548947
   }
+ },
+ {
+  "run": "2026-11-10_0914",
+  "audit": "58/58",
+  "oil": {
+   "n": 2,
+   "cand": "wm_sv",
+   "cand_qs": 0.017655191411181728,
+   "rank": 6,
+   "of": 9,
+   "best": "chronos2",
+   "best_qs": 0.015599466238336381
+  },
+  "power": {
+   "n": 10,
+   "cand": "wm_power",
+   "cand_qs": 11.705043623853616,
+   "rank": 6,
+   "of": 13,
+   "best": "chronos_bolt_base",
+   "best_qs": 10.124903066140634
+  },
+  "gas": {
+   "n": 1,
+   "cand": "wm_gas_ens",
+   "cand_qs": 1.8418250567686627,
+   "rank": 1,
+   "of": 13,
+   "best": "wm_gas_ens",
+   "best_qs": 1.8418250567686627
+  },
+  "crypto": {
+   "n": 9,
+   "cand": "wm_fin",
+   "cand_qs": 0.1851709990430745,
+   "rank": 7,
+   "of": 15,
+   "best": "chronos2",
+   "best_qs": 0.1670450855006559
+  }
  }
 ]
