@@ -1,0 +1,19 @@
+{
+ "files": {
+  "data/power/raw/price_de_lu/2026.json": {
+   "bytes": 528202,
+   "downloaded_utc": "2026-11-11T09:14:31Z",
+   "n_points": 30240,
+   "sha256": "8e1aa570ba02f7ddf04b5ef342ea76be787544f376c1166d9c14cb54506a3ee4",
+   "url": "https://api.energy-charts.info/price?bzn=DE-LU&start=2026-01-01&end=2026-11-12"
+  },
+  "data/power/raw/public_power/2026.json": {
+   "bytes": 4461732,
+   "downloaded_utc": "2026-11-11T09:14:49Z",
+   "n_points": 30172,
+   "sha256": "bfe8a37d26d2234a122b34890414ccc6491b90c9d51114a7b876f1ee802d1c22",
+   "url": "https://api.energy-charts.info/public_power?country=de&start=2026-01-01&end=2026-11-12"
+  }
+ },
+ "note": "entries new or changed vs the committed data/power/manifest.json"
+}

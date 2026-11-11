@@ -91,7 +91,20 @@ Each forecast was written and sha256-sealed before its target was published; tru
 | arx | 291.60 | 62.18 | 23.9925 | 0.83 of hours |
 | naive_epf | 345.64 | 62.84 | 25.2841 | 0.29 of hours |
 
-- **delivery 2026-11-11 (24 h)**: not published yet (sealed in `runs/deploy_daily/2026-11-10_0914`)
+**delivery 2026-11-11 (24 h)** — actual 316.65 (sealed in `runs/deploy_daily/2026-11-10_0914`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| chronos_bolt_base | 299.17 | 34.31 | 13.5555 | 0.79 of hours |
+| tirex | 284.96 | 42.51 | 15.9445 | 0.79 of hours |
+| wm_power ★ | 271.10 | 49.25 | 18.9655 | 0.83 of hours |
+| naive_epf | 351.48 | 47.59 | 19.9139 | 0.54 of hours |
+| chronos2 | 265.40 | 53.63 | 20.2280 | 0.71 of hours |
+| wm_power_blend | 266.50 | 56.78 | 21.1700 | 0.83 of hours |
+| wm_power_direct | 265.38 | 54.63 | 21.4853 | 0.75 of hours |
+| chronos2_cov | 266.84 | 54.27 | 21.5918 | 0.54 of hours |
+| arx | 262.75 | 62.35 | 22.0952 | 1.00 of hours |
+| lear | 261.90 | 64.31 | 23.6644 | 0.83 of hours |
 
 ## oil
 
