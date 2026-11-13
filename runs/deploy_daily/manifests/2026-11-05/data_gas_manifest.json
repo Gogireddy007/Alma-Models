@@ -1,0 +1,33 @@
+{
+ "files": {
+  "data/gas/raw/DHHNGSP.csv": {
+   "bytes": 116393,
+   "downloaded_utc": "2026-11-05T09:39:50Z",
+   "group": "hh_fred",
+   "sha256": "49b12d4ac0c5e14da46d15c98e8c371385a775e916513886609020417b236185",
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+  },
+  "data/gas/raw/rngc1d.htm": {
+   "bytes": 351383,
+   "downloaded_utc": "2026-11-05T09:39:53Z",
+   "group": "ng_c1",
+   "sha256": "3f9b0ea7a46a94c7bf3799a902ff45be57b3ddb7363b14e19f062219f6cef969",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc1d.htm"
+  },
+  "data/gas/raw/rngc2d.htm": {
+   "bytes": 351404,
+   "downloaded_utc": "2026-11-05T09:39:54Z",
+   "group": "ng_c2",
+   "sha256": "f688466ee96466223ca9b919f403ae62dbf05b133715eb32ce4afe40dec7f4ca",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc2d.htm"
+  },
+  "data/gas/raw/rngwhhdd.htm": {
+   "bytes": 308964,
+   "downloaded_utc": "2026-11-05T09:39:51Z",
+   "group": "hh_eia",
+   "sha256": "ead49aa50f8b3bf0b01d82dcad583d331293f7c88b10c5fbf9c971bf4f209452",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"
+  }
+ },
+ "note": "entries new or changed vs the committed data/gas/manifest.json"
+}

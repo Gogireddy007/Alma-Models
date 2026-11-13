@@ -1,0 +1,363 @@
+{
+ "sections": [
+  "pins",
+  "nofit",
+  "oil",
+  "power",
+  "gas",
+  "fin"
+ ],
+ "n_checks": 58,
+ "n_fail": 0,
+ "checks": [
+  {
+   "section": "A",
+   "check": "all winning_models checkpoints match SHA256SUMS and FREEZE.json",
+   "status": "PASS",
+   "detail": "18 files"
+  },
+  {
+   "section": "A",
+   "check": "all FREEZE.json files (code + checkpoints) unchanged",
+   "status": "PASS",
+   "detail": "29 files, changed: []"
+  },
+  {
+   "section": "A",
+   "check": "git: no edits to frozen model code / checkpoints / forward freeze",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "section": "A",
+   "check": "oil wrapper pins == oil SHA256SUMS",
+   "status": "PASS",
+   "detail": "6 pins"
+  },
+  {
+   "section": "B",
+   "check": "deploy scripts contain no optimizer/backward/train() call",
+   "status": "PASS",
+   "detail": "[]"
+  },
+  {
+   "section": "B",
+   "check": "oil/results.json: every registered model ran (no competitor silently skipped)",
+   "status": "PASS",
+   "detail": "9 models; skipped: {}"
+  },
+  {
+   "section": "B",
+   "check": "oil/results.json: torch parameters unchanged after deployment",
+   "status": "PASS",
+   "detail": "7 modules hashed"
+  },
+  {
+   "section": "B",
+   "check": "power/results.json: every registered model ran (no competitor silently skipped)",
+   "status": "PASS",
+   "detail": "13 models; skipped: {}"
+  },
+  {
+   "section": "B",
+   "check": "power/results.json: torch parameters unchanged after deployment",
+   "status": "PASS",
+   "detail": "10 modules hashed"
+  },
+  {
+   "section": "B",
+   "check": "gas/results.json: every registered model ran (no competitor silently skipped)",
+   "status": "PASS",
+   "detail": "13 models; skipped: {}"
+  },
+  {
+   "section": "B",
+   "check": "gas/results.json: torch parameters unchanged after deployment",
+   "status": "PASS",
+   "detail": "21 modules hashed"
+  },
+  {
+   "section": "B",
+   "check": "fin/results_corrected.json: every registered model ran (no competitor silently skipped)",
+   "status": "PASS",
+   "detail": "15 models; skipped: {}"
+  },
+  {
+   "section": "B",
+   "check": "fin/results_corrected.json: torch parameters unchanged after deployment",
+   "status": "PASS",
+   "detail": "10 modules hashed"
+  },
+  {
+   "section": "B",
+   "check": "fin/results_corrected.json: zero online updates",
+   "status": "PASS",
+   "detail": "{'wm_fin': 0, 'wm_direct': 0, 'wm_fin_blend': 0, 'har_intra_dow': 0, 'har_dow': 0, 'lgbm_dow': 0, 'har': 0, 'har_roll': 0, 'lgbm': 0, 'lgbm_asset': 0, 'rv_persist': 0, 'garch': 0, 'chronos2': 0, 'chronos_bolt_base': 0, 'tirex': 0}"
+  },
+  {
+   "section": "G",
+   "check": "oil preds sha256 matches results",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "section": "C",
+   "check": "oil: origin dates re-derived from raw FRED csv",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "section": "C",
+   "check": "oil oct_2026 h1: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=22"
+  },
+  {
+   "section": "C",
+   "check": "oil oct_2026 h5: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=22"
+  },
+  {
+   "section": "C",
+   "check": "oil oct_2026 h20: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=22"
+  },
+  {
+   "section": "C",
+   "check": "oil nov_2026 h1: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=2"
+  },
+  {
+   "section": "C",
+   "check": "oil nov_2026 h5: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=2"
+  },
+  {
+   "section": "C",
+   "check": "oil nov_2026 h20: n targets from raw csv",
+   "status": "PASS",
+   "detail": "n=2"
+  },
+  {
+   "section": "D",
+   "check": "oil: every QS recomputed from saved forecasts",
+   "status": "PASS",
+   "detail": "54/54 match"
+  },
+  {
+   "section": "F",
+   "check": "oil: every significance verdict rests on >= 10 independent units",
+   "status": "PASS",
+   "detail": "48 verdicts, 0 significant, bad=[]"
+  },
+  {
+   "section": "E",
+   "check": "oil: future-scramble leak test (wm_sv, wm_sv_direct)",
+   "status": "PASS",
+   "detail": "0/30 forecasts changed"
+  },
+  {
+   "section": "R",
+   "check": "oil: saved wm_sv forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "10 origins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "oil: saved wm_sv_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "10 origins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "G",
+   "check": "power preds sha256 matches results",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "section": "C",
+   "check": "power: realised hourly prices re-derived from raw Energy-Charts JSON",
+   "status": "PASS",
+   "detail": "1008 hours, max diff 5.68e-14"
+  },
+  {
+   "section": "C",
+   "check": "power oct_2026: n delivery days",
+   "status": "PASS",
+   "detail": "n=31"
+  },
+  {
+   "section": "C",
+   "check": "power nov_2026: n delivery days",
+   "status": "PASS",
+   "detail": "n=11"
+  },
+  {
+   "section": "D",
+   "check": "power: every QS recomputed from saved forecasts",
+   "status": "PASS",
+   "detail": "52/52 match"
+  },
+  {
+   "section": "F",
+   "check": "power: every significance verdict rests on >= 10 independent units",
+   "status": "PASS",
+   "detail": "96 verdicts, 0 significant, bad=[]"
+  },
+  {
+   "section": "E",
+   "check": "power: future-scramble leak test (prices >= D, fundamentals >= D-1)",
+   "status": "PASS",
+   "detail": "0/14 forecasts changed"
+  },
+  {
+   "section": "R",
+   "check": "power: saved wm_power forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "11 delivery days, max |diff| 3.1e-05"
+  },
+  {
+   "section": "R",
+   "check": "power: saved wm_power_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "11 delivery days, max |diff| 3.1e-05"
+  },
+  {
+   "section": "G",
+   "check": "gas preds sha256 matches results",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "section": "C",
+   "check": "gas: TEST forecasts reproduce the audit cache (inputs identical)",
+   "status": "PASS",
+   "detail": "max diff 5.1e-05 Bcf over 10 series x 52 weeks"
+  },
+  {
+   "section": "C",
+   "check": "gas oct_2026: storage changes re-derived from raw EIA ngshistory.xls",
+   "status": "PASS",
+   "detail": "[64.0, 85.0, 67.0, 77.0, 80.0] vs [64.0, 85.0, 67.0, 77.0, 80.0]"
+  },
+  {
+   "section": "C",
+   "check": "gas nov_2026: storage changes re-derived from raw EIA ngshistory.xls",
+   "status": "PASS",
+   "detail": "[77.0] vs [77.0]"
+  },
+  {
+   "section": "D",
+   "check": "gas: every MAE and QS recomputed from saved forecasts",
+   "status": "PASS",
+   "detail": "208/208 match"
+  },
+  {
+   "section": "F",
+   "check": "gas: every significance verdict rests on >= 10 independent units",
+   "status": "PASS",
+   "detail": "192 verdicts, 0 significant, bad=[]"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (oct_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (oct_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (oct_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (oct_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "5 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (nov_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "1 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (nov_2026, thu) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "1 weeks, max |diff| 2.0e-07"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas (nov_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "1 weeks, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "gas: saved wm_gas_ens (nov_2026, fri) forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "1 weeks, max |diff| 1.8e-07"
+  },
+  {
+   "section": "E",
+   "check": "gas: future-scramble leak test (storage >= target week, weather after origin)",
+   "status": "PASS",
+   "detail": "0/36 forecasts changed"
+  },
+  {
+   "section": "G",
+   "check": "fin corrected preds sha256 matches results",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "section": "C",
+   "check": "fin corrected: log-RV labels re-derived from raw Binance zips (60 random coin-days)",
+   "status": "PASS",
+   "detail": "58 labelled, max |diff| 0.0e+00"
+  },
+  {
+   "section": "D",
+   "check": "fin corrected: every QS and direction accuracy recomputed",
+   "status": "PASS",
+   "detail": "120/120 match"
+  },
+  {
+   "section": "F",
+   "check": "fin corrected: every significance verdict rests on >= 10 independent units",
+   "status": "PASS",
+   "detail": "112 verdicts, 0 significant, bad=[]"
+  },
+  {
+   "section": "R",
+   "check": "fin: saved wm_fin forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "7 days x 24 coins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "R",
+   "check": "fin: saved wm_direct forecasts = fresh re-run of the frozen model",
+   "status": "PASS",
+   "detail": "7 days x 24 coins, max |diff| 0.0e+00"
+  },
+  {
+   "section": "E",
+   "check": "fin: future-scramble leak test (daily rows >= D, hourly rows >= D 00:00)",
+   "status": "PASS",
+   "detail": "0/6 forecasts changed"
+  }
+ ],
+ "git_head": "114ed7e8b1341e48d69c243202bea30b6f1cebfb"
+}

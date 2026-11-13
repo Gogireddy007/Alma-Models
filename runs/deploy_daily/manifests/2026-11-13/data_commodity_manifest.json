@@ -1,0 +1,21 @@
+{
+ "files": {
+  "data/commodity/raw/DCOILBRENTEU.csv": {
+   "sha256": "24c21dcefd22454f23390f58e8472c6b8a3cdea283d6cc5b7cfade9fede1d985",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU"
+  },
+  "data/commodity/raw/DCOILWTICO.csv": {
+   "sha256": "2bab6974f96b57b1fe1bdfe6fd2edd44ae041dc135060dddc479ef1994a02bc3",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO"
+  },
+  "data/commodity/raw/DHHNGSP.csv": {
+   "sha256": "7fc71f76d90130f07537a142e6bdc3c633b90ac03ea954f6438ed981026bac41",
+   "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+  },
+  "data/commodity/raw/WCESTUS1_leaf.html": {
+   "sha256": "5e7dfb2d85a99b622271c755fa5b82f8cde5a3233476b5040ef1a5c9c4faeede",
+   "source": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCESTUS1&f=W"
+  }
+ },
+ "note": "entries new or changed vs the committed data/commodity/manifest.json"
+}

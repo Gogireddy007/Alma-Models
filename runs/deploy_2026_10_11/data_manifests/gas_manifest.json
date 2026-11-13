@@ -1,0 +1,131 @@
+{
+ "files": {
+  "data/gas/raw/DHHNGSP.csv": {
+   "bytes": 116393,
+   "downloaded_utc": "2026-11-04T23:04:30Z",
+   "group": "hh_fred",
+   "sha256": "49b12d4ac0c5e14da46d15c98e8c371385a775e916513886609020417b236185",
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+  },
+  "data/gas/raw/ngs_revisions.xls": {
+   "bytes": 121856,
+   "downloaded_utc": "2026-11-04T23:04:26Z",
+   "group": "storage",
+   "sha256": "ee7c703c6d30176d0253b879aa4c8c6dc0178b411c36d73036d89aeff412dd3c",
+   "url": "https://ir.eia.gov/ngs/revisions.xls"
+  },
+  "data/gas/raw/ngs_schedule.html": {
+   "bytes": 8105,
+   "downloaded_utc": "2026-11-04T23:04:27Z",
+   "group": "storage",
+   "sha256": "b54595ec6784c11c95ab448fa21d3f115b03a2bcc02960cab589fb0ad4cc1e04",
+   "url": "https://ir.eia.gov/ngs/schedule.html"
+  },
+  "data/gas/raw/ngshistory.xls": {
+   "bytes": 777216,
+   "downloaded_utc": "2026-11-04T23:04:25Z",
+   "group": "storage",
+   "sha256": "797d43481e578025097b9475857eae8df00e620a3a467e60703f1156432fef03",
+   "url": "https://ir.eia.gov/ngs/ngshistory.xls"
+  },
+  "data/gas/raw/nw2_epg0_swo_r48_bcfw.htm": {
+   "bytes": 93433,
+   "downloaded_utc": "2026-11-04T23:04:28Z",
+   "group": "storage",
+   "sha256": "cda8f1932ceab7b4783964c5134a734974064e48355e4e199f6b35b14f46442d",
+   "url": "https://www.eia.gov/dnav/ng/hist/nw2_epg0_swo_r48_bcfw.htm"
+  },
+  "data/gas/raw/rngc1d.htm": {
+   "bytes": 351383,
+   "downloaded_utc": "2026-11-04T23:04:32Z",
+   "group": "ng_c1",
+   "sha256": "3f9b0ea7a46a94c7bf3799a902ff45be57b3ddb7363b14e19f062219f6cef969",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc1d.htm"
+  },
+  "data/gas/raw/rngc2d.htm": {
+   "bytes": 351404,
+   "downloaded_utc": "2026-11-04T23:04:33Z",
+   "group": "ng_c2",
+   "sha256": "f688466ee96466223ca9b919f403ae62dbf05b133715eb32ce4afe40dec7f4ca",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc2d.htm"
+  },
+  "data/gas/raw/rngwhhdd.htm": {
+   "bytes": 308964,
+   "downloaded_utc": "2026-11-04T23:04:31Z",
+   "group": "hh_eia",
+   "sha256": "ead49aa50f8b3bf0b01d82dcad583d331293f7c88b10c5fbf9c971bf4f209452",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"
+  },
+  "data/gas/raw/weather_atlanta.json": {
+   "bytes": 196406,
+   "downloaded_utc": "2026-11-01T01:17:31Z",
+   "group": "weather",
+   "sha256": "4489e75af2e59a171262e8f0bb5acffd84e0aab6330674a9261c8107d894d7c1",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=33.7490&longitude=-84.3880&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_boston.json": {
+   "bytes": 196325,
+   "downloaded_utc": "2026-11-01T01:17:18Z",
+   "group": "weather",
+   "sha256": "693de2aa2a9777d4bd0d1c2806b1cfb980c0514647be4e139df5317d22ee13b0",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.3601&longitude=-71.0589&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_chicago.json": {
+   "bytes": 196255,
+   "downloaded_utc": "2026-11-01T01:17:11Z",
+   "group": "weather",
+   "sha256": "54a0330b5ce8f9bbadf10b1ade26eade0a369887b3582b81ae3ef388f6b16d7b",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=41.8781&longitude=-87.6298&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_dallas.json": {
+   "bytes": 196401,
+   "downloaded_utc": "2026-11-01T01:18:34Z",
+   "group": "weather",
+   "sha256": "9a61d21a772e35a58159c49c321a7db700f5092837c023681ae3ae64286f214c",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=32.7767&longitude=-96.7970&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_detroit.json": {
+   "bytes": 196259,
+   "downloaded_utc": "2026-11-01T01:17:21Z",
+   "group": "weather",
+   "sha256": "b85cd27565a7e82b286113779f3fc61b0dbc4648d17974080fb4143dea2cf248",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=42.3314&longitude=-83.0458&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_houston.json": {
+   "bytes": 196403,
+   "downloaded_utc": "2026-11-01T01:18:37Z",
+   "group": "weather",
+   "sha256": "d369ef8033c46afa5d504919a1d38532b95930b1c451b9968ff9cb8ef1b9f8c2",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=29.7604&longitude=-95.3698&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_minneapolis.json": {
+   "bytes": 195994,
+   "downloaded_utc": "2026-11-01T01:17:24Z",
+   "group": "weather",
+   "sha256": "8b953bb3bfaf92083142681e2887b49cbeed9271a43e7bc29f33d1f041293ca6",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=44.9778&longitude=-93.2650&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_new_york.json": {
+   "bytes": 196374,
+   "downloaded_utc": "2026-11-01T01:17:08Z",
+   "group": "weather",
+   "sha256": "38018be23db699c2d79710511020cf9d940b722876b81b9f9929de63db5e5f72",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=40.7128&longitude=-74.0060&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_philadelphia.json": {
+   "bytes": 196392,
+   "downloaded_utc": "2026-11-01T01:17:15Z",
+   "group": "weather",
+   "sha256": "54aea7319257ba39bac319b7184532724bc1b3ebfec949df71bd7cc42750dae2",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=39.9526&longitude=-75.1652&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  },
+  "data/gas/raw/weather_pittsburgh.json": {
+   "bytes": 196340,
+   "downloaded_utc": "2026-11-01T01:17:27Z",
+   "group": "weather",
+   "sha256": "ffb18cf776a023c7d989122c9d40f6aedff738f64a0a5ddc4593eecbad8300c9",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=40.4406&longitude=-79.9959&start_date=1997-01-01&end_date=2026-10-30&daily=temperature_2m_mean&temperature_unit=fahrenheit&timezone=America%2FNew_York"
+  }
+ },
+ "note": "raw files exactly as downloaded; sha256 of the bytes on disk. Licences: FRED/EIA US public domain; Open-Meteo CC BY 4.0 (ERA5: Copernicus C3S)."
+}

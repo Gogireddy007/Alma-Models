@@ -1,0 +1,47 @@
+{
+ "files": {
+  "data/gas/raw/DHHNGSP.csv": {
+   "bytes": 116393,
+   "downloaded_utc": "2026-11-11T09:15:16Z",
+   "group": "hh_fred",
+   "sha256": "49b12d4ac0c5e14da46d15c98e8c371385a775e916513886609020417b236185",
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+  },
+  "data/gas/raw/ngshistory.xls": {
+   "bytes": 787968,
+   "downloaded_utc": "2026-11-11T09:15:11Z",
+   "group": "storage",
+   "sha256": "740219b3c360502a6f134480aa7c72c1b3c7be453f76a6e290b8db5159c6beca",
+   "url": "https://ir.eia.gov/ngs/ngshistory.xls"
+  },
+  "data/gas/raw/nw2_epg0_swo_r48_bcfw.htm": {
+   "bytes": 93442,
+   "downloaded_utc": "2026-11-11T09:15:15Z",
+   "group": "storage",
+   "sha256": "547d48b12a353eed11fb71521c00346f18ff9430c041b936d1a7f0ec3bf0ed9e",
+   "url": "https://www.eia.gov/dnav/ng/hist/nw2_epg0_swo_r48_bcfw.htm"
+  },
+  "data/gas/raw/rngc1d.htm": {
+   "bytes": 351383,
+   "downloaded_utc": "2026-11-11T09:15:19Z",
+   "group": "ng_c1",
+   "sha256": "3f9b0ea7a46a94c7bf3799a902ff45be57b3ddb7363b14e19f062219f6cef969",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc1d.htm"
+  },
+  "data/gas/raw/rngc2d.htm": {
+   "bytes": 352424,
+   "downloaded_utc": "2026-11-11T09:15:20Z",
+   "group": "ng_c2",
+   "sha256": "b49b0ceaa767302cbc55800189e884aef56432a372e7cb01044780c567309ec8",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngc2d.htm"
+  },
+  "data/gas/raw/rngwhhdd.htm": {
+   "bytes": 308964,
+   "downloaded_utc": "2026-11-11T09:15:17Z",
+   "group": "hh_eia",
+   "sha256": "ead49aa50f8b3bf0b01d82dcad583d331293f7c88b10c5fbf9c971bf4f209452",
+   "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"
+  }
+ },
+ "note": "entries new or changed vs the committed data/gas/manifest.json"
+}
