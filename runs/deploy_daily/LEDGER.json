@@ -328,5 +328,45 @@
    "best": "chronos2",
    "best_qs": 0.15786548819331975
   }
+ },
+ {
+  "run": "2026-11-13_0913",
+  "audit": "58/58",
+  "oil": {
+   "n": 8,
+   "cand": "wm_sv",
+   "cand_qs": 0.013635072903866237,
+   "rank": 5,
+   "of": 9,
+   "best": "auto_ets",
+   "best_qs": 0.01310971447336515
+  },
+  "power": {
+   "n": 13,
+   "cand": "wm_power",
+   "cand_qs": 14.199623067345035,
+   "rank": 5,
+   "of": 13,
+   "best": "chronos_bolt_base",
+   "best_qs": 12.778371565185722
+  },
+  "gas": {
+   "n": 1,
+   "cand": "wm_gas_ens",
+   "cand_qs": 1.8418250567686627,
+   "rank": 1,
+   "of": 13,
+   "best": "wm_gas_ens",
+   "best_qs": 1.8418250567686627
+  },
+  "crypto": {
+   "n": 12,
+   "cand": "wm_fin",
+   "cand_qs": 0.162936197411993,
+   "rank": 8,
+   "of": 15,
+   "best": "chronos2",
+   "best_qs": 0.1444602108964729
+  }
  }
 ]

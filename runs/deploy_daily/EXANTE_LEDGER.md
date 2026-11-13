@@ -106,10 +106,42 @@ Each forecast was written and sha256-sealed before its target was published; tru
 | arx | 262.75 | 62.35 | 22.0952 | 1.00 of hours |
 | lear | 261.90 | 64.31 | 23.6644 | 0.83 of hours |
 
+- **delivery 2026-11-14 (24 h)**: not published yet (sealed in `runs/deploy_daily/2026-11-13_0913`)
+
 ## oil
 
-- **WTI print 1 after 2026-11-03**: not published yet (sealed in `runs/deploy_2026_10_11`)
+**WTI print 1 after 2026-11-03 (2026-11-04)** — actual 91.73 (sealed in `runs/deploy_2026_10_11`)
 
-- **WTI print 5 after 2026-11-03**: not published yet (sealed in `runs/deploy_2026_10_11`)
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| ewma94 | 99.64 | 7.91 | 0.0336 | no |
+| rw_gauss | 99.64 | 7.91 | 0.0339 | no |
+| auto_ets | 99.67 | 7.94 | 0.0354 | no |
+| wm_sv ★ | 99.89 | 8.16 | 0.0356 | no |
+| auto_arima | 99.64 | 7.91 | 0.0360 | no |
+| wm_sv_direct | 100.16 | 8.43 | 0.0378 | no |
+| tirex | 100.29 | 8.56 | 0.0382 | no |
+| chronos_bolt_base | 101.02 | 9.29 | 0.0404 | no |
+| chronos2 | 100.74 | 9.01 | 0.0407 | no |
+
+**WTI print 5 after 2026-11-03 (2026-11-10)** — actual 89.62 (sealed in `runs/deploy_2026_10_11`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| ewma94 | 99.64 | 10.02 | 0.0363 | yes |
+| rw_gauss | 99.64 | 10.02 | 0.0365 | yes |
+| chronos_bolt_base | 100.01 | 10.39 | 0.0385 | no |
+| auto_ets | 99.67 | 10.05 | 0.0397 | no |
+| tirex | 100.22 | 10.60 | 0.0402 | no |
+| wm_sv ★ | 100.26 | 10.64 | 0.0408 | no |
+| auto_arima | 99.64 | 10.02 | 0.0408 | no |
+| wm_sv_direct | 101.06 | 11.44 | 0.0466 | no |
+| chronos2 | 101.02 | 11.40 | 0.0490 | no |
 
 - **WTI print 20 after 2026-11-03**: not published yet (sealed in `runs/deploy_2026_10_11`)
+
+- **WTI print 1 after 2026-11-11**: not published yet (sealed in `runs/deploy_daily/2026-11-13_0913`)
+
+- **WTI print 5 after 2026-11-11**: not published yet (sealed in `runs/deploy_daily/2026-11-13_0913`)
+
+- **WTI print 20 after 2026-11-11**: not published yet (sealed in `runs/deploy_daily/2026-11-13_0913`)
