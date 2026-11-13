@@ -40,9 +40,41 @@ Each forecast was written and sha256-sealed before its target was published; tru
 | st_persistence | 39.20 | 37.80 | 14.0311 | yes |
 | st_seasonal_naive | 32.00 | 45.00 | 15.4933 | yes |
 
-- **week 2026-11-06 (thu origin)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0930`)
+**week 2026-11-06 (thu origin)** — actual 61.00 (sealed in `runs/deploy_daily/2026-11-08_0930`)
 
-- **week 2026-11-06 (fri origin)**: not published yet (sealed in `runs/deploy_daily/2026-11-08_0930`)
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| wm_gas | 63.30 | 2.30 | 2.3642 | yes |
+| wm_gas_direct | 66.12 | 5.12 | 2.7079 | yes |
+| chronos2_cov | 54.05 | 6.95 | 2.8450 | yes |
+| wm_gas_ens ★ | 71.17 | 10.17 | 3.2356 | yes |
+| tirex | 46.98 | 14.02 | 5.1343 | yes |
+| st_arima_dev | 58.83 | 2.17 | 5.5567 | yes |
+| st_climatology | 48.40 | 12.60 | 5.5849 | yes |
+| chronos2 | 44.04 | 16.96 | 5.7355 | yes |
+| st_seasonal_naive | 44.00 | 17.00 | 6.7344 | yes |
+| chronos_bolt_base | 36.62 | 24.38 | 8.5400 | yes |
+| st_persistence | 91.00 | 30.00 | 9.4738 | yes |
+| st_ols_wx_nolag | 93.61 | 32.61 | 11.5285 | no |
+| st_ols_wx | 98.15 | 37.15 | 14.0982 | no |
+
+**week 2026-11-06 (fri origin)** — actual 61.00 (sealed in `runs/deploy_daily/2026-11-08_0930`)
+
+| model | median | abs. error | QS | in 80% interval |
+|---|---|---|---|---|
+| wm_gas_ens ★ | 54.23 | 6.77 | 2.3641 | yes |
+| wm_gas_direct | 51.88 | 9.12 | 3.5013 | yes |
+| st_ols_wx_nolag | 68.78 | 7.78 | 3.6833 | yes |
+| wm_gas | 47.31 | 13.69 | 4.4099 | yes |
+| st_ols_wx | 74.41 | 13.41 | 4.6332 | yes |
+| tirex | 46.98 | 14.02 | 5.1343 | yes |
+| st_arima_dev | 58.83 | 2.17 | 5.5567 | yes |
+| st_climatology | 48.40 | 12.60 | 5.5849 | yes |
+| chronos2 | 44.04 | 16.96 | 5.7355 | yes |
+| chronos2_cov | 42.70 | 18.30 | 6.1138 | yes |
+| st_seasonal_naive | 44.00 | 17.00 | 6.7344 | yes |
+| chronos_bolt_base | 36.62 | 24.38 | 8.5400 | yes |
+| st_persistence | 91.00 | 30.00 | 9.4738 | yes |
 
 ## power
 
